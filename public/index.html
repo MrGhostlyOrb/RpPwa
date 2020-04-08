@@ -1,0 +1,140 @@
+<!--
+ Your First PWA Codelab (https://g.co/codelabs/pwa)
+
+ Copyright 2019 Google Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Richmond Paper Supply</title>
+  <meta name="codelab" content="your-first-pwa-v3">
+  <link rel="stylesheet" type="text/css" href="/styles/inline.css">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+
+  <!-- CODELAB: Add link rel manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- CODELAB: Add iOS meta tags and icons -->
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Richmond PWA">
+<link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
+  <!-- CODELAB: Add description here -->
+  
+  <meta name="description" content="A sample weather app">
+  <!-- CODELAB: Add meta theme-color -->
+  
+  <meta name="theme-color" content="#df78ef" />
+
+</head>
+<body>
+
+  <header class="header">
+    <h1>
+      Richmond Paper Supply
+      <a href="https://darksky.net/poweredby/" class="powered-by">
+        Progressive Web App
+      </a>
+    </h1>
+    <button id="butInstall" aria-label="Install" hidden></button>
+    <button id="butRefresh" aria-label="Refresh"></button>
+  </header>
+
+  <main class="main">
+
+    <button id="butAdd" class="fab" aria-label="Add">
+      <span class="icon add"></span>
+    </button>
+
+    <div id="about" class="weather-card">
+      <b>Welcome to the Richmond Paper Progressive Web App Experience</b><br>
+      Get started at <a href="https://g.co/codelabs/pwa">https://g.co/codelabs/pwa</a>.
+    </div>
+	
+	<div id="about" class="weather-card">
+	 <img src = "/images/square-logo-image.png"></img>
+	  <div class = 'desc'>
+	  <h2>Product Name / Title</h2>
+	  <p>Product description line 1</p>
+	  <p>Product description line 2</p>
+	  
+		<p>Add to order : Button here</p><a href="https://g.co/codelabs/pwa">https://g.co/codelabs/pwa</a>.
+	  </div>	
+	</div>
+	
+	<div id="about" class="weather-card">
+	 <img src = "/images/square-logo-image.png"></img>
+	 <img src = "/images/square-logo-image.png"></img>
+	 <img src = "/images/square-logo-image.png"></img>
+	  <div class = 'desc'>
+	  <h2>Product Name / Title</h2>
+	  <p>Product description line 1</p>
+	  <p>Product description line 2</p>
+	  
+		<p>Add to order : Button here</p><a href="https://g.co/codelabs/pwa">https://g.co/codelabs/pwa</a>.
+	  </div>	
+	</div>
+	
+	<div id="about" class="weather-card">
+	 <img src = "/images/square-logo-image.png"></img>
+	 <img src = "/images/square-logo-image.png"></img>
+	  <div class = 'desc'>
+	  <h2>Product Name / Title</h2>
+	  <p>Product description line 1</p>
+	  <p>Product description line 2</p>
+	  
+		<p>Add to order : Button here</p><a href="https://g.co/codelabs/pwa">https://g.co/codelabs/pwa</a>.
+	  </div>	
+	</div>
+	
+	<div id="about" class="weather-card">
+	 <img src = "/images/square-logo-image.png"></img>
+	 <img src = "/images/square-logo-image.png"></img>
+	 <img src = "/images/square-logo-image.png"></img>
+	  <div class = 'desc'>
+	  <h2>Product Name / Title</h2>
+	  <p>Product description line 1</p>
+	  <p>Product description line 2</p>
+	  <ul></ul>
+    <button>Users</button>
+	  
+		<p>Add to order : Button here</p><a href="https://g.co/codelabs/pwa">https://g.co/codelabs/pwa</a>.
+	  </div>	
+	</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="/scripts/luxon-1.11.4.js"></script>
+  <script src="/scripts/app.js"></script>
+  <!-- CODELAB: Add the install script here -->
+  <script>
+    // CODELAB: Register service worker.
+	if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then((reg) => {
+          console.log('Service worker registered.', reg);
+        });
+  });
+}
+	
+  </script>
+
+</body>
+</html>
