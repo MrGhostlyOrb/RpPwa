@@ -345,7 +345,12 @@ img{
   padding: 16px;
   position: relative;
   left:12.5%;
-  width:75%;
+  width:20%;
+  display:inline-block;
+}
+
+.top-row{
+	width:100%;
 }
 
 .weather-card .remove-city {

@@ -20,6 +20,7 @@
 
 const express = require('express');
 const fetch = require('node-fetch');
+const app = express();
 const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 // CODELAB: Change this to add a delay (ms) before the server responds.
 const FORECAST_DELAY = 0;
@@ -184,8 +185,25 @@ function onRequest(request,response){
           fs.createReadStream("./article.json").pipe(response);
   }
 }
-	
-  const app = express();
+
+//Set app to use a pug interface to display pages
+	app.engine('pug', require('pug').__express)
+	app.set('views', __dirname + '/views');
+	app.set('view engine', 'pug');
+	app.get('/option1',function(req,res)
+{  
+  res.render('option1', {title:'Option1', message:'This is option 1'});
+});
+	app.get('/option2',function(req,res)
+{  
+  res.render('option2', {title:'Option2', message:'This is option 2'});
+});
+	app.get('/option3',function(req,res)
+{  
+  res.render('option3', {title:'Option3', message:'This is option 3'});
+});
+
+  
 
   // Redirect HTTP to HTTPS,
   app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
