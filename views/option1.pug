@@ -1,10 +1,18 @@
 extends layout.pug
+
 block content
-	h1 Database Systems Module
+	h1 Option1
 	h3.alert-warning=message 
 	main
-		h2 Query Results
+		h2 Option Select
 		ul
 			li <a href='http://localhost:8000/option1')> Option 1</a>
 			li <a href='http://localhost:8000/option2')> Option 2</a>
 			li <a href='http://localhost:8000/option3')> Option 3</a>
+		h3 Products:
+		ul
+			li 
+				h4 Test Product
+				p Test product description
+		div.container
+	script(defer, src='jquery.js')

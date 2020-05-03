@@ -192,18 +192,17 @@ function onRequest(request,response){
 	app.set('view engine', 'pug');
 	app.get('/option1',function(req,res)
 {  
-  res.render('option1', {title:'Option1', message:'This is option 1'});
+  res.render('option1', {title:'Option1', message:'This is the option 1 home page'});
 });
 	app.get('/option2',function(req,res)
 {  
-  res.render('option2', {title:'Option2', message:'This is option 2'});
+  res.render('option2', {title:'Option2', message:'This is the option 2 home page'});
 });
 	app.get('/option3',function(req,res)
 {  
-  res.render('option3', {title:'Option3', message:'This is option 3'});
+  res.render('option3', {title:'Option3', message:'This is the option 3 home page'});
 });
 
-  
 
   // Redirect HTTP to HTTPS,
   app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
