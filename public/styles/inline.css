@@ -33,7 +33,6 @@ body {
 }
 
 html {
-  overflow: hidden;
 }
 
 body {
@@ -66,11 +65,14 @@ body {
   height: 56px;
   justify-content: flex-start;
   padding: 16px 16px 0 16px;
-  position: fixed;
   transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
   width: 100%;
   will-change: transform;
   z-index: 1000;
+}
+
+.right{
+
 }
 
 .header h1 {

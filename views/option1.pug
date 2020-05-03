@@ -1,18 +1,38 @@
 extends layout.pug
 
 block content
-	h1 Option1
-	h3.alert-warning=message 
+	header.header
+		h1 Richmond Paper Supply
+			a.powered-by(href = '/')  Powered by pwa
+	div.top-row
+		div.weather-card
+			a(href = '/')
+				h1 Option1
+				h3.alert-warning=message 
 	main
-		h2 Option Select
-		ul
-			li <a href='http://localhost:8000/option1')> Option 1</a>
-			li <a href='http://localhost:8000/option2')> Option 2</a>
-			li <a href='http://localhost:8000/option3')> Option 3</a>
-		h3 Products:
-		ul
-			li 
-				h4 Test Product
-				p Test product description
-		div.container
+		div.weather-card.right
+			h2 Option Select
+			ul
+				li <a href='/option1')> Option 1</a>
+				li <a href='/option2')> Option 2</a>
+				li <a href='/option3')> Option 3</a>
+		div.weather-card
+			h3 Products:
+			ul
+				li 
+					h4 Test Product
+					p Test product description
+					p(name = 'ProductNo', id = 'ProductNo') 5
+					p(name = 'Qty', id = 'Qty') 4
+					
+					
+					
+					button(onclick = 'addJson(ProductNo.innerHTML, Qty.innerHTML)') Click Me
+					button(onclick = 'showBasket()') Show Basket
+					button(onclick = 'sendBasket()') Send Email
+		div.container.weather-card
+			button(onclick = 'addJson(ProductNo.innerHTML, Qty.innerHTML)') Click Me
+			button(onclick = 'showBasket()') Show Basket
+			button(onclick = 'sendBasket()') Send Email
+	script(defer, type = 'text/javascript', src = 'addJson.js')
 	script(defer, src='jquery.js')
