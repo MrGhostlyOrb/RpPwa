@@ -1,20 +1,15 @@
 extends layout.pug
+
 block content
-	h1 Database Systems Module
-	h3.alert-warning=message 
-	main
-		h2 Query Results
-		ul
-			li <a href='http://localhost:3000/test')> Query A Results</a>
-			li <a href='http://localhost:3000/qb')> Query B Results</a>
-			li query 3
-			li query 4
-			li query 5
-			li query 6
-		h2 Forms
-		ul 
-			li <a href='http://localhost:3000/flight_form')> Add a Flight </a>
-			li <a href='http://localhost:3000/customer_form')> Add a Customer </a>
-			li <a href='http://localhost:3000/passenger_form')> Add a Passenger </a>
-			li <a href='http://localhost:3000/check_avaliability')> Check Avaliability </a>
-	
+	body
+		header.header
+			h1.pageTitle Richmond Paper Supply
+				a.powered-by(href = '/') Progressive Web App
+				button#butInstall(aria-label = 'Install')
+				button#butRefresh(aria-label = 'Refresh')
+		div.pageInfo
+			div.card
+				p.card-text
+					b Some text about the contents of this page
+		div.grid-product
+			

@@ -1,0 +1,118 @@
+*{
+	margin:0;
+	padding:0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+html,body{
+	margin:0;
+	padding:0;
+	background-color:#ececec;
+}
+
+header{
+	height:56px;
+	width:100%;
+	background-color:#ab47bc;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.header .powered-by {
+  color: white;
+  font-size: 0.4em;
+  text-decoration: none;
+  
+}
+.grid{
+	display:grid;
+	grid-template-columns: 25% 25% 25%; /* 5 cols */
+  	grid-template-rows:    110% 110% 110%;
+  	grid-column-gap:2%;
+  	margin-left:20%;
+  	margin-top:5%;
+}
+
+.grid-product{
+	display:grid;
+	grid-template-columns: 20% 20% 20% 20%; /* 5 cols */
+  	grid-template-rows:    60% 60% 60% 60%;
+  	grid-column-gap:2%;
+  	grid-row-gap:5%;
+  	margin-left:20%;
+  	margin-top:5%;
+}
+
+.card{
+	background-color:white;
+  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  	border-radius:10px;
+}
+
+.cardImage{
+	width:100%;
+	margin-bottom:5%;
+	border-radius:10px 10px 0px 0px;
+}
+
+.pageInfo{
+	margin-top:2%;
+	width:50%;
+	position:relative;
+	left:25%;
+}
+
+.header #butRefresh {
+  background: url(/images/refresh.svg) center center no-repeat;
+}
+
+.header #butInstall {
+  background: url(/images/install.svg) center center no-repeat;
+}
+
+.card-text{
+	padding:1%;
+}
+
+.card-title{
+	padding:1%;
+}
+
+.card-button-link{
+	background-color:grey;
+	width:20%;
+	position:relative;
+	left:40%;
+	top:2%;
+	padding:2% 5% 2% 5%;
+	border-radius: 3px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	text-decoration:none;
+}
+
+.pageTitle{
+	color:white;
+	padding:0.25%;
+	margin-left:5%;
+}
+
+footer{
+	position:fixed;
+	bottom:0px;
+}
+
+@media only screen and (max-width: 600px) {
+
+	*{
+		font-size: 20px;
+	}
+
+  .grid{
+	display:grid;
+	grid-template-columns: 80%; /* 5 cols */
+  	grid-template-rows:    40% 40% 40%;
+  	grid-column-gap:2%;
+  	grid-row-gap:2%;
+  	margin-left:20%;
+  	margin-top:15%;
+}
+}
