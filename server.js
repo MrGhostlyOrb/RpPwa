@@ -15,6 +15,7 @@ const app = express();
 app.engine('pug', require('pug').__express)
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
+
 //Redirect HTTP to HTTPS,
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 //Handle requests for static files
@@ -24,22 +25,26 @@ app.use(express.static('public'));
 function startServer() {
 	
 //May not need this
-function onRequest(request,response){
-  if(request.method == 'GET' && request.url == '/') {
-          response.writeHead(200,{"Content-Type":"text/html"});
-          fs.createReadStream("./index.html").pipe(response);
-  } else if(request.method == 'GET' && request.url == '/jquery-3.2.0.min.js') {
-          response.writeHead(200,{"Content-Type":"text/javascript"});
-          fs.createReadStream("./jquery-3.2.0.min.js").pipe(response);
-  } else if(request.method == 'GET' && request.url == '/app.js') {
-          response.writeHead(200,{"Content-Type":"text/javascript"});
-          fs.createReadStream("./app.js").pipe(response);
-  }
-  else if(request.method == 'GET' && request.url == '/article.json') {
-          response.writeHead(200,{"Content-Type":"text/json"});
-          fs.createReadStream("./article.json").pipe(response);
-  }
-}
+//function onRequest(request,response){
+  //if(request.method == 'GET' && request.url == '/') {
+          //response.writeHead(200,{"Content-Type":"text/html"});
+          //fs.createReadStream("./index.html").pipe(response);
+  //} else if(request.method == 'GET' && request.url == '/jquery-3.2.0.min.js') {
+          //response.writeHead(200,{"Content-Type":"text/javascript"});
+          //fs.createReadStream("./jquery-3.2.0.min.js").pipe(response);
+  //} else if(request.method == 'GET' && request.url == '/app.js') {
+          //response.writeHead(200,{"Content-Type":"text/javascript"});
+          //fs.createReadStream("./app.js").pipe(response);
+  //}
+  //else if(request.method == 'GET' && request.url == '/article.json') {
+          //response.writeHead(200,{"Content-Type":"text/json"});
+          //fs.createReadStream("./article.json").pipe(response);
+  //}
+
+
+	app.get('/', function(req,res){
+		res.render('index');
+	});
 
 	app.get('/option1',function(req,res)
 {  
