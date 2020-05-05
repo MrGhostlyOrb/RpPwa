@@ -61,9 +61,10 @@ function startServer() {
 
 //Start the server
   
-app.listen(8000);
-console.log('Server running at http://0.0.0.0:8000/');
+app.listen(process.env.PORT || 3000, function() {
+console.log('Server listening on port 3000');
 
+});
 
 };
 
