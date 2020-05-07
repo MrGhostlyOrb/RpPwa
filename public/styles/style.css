@@ -42,12 +42,25 @@ header{
   	margin-left:20%;
   	margin-top:5%;
   	
+  	
 }
 
 .card{
 	background-color:white;
   	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   	border-radius:10px;
+  	display:grid;
+	grid-template-columns: 100%; /* 5 cols */
+  	grid-template-rows:    50% 8% 8% 16% 16%;
+}
+
+.card-home{
+	background-color:white;
+  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  	border-radius:10px;
+  	display:grid;
+	grid-template-columns: 100%; /* 5 cols */
+  	grid-template-rows:    65% 10% 5% 5% 15%;
 }
 
 .cardImage{
@@ -72,25 +85,28 @@ header{
 }
 
 .card-text{
-	padding:1%;
+	padding-left:10%;
+}
+
+.card-text-title{
+	padding-left:2%;
 }
 
 .card-title{
-	padding:1%;
+	padding-left:10%;
 }
 
 .card-button-link{
-	display:grid;
-	grid-template-columns: 20% 20%; /* 5 cols */
-  	grid-template-rows:    60% 60% 60% 60%;
-	background-color:grey;
-	width:20%;
-	position:relative;
-	top:2%;
+	background-color:#ee98fb;
+	width:60%;
 	padding:2% 5% 2% 5%;
+	margin-left:15%;
+	margin-top:5%;
+	margin-bottom:5%;
 	border-radius: 3px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	text-decoration:none;
+	text-align:center;
 }
 
 .pageTitle{
@@ -100,14 +116,18 @@ header{
 }
 
 footer{
-	position:fixed;
-	bottom:0px;
+	margin-top:15%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
 
 	*{
-		font-size: 20px;
+		font-size: 3vw;
+	}
+	
+	.pageTitle{
+		font-size:32px;
+	
 	}
 
   .grid{
@@ -119,4 +139,64 @@ footer{
   	margin-left:20%;
   	margin-top:15%;
 }
+
+
+.grid-product{
+	display:grid;
+	grid-template-columns: 45% 45%; /* 5 cols */
+  	grid-template-rows:    40% 40% 40% 40%;
+  	grid-column-gap:2%;
+  	grid-row-gap:2%;
+  	margin-left:5%;
+  	margin-top:15%;
+  	
+}
+
+footer{
+	margin-top:60%;
+}
+
+}
+
+@media only screen and (max-width: 600px) {
+
+	*{
+		font-size: 3vw;
+	}
+	
+	.pageTitle{
+		font-size:20px;
+	
+	}
+	
+		.header{
+			height:32px;
+		}
+		
+		.powered-by{
+			display:none;
+		}
+
+  .grid{
+	display:grid;
+	grid-template-columns: 80%; /* 5 cols */
+  	grid-template-rows:    40% 40% 40%;
+  	grid-column-gap:2%;
+  	grid-row-gap:2%;
+  	margin-left:20%;
+  	margin-top:15%;
+}
+
+
+.grid-product{
+	display:grid;
+	grid-template-columns: 45% 45%; /* 5 cols */
+  	grid-template-rows:    40% 40% 40% 40%;
+  	grid-column-gap:2%;
+  	grid-row-gap:2%;
+  	margin-left:5%;
+  	margin-top:15%;
+  	
+}
+
 }
