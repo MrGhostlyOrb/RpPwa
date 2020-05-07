@@ -2,7 +2,7 @@
   "name": "Richond Paper Web App",
   "version": "2.0.0",
   "description": "Web app to showcase products",
-  "homepage": "https://richmondpapersupply.co.uk"
+  "homepage": "https://richmondpapersupply.co.uk",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
