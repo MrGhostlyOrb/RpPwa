@@ -2,21 +2,34 @@
 'use strict';
 
 
-// Detects if device is on iOS 
+let basketList;
 
 
-let basketList = [];
+if (localStorage.getItem('basket')){
+	basketList = JSON.parse(localStorage.getItem('basket'));
+}
+else{
+	basketList = new Array();
+}
+
+localStorage.setItem('basket', JSON.stringify(basketList))
+const data = JSON.parse(localStorage.getItem('basket'))
+
+
 function addJson(ProductNo, Qty){
 	console.log(ProductNo);
 	console.log(Qty)
+
 	//Add to basket array
 	if(basketList.includes(ProductNo)){
 		alert('This product is already in your basket, please try selecting a different quantuity')
 	}
 	else{
 		basketList.push(ProductNo);
-		let bg = document.getElementById(ProductNo);
-		bg.style.backgroundColor = "#ba68c8"
+		let bg = document.getElementById(ProductNo + "add");
+		bg.style.backgroundColor = "#ba68c8";
+		localStorage.setItem('basket', JSON.stringify(basketList));
+		
 		
 	}
 	
@@ -26,17 +39,24 @@ function removeFromBasket(ProductNo){
 	for(var i = basketList.length - 1; i >= 0; i--) {
     if(basketList[i] === ProductNo) {
         basketList.splice(i, 1);
-        let bg = document.getElementById(ProductNo);
-		bg.style.backgroundColor = "#ee98fb"
-        alert('Removed ' + ProductNo + 'from your basket')
+        let bg = document.getElementById(ProductNo + "add");
+		bg.style.backgroundColor = "#ee98fb";
+        alert('Removed ' + ProductNo + 'from your basket');
+        localStorage.setItem('basket', JSON.stringify(basketList));
     }
 }
-
-
 }
+
+function clearBasket(){
+	localStorage.clear();
+	console.log("Cleared basket");
+	basketList = new Array();
+}
+
 
 function showBasket(){
 	console.log(basketList);
+	console.log("Showing basket");
 }
 function sendBasket(){
 	console.log('Sending' + basketList + 'To email');
@@ -79,8 +99,8 @@ $.each(json.data, function (index, item) {
     var img = "<img class = 'cardImage' src = '" + item.imageURL + "'/>";
     var h2 = "<h2 class = 'card-title'>" + item.productName + "</h2>";
     var p = "<p class = 'card-text'>" + item.productInfo + "</p>";
-    var a = "<a class = 'card-button-link' id = '" + item.productNo + "' onclick = 'addJson(" + item.productNo + ")'>" + "Add to Basket </a>";
-    var r = "<a class = 'card-button-link' id = '" + item.productNo + "' onclick = 'removeFromBasket(" + item.productNo + ")'>" + "Remove from basket </a>";
+    var a = "<a class = 'card-button-link' id = '" + item.productNo + "add" + "' onclick = 'addJson(" + item.productNo + ")'>" + "Add to Basket </a>";
+    var r = "<a class = 'card-button-link' id = '" + item.productNo + "rem" + "' onclick = 'removeFromBasket(" + item.productNo + ")'>" + "Remove from basket </a>";
     
     
     var prod = "<div class = 'card'>" + img + h2 + p + a + r +"</div>";
