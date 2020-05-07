@@ -21,12 +21,7 @@ app.set('view engine', 'pug');
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 //Handle requests for static files
 app.use(express.static('public'));
-//app.use(function(request, response){
-  //if(!request.secure){
-  	//console.log("notsecure")
-    //response.redirect("https://" + request.headers.host + request.url);
-  //}
-//});
+
 //Function to begin server and serve pages
 function startServer() {
 	

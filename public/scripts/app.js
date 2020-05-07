@@ -14,7 +14,7 @@ function addJson(ProductNo, Qty){
 	else{
 		basketList.push(ProductNo);
 		let bg = document.getElementById(ProductNo);
-		bg.style.backgroundColor = "red"
+		bg.style.backgroundColor = "#ba68c8"
 		
 	}
 	
@@ -25,7 +25,7 @@ function removeFromBasket(ProductNo){
     if(basketList[i] === ProductNo) {
         basketList.splice(i, 1);
         let bg = document.getElementById(ProductNo);
-		bg.style.backgroundColor = "grey"
+		bg.style.backgroundColor = "#ee98fb"
         alert('Removed ' + ProductNo + 'from your basket')
     }
 }

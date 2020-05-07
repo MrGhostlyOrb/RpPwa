@@ -3,13 +3,14 @@ extends layout.pug
 block content
 	body
 		header.header
-			h1.pageTitle Richmond Paper Supply
+			h1.pageTitle 
+				a.pageTitleLink(href = '/') Richmond Paper Supply
 				a.powered-by(href = '/') Progressive Web App
 				button#butInstall(aria-label = 'Install')
 				button#butRefresh(aria-label = 'Refresh')
 		div.pageInfo
 			div.card
-				p.card-text
+				p.card-text-title
 					b Some text about the contents of this page
 		div.grid-product
 			
