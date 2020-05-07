@@ -2,6 +2,8 @@
 'use strict';
 
 
+// Detects if device is on iOS 
+
 
 let basketList = [];
 function addJson(ProductNo, Qty){
