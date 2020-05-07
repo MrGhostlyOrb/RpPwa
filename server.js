@@ -6,6 +6,7 @@ const express = require('express');
 const fetch = require('node-fetch');
 const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 const http = require('http');
+const https = require('https');
 const fs = require('fs');
 
 //Constant for the express app
@@ -20,7 +21,11 @@ app.set('view engine', 'pug');
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 //Handle requests for static files
 app.use(express.static('public'));
-
+app.use(function(request, response){
+  if(!request.secure){
+    response.redirect("https://" + request.headers.host + request.url);
+  }
+});
 //Function to begin server and serve pages
 function startServer() {
 	
@@ -61,10 +66,14 @@ function startServer() {
 
 //Start the server
   
-app.listen(process.env.PORT || 3000, function() {
-console.log('Server listening on port 3000');
-
-});
+ var options = {
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
+}
+  
+http.createServer(app).listen(8000);
+https.createServer(options, app).listen(8001);
+console.log("Server running on port 8000/8001")
 
 };
 

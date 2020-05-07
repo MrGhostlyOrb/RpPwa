@@ -50,13 +50,19 @@ function sendOrderRecievedEmail(){
 function init() {
   // Get the location list, and update the UI.
   console.log("Here")
-  Notification.requestPermission(result => {
+  
+  
+  const refreshButton = document.getElementById('butRefresh');
+	refreshButton.addEventListener('click', notif);
+  
+};
+
+ function notif(){
+ 	Notification.requestPermission(result => {
   if (result === 'granted') {
     showNotification('So nice to have you here!', 'Hey there!')
   }
-});
-
-  
+ })}
 
 $.getJSON("/products.json", function(json){
 
@@ -87,7 +93,7 @@ $.each(json.data, function (index, item) {
   //document.getElementById('butRefresh').addEventListener('click', doSomethingRefresh());
   //document.getElementById('butAdd').addEventListener('click', doSomethingAdd);
 
-}
+
 
 function showNotification(title, message) {
   if ('Notification' in window) {
