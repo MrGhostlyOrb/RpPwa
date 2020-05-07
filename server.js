@@ -72,9 +72,9 @@ function startServer() {
     cert: fs.readFileSync('cert.pem')
 }
   
-http.createServer(app).listen(8000);
-https.createServer(options, app).listen(8001);
-console.log("Server running on port 8000/8001")
+http.createServer(app).listen(3000);
+//https.createServer(options, app).listen(3001);
+console.log("Server running on port 3000/3001")
 
 };
 
