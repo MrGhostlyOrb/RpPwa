@@ -56,10 +56,6 @@ function init() {
   }
 });
 
-
-  $("button").click( function() {
- 
-});
   
 
 $.getJSON("/products.json", function(json){

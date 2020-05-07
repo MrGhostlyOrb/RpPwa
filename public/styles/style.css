@@ -28,7 +28,7 @@ header{
 	grid-template-columns: 25% 25% 25%; /* 5 cols */
   	grid-template-rows:    110% 110% 110%;
   	grid-column-gap:2%;
-  	margin-left:20%;
+  	margin-left:12%;
   	margin-top:5%;
   	margin-bottom:5%;
 }
@@ -39,7 +39,7 @@ header{
   	grid-template-rows:    60% 60% 60% 60%;
   	grid-column-gap:2%;
   	grid-row-gap:5%;
-  	margin-left:20%;
+  	margin-left:12%;
   	margin-top:5%;
   	
   	
@@ -51,7 +51,7 @@ header{
   	border-radius:10px;
   	display:grid;
 	grid-template-columns: 100%; /* 5 cols */
-  	grid-template-rows:    50% 8% 8% 16% 16%;
+  	grid-template-rows:    54% 8% 8% 15% 15%;
 }
 
 .card-home{
@@ -75,6 +75,24 @@ header{
 	position:relative;
 	left:25%;
 }
+.header button {
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  margin-right: 16px;
+  opacity: 0.54;
+  outline: none;
+  overflow: hidden;
+  text-indent: -30000px;
+  transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+  width: 24px;
+  float:right;
+}
+
+.pageTitleLink{
+	text-decoration:none;
+	color:white;
+}
 
 .header #butRefresh {
   background: url(/images/refresh.svg) center center no-repeat;
@@ -89,7 +107,7 @@ header{
 }
 
 .card-text-title{
-	padding-left:2%;
+	padding:2%;
 }
 
 .card-title{
@@ -107,6 +125,7 @@ header{
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	text-decoration:none;
 	text-align:center;
+	color:black;
 }
 
 .pageTitle{
@@ -136,7 +155,7 @@ footer{
   	grid-template-rows:    40% 40% 40%;
   	grid-column-gap:2%;
   	grid-row-gap:2%;
-  	margin-left:20%;
+  	margin-left:10%;
   	margin-top:15%;
 }
 
@@ -147,13 +166,38 @@ footer{
   	grid-template-rows:    40% 40% 40% 40%;
   	grid-column-gap:2%;
   	grid-row-gap:2%;
-  	margin-left:5%;
+  	margin-left:10%;
   	margin-top:15%;
   	
 }
 
+.pageInfo{
+	margin-top:2%;
+	width:80%;
+	position:relative;
+	left:10%;
+}
+
 footer{
 	margin-top:60%;
+}
+
+.card{
+	background-color:white;
+  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  	border-radius:10px;
+  	display:grid;
+	grid-template-columns: 100%; /* 5 cols */
+  	grid-template-rows:    50% 8% 8% 15% 15%;
+}
+
+.card-home{
+	background-color:white;
+  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  	border-radius:10px;
+  	display:grid;
+	grid-template-columns: 100%; /* 5 cols */
+  	grid-template-rows:    60% 10% 5% 5% 15%;
 }
 
 }
@@ -173,6 +217,11 @@ footer{
 			height:32px;
 		}
 		
+		.header button{
+			height:20px;
+			margin-top:5px;
+		}
+		
 		.powered-by{
 			display:none;
 		}
@@ -183,7 +232,7 @@ footer{
   	grid-template-rows:    40% 40% 40%;
   	grid-column-gap:2%;
   	grid-row-gap:2%;
-  	margin-left:20%;
+  	margin-left:10%;
   	margin-top:15%;
 }
 
@@ -194,7 +243,7 @@ footer{
   	grid-template-rows:    40% 40% 40% 40%;
   	grid-column-gap:2%;
   	grid-row-gap:2%;
-  	margin-left:5%;
+  	margin-left:10%;
   	margin-top:15%;
   	
 }
