@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+	body
+		script(defer src='/scripts/basketShow.js')
+		header.header
+			h1.pageTitle 
+				a.pageTitleLink(href = '/') Richmond Paper Supply
+				a.powered-by(href = '/') Progressive Web App
+				button#butInstall(aria-label = 'Install')
+				button#butRefresh(aria-label = 'Refresh')
+		div.pageInfo
+			div.card
+				p.card-text-title
+					b Some text about the contents of this page
+		ul#listForBasket
+			

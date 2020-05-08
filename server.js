@@ -60,6 +60,11 @@ function startServer() {
   res.render('option3', {title:'Option3', message:'This is the option 3 home page'});
 });
 
+app.get('/basket',function(req,res)
+{  
+  res.render('basket', {title:'Basket', message:'Basket List'});
+});
+
 //Start the server
   
  var options = {
