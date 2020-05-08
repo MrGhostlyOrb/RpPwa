@@ -27,7 +27,7 @@ header{
 .grid{
 	display:grid;
 	grid-template-columns: 25% 25% 25%; /* 5 cols */
-  	grid-template-rows:    110% 110% 110%;
+  	grid-template-rows:    100% 100% 100%;
   	grid-column-gap:2%;
   	margin-left:12%;
   	margin-top:5%;
@@ -52,7 +52,7 @@ header{
   	border-radius:10px;
   	display:grid;
 	grid-template-columns: 100%; /* 5 cols */
-  	grid-template-rows:    61% 6% 5% 14% 14%;
+  	grid-template-rows:    60% 6% 5% 14% 14%;
 }
 
 .card-home{
@@ -136,7 +136,7 @@ header{
 }
 
 footer{
-	margin-top:15%;
+	margin-top:20%;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -191,7 +191,7 @@ footer{
 }
 
 footer{
-	margin-top:60%;
+	margin-top:70%;
 }
 
 .card{
