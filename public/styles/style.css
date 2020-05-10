@@ -96,6 +96,29 @@ header{
 	color:white;
 }
 
+.listForBasket{
+	background-color:red;
+	width:90%;
+	position:relative;
+	left:5%;
+	list-style-type:none;
+	
+}
+
+.listItem{
+
+	background-color:yellow;
+	width:50%;
+	position:relative;
+	left:25%;
+	text-decoration:none;
+	outline: 1px solid black;
+	margin-top:2%;
+	margin-bottom:2%;
+	height:20%;
+	
+}
+
 .header #butRefresh {
   background: url(/images/refresh.svg) center center no-repeat;
 }

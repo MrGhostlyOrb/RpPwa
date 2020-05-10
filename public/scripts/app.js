@@ -12,32 +12,47 @@ else{
 	basketList = new Array();
 }
 
-localStorage.setItem('basket', JSON.stringify(basketList))
-const data = JSON.parse(localStorage.getItem('basket'))
+localStorage.setItem('basket', JSON.stringify(basketList));
 
 
 function addJson(ProductNo, Qty){
+
+	basketList = JSON.parse(localStorage.getItem('basket'));
 	console.log(ProductNo);
 	console.log(Qty)
+	console.log("0")
+
+	let isFound = false;
 
 	//Add to basket array
-	if(basketList.includes(ProductNo)){
-		alert('This product is already in your basket, please try selecting a different quantuity')
+	for(var i = 0; i < basketList.length; i++){
+
+	const parsedList = JSON.parse(basketList[i]);
+	
+	if(parsedList.Item.ProductNo == ProductNo){
+		alert('This product is already in your basket, please try selecting a different quantuity');
+		isFound = true;
 	}
 	else{
-		basketList.push(ProductNo);
+		i = i + 1
+		
+		
+	}}
+	
+	if(isFound === false){
+	basketList.push('{"Item":{"ProductNo" :"' + ProductNo + '", "Quantity" :"' + Qty + '"}}');
 		let bg = document.getElementById(ProductNo + "add");
 		bg.style.backgroundColor = "#ba68c8";
 		localStorage.setItem('basket', JSON.stringify(basketList));
-		
-		
 	}
 	
 }
 
 function removeFromBasket(ProductNo){
 	for(var i = basketList.length - 1; i >= 0; i--) {
-    if(basketList[i] === ProductNo) {
+	
+	const parsedList = JSON.parse(basketList[i]);
+    if(parsedList.Item.ProductNo == ProductNo) {
         basketList.splice(i, 1);
         let bg = document.getElementById(ProductNo + "add");
 		bg.style.backgroundColor = "#ee98fb";
