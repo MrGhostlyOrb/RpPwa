@@ -32,5 +32,16 @@
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ee98fb",
-  "theme_color": "#ba68c8"
+  "theme_color": "#ba68c8",
+  "Shortcuts": [{
+  	"name": "Option 1",
+  	"description": "Description",
+  	"url": "/option1",
+  	"icons": [{
+  		"src": "/images/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+  	}]
+  }]
 }
