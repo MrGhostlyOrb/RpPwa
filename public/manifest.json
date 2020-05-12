@@ -33,7 +33,7 @@
   "display": "standalone",
   "background_color": "#ee98fb",
   "theme_color": "#ba68c8",
-  "Shortcuts": [{
+  "shortcuts": [{
   	"name": "Option 1",
   	"description": "Description",
   	"url": "/option1",
