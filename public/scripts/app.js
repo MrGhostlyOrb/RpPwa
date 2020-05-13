@@ -114,11 +114,13 @@ $.each(json.data, function (index, item) {
     var img = "<img class = 'cardImage' src = '" + item.imageURL + "'/>";
     var h2 = "<h2 class = 'card-title'>" + item.productName + "</h2>";
     var p = "<p class = 'card-text'>" + item.productInfo + "</p>";
+    var input = "<input type = 'number' class = 'input' id = 'inp"+item.productNo+"'></input>";
+    var submit = "<input type = 'submit' id = 'sub"+item.productNo+"'></input>"
     var a = "<a class = 'card-button-link' id = '" + item.productNo + "add" + "' onclick = 'addJson(" + item.productNo + ")'>" + "Add to Basket </a>";
     var r = "<a class = 'card-button-link' id = '" + item.productNo + "rem" + "' onclick = 'removeFromBasket(" + item.productNo + ")'>" + "Remove from basket </a>";
     
     
-    var prod = "<div class = 'card'>" + img + h2 + p + a + r +"</div>";
+    var prod = "<div class = 'card'>" + img + h2 + p + input + submit + a + r +"</div>";
     
     
     $(".grid-product").append(prod);
@@ -141,6 +143,55 @@ function showNotification(title, message) {
       });
     });
   }
+}
+
+function getValues(){
+	alert("submission");
+	const inputs = document.getElementsByClassName('input');
+	console.log(inputs);
+	for(var i = 0; i < inputs.length; i++){
+		if(inputs[i].value === ""){
+			continue
+		}
+		else{
+			console.log("found input")
+			var productNumber = inputs[i].id.substr(3);
+			
+			if (localStorage.getItem('basket')){
+			var basketList2 = JSON.parse(localStorage.getItem('basket'));
+			addQty(productNumber, basketList2, inputs[i].value);
+				}
+			else{
+				alert("There is nothing in your basket")
+}
+			
+			
+		}
+	}
+	
+}
+
+function addQty(productNumber, basketList2, quantity){
+	for(let j = 0; j < basketList2.length; j++){
+	
+		const parsedList = JSON.parse(basketList[j]);
+		if(parsedList.Item.ProductNo == productNumber){
+			console.log("found item");
+			parsedList.Item.Quantity = quantity;
+			console.log(parsedList.Item.Quantity);
+			console.log(parsedList);
+			basketList2[j] = JSON.stringify(parsedList);
+			console.log(basketList2[j])
+			localStorage.setItem('basket', JSON.stringify(basketList2));
+			
+			
+		}
+		else{
+			console.log("not found item");
+		}
+	
+	}
+	
 }
 
 init();
