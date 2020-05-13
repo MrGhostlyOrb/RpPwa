@@ -8,10 +8,11 @@ block content
 				a.powered-by(href = '/') Progressive Web App
 				button#butInstall(aria-label = 'Install')
 				button#butRefresh(aria-label = 'Refresh')
+				button#butBasket(aria-label = 'Basket' onclick = 'location.href = "/basket"')
 		div.pageInfo
 			div.card
 				p.card-text-title
 					b Some text about the contents of this page
-		div.grid-product#grid-product
-			
+		form#form(onsubmit='getValues(); return false;')
+			div.grid-product#grid-product
 	
