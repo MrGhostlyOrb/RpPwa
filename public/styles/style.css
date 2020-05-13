@@ -24,6 +24,11 @@ header{
   text-decoration: none;
   
 }
+
+label{
+	margin-left: 10%;
+}
+
 .grid{
 	display:grid;
 	grid-template-columns: 25% 25% 25%; /* 5 cols */
@@ -52,7 +57,7 @@ header{
   	border-radius:10px;
   	display:grid;
 	grid-template-columns: 100%; /* 5 cols */
-  	grid-template-rows:    53% 6% 5% 14% 14%;
+  	grid-template-rows:    50% 6% 5% 2% 5% 14% 14%;
 }
 
 .card-home{
@@ -97,7 +102,6 @@ header{
 }
 
 .listForBasket{
-	background-color:red;
 	width:90%;
 	position:relative;
 	left:5%;
@@ -107,7 +111,6 @@ header{
 
 .listItem{
 
-	background-color:yellow;
 	width:50%;
 	position:relative;
 	left:25%;
@@ -147,10 +150,25 @@ header{
 
 .card-button-link{
 	background-color:#ee98fb;
-	width:50%;
-	padding:2% 5% 2% 5%;
-	margin-left:20%;
-	margin-top:3%;
+	width:80%;
+	padding:2% 3% 2% 3%;
+	margin-left:10%;
+	margin-top:5%;
+	margin-bottom:3%;
+	border-radius: 3px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	text-decoration:none;
+	text-align:center;
+	color:black;
+}
+
+.input{
+	background-color:#ee98fb;
+	width:30%;
+	height:10%;
+	padding:2% 3% 2% 3%;
+	margin-left:10%;
+	margin-top:5%;
 	margin-bottom:3%;
 	border-radius: 3px;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -230,7 +248,7 @@ footer{
   	border-radius:10px;
   	display:grid;
 	grid-template-columns: 100%; /* 5 cols */
-  	grid-template-rows:    50% 8% 8% 15% 15%;
+  	grid-template-rows:    50% 8% 8% 2% 5% 10% 10%;
 }
 
 .card-home{

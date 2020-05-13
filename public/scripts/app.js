@@ -30,7 +30,7 @@ function addJson(ProductNo, Qty){
 	const parsedList = JSON.parse(basketList[i]);
 	
 	if(parsedList.Item.ProductNo == ProductNo){
-		alert('This product is already in your basket, please try selecting a different quantuity');
+		alert('This product is already in your basket');
 		isFound = true;
 	}
 	else{
@@ -41,7 +41,7 @@ function addJson(ProductNo, Qty){
 	
 	if(isFound === false){
 	basketList.push('{"Item":{"ProductNo" :"' + ProductNo + '", "Quantity" :"' + Qty + '"}}');
-		let bg = document.getElementById(ProductNo + "add");
+		let bg = document.getElementById("sub" + ProductNo);
 		bg.style.backgroundColor = "#ba68c8";
 		localStorage.setItem('basket', JSON.stringify(basketList));
 	}
@@ -54,7 +54,7 @@ function removeFromBasket(ProductNo){
 	const parsedList = JSON.parse(basketList[i]);
     if(parsedList.Item.ProductNo == ProductNo) {
         basketList.splice(i, 1);
-        let bg = document.getElementById(ProductNo + "add");
+        let bg = document.getElementById("sub" + ProductNo);
 		bg.style.backgroundColor = "#ee98fb";
         alert('Removed ' + ProductNo + 'from your basket');
         localStorage.setItem('basket', JSON.stringify(basketList));
@@ -114,13 +114,13 @@ $.each(json.data, function (index, item) {
     var img = "<img class = 'cardImage' src = '" + item.imageURL + "'/>";
     var h2 = "<h2 class = 'card-title'>" + item.productName + "</h2>";
     var p = "<p class = 'card-text'>" + item.productInfo + "</p>";
+    var lab = "<label for='inp"+item.productNo+"'>Quantity</label>"
     var input = "<input type = 'number' class = 'input' id = 'inp"+item.productNo+"'></input>";
-    var submit = "<input type = 'submit' id = 'sub"+item.productNo+"'></input>"
-    var a = "<a class = 'card-button-link' id = '" + item.productNo + "add" + "' onclick = 'addJson(" + item.productNo + ")'>" + "Add to Basket </a>";
-    var r = "<a class = 'card-button-link' id = '" + item.productNo + "rem" + "' onclick = 'removeFromBasket(" + item.productNo + ")'>" + "Remove from basket </a>";
+    var submit = "<button type = 'submit' class = 'card-button-link' onclick = 'addJson(" + item.productNo + ")' value = 'Add to Basket' id = 'sub"+item.productNo+"'>Add to Basket</button>"
+    var r = "<button class = 'card-button-link' value = 'Remove From Basket' id = '" + item.productNo + "rem" + "' onclick = 'removeFromBasket(" + item.productNo + ")'>" + "Remove From Basket</button>";
     
     
-    var prod = "<div class = 'card'>" + img + h2 + p + input + submit + a + r +"</div>";
+    var prod = "<div class = 'card'>" + img + h2 + p + lab + input + submit + r +"</div>";
     
     
     $(".grid-product").append(prod);
@@ -146,7 +146,6 @@ function showNotification(title, message) {
 }
 
 function getValues(){
-	alert("submission");
 	const inputs = document.getElementsByClassName('input');
 	console.log(inputs);
 	for(var i = 0; i < inputs.length; i++){
@@ -177,6 +176,7 @@ function addQty(productNumber, basketList2, quantity){
 		const parsedList = JSON.parse(basketList[j]);
 		if(parsedList.Item.ProductNo == productNumber){
 			console.log("found item");
+			
 			parsedList.Item.Quantity = quantity;
 			console.log(parsedList.Item.Quantity);
 			console.log(parsedList);
@@ -193,5 +193,7 @@ function addQty(productNumber, basketList2, quantity){
 	}
 	
 }
+
+
 
 init();

@@ -25,8 +25,31 @@ function showBasketList(){
 
 	for(let i = 0; i < basketList2.length; i++){
 	
-	const parsedList = JSON.parse(basketList[i]);
+	const parsedList = JSON.parse(basketList2[i]);
 		listBasket.innerHTML = listBasket.innerHTML + li + "Product Number : " + parsedList.Item.ProductNo + "<br>Quantity : " + parsedList.Item.Quantity + cli
+	}
+	
+}
+
+function checkQty(){
+
+	var allGood = true;
+	for(let i = 0; i < basketList2.length; i++){
+	
+	const parsedList = JSON.parse(basketList2[i]);
+		if(parsedList.Item.Quantity === "undefined"){
+			allGood = false;
+			alert("Please add a quantity for : " + parsedList.Item.ProductName + "and re-send your order")
+			
+		}
+		else{
+			console.log("order will be sent")
+			
+		}
+	}
+	if(allGood === true){
+		sendBasket();
+		alert("Thank you, your order has been sent")
 	}
 	
 }
