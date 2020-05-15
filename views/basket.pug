@@ -13,5 +13,9 @@ block content
 			div.card
 				p.card-text-title
 					b Some text about the contents of this page
-		ul#listForBasket.listForBasket
-		button#butSendOrder(aria-label = 'Send Order' onclick = 'checkQty()') Send Order
+		form#customerForm(method = 'post' onsubmit = 'sendData()')
+			input(class='input' id='email' name='email' type='email' value='')
+			ul#listForBasket.listForBasket
+			input#butSubmit(type = 'submit' value = 'submit')
+			//button#butSendOrder(aria-label = 'Send Order' onclick = 'checkQty()') Send Order
+			//button#butSendOrder(aria-label = 'Send Order' onclick = 'checkQty()') Send Order

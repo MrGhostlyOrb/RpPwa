@@ -73,16 +73,44 @@ function showBasket(){
 	console.log(basketList);
 	console.log("Showing basket");
 }
+
 function sendBasket(){
+
+	fetch('/foo/', {
+  method: 'post',
+  headers: {
+    'Accept': 'application/json, text/plain, */*',
+    'Content-Type': 'application/json'
+  },
+  body: localStorage.getItem('basket')
+}).then(res=>res.json())
+  .then(res => console.log(res));
+
 	console.log('Sending' + basketList + 'To email');
+	//console.log(localStorage.getItem('basket'));
+	//$.post("/foo/", localStorage.getItem('basket'), function(temp) {
+    // temp === "I am done";    
+//});
 	
-	
-	
-	sendOrderRecievedEmail();
+
 }
-function sendOrderRecievedEmail(){
-	
+
+function sendData(){
+
+	fetch('/basket/', {
+  method: 'post',
+  headers: {
+    'Accept': 'application/json, text/plain, */*',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({"swag": "swag"})
+}).then(res=>res.json())
+  .then(res => console.log(res));
+   
+
 }
+
+
 
 function init() {
   // Get the location list, and update the UI.
