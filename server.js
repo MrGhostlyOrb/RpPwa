@@ -8,11 +8,10 @@ const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 const http = require('http');
 const https = require('https');
 const fs = require('fs');
-const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
 
 //Constant for the express app
 const app = express();
+
 //Set app to use a pug interface to display pages
 app.engine('pug', require('pug').__express)
 app.set('views', __dirname + '/views');
@@ -22,11 +21,7 @@ app.set('view engine', 'pug');
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 //Handle requests for static files
 app.use(express.static('public'));
-app.use(express.json());
-app.use(bodyParser.urlencoded({
-	extended: false
-}));
-app.use(bodyParser.json());
+
 //Function to begin server and serve pages
 function startServer() {
 	
@@ -65,15 +60,12 @@ function startServer() {
   res.render('option3', {title:'Option3', message:'This is the option 3 home page'});
 });
 
-app.get('/basket/',function(req,res)
+app.get('/basket',function(req,res)
 {  
   res.render('basket', {title:'Basket', message:'Basket List'});
 });
 
-app.get('/cust/',function(req,res)
-{  
-  res.render('basket', {title:'Basket', message:'Basket List'});
-});
+app.get('/cust/', (req, res) => {});
 
 //Start the server
   
@@ -92,48 +84,23 @@ console.log("Server running on port 3000/3001")
 
 };
 
-app.post("/basket/"), function(req, res){
-
-	var bod = req.body;
-	console.log(bod);
-}
-
-app.post("/foo/", function(req, res) {
-
-    var myObject = req.body;
-
-    console.log(myObject);
-    
-    for(var i = 0; i < myObject.length; i++){
-    	var parsed = JSON.parse(myObject[i])
-    	console.log(parsed.Item.ProductNo);
-    	console.log(parsed.Item.Quantity);
-    }
-	
-	var transporter = nodemailer.createTransport({
-  service: 'Outlook365',
-  auth: {
-    user: '***',
-    pass: '***'
-  }
-});
-
-var mailOptions = {
-  from: 'orders@richmondpapersupply.co.uk',
-  to: 'bassbencooper999@gmail.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!' + parsed.Item.ProductNo
-};
-
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
-
-    res.send("I am done");
-});
+   app.post("/foo/", function(req, res) { 
+   var myObject = req.body;      
+   console.log(myObject); 
+   for(var i = 0; i < myObject.length; i++){ 
+   var parsed = JSON.parse(myObject[i])         
+   console.log(parsed.Item.ProductNo);         
+   console.log(parsed.Item.Quantity); } 
+   var transporter = nodemailer.createTransport({   
+   service: '*****',   
+   auth: {     
+   user: '*****',     
+   pass: '*****' } 
+   });
+   	})
+   app.post("/cust/"), function(req, res){ 
+   var body = req.body;     
+   console.log(body); 
+   }
 
 startServer();

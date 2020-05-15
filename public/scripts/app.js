@@ -95,15 +95,15 @@ function sendBasket(){
 
 }
 
-function sendData(){
-
-	fetch('/basket/', {
+function sendData(e){
+	e.preventDefault();
+	fetch('/cust/', {
   method: 'post',
   headers: {
     'Accept': 'application/json, text/plain, */*',
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify({"swag": "swag"})
+  body: document.getElementById("customerForm")
 }).then(res=>res.json())
   .then(res => console.log(res));
    
