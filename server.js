@@ -8,6 +8,8 @@ const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 const http = require('http');
 const https = require('https');
 const fs = require('fs');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
 
 //Constant for the express app
 const app = express();
@@ -21,7 +23,8 @@ app.set('view engine', 'pug');
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 //Handle requests for static files
 app.use(express.static('public'));
-
+app.use(bodyParser.urlencoded({extended: true }));
+app.use(bodyParser.json());
 //Function to begin server and serve pages
 function startServer() {
 	
@@ -65,9 +68,6 @@ app.get('/basket',function(req,res)
   res.render('basket', {title:'Basket', message:'Basket List'});
 });
 
-app.get('*', function(req, res){
-	console.log("here2")
-});
 
 //Start the server
   
@@ -89,16 +89,16 @@ console.log("Server running on port 3000/3001")
    app.post("/foo/", function(req, res) { 
    var myObject = req.body;      
    console.log(myObject); 
-   for(var i = 0; i < myObject.length; i++){ 
-   var parsed = JSON.parse(myObject[i])         
-   console.log(parsed.Item.ProductNo);         
-   console.log(parsed.Item.Quantity); } 
-   var transporter = nodemailer.createTransport({   
-   service: '*****',   
-   auth: {     
-   user: '*****',     
-   pass: '*****' } 
-   });
+   //for(var i = 0; i < myObject.length; i++){ 
+   //var parsed = JSON.parse(myObject[i])         
+   //console.log(parsed.Item.ProductNo);         
+   //console.log(parsed.Item.Quantity); } 
+   //var transporter = nodemailer.createTransport({   
+   //service: '*****',   
+   //auth: {     
+   //user: '*****',     
+   //pass: '*****' } 
+   //});
    	})
 
    app.post("/foo2/", function(req, res) { 

@@ -76,6 +76,8 @@ function showBasket(){
 
 function sendBasket(){
 
+	console.log(localStorage.getItem('basket'));
+
 	fetch('/foo/', {
   method: 'post',
   headers: {
@@ -97,13 +99,22 @@ function sendBasket(){
 
 function sendData(e){
 	e.preventDefault();
+	
+	const email = document.getElementById("email").value;
+	
+	const bodyToSubmit = {
+		"email": email
+	}
+	
+	console.log(JSON.stringify(bodyToSubmit))
+	
 	fetch('/foo2/', {
   method: 'post',
   headers: {
     'Accept': 'application/json, text/plain, */*',
     'Content-Type': 'application/json'
   },
-  body: localStorage.getItem('basket')
+  body: JSON.stringify(bodyToSubmit)
 }).then(res=>res.json())
   .then(res => console.log(res));
    
