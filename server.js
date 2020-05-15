@@ -113,8 +113,8 @@ app.post("/foo/", function(req, res) {
 	var transporter = nodemailer.createTransport({
   service: 'Outlook365',
   auth: {
-    user: 'orders@richmondpapersupply.co.uk',
-    pass: 'rICHMOND1155'
+    user: '***',
+    pass: '***'
   }
 });
 
