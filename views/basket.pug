@@ -13,7 +13,7 @@ block content
 			div.card
 				p.card-text-title
 					b Some text about the contents of this page
-		form#customerForm(name = 'form' method = 'post' onsubmit = 'sendData(event)')
+		form#customerForm(name = 'form' method = 'post' onsubmit = 'sendData(event); sendBasket()')
 			input(class='input' id='email' name='email' type='email' value='')
 			ul#listForBasket.listForBasket
 			input#butSubmit(type = 'submit' value = 'submit')

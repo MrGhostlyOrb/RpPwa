@@ -97,13 +97,13 @@ function sendBasket(){
 
 function sendData(e){
 	e.preventDefault();
-	fetch('/cust/', {
+	fetch('/foo2/', {
   method: 'post',
   headers: {
     'Accept': 'application/json, text/plain, */*',
     'Content-Type': 'application/json'
   },
-  body: document.getElementById("customerForm")
+  body: localStorage.getItem('basket')
 }).then(res=>res.json())
   .then(res => console.log(res));
    

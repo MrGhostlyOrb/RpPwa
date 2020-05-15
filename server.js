@@ -65,7 +65,9 @@ app.get('/basket',function(req,res)
   res.render('basket', {title:'Basket', message:'Basket List'});
 });
 
-app.get('/cust/', (req, res) => {});
+app.get('*', function(req, res){
+	console.log("here2")
+});
 
 //Start the server
   
@@ -98,9 +100,10 @@ console.log("Server running on port 3000/3001")
    pass: '*****' } 
    });
    	})
-   app.post("/cust/"), function(req, res){ 
-   var body = req.body;     
-   console.log(body); 
-   }
+
+   app.post("/foo2/", function(req, res) { 
+   var myObject = req.body;      
+   console.log(myObject); 
+   	})
 
 startServer();
