@@ -81,9 +81,9 @@ function startServer() {
    			service: 'Outlook365',   
    			auth: {     
    				user: //cred.email
-   					yeshaya.rodger@andyes.net,     
+   					"yeshaya.rodger@andyes.net",     
    				pass: //cred.password
-   					jxjpb9K@ 
+   					"jxjpb9K@" 
    				} 
    		});
    		var mailOptions = {
