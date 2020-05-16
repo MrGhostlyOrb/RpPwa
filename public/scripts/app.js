@@ -1,46 +1,42 @@
 //Execute code in strict method
 'use strict';
 
-
+//Variable to store the user's basket
 let basketList;
 
-
+//Check if there is a basket already in local storage
 if (localStorage.getItem('basket')){
 	basketList = JSON.parse(localStorage.getItem('basket'));
 }
+//Otherwise create a new basket locally
 else{
 	basketList = new Array();
 }
 
+//Save basket in local storage
 localStorage.setItem('basket', JSON.stringify(basketList));
 
-
+//Function to add a product to the user's basket
 function addJson(ProductNo, Qty){
 
 	basketList = JSON.parse(localStorage.getItem('basket'));
 	console.log(ProductNo);
 	console.log(Qty)
-	console.log("0")
-
+	//Check if the product is already in the basket
 	let isFound = false;
-
-	//Add to basket array
 	for(var i = 0; i < basketList.length; i++){
-
-	const parsedList = JSON.parse(basketList[i]);
+		const parsedList = JSON.parse(basketList[i]);
 	
-	if(parsedList.Item.ProductNo == ProductNo){
-		alert('This product is already in your basket');
-		isFound = true;
-	}
-	else{
-		i = i + 1
-		
-		
-	}}
+		if(parsedList.Item.ProductNo == ProductNo){
+			alert('This product is already in your basket');
+			isFound = true;
+		}
+		else{
+			i = i + 1;
+		}}
 	
 	if(isFound === false){
-	basketList.push('{"Item":{"ProductNo" :"' + ProductNo + '", "Quantity" :"' + Qty + '"}}');
+		basketList.push('{"Item":{"ProductNo" :"' + ProductNo + '", "Quantity" :"' + Qty + '"}}');
 		let bg = document.getElementById("sub" + ProductNo);
 		bg.style.backgroundColor = "#ba68c8";
 		localStorage.setItem('basket', JSON.stringify(basketList));
@@ -48,138 +44,111 @@ function addJson(ProductNo, Qty){
 	
 }
 
+//Function to remove an item from the customer's basket
 function removeFromBasket(ProductNo){
 	for(var i = basketList.length - 1; i >= 0; i--) {
-	
-	const parsedList = JSON.parse(basketList[i]);
-    if(parsedList.Item.ProductNo == ProductNo) {
-        basketList.splice(i, 1);
-        let bg = document.getElementById("sub" + ProductNo);
-		bg.style.backgroundColor = "#ee98fb";
-        alert('Removed ' + ProductNo + 'from your basket');
-        localStorage.setItem('basket', JSON.stringify(basketList));
-    }
-}
+		const parsedList = JSON.parse(basketList[i]);
+    	if(parsedList.Item.ProductNo == ProductNo) {
+        	basketList.splice(i, 1);
+        	let bg = document.getElementById("sub" + ProductNo);
+			bg.style.backgroundColor = "#ee98fb";
+        	alert('Removed ' + ProductNo + 'from your basket');
+        	localStorage.setItem('basket', JSON.stringify(basketList));
+    	}
+	}
 }
 
+//Function to clear the basket from local storage
 function clearBasket(){
 	localStorage.clear();
 	console.log("Cleared basket");
 	basketList = new Array();
 }
 
-
+//Function for debugging to show basket
 function showBasket(){
 	console.log(basketList);
 	console.log("Showing basket");
 }
 
+//Function to send the basket to the RP email account
 function sendBasket(){
-
-	console.log(localStorage.getItem('basket'));
-
 	fetch('/foo/', {
-  method: 'post',
-  headers: {
-    'Accept': 'application/json, text/plain, */*',
-    'Content-Type': 'application/json'
-  },
-  body: localStorage.getItem('basket')
-}).then(res=>res.json())
-  .then(res => console.log(res));
-
+  		method: 'post',
+  		headers: {
+    		'Accept': 'application/json, text/plain, */*',
+    		'Content-Type': 'application/json'
+  		},
+  		body: localStorage.getItem('basket')
+	}).then(res=>res.json())
+  		.then(res => console.log(res));
 	console.log('Sending' + basketList + 'To email');
-	//console.log(localStorage.getItem('basket'));
-	//$.post("/foo/", localStorage.getItem('basket'), function(temp) {
-    // temp === "I am done";    
-//});
-	
-
 }
 
+//Function to send the form data to the RP email account
 function sendData(e){
 	e.preventDefault();
-	
 	const email = document.getElementById("email").value;
-	
 	const bodyToSubmit = {
 		"email": email
 	}
-	
-	console.log(JSON.stringify(bodyToSubmit))
-	
 	fetch('/foo2/', {
-  method: 'post',
-  headers: {
-    'Accept': 'application/json, text/plain, */*',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(bodyToSubmit)
-}).then(res=>res.json())
-  .then(res => console.log(res));
-   
-
+  		method: 'post',
+  		headers: {
+    		'Accept': 'application/json, text/plain, */*',
+    		'Content-Type': 'application/json'
+  		},
+  		body: JSON.stringify(bodyToSubmit)
+	}).then(res=>res.json())
+  		.then(res => console.log(res));
 }
 
-
-
+//Function for basic page interactions
 function init() {
-  // Get the location list, and update the UI.
- 
-  const refreshButton = document.getElementById('butRefresh');
+  	const refreshButton = document.getElementById('butRefresh');
 	refreshButton.addEventListener('click', notif);
-  
 };
 
- function notif(){
- 	Notification.requestPermission(result => {
-  if (result === 'granted') {
-    showNotification('So nice to have you here!', 'Hey there!')
-  }
- })}
-
-$.getJSON("/products.json", function(json){
-
-
-
-$.each(json.data, function (index, item) {
-
-   
-   	
-    var img = "<img class = 'cardImage' src = '" + item.imageURL + "'/>";
-    var h2 = "<h2 class = 'card-title'>" + item.productName + "</h2>";
-    var p = "<p class = 'card-text'>" + item.productInfo + "</p>";
-    var lab = "<label for='inp"+item.productNo+"'>Quantity</label>"
-    var input = "<input type = 'number' class = 'input' id = 'inp"+item.productNo+"'></input>";
-    var submit = "<button type = 'submit' class = 'card-button-link' onclick = 'addJson(" + item.productNo + ")' value = 'Add to Basket' id = 'sub"+item.productNo+"'>Add to Basket</button>"
-    var r = "<button class = 'card-button-link' value = 'Remove From Basket' id = '" + item.productNo + "rem" + "' onclick = 'removeFromBasket(" + item.productNo + ")'>" + "Remove From Basket</button>";
-    
-    
-    var prod = "<div class = 'card'>" + img + h2 + p + lab + input + submit + r +"</div>";
-    
-    
-    $(".grid-product").append(prod);
-});
-
-});
-
-  // Set up the event handlers for all of the buttons.
-  //document.getElementById('butRefresh').addEventListener('click', doSomethingRefresh());
-  //document.getElementById('butAdd').addEventListener('click', doSomethingAdd);
-
-
-
-function showNotification(title, message) {
-  if ('Notification' in window) {
-    navigator.serviceWorker.ready.then(registration => {
-      registration.showNotification(title, {
-        body: message,
-        tag: 'vibration-sample'
-      });
-    });
-  }
+//Function to send a test notification to the user when the refersh button is clicked
+function notif(){
+	Notification.requestPermission(result => {
+  		if (result === 'granted') {
+    		showNotification('So nice to have you here!', 'Hey there!')
+  		}
+ 	})
 }
 
+//Request to get the product.json file
+$.getJSON("/products.json", function(json){
+//Loop through the json file to build the products
+	$.each(json.data, function (index, item) {
+    	var img = "<img class = 'cardImage' src = '" + item.imageURL + "'/>";
+    	var h2 = "<h2 class = 'card-title'>" + item.productName + "</h2>";
+    	var p = "<p class = 'card-text'>" + item.productInfo + "</p>";
+    	var lab = "<label for='inp"+item.productNo+"'>Quantity</label>"
+    	var input = "<input type = 'number' class = 'input' id = 'inp"+item.productNo+"'></input>";
+    	var submit = "<button type = 'submit' class = 'card-button-link' onclick = 'addJson(" + item.productNo + ")' value = 'Add to Basket' id = 'sub"+item.productNo+"'>Add to Basket</button>"
+    	var r = "<button class = 'card-button-link' value = 'Remove From Basket' id = '" + item.productNo + "rem" + "' onclick = 'removeFromBasket(" + item.productNo + ")'>" + "Remove From Basket</button>";
+    	//Add all variables to build the HTML element
+    	var prod = "<div class = 'card'>" + img + h2 + p + lab + input + submit + r +"</div>";
+    	//Append the HTML element to the page
+    	$(".grid-product").append(prod);
+	});
+});
+
+//Function to show a notification
+function showNotification(title, message) {
+  	if ('Notification' in window) {
+    	navigator.serviceWorker.ready.then(registration => {
+      		registration.showNotification(title, {
+        		body: message,
+        		tag: 'vibration-sample'
+      		});
+    	});
+  	}
+}
+
+//Function to get the user's selected quantity of item
 function getValues(){
 	const inputs = document.getElementsByClassName('input');
 	console.log(inputs);
@@ -190,45 +159,34 @@ function getValues(){
 		else{
 			console.log("found input")
 			var productNumber = inputs[i].id.substr(3);
-			
 			if (localStorage.getItem('basket')){
-			var basketList2 = JSON.parse(localStorage.getItem('basket'));
-			addQty(productNumber, basketList2, inputs[i].value);
-				}
+				var basketList2 = JSON.parse(localStorage.getItem('basket'));
+				addQty(productNumber, basketList2, inputs[i].value);
+			}
 			else{
 				alert("There is nothing in your basket")
-}
-			
-			
+			}
 		}
 	}
-	
 }
 
+//Function to add quantity to the basket
 function addQty(productNumber, basketList2, quantity){
 	for(let j = 0; j < basketList2.length; j++){
-	
 		const parsedList = JSON.parse(basketList[j]);
 		if(parsedList.Item.ProductNo == productNumber){
 			console.log("found item");
-			
 			parsedList.Item.Quantity = quantity;
 			console.log(parsedList.Item.Quantity);
 			console.log(parsedList);
 			basketList2[j] = JSON.stringify(parsedList);
 			console.log(basketList2[j])
 			localStorage.setItem('basket', JSON.stringify(basketList2));
-			
-			
 		}
 		else{
 			console.log("not found item");
 		}
-	
 	}
-	
 }
-
-
 
 init();
