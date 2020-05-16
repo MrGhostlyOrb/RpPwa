@@ -125,9 +125,7 @@ function sendData(e){
 
 function init() {
   // Get the location list, and update the UI.
-  console.log("Here")
-  
-  
+ 
   const refreshButton = document.getElementById('butRefresh');
 	refreshButton.addEventListener('click', notif);
   
