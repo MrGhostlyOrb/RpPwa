@@ -143,8 +143,6 @@ function init() {
 $.getJSON("/products.json", function(json){
 
 
-console.log(json)
-
 
 $.each(json.data, function (index, item) {
 
