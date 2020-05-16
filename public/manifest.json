@@ -41,7 +41,7 @@
   		"src": "/images/cafe.png",
       "sizes": "36x36",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any"
   	}]
   }]
 }
