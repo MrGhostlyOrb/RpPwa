@@ -2,15 +2,15 @@
   "name": "Richmond Paper Supply",
   "short_name": "Richmond Paper",
   "icons": [{
-    "src": "/images/icons/icon-128x128.png",
+    "src": "/images/icons/icon-128.png",
       "sizes": "128x128",
       "type": "image/png"
     }, {
-      "src": "/images/icons/icon-144x144.png",
+      "src": "/images/icons/icon-144.png",
       "sizes": "144x144",
       "type": "image/png"
     }, {
-      "src": "/images/icons/icon-152x152.png",
+      "src": "/images/icons/icon-152.png",
       "sizes": "152x152",
       "type": "image/png"
     }, {
@@ -19,12 +19,12 @@
       "type": "image/png",
       "purpose": "maskable"
     }, {
-      "src": "/images/icons/icon-256x256.png",
+      "src": "/images/icons/icon-256.png",
       "sizes": "256x256",
       "type": "image/png",
       "purpose": "maskable"
     }, {
-      "src": "/images/icons/icon-512x512.png",
+      "src": "/images/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -34,14 +34,14 @@
   "background_color": "#ee98fb",
   "theme_color": "#ba68c8",
   "shortcuts": [{
-  	"name": "Option 1",
-  	"description": "Description",
+  	"name": "Cafes",
+  	"description": "Jump to the cafe section of our product page",
   	"url": "/option1",
   	"icons": [{
-  		"src": "/images/icons/icon-128x128.png",
-      "sizes": "128x128",
+  		"src": "/images/cafe.png",
+      "sizes": "36x36",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "maskable"
   	}]
   }]
 }

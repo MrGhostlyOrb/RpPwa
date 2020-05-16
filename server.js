@@ -10,6 +10,7 @@ const https = require('https');
 const fs = require('fs');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const { check, validationResult } = require('express-validator');
 
 //Constant for the express app
 const app = express();
@@ -25,6 +26,8 @@ app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
+
+var userEmail = "";
 //Function to begin server and serve pages
 function startServer() {
 	
@@ -84,26 +87,42 @@ http.createServer(app).listen(3000);
 //https.createServer(options, app).listen(3001);
 console.log("Server running on port 3000/3001")
 
+
+
 };
 
    app.post("/foo/", function(req, res) { 
    var myObject = req.body;      
    console.log(myObject); 
-   //for(var i = 0; i < myObject.length; i++){ 
-   //var parsed = JSON.parse(myObject[i])         
-   //console.log(parsed.Item.ProductNo);         
-   //console.log(parsed.Item.Quantity); } 
-   //var transporter = nodemailer.createTransport({   
-   //service: '*****',   
-   //auth: {     
-   //user: '*****',     
-   //pass: '*****' } 
-   //});
+   for(var i = 0; i < myObject.length; i++){ 
+   var parsed = JSON.parse(myObject[i])         
+   console.log(parsed.Item.ProductNo);         
+   console.log(parsed.Item.Quantity); } 
+   var transporter = nodemailer.createTransport({   
+   service: 'Outlook365',   
+   auth: {     
+   user: 'admin@richmondpapersupply.co.uk',     
+   pass: 'Coopster123' } 
+   });
+   var mailOptions = {
+  from: 'admin@richmondpapersupply.co.uk',
+  to: 'bassbencooper999@gmail.com',
+  subject: 'Sending Email using Node.js' + userEmail,
+  text: 'That was easy!' + userEmail + myObject
+};
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
    	})
 
    app.post("/foo2/", function(req, res) { 
    var myObject = req.body;      
    console.log(myObject); 
+   userEmail = myObject.email;
    	})
 
 startServer();
