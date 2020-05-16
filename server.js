@@ -13,7 +13,7 @@ const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
 
 //Constant for credentials file
-const cred = require('./cred.json');
+//const cred = require('./cred.json');
 
 //Constant for the express app
 const app = express();
@@ -80,8 +80,10 @@ function startServer() {
    		var transporter = nodemailer.createTransport({   
    			service: 'Outlook365',   
    			auth: {     
-   				user: cred.email,     
-   				pass: cred.password 
+   				user: //cred.email
+   					yeshaya.rodger@andyes.net,     
+   				pass: //cred.password
+   					jxjpb9K@ 
    				} 
    		});
    		var mailOptions = {
