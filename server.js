@@ -11,6 +11,7 @@ const fs = require('fs');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
+const cred = require('./cred.json');
 
 //Constant for the express app
 const app = express();
@@ -99,10 +100,10 @@ console.log("Server running on port 3000/3001")
    console.log(parsed.Item.ProductNo);         
    console.log(parsed.Item.Quantity); } 
    var transporter = nodemailer.createTransport({   
-   service: 'Outlook365',   
+   service: 'gmail',   
    auth: {     
-   user: 'admin@richmondpapersupply.co.uk',     
-   pass: 'Coopster123' } 
+   user: cred.email,     
+   pass: cred.password } 
    });
    var mailOptions = {
   from: 'admin@richmondpapersupply.co.uk',
