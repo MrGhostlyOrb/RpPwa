@@ -4,7 +4,7 @@ To get started, clone the repo to your local machine and enter the working direc
 
 The in the working directory run the following:
 
-  node server.js
+<code>node server.js</code>
   
 The server will then start up and for development will be hosted locally on port 8080.
 
