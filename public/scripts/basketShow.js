@@ -32,14 +32,13 @@ function showBasketList(){
 }
 
 function checkQty(){
-
 	var allGood = true;
 	for(let i = 0; i < basketList2.length; i++){
 	
 	const parsedList = JSON.parse(basketList2[i]);
 		if(parsedList.Item.Quantity === "undefined"){
 			allGood = false;
-			alert("Please add a quantity for : " + parsedList.Item.ProductName + "and re-send your order")
+			alert("Please add a quantity for : " + parsedList.Item.ProductName + " and re-send your order. Your order has not been sent.")
 			
 		}
 		else{

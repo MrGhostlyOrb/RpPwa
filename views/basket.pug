@@ -13,7 +13,7 @@ block content
 			div.card
 				p.card-text-title
 					b Some text about the contents of this page
-		form#customerForm(name = 'form' class = 'form-data' method = 'post' onsubmit = 'sendData(event); sendBasket(); clearBasket()')
+		form#customerForm(name = 'form' class = 'form-data' method = 'post' onsubmit = 'sendData(event); checkQty(); sendBasket(); clearBasket()')
 			table.tab
 				tr.row
 					td.col

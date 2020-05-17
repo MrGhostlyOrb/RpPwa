@@ -73,7 +73,10 @@ function startServer() {
    		var myObject = req.body;      
    		console.log(myObject); 
    		for(var i = 0; i < myObject.length; i++){ 
-   			var parsed = JSON.parse(myObject[i])         
+   			var parsed = JSON.parse(myObject[i]);
+   			if(parsed.Item.Quantity === "undefined"){
+   				console.log("Don't send")
+   			}        
    		} 
    		var transporter = nodemailer.createTransport({   
    			service: 'Outlook365',   
