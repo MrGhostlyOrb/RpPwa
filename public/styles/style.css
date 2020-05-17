@@ -32,8 +32,8 @@ label{
 .grid{
 	display:grid;
 	grid-template-columns: 25% 25% 25%; /* 5 cols */
-  	grid-column-gap:2%;
-  	margin-left:12%;
+  	grid-column-gap:3%;
+  	margin-left:15%;
   	margin-top:5%;
   	margin-bottom:5%;
 }
@@ -43,7 +43,7 @@ label{
 	grid-template-columns: 20% 20% 20% 20%; /* 5 cols */
   	grid-column-gap:2%;
   	grid-row-gap:5%;
-  	margin-left:12%;
+  	margin-left:12.5%;
   	margin-top:5%;
   	
   	
