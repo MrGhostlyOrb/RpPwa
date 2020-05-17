@@ -118,23 +118,49 @@ function notif(){
  	})
 }
 
-//Request to get the product.json file
-$.getJSON("/products.json", function(json){
-//Loop through the json file to build the products
-	$.each(json.data, function (index, item) {
-    	var img = "<img class = 'cardImage' src = '" + item.imageURL + "'/>";
-    	var h2 = "<h2 class = 'card-title'>" + item.productName + "</h2>";
-    	var p = "<p class = 'card-text'>" + item.productInfo + "</p>";
-    	var lab = "<label for='inp"+item.productNo+"'>Quantity</label>"
-    	var input = "<input type = 'number' class = 'input' id = 'inp"+item.productNo+"'></input>";
-    	var submit = "<button type = 'submit' class = 'card-button-link' onclick = 'addJson(" + item.productNo + ")' value = 'Add to Basket' id = 'sub"+item.productNo+"'>Add to Basket</button>"
-    	var r = "<button class = 'card-button-link' value = 'Remove From Basket' id = '" + item.productNo + "rem" + "' onclick = 'removeFromBasket(" + item.productNo + ")'>" + "Remove From Basket</button>";
-    	//Add all variables to build the HTML element
-    	var prod = "<div class = 'card'>" + img + h2 + p + lab + input + submit + r +"</div>";
-    	//Append the HTML element to the page
-    	$(".grid-product").append(prod);
-	});
-});
+function productLoad(){
+	var request = new XMLHttpRequest();
+request.open('GET', '/products.json', true);
+
+request.onload = function() {
+  	if (this.status >= 200 && this.status < 400) {
+    	// Success!
+    	var json = JSON.parse(this.response);
+    	for(var index = 0; index < json.data.length; index++){
+    		var item = json.data[index];
+    	
+    		var img = "<img class = 'cardImage' alt = 'Product Image' src = '" + item.imageURL + "'/>";
+    		var h2 = "<h2 class = 'card-title'>" + item.productName + "</h2>";
+    		var p = "<p class = 'card-text'>" + item.productInfo + "</p>";
+    		var lab = "<label for='inp"+item.productNo+"'>Quantity</label>"
+    		var input = "<input type = 'number' class = 'input' id = 'inp"+item.productNo+"'></input>";
+    		var submit = "<button type = 'submit' class = 'card-button-link' onclick = 'addJson(" + item.productNo + ")' value = 'Add to Basket' id = 'sub"+item.productNo+"'>Add to Basket</button>"
+    		var r = "<button class = 'card-button-link' value = 'Remove From Basket' id = '" + item.productNo + "rem" + "' onclick = 'removeFromBasket(" + item.productNo + ")'>" + "Remove From Basket</button>";
+    		//Add all variables to build the HTML element
+    		var prod = "<div class = 'card'>" + img + h2 + p + lab + input + submit + r +"</div>";
+    		//Append the HTML element to the page
+    		if(document.getElementById("grid-product").innerHTML == null){
+    			document.getElementById("grid-product").innerHTML = prod
+    		}
+    		else{
+    			document.getElementById("grid-product").innerHTML = document.getElementById("grid-product").innerHTML + prod
+    		}
+    	}
+  	}	 
+  	else {
+    // We reached our target server, but it returned an error
+	console.log("There was an error");
+  	}	
+};
+
+request.onerror = function() {
+	console.log("Connection error")
+};
+
+request.send();
+}
+
+
 
 //Function to show a notification
 function showNotification(title, message) {

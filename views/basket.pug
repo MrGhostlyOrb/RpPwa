@@ -19,7 +19,7 @@ block content
 					td.col
 						label(for='name') Name :
 					td.col
-						input(class = 'input' id = 'name' name = 'name' type = 'text' value = '' required)
+						input(class = 'input' id = 'name' name = 'name' type = 'text' value = '' required autofocus)
 				tr.row
 					td.col
 						label(for='email') Email :
@@ -33,9 +33,9 @@ block content
 				
 				tr.row
 					td.col
-						label(for='time') Pickup/Delivery Time :
+						label(for='time') Pickup/Delivery Date :
 					td.col
-						input(class = 'input' id = 'time' name = 'time' type = 'time' value = '' required)
+						input(class = 'input' id = 'time' name = 'time' type = 'date' value = '' required)
 				br
 			div.row2
 				div.pageInfo
@@ -44,6 +44,6 @@ block content
 							b Your Order : 
 				ul#listForBasket.listForBasket
 			
-				input#butSubmit(type = 'submit' value = 'Send Order')
+				input#butSubmit(class = 'sub' type = 'submit' value = 'Send Order')
 			//button#butSendOrder(aria-label = 'Send Order' onclick = 'checkQty()') Send Order
 			//button#butSendOrder(aria-label = 'Send Order' onclick = 'checkQty()') Send Order

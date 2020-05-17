@@ -1,7 +1,7 @@
 extends layout.pug
 
 block content
-	body
+	body(onload = 'productLoad()')
 		header.header
 			h1.pageTitle 
 				a.pageTitleLink(href = '/') Richmond Paper Supply
