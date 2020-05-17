@@ -139,7 +139,7 @@ request.onload = function() {
     		var h2 = "<h2 class = 'card-title'>" + item.productName + "</h2>";
     		var p = "<p class = 'card-text'>" + item.productInfo + "</p>";
     		var lab = "<label for='inp"+item.productNo+"'>Quantity</label>"
-    		var input = "<input type = 'number' class = 'input' id = 'inp"+item.productNo+"'></input>";
+    		var input = "<input type = 'number' class = 'input' min = '1' max = '999' id = 'inp"+item.productNo+"'></input>";
     		var submit = "<button type = 'submit' class = 'card-button-link' onclick = 'addJson(" + item.productNo + ")' value = 'Add to Basket' id = 'sub"+item.productNo+"'>Add to Basket</button>"
     		var r = "<button class = 'card-button-link' value = 'Remove From Basket' id = '" + item.productNo + "rem" + "' onclick = 'removeFromBasket(" + item.productNo + ")'>" + "Remove From Basket</button>";
     		//Add all variables to build the HTML element

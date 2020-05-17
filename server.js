@@ -82,15 +82,13 @@ function startServer() {
    		var transporter = nodemailer.createTransport({   
    			service: 'Outlook365',   
    			auth: {     
-   				user: //cred.email
-   					"yeshaya.rodger@andyes.net",     
-   				pass: //cred.password
-   					"jxjpb9K@" 
+   				user: cred.email,     
+   				pass: cred.password
    				} 
    		});
    		var mailOptions = {
-  			from: 'yeshaya.rodger@andyes.net',
-  			to: 'bassbencooper999@gmail.com',
+  			from: cred.email,
+  			to: cred.email,
   			subject: 'Sending Email using Node.js' + userEmail,
   			text: 'That was easy!' + userEmail + myObject
 		};
