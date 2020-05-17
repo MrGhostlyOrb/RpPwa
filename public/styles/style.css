@@ -32,7 +32,6 @@ label{
 .grid{
 	display:grid;
 	grid-template-columns: 25% 25% 25%; /* 5 cols */
-  	grid-template-rows:    100% 100% 100%;
   	grid-column-gap:2%;
   	margin-left:12%;
   	margin-top:5%;
@@ -42,7 +41,6 @@ label{
 .grid-product{
 	display:grid;
 	grid-template-columns: 20% 20% 20% 20%; /* 5 cols */
-  	grid-template-rows:    60% 60% 60% 60%;
   	grid-column-gap:2%;
   	grid-row-gap:5%;
   	margin-left:12%;
@@ -57,7 +55,6 @@ label{
   	border-radius:10px;
   	display:grid;
 	grid-template-columns: 100%; /* 5 cols */
-  	grid-template-rows:    50% 6% 5% 2% 5% 14% 14%;
 }
 
 .card-home{
@@ -66,7 +63,6 @@ label{
   	border-radius:10px;
   	display:grid;
 	grid-template-columns: 100%; /* 5 cols */
-  	grid-template-rows:    70% 9% 5% 5% 12%;
 }
 
 .cardImage{
@@ -285,7 +281,6 @@ footer{
   	border-radius:10px;
   	display:grid;
 	grid-template-columns: 100%; /* 5 cols */
-  	grid-template-rows:    50% 8% 8% 2% 5% 10% 10%;
 }
 
 .card-home{
@@ -294,7 +289,6 @@ footer{
   	border-radius:10px;
   	display:grid;
 	grid-template-columns: 100%; /* 5 cols */
-  	grid-template-rows:    60% 10% 5% 5% 15%;
 }
 
 #customerForm{
@@ -352,7 +346,6 @@ footer{
   .grid{
 	display:grid;
 	grid-template-columns: 80%; /* 5 cols */
-  	grid-template-rows:    40% 40% 40%;
   	grid-column-gap:2%;
   	grid-row-gap:2%;
   	margin-left:15%;
@@ -363,7 +356,6 @@ footer{
 .grid-product{
 	display:grid;
 	grid-template-columns: 45% 45%; /* 5 cols */
-  	grid-template-rows:    40% 40% 40% 40%;
   	grid-column-gap:2%;
   	grid-row-gap:2%;
   	margin-left:10%;

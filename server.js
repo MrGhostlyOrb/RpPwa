@@ -68,7 +68,7 @@ function startServer() {
 	});
 
 };
-
+	var sendMail = true;
    	app.post("/foo/", function(req, res) { 
    		var myObject = req.body;      
    		console.log(myObject); 
@@ -76,6 +76,7 @@ function startServer() {
    			var parsed = JSON.parse(myObject[i]);
    			if(parsed.Item.Quantity === "undefined"){
    				console.log("Don't send")
+   				sendMail = false;
    			}        
    		} 
    		var transporter = nodemailer.createTransport({   
@@ -93,14 +94,16 @@ function startServer() {
   			subject: 'Sending Email using Node.js' + userEmail,
   			text: 'That was easy!' + userEmail + myObject
 		};
-		transporter.sendMail(mailOptions, function(error, info){
-  			if (error) {
-    			console.log(error);
-  			} 
-  			else {
-    			console.log('Email sent: ' + info.response);
-  			}
-		});
+		if(sendMail == true){
+			transporter.sendMail(mailOptions, function(error, info){
+  				if (error) {
+    				console.log(error);
+  				} 
+  				else {
+    				console.log('Email sent: ' + info.response);
+  				}
+			});
+		}
    	})
 
    	app.post("/foo2/", function(req, res) { 
