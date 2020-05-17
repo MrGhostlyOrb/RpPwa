@@ -29,7 +29,6 @@ app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
-
 //Variable to store user's email for orders
 var userEmail = "";
 //Function to begin server and serve pages
@@ -87,7 +86,7 @@ function startServer() {
    				} 
    		});
    		var mailOptions = {
-  			from: 'admin@richmondpapersupply.co.uk',
+  			from: 'yeshaya.rodger@andyes.net',
   			to: 'bassbencooper999@gmail.com',
   			subject: 'Sending Email using Node.js' + userEmail,
   			text: 'That was easy!' + userEmail + myObject

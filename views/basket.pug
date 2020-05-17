@@ -14,10 +14,36 @@ block content
 				p.card-text-title
 					b Some text about the contents of this page
 		form#customerForm(name = 'form' class = 'form-data' method = 'post' onsubmit = 'sendData(event); sendBasket(); clearBasket()')
-			label(for="email") Email :
-			br
-			input(class='input' id='email' name='email' type='email' value='' required)
-			ul#listForBasket.listForBasket
-			input#butSubmit(type = 'submit' value = 'submit')
+			table.tab
+				tr.row
+					td.col
+						label(for='name') Name :
+					td.col
+						input(class = 'input' id = 'name' name = 'name' type = 'text' value = '' required)
+				tr.row
+					td.col
+						label(for='email') Email :
+					td.col
+						input(class = 'input' id = 'email' name = 'email' type = 'email' value = '' required)
+				tr.row
+					td.col
+						label(for='phone') Phone Number :
+					td.col
+						input(class = 'input' id = 'phone' name = 'phone' type = 'number' value = '' required)
+				
+				tr.row
+					td.col
+						label(for='time') Pickup/Delivery Time :
+					td.col
+						input(class = 'input' id = 'time' name = 'time' type = 'time' value = '' required)
+				br
+			div.row2
+				div.pageInfo
+					div.card
+						p.card-text-title 
+							b Your Order : 
+				ul#listForBasket.listForBasket
+			
+				input#butSubmit(type = 'submit' value = 'Send Order')
 			//button#butSendOrder(aria-label = 'Send Order' onclick = 'checkQty()') Send Order
 			//button#butSendOrder(aria-label = 'Send Order' onclick = 'checkQty()') Send Order

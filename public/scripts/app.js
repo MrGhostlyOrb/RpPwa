@@ -143,6 +143,7 @@ function showNotification(title, message) {
       		registration.showNotification(title, {
         		body: message,
         		tag: 'vibration-sample'
+        		//image, icon
       		});
     	});
   	}

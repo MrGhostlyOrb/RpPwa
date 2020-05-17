@@ -26,7 +26,7 @@ header{
 }
 
 label{
-	margin-left: 10%;
+	margin-left: 5%;
 }
 
 .grid{
@@ -134,6 +134,16 @@ label{
   background: url(/images/basket.svg) center center no-repeat;
 }
 
+#butSubmit{
+	width:30%;
+	margin-left:35%;
+	margin-top:3%;
+	height:6vh;
+	border-radius: 3px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	text-align:center;
+}
+
 .card-text{
 	
 	padding-left:5%;
@@ -162,10 +172,35 @@ label{
 	color:black;
 }
 
+#customerForm{
+	width:50%;
+	margin-left:25%;
+	margin-top:1%;
+
+}
+.tab{
+	margin-left:25%;
+}
+.row{
+	width:100%;
+}
+.col{
+	width:55%;
+
+}
+.row2{
+	column-span:2;
+}
+label { 
+padding-left:10%;
+}
+input {  
+padding-right:10%;
+}
+
 .input{
 	background-color:#ee98fb;
-	width:30%;
-	height:10%;
+	width:70%;
 	padding:2% 3% 2% 3%;
 	margin-left:10%;
 	margin-top:5%;
@@ -192,7 +227,9 @@ footer{
 	*{
 		font-size: 3vw;
 	}
-	
+	.tab{
+		margin-left:0;
+	}
 	.pageTitle{
 		font-size:1em;
 	
@@ -260,6 +297,23 @@ footer{
   	grid-template-rows:    60% 10% 5% 5% 15%;
 }
 
+#customerForm{
+	width:100%;
+	margin-top:5%;
+	margin-left:0;
+
+}
+
+.listForBasket{
+	margin-top:10%;
+}
+
+.listItem{
+	width:100%;
+	position:relative;
+	left:0%;
+}
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -316,6 +370,8 @@ footer{
   	margin-top:15%;
   	
 }
+
+
 
 }
 
