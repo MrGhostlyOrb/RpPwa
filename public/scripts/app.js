@@ -88,9 +88,15 @@ function sendBasket(){
 //Function to send the form data to the RP email account
 function sendData(e){
 	e.preventDefault();
+	const name = document.getElementById("name").value;
 	const email = document.getElementById("email").value;
+	const phone = document.getElementById("phone").value;
+	const time = document.getElementById("time").value;
 	const bodyToSubmit = {
-		"email": email
+		"name": name,
+		"email": email,
+		"phone": phone,
+		"time": time
 	}
 	fetch('/foo2/', {
   		method: 'post',

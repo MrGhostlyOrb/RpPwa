@@ -7,6 +7,7 @@ const fetch = require('node-fetch');
 const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 const http = require('http');
 const https = require('https');
+const http2 = require('http2');
 const fs = require('fs');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
@@ -73,8 +74,6 @@ function startServer() {
    		console.log(myObject); 
    		for(var i = 0; i < myObject.length; i++){ 
    			var parsed = JSON.parse(myObject[i])         
-   			console.log(parsed.Item.ProductNo);         
-   			console.log(parsed.Item.Quantity); 
    		} 
    		var transporter = nodemailer.createTransport({   
    			service: 'Outlook365',   
