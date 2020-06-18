@@ -32,7 +32,26 @@ app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 //Variable to store user's email for orders
 var userEmail = "";
+let productList = JSON.parse(fs.readFileSync('productList.json'));
 //Function to begin server and serve pages
+let grid = "";
+for(let i = 0; i < productList.data.length; i++){
+				
+	let item = productList.data[i];
+	let loc = '"/product' + item.productNumber + '"';
+	let img = "<img class = 'cardImage' alt = 'Product Image' src = '" + item.imageURL + "'/>";
+    let h2 = "<h2 class = 'card-title'>" + item.productName + "</h2>";
+    let p = "<p class = 'card-text'>£" + item.productPrice + "</p>";
+    let lab = "<label for='inp"+item.productNumber+"'>Quantity</label>"
+    let input = "<input type = 'number' placeholder = 'Quantity' class = 'input' min = '1' max = '999' id = 'inp"+item.productNumber+"'></input>";
+    let submit = "<button type = 'sumbit' class = 'card-button-link' onclick = 'addJson(" + item.productNumber + ")' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Basket</button>"
+    let r = "<button class = 'card-button-link' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
+	console.log(r);
+	let gridItem = "<div class = 'card'>" + img + h2 + p + input + submit + r +"</div>"
+			grid = grid + gridItem
+			
+}
+
 function startServer() {
 
 	app.get('/', function(req,res){
@@ -41,7 +60,14 @@ function startServer() {
 
 	app.get('/option1',function(req,res)
 		{  
-  			res.render('option1', {title:'Option1', message:'This is the option 1 home page'});
+
+  			res.render('option1', 
+  			{
+  				title:'Option1', 
+  				message:'This is the option 1 home page',
+  				grid: grid
+  				
+  			});
 		});
 	app.get('/option2',function(req,res)
 		{  
@@ -55,7 +81,24 @@ function startServer() {
 		{  
   			res.render('basket', {title:'Basket', message:'Basket List'});
 		});
-
+	
+	
+	for(let i = 0; i < productList.data.length; i++){
+		app.get('/product' + productList.data[i].productNumber, (req,res) => {
+			
+			var item = productList.data[i];
+			
+			res.render('product', 
+				{
+					product:item.productNumber,
+					productDescription:item.productInfo,
+					
+				});
+		})
+	}
+	
+	
+	
 	//Options for ssl  
  	var options = {
     	key: fs.readFileSync('key.pem'),
