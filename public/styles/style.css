@@ -251,8 +251,12 @@ footer{
 	#order{
 	width:100%;
 	position:relative;
-	left:5%;
+	left:0%;
 }
+	#butSubmit{
+		width:70%;
+		margin-left:15%
+	}
 
   .grid{
 	display:grid;
