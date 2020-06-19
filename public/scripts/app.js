@@ -17,9 +17,10 @@ else{
 localStorage.setItem('basket', JSON.stringify(basketList));
 
 //Function to add a product to the user's basket
-function addJson(ProductNo, Qty){
+function addJson(ProductNo, Qty, Name){
 
 	basketList = JSON.parse(localStorage.getItem('basket'));
+	console.log('JSON');
 	console.log(ProductNo);
 	console.log(Qty);
 	//Check if the product is already in the basket

@@ -4,6 +4,8 @@
 
 let listBasket = document.getElementById("listForBasket")
 let basketList2;
+let resp = [];
+
 
 if (localStorage.getItem('basket')){
 	basketList2 = JSON.parse(localStorage.getItem('basket'));
@@ -16,9 +18,22 @@ else{
 localStorage.setItem('basket', JSON.stringify(basketList2));
 const data2 = JSON.parse(localStorage.getItem('basket'));
 
-
+function getOtherInfo(ProductNo){
+	let bodyToSubmit = {"ProductNo":ProductNo}
+	
+	fetch('/getInfo', {
+  		method: 'post',
+  		headers: {
+    		'Accept': 'application/json, text/plain, */*',
+    		'Content-Type': 'application/json'
+  		},
+  		body: JSON.stringify(bodyToSubmit)
+	}).then(res=>res.json())
+  		.then(res => resp.push(res));
+}
 
 function showBasketList(){
+	
 	var sPath = window.location.pathname;
 	console.log(sPath)
 	if(sPath != '/confirmation'){
@@ -33,8 +48,12 @@ function showBasketList(){
 	for(let i = 0; i < basketList2.length; i++){
 	
 	const parsedList = JSON.parse(basketList2[i]);
-		listBasket.innerHTML = listBasket.innerHTML + li + "Product Name : " + parsedList.Item.ProductNo + "<br>Quantity : " + parsedList.Item.Quantity + cli
-	}
+	getOtherInfo(parsedList.Item.ProductNo);
+	setTimeout(()=>{
+		console.log(resp);
+		
+		listBasket.innerHTML = listBasket.innerHTML + li + "Product Number : " + parsedList.Item.ProductNo + "<br>Quantity : " + parsedList.Item.Quantity + "<br>Name : " + resp[i].prodName + cli
+	},2000)}
 	}
 	}
 	else{

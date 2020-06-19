@@ -262,5 +262,34 @@ function startServer() {
 		
    		
    	})
+   	
+   	app.post("/getInfo", function(req, res) { 
+   		var myObject = req.body;      
+   		var resJson;
+   		console.log(myObject); 
+   		let ProductNo = myObject.ProductNo;
+   		
+   		for(let i = 0; i < productList.data.length; i++){
+   			
+   		
+   			if(productList.data[i].productNumber == ProductNo){
+   				let prodName = productList.data[i].productName;
+   				let prodPrice = productList.data[i].productPrice;
+   				let prodImg = productList.data[i].imageURL;
+   				
+   				resJson = {
+   					"prodName":prodName,
+   					"prodPrice":prodPrice,
+   					"prodImg":prodImg
+   				}
+   			}
+   		
+   		}
+   		console.log(resJson);
+   		res.json(resJson);
+   		
+		
+   		
+   	})
 
 startServer();
