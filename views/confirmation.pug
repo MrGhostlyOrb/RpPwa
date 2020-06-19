@@ -1,0 +1,37 @@
+extends layout.pug
+
+block content
+	
+
+
+	
+	body(onload = 'getValue()')
+		script(defer src='/scripts/basketShow.js')
+		header.header
+			h1.pageTitle 
+				a.pageTitleLink(href = '/') 📎️ Richmond Paper Supply
+				a.powered-by(href = '/') Progressive Web App
+				button#butInstall(aria-label = 'Install')
+				button#butRefresh(aria-label = 'Refresh')
+		div.pageInfo
+			div.card
+				p.card-text-title
+					b Order Confirmation:
+					p.card-text Thank you for placing your order with Richmond Paper Supply, our team in the office has been notified of your order and you should recieve a confirmation of your order shortly. Thank you.
+						ul#listForBasket.listForBasket
+						
+					br
+					b#tot Your total was
+					br
+				p.card-text-title
+					b Feedback
+					p.card-text It would be great if you could provide some feedback to us about your experience with this web app and what we could do to improve it.
+					form(onsubmit = 'sendFeedback()')
+						input(type = 'textarea' id = 'feedback')
+						input(type = 'submit')
+				
+			
+							
+
+
+

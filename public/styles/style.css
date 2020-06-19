@@ -222,7 +222,7 @@ padding-right:10%;
 }
 
 footer{
-	margin-top:20%;
+	margin-top:30%;
 }
 
 @media only screen and (max-width: 1070px) {
@@ -290,7 +290,7 @@ footer{
 }
 
 footer{
-	margin-top:70%;
+	margin-top:80%;
 }
 
 .card{
@@ -404,4 +404,62 @@ footer{
 		color:white;
 	}
 
+}
+
+@media only screen and (max-width: 600px) {
+
+	*{
+		font-size: 4vw;
+	}
+	
+	.pageTitle{
+		font-size:2em;
+	
+	}
+	
+		.header{
+			height:56px;
+			font-size:1em;
+			
+		}
+		
+		.header button{
+			height:40px;
+			margin-top:5px;
+		}
+		
+		.powered-by{
+			display:none;
+		}
+		
+		.pageTitleLink{
+		
+		font-size:20px;
+		margin-top:5%;
+	
+	}
+	
+	#butRefresh{
+		display:none;
+	}
+
+  .grid{
+	display:grid;
+	grid-template-columns: 80%; /* 5 cols */
+  	grid-column-gap:2%;
+  	grid-row-gap:2%;
+  	margin-left:15%;
+  	margin-top:15%;
+}
+
+
+.grid-product{
+	display:grid;
+	grid-template-columns: 45% 45%; /* 5 cols */
+  	grid-column-gap:2%;
+  	grid-row-gap:2%;
+  	margin-left:10%;
+  	margin-top:15%;
+  	
+}
 }

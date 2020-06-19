@@ -16,27 +16,38 @@ block content
 		div.pageInfo
 			div.card
 				p.card-text-title
-					b Some text about the contents of this page
+					b Welcome to your basket
+					button(onclick = 'alert("This will remove everything from your basket");clearBasket()') Click Here to Clear your basket
 		
 
    
-		form#customerForm(name = 'form' class = 'form-data' method = 'post' onsubmit = 'sendData(event); checkQty();  getValue(); sendOrder(); clearBasket();')
+		form#customerForm(name = 'form' class = 'form-data' method = 'post' onsubmit = 'sendData(event); checkQty();  getValue(); sendOrder(); copyBasket(); clearBasket();')
 			table.tab
 				tr.row
 					td.col
 						label(for='name') Name :
 					td.col
-						input(class = 'input' id = 'name' name = 'name' type = 'text' value = '' required autofocus)
+						input(class = 'input' placeholder = 'Name' id = 'name' name = 'name' type = 'text' value = '' required autofocus)
 				tr.row
 					td.col
 						label(for='email') Email :
 					td.col
-						input(class = 'input' id = 'email' name = 'email' type = 'email' value = '' required)
+						input(class = 'input' placeholder = 'Email' id = 'email' name = 'email' type = 'email' value = '' required)
 				tr.row
 					td.col
 						label(for='phone') Phone Number :
 					td.col
-						input(class = 'input' id = 'phone' name = 'phone' type = 'number' value = '' required)
+						input(class = 'input' placeholder = 'Phone Number' id = 'phone' name = 'phone' type = 'text' value = '' required)
+				tr.row
+					td.col
+						label(for='address') Delivery Address :
+					td.col
+						input(class = 'input' placeholder = 'Address' id = 'address' name = 'address' type = 'text' value = '' required)
+				tr.row
+					td.col
+						label(for='postcode') PostCode :
+					td.col
+						input(class = 'input' placeholder = 'PostCode' id = 'postcode' name = 'postcode' type = 'text' value = '' required)
 				
 				//tr.row
 					//td.col
@@ -52,7 +63,7 @@ block content
 							br 
 							ul#listForBasket.listForBasket
 			
-							input#butSubmit(class = 'sub' type = 'submit' value = 'Send Order and Pay')
+							input#butSubmit(class = 'sub' type = 'submit' value = 'Proceed to Payment')
 							br
 							b#tot Estimated total = 
 							br

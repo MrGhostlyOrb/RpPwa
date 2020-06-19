@@ -46,7 +46,7 @@ for(let i = 0; i < productList.data.length; i++){
 	let img = "<img class = 'cardImage' alt = 'Product Image' src = '" + item.imageURL + "'/>";
     let h2 = "<h2 class = 'card-title'>" + item.productName + "</h2>";
     let p = "<p class = 'card-text'>£" + item.productPrice + "</p>";
-    let lab = "<label for='inp"+item.productNumber+"'>Quantity required : </label>"
+    let lab = "<label for='inp"+item.productNumber+"'>Quantity : </label>"
     let input = "<input type = 'number' placeholder = 'Quantity' class = 'input' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input>";
     let submit = "<button type = 'sumbit' class = 'card-button-link' onclick = 'addJson(" + item.productNumber + ")' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Basket</button>"
     let r = "<button class = 'card-button-link' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
@@ -85,6 +85,9 @@ function startServer() {
 		{  
   			res.render('basket', {title:'Basket', message:'Basket List', pay:payment});
 		});
+	app.get('/confirmation', function(req,res){
+		res.render('confirmation', {title:'Confirmation', message:'Confirmation Page'})
+	})
 	
 	
 	for(let i = 0; i < productList.data.length; i++){
@@ -228,6 +231,36 @@ function startServer() {
    		res.json({"total":total});
    		
    	
+   	})
+   	
+   	app.post("/feedback", function(req, res) { 
+   		var myObject = req.body;      
+   		console.log(myObject); 
+   		let feedback = myObject.feedBack;
+   		var transporter = nodemailer.createTransport({   
+   			service: 'Outlook365',   
+   			auth: {     
+   				user: cred.email,     
+   				pass: cred.password
+   				} 
+   		});
+   		var mailOptions = {
+  			from: cred.email,
+  			to: cred.email,
+  			subject: 'New Feedback about website',
+  			text: feedback
+		};
+		
+			transporter.sendMail(mailOptions, function(error, info){
+  				if (error) {
+    				console.log(error);
+  				} 
+  				else {
+    				console.log('Email sent: ' + info.response);
+  				}
+			});
+		
+   		
    	})
 
 startServer();

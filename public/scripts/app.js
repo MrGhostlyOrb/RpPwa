@@ -60,7 +60,7 @@ function removeFromBasket(ProductNo){
 
 //Function to clear the basket from local storage
 function clearBasket(){
-	localStorage.clear();
+	localStorage.removeItem('basket');
 	console.log("Cleared basket");
 	basketList = new Array();
 }
@@ -163,6 +163,7 @@ function sendOrder(){
         		// This function shows a transaction success message to your buyer.
         			alert('Transaction completed by ' + details.payer.name.given_name);
         			sendEmailConf(details.payer.name.given_name);
+        			window.location.href = '/confirmation'
       			});
     		}
   		}).render('#paypal-button-container');
@@ -186,8 +187,17 @@ function sendEmailConf(name){
 	}).then(res=>res.json())
   		.then(res => console.log(res));
 }
+let copiedBasket;
+function copyBasket(){
+	console.log('copying basket');
+	copiedBasket = localStorage.getItem('basket')
+	localStorage.setItem('copiedBasket', copiedBasket);
+
+}
 
 function getValue(){
+	var sPath = window.location.pathname;
+	if(sPath != '/confirmation'){
 	console.log(localStorage.getItem('basket'));
 	fetch('/price',
 		{
@@ -204,12 +214,45 @@ function getValue(){
   		total = '0';
   		
   		});
+  		}else{
+  			fetch('/price',
+		{
+			method: 'post',
+  			headers: {
+    			'Accept': 'application/json',
+    			'Content-Type': 'application/json'
+  				},
+  			body: localStorage.getItem('copiedBasket')
+	
+		}).then(res=>res.json())
+  		.then(res => total = res).catch((err)=>{
+  		console.log('Empty Order'); 
+  		total = '0';
+  		
+  		});
+  		}
   		setTimeout(()=>{
+  		
+  		if(sPath = '/confirmation'){
+  			document.getElementById('tot').innerHTML = "Your total was : £" + Math.round((total.total + Number.EPSILON) * 100) / 100
+  		}else{
   		document.getElementById('tot').innerHTML = "Estimated total is : £" + Math.round((total.total + Number.EPSILON) * 100) / 100
-  		},250)
+  		}},250)
   		
 }
 
+function sendFeedback(){
+	let text = {"feedBack":document.getElementById('feedback').value};
+	fetch('/feedback', {
+  		method: 'post',
+  		headers: {
+    		'Accept': 'application/json, text/plain, */*',
+    		'Content-Type': 'application/json'
+  		},
+  		body: JSON.stringify(text)
+	}).then(res=>res.json())
+  		.then(res => console.log(res));
+}
 
 //Function to get the user's selected quantity of item
 function getValues(){
