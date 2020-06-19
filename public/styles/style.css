@@ -250,6 +250,8 @@ footer{
 
 	#order{
 	width:100%;
+	position:relative;
+	left:25%;
 }
 
   .grid{
