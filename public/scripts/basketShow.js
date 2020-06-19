@@ -53,7 +53,7 @@ function checkQty(){
 	}
 	if(allGood === true){
 		sendBasket();
-		alert("Thank you, your order has been sent")
+		alert("Please complete the transaction with paypal or a Credit/Debit card after clicking 'OK'")
 	}
 	
 }

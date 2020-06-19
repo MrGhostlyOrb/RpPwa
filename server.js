@@ -144,7 +144,7 @@ function startServer() {
   			from: cred.email,
   			to: cred.email,
   			subject: 'New Online Order From ' + userEmail,
-  			text: 'Their email : ' + userEmail + ', Their name : ' + userName + ', Their phone number : ' + userPhone + ', Their total : £' + total + '\n \n They bought : ' + list.toString()
+  			text: 'Their email : ' + userEmail + ', Their name : ' + userName + ', Their phone number : ' + userPhone + ', Their total : £' + Math.round((total + Number.EPSILON) * 100) / 100 + '\n \n They bought : ' + list.toString()
 		};
 		if(sendMail == true){
 			transporter.sendMail(mailOptions, function(error, info){
@@ -165,6 +165,36 @@ function startServer() {
    		userName = myObject.name;
    		userPhone = myObject.phone;
    		total = myObject.total;
+   	})
+   	
+   	app.post("/foo3/", function(req, res) { 
+   		var myObject = req.body;      
+   		console.log(myObject); 
+   		let buyerName = myObject.name;
+   		var transporter = nodemailer.createTransport({   
+   			service: 'Outlook365',   
+   			auth: {     
+   				user: cred.email,     
+   				pass: cred.password
+   				} 
+   		});
+   		var mailOptions = {
+  			from: cred.email,
+  			to: cred.email,
+  			subject: 'New Payment From ' + userEmail,
+  			text: 'Confirmed Payment From : ' + buyerName
+		};
+		
+			transporter.sendMail(mailOptions, function(error, info){
+  				if (error) {
+    				console.log(error);
+  				} 
+  				else {
+    				console.log('Email sent: ' + info.response);
+  				}
+			});
+		
+   		
    	})
    	
    	app.post('/price', (req,res) => {

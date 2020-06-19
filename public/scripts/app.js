@@ -112,7 +112,7 @@ function sendData(e){
   		body: JSON.stringify(bodyToSubmit)
 	}).then(res=>res.json())
   		.then(res => console.log(res));
-},2000)}
+},100)}
 
 //Function for basic page interactions
 function init() {
@@ -145,19 +145,46 @@ function showNotification(title, message) {
 let x = '15';
 function sendOrder(){
 	setTimeout(() => {
-	console.log(total);
-	 paypal.Buttons({
-    createOrder: function(data, actions) {
-      // This function sets up the details of the transaction, including the amount and line item details.
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value: total.total
-          }
-        }]
-      });
-    }
-  }).render('#paypal-button-container');},2000);
+		console.log(total);
+	 	paypal.Buttons({
+    		createOrder: function(data, actions) {
+      		// This function sets up the details of the transaction, including the amount and line item details.
+      			return actions.order.create({
+        			purchase_units: [{
+          				amount: {
+            				value: Math.round((total.total + Number.EPSILON) * 100) / 100
+          				}
+        			}]
+      			});
+    		},
+    		onApprove: function(data, actions) {
+      		// This function captures the funds from the transaction.
+      			return actions.order.capture().then(function(details) {
+        		// This function shows a transaction success message to your buyer.
+        			alert('Transaction completed by ' + details.payer.name.given_name);
+        			sendEmailConf(details.payer.name.given_name);
+      			});
+    		}
+  		}).render('#paypal-button-container');
+  	},500);
+ }
+
+
+function sendEmailConf(name){
+	console.log('Completed');
+	const bodyToSubmit = {
+		"name": name
+	}
+	console.log(bodyToSubmit);
+	fetch('/foo3/', {
+  		method: 'post',
+  		headers: {
+    		'Accept': 'application/json, text/plain, */*',
+    		'Content-Type': 'application/json'
+  		},
+  		body: JSON.stringify(bodyToSubmit)
+	}).then(res=>res.json())
+  		.then(res => console.log(res));
 }
 
 function getValue(){
@@ -178,8 +205,8 @@ function getValue(){
   		
   		});
   		setTimeout(()=>{
-  		document.getElementById('tot').innerHTML = "Estimated total is : £" + total.total
-  		},500)
+  		document.getElementById('tot').innerHTML = "Estimated total is : £" + Math.round((total.total + Number.EPSILON) * 100) / 100
+  		},250)
   		
 }
 
