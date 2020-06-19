@@ -16,11 +16,13 @@ block content
 		div.pageInfo
 			div.card
 				p.card-text-title
-					b Welcome to your basket
+					b.topText Welcome To Your Basket
 					br
-					b <--Please note that ALL orders are UK ONLY.-->
 					br
-					button(onclick = 'alert("This will remove everything from your basket");clearBasket()') Click Here to Clear your basket
+					b.topText <--Please note that ALL orders are UK Delivery ONLY-->
+					br
+					br
+					button#remove(onclick = 'alert("This will remove everything from your basket");clearBasket()') Click Here to Clear your basket
 		
 
    
@@ -62,7 +64,7 @@ block content
 				div.pageInfo
 					div.card#order
 						p.card-text-title 
-							b Your Order So Far : 
+							b Your Order 🗒️ So Far : 
 							br 
 							ul#listForBasket.listForBasket
 			

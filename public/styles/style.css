@@ -15,7 +15,7 @@ header{
 	width:100%;
 	background-color:#ab47bc;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-	font-size:1em;
+	font-size:15px;
 }
 
 .header .powered-by {
@@ -147,13 +147,18 @@ label{
 	text-align:center;
 }
 
+#remove{
+	width:100%;
+}
+
+
 .card-text{
 	
 	padding-left:5%;
 }
 
 .card-text-title{
-	padding:1%;
+	padding:4%;
 }
 
 .card-title{
@@ -219,6 +224,7 @@ padding-right:10%;
 	color:white;
 	padding:0.25%;
 	margin-left:5%;
+	padding-top:5px;
 }
 
 footer{
@@ -230,23 +236,23 @@ footer{
 
 
 	*{
-		font-size: 3vw;
+		
 	}
 	.tab{
 		margin-left:0;
 	}
 	.pageTitle{
-		font-size:1em;
+	
 	
 	}
 	.pageTitleLink{
-		font-size:1em;
+		
 	
 	}
 	
 	.header{
 			height:56px;
-			font-size:1em;
+			
 		}
 		
 
@@ -331,17 +337,17 @@ footer{
 @media only screen and (max-width: 600px) {
 
 	*{
-		font-size: 4vw;
+	
 	}
 	
 	.pageTitle{
-		font-size:2em;
+		
 	
 	}
 	
 		.header{
 			height:56px;
-			font-size:1em;
+		
 			
 		}
 		
@@ -356,8 +362,8 @@ footer{
 		
 		.pageTitleLink{
 		
-		font-size:20px;
-		margin-top:5%;
+		
+		
 	
 	}
 
@@ -412,17 +418,17 @@ footer{
 @media only screen and (max-width: 600px) {
 
 	*{
-		font-size: 4vw;
+		
 	}
 	
 	.pageTitle{
-		font-size:2em;
+		
 	
 	}
 	
 		.header{
 			height:56px;
-			font-size:1em;
+		
 			
 		}
 		
