@@ -14,7 +14,7 @@ const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
 
 //Constant for credentials file
-//const cred = require('./cred.json');
+const cred = require('./cred.json');
 
 //Constant for the express app
 const app = express();
@@ -32,6 +32,10 @@ app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 //Variable to store user's email for orders
 var userEmail = "";
+var userName = "";
+var userPhone = "";
+var total = "";
+
 let productList = JSON.parse(fs.readFileSync('productList.json'));
 //Function to begin server and serve pages
 let grid = "";
@@ -46,12 +50,12 @@ for(let i = 0; i < productList.data.length; i++){
     let input = "<input type = 'number' placeholder = 'Quantity' class = 'input' min = '1' max = '999' id = 'inp"+item.productNumber+"'></input>";
     let submit = "<button type = 'sumbit' class = 'card-button-link' onclick = 'addJson(" + item.productNumber + ")' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Basket</button>"
     let r = "<button class = 'card-button-link' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
-	console.log(r);
+	
 	let gridItem = "<div class = 'card'>" + img + h2 + p + input + submit + r +"</div>"
 			grid = grid + gridItem
 			
 }
-
+let payment = "<script> paypal.Buttons({createOrder: function (data, actions) {return fetch('/my-server/create-order', {method: 'POST'}).then(function(res) {return res.json();}).then(function(data) {return data.id;});},onApprove: function (data, actions) {return fetch('/my-server/capture-order/' + data.orderID, {method: 'POST'}).then(function(res) {if (!res.ok) {alert('Something went wrong');}});}}).render('#paypal-button-container');</script>"
 function startServer() {
 
 	app.get('/', function(req,res){
@@ -79,7 +83,7 @@ function startServer() {
 		});
 	app.get('/basket',function(req,res)
 		{  
-  			res.render('basket', {title:'Basket', message:'Basket List'});
+  			res.render('basket', {title:'Basket', message:'Basket List', pay:payment});
 		});
 	
 	
@@ -113,14 +117,21 @@ function startServer() {
 };
 	var sendMail = true;
    	app.post("/foo/", function(req, res) { 
+   		
+   		setTimeout(() => {
+   		console.log('About to send mail');
+   		var list = [];
    		var myObject = req.body;      
    		console.log(myObject); 
    		for(var i = 0; i < myObject.length; i++){ 
    			var parsed = JSON.parse(myObject[i]);
+   			
    			if(parsed.Item.Quantity === "undefined"){
    				console.log("Don't send")
    				sendMail = false;
    			}        
+   			list.push('Item Number : ' + parsed.Item.ProductNo);
+   			list.push('Quantity :' + parsed.Item.Quantity);
    		} 
    		var transporter = nodemailer.createTransport({   
    			service: 'Outlook365',   
@@ -132,8 +143,8 @@ function startServer() {
    		var mailOptions = {
   			from: cred.email,
   			to: cred.email,
-  			subject: 'Sending Email using Node.js' + userEmail,
-  			text: 'That was easy!' + userEmail + myObject
+  			subject: 'New Online Order From ' + userEmail,
+  			text: 'Their email : ' + userEmail + ', Their name : ' + userName + ', Their phone number : ' + userPhone + ', Their total : £' + total + '\n \n They bought : ' + list.toString()
 		};
 		if(sendMail == true){
 			transporter.sendMail(mailOptions, function(error, info){
@@ -145,12 +156,48 @@ function startServer() {
   				}
 			});
 		}
-   	})
+   	}, 5000)})
 
    	app.post("/foo2/", function(req, res) { 
    		var myObject = req.body;      
    		console.log(myObject); 
    		userEmail = myObject.email;
+   		userName = myObject.name;
+   		userPhone = myObject.phone;
+   		total = myObject.total;
+   	})
+   	
+   	app.post('/price', (req,res) => {
+   		let total = 0;
+   		var body = req.body;
+   		console.log(body[0]);
+   		if(body[0] != undefined){
+
+   		console.log(JSON.parse(body[0]).Item);
+   		for(let i = 0; i < productList.data.length; i++){
+   			for(let j = 0; j < body.length; j++){
+   				console.log(JSON.parse(body[j]).Item.ProductNo);
+   				console.log(productList.data[i].productNumber);
+   				if(JSON.parse(body[j]).Item.ProductNo == productList.data[i].productNumber){
+   					console.log('Found product');
+   					console.log(productList.data[i].productPrice);
+   					total = total + (productList.data[i].productPrice * JSON.parse(body[j]).Item.Quantity);
+   					console.log(total);
+
+   				}
+   				else{
+   					console.log('no');
+   				}
+   			}
+   			
+   		
+   		}}else{
+   		console.log('nah');
+   		}
+   		console.log(total);
+   		res.json({"total":total});
+   		
+   	
    	})
 
 startServer();

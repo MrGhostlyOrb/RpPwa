@@ -3,7 +3,7 @@
 
 //Variable to store the user's basket
 let basketList;
-
+let total;
 //Check if there is a basket already in local storage
 if (localStorage.getItem('basket')){
 	basketList = JSON.parse(localStorage.getItem('basket'));
@@ -16,14 +16,12 @@ else{
 //Save basket in local storage
 localStorage.setItem('basket', JSON.stringify(basketList));
 
-document.getElementById('form').addEventListener('sumbit', (evt) => {evt.preventDefault()})
-
 //Function to add a product to the user's basket
 function addJson(ProductNo, Qty){
 
 	basketList = JSON.parse(localStorage.getItem('basket'));
 	console.log(ProductNo);
-	console.log(Qty)
+	console.log(Qty);
 	//Check if the product is already in the basket
 	let isFound = false;
 	for(var i = 0; i < basketList.length; i++){
@@ -75,6 +73,7 @@ function showBasket(){
 
 //Function to send the basket to the RP email account
 function sendBasket(){
+	console.log('Doing stuff');
 	fetch('/foo/', {
   		method: 'post',
   		headers: {
@@ -90,16 +89,20 @@ function sendBasket(){
 //Function to send the form data to the RP email account
 function sendData(e){
 	e.preventDefault();
+	setTimeout(()=>{
 	const name = document.getElementById("name").value;
 	const email = document.getElementById("email").value;
 	const phone = document.getElementById("phone").value;
-	const time = document.getElementById("time").value;
+	console.log(total);
+	//const time = document.getElementById("time").value;
 	const bodyToSubmit = {
 		"name": name,
 		"email": email,
 		"phone": phone,
-		"time": time
+		"total": total.total
+		//"time": time
 	}
+	console.log(bodyToSubmit);
 	fetch('/foo2/', {
   		method: 'post',
   		headers: {
@@ -109,7 +112,7 @@ function sendData(e){
   		body: JSON.stringify(bodyToSubmit)
 	}).then(res=>res.json())
   		.then(res => console.log(res));
-}
+},2000)}
 
 //Function for basic page interactions
 function init() {
@@ -139,6 +142,47 @@ function showNotification(title, message) {
     	});
   	}
 }
+let x = '15';
+function sendOrder(){
+	setTimeout(() => {
+	console.log(total);
+	 paypal.Buttons({
+    createOrder: function(data, actions) {
+      // This function sets up the details of the transaction, including the amount and line item details.
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: total.total
+          }
+        }]
+      });
+    }
+  }).render('#paypal-button-container');},2000);
+}
+
+function getValue(){
+	console.log(localStorage.getItem('basket'));
+	fetch('/price',
+		{
+			method: 'post',
+  			headers: {
+    			'Accept': 'application/json',
+    			'Content-Type': 'application/json'
+  				},
+  			body: localStorage.getItem('basket')
+	
+		}).then(res=>res.json())
+  		.then(res => total = res).catch((err)=>{
+  		console.log('Empty Order'); 
+  		total = '0';
+  		
+  		});
+  		setTimeout(()=>{
+  		document.getElementById('tot').innerHTML = "Estimated total is : £" + total.total
+  		},500)
+  		
+}
+
 
 //Function to get the user's selected quantity of item
 function getValues(){

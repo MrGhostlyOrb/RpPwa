@@ -22,11 +22,16 @@ function showBasketList(){
 
 	const li = "<li class = 'listItem'>"
 	const cli = "</li>"
-
+	if(basketList2.length < 1){
+		listBasket.innerHTML = "Nothing in your basket yet";
+	}
+	else{
+	listBasket.innerHTML = "";
 	for(let i = 0; i < basketList2.length; i++){
 	
 	const parsedList = JSON.parse(basketList2[i]);
-		listBasket.innerHTML = listBasket.innerHTML + li + "Product Number : " + parsedList.Item.ProductNo + "<br>Quantity : " + parsedList.Item.Quantity + cli
+		listBasket.innerHTML = listBasket.innerHTML + li + "Product Name : " + parsedList.Item.ProductNo + "<br>Quantity : " + parsedList.Item.Quantity + cli
+	}
 	}
 	
 }

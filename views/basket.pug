@@ -1,7 +1,11 @@
 extends layout.pug
 
 block content
-	body
+	
+
+
+	
+	body(onload = 'getValue()')
 		script(defer src='/scripts/basketShow.js')
 		header.header
 			h1.pageTitle 
@@ -13,13 +17,10 @@ block content
 			div.card
 				p.card-text-title
 					b Some text about the contents of this page
-						
-
-	
-
+		
 
    
-		form#customerForm(name = 'form' class = 'form-data' method = 'post' onsubmit = 'sendData(event); checkQty(); sendBasket(); clearBasket()')
+		form#customerForm(name = 'form' class = 'form-data' method = 'post' onsubmit = 'sendData(event); checkQty();  getValue(); sendOrder(); clearBasket();')
 			table.tab
 				tr.row
 					td.col
@@ -37,23 +38,25 @@ block content
 					td.col
 						input(class = 'input' id = 'phone' name = 'phone' type = 'number' value = '' required)
 				
-				tr.row
-					td.col
-						label(for='time') Pickup/Delivery Date :
-					td.col
-						input(class = 'input' id = 'time' name = 'time' type = 'date' value = '' required)
+				//tr.row
+					//td.col
+						//label(for='time') Pickup/Delivery Date :
+					//td.col
+						//input(class = 'input' id = 'time' name = 'time' type = 'date' value = '' required)
 				br
 			div.row2
 				div.pageInfo
-					div.card
+					div.card#order
 						p.card-text-title 
-							b Your Order : 
-				ul#listForBasket.listForBasket
+							b Your Order So Far : 
+							br 
+							ul#listForBasket.listForBasket
 			
-				input#butSubmit(class = 'sub' type = 'submit' value = 'Send Order')
-				
-	div(id="paypal-button-container")
-	script paypal.Buttons().render('#paypal-button-container');
-	script paypal.Buttons({createOrder: function(data, actions) {return actions.order.create({purchase_units: [{amount: {value: '0.01'}}]});},onApprove: function(data, actions) {return actions.order.capture().then(function(details) {alert('Transaction completed by ' + details.payer.name.given_name);});}}).render('#paypal-button-container');
-			//button#butSendOrder(aria-label = 'Send Order' onclick = 'checkQty()') Send Order
-			//button#butSendOrder(aria-label = 'Send Order' onclick = 'checkQty()') Send Order
+							input#butSubmit(class = 'sub' type = 'submit' value = 'Send Order and Pay')
+							br
+							b#tot Estimated total = 
+							br
+							div(id='paypal-button-container')
+
+
+
