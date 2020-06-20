@@ -20,21 +20,15 @@ localStorage.setItem('basket', JSON.stringify(basketList));
 function addJson(ProductNo, Qty, Name){
 
 	basketList = JSON.parse(localStorage.getItem('basket'));
-	console.log('JSON');
-	console.log(ProductNo);
-	console.log(Qty);
 	//Check if the product is already in the basket
 	let isFound = false;
-	for(var i = 0; i < basketList.length; i++){
+	for(var i = 0; i < JSON.parse(localStorage.getItem('basket')).length; i++){
 		const parsedList = JSON.parse(basketList[i]);
-	
 		if(parsedList.Item.ProductNo == ProductNo){
 			alert('This product is already in your basket');
 			isFound = true;
 		}
-		else{
-			i = i + 1;
-		}}
+		}
 	
 	if(isFound === false){
 		basketList.push('{"Item":{"ProductNo" :"' + ProductNo + '", "Quantity" :"' + Qty + '"}}');
@@ -257,6 +251,7 @@ function sendFeedback(){
 
 //Function to get the user's selected quantity of item
 function getValues(){
+	setTimeout(()=>{
 	const inputs = document.getElementsByClassName('input');
 	console.log(inputs);
 	for(var i = 0; i < inputs.length; i++){
@@ -274,7 +269,7 @@ function getValues(){
 				alert("There is nothing in your basket")
 			}
 		}
-	}
+	}},300)
 }
 
 //Function to add quantity to the basket
