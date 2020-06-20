@@ -18,19 +18,20 @@ localStorage.setItem('basket', JSON.stringify(basketList));
 
 //Function to add a product to the user's basket
 function addJson(ProductNo, Qty, Name){
-
+	
 	basketList = JSON.parse(localStorage.getItem('basket'));
 	//Check if the product is already in the basket
 	let isFound = false;
 	for(var i = 0; i < JSON.parse(localStorage.getItem('basket')).length; i++){
 		const parsedList = JSON.parse(basketList[i]);
 		if(parsedList.Item.ProductNo == ProductNo){
-			alert('This product is already in your basket');
 			isFound = true;
+			mdtoast('This product is already in your basket.', {type: mdtoast.ERROR});
 		}
 		}
 	
 	if(isFound === false){
+		mdtoast('Product added to your basket', {type: mdtoast.SUCCESS});
 		basketList.push('{"Item":{"ProductNo" :"' + ProductNo + '", "Quantity" :"' + Qty + '"}}');
 		let bg = document.getElementById("sub" + ProductNo);
 		bg.style.backgroundColor = "#ba68c8";
@@ -45,9 +46,7 @@ function removeFromBasket(ProductNo){
 		const parsedList = JSON.parse(basketList[i]);
     	if(parsedList.Item.ProductNo == ProductNo) {
         	basketList.splice(i, 1);
-        	let bg = document.getElementById("sub" + ProductNo);
-			bg.style.backgroundColor = "#ee98fb";
-        	alert('Removed ' + ProductNo + 'from your basket');
+        	mdtoast('Removed product number ' + ProductNo + ' from your basket');
         	localStorage.setItem('basket', JSON.stringify(basketList));
     	}
 	}
@@ -156,7 +155,7 @@ function sendOrder(){
       		// This function captures the funds from the transaction.
       			return actions.order.capture().then(function(details) {
         		// This function shows a transaction success message to your buyer.
-        			alert('Transaction completed by ' + details.payer.name.given_name);
+        			mdtoast('Transaction successfully completed by ' + details.payer.name.given_name, {type: mdtoast.SUCCESS});
         			sendEmailConf(details.payer.name.given_name);
         			window.location.href = '/confirmation'
       			});
@@ -266,7 +265,7 @@ function getValues(){
 				addQty(productNumber, basketList2, inputs[i].value);
 			}
 			else{
-				alert("There is nothing in your basket")
+				mdtoast("There is nothing in your basket", {type: mdtoast.ERROR})
 			}
 		}
 	}},300)

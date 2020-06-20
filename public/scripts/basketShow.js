@@ -52,7 +52,7 @@ function showBasketList(){
 	setTimeout(()=>{
 		console.log(resp);
 		
-		listBasket.innerHTML = listBasket.innerHTML + li + "Product Number : " + parsedList.Item.ProductNo + "<br>Quantity : " + parsedList.Item.Quantity + "<br>Name : " + resp[i].prodName + cli
+		listBasket.innerHTML = listBasket.innerHTML + li + "Product Number : " + parsedList.Item.ProductNo + "<br>Quantity : " + parsedList.Item.Quantity + "<br>Name : " + resp[i].prodName + "<div onclick = 'removeFromBasket("+parsedList.Item.ProductNo+");setTimeout(()=>{location.reload()},1000);'>Remove</div>" + cli
 	},2000)}
 	}
 	}

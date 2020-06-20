@@ -5,7 +5,7 @@ block content
 
 
 	
-	body(onload = 'getValue()')
+	body(onload = 'getValue();mdtoast("Loading your basket", {duration: 2000})')
 		script(defer src='/scripts/basketShow.js')
 		header.header
 			h1.pageTitle 
@@ -22,7 +22,7 @@ block content
 					b.topText <--Please note that ALL orders are UK Delivery ONLY-->
 					br
 					br
-					button#remove(onclick = 'alert("This will remove everything from your basket");clearBasket()') Click Here to Clear your basket
+					button#remove(onclick = 'mdtoast("Everything has been removed from your basket", {type: mdtoast.WARNING});clearBasket();setTimeout(()=>{location.reload()},2000)') Click Here to Clear your basket
 		
 
    

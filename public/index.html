@@ -17,6 +17,8 @@
   	<script defer src="/scripts/luxon-1.11.4.js"></script>
   	<script defer src="/scripts/app.js"></script>
   	<script defer src="/scripts/install.js"></script>
+  	<link rel='stylesheet' type='text/css' href='/styles/mdtoast.css'>
+	<script defer type='text/javascript' src='/scripts/mdtoast.js'></script>
   	<script
     src="https://www.paypal.com/sdk/js?client-id=Af8BTjxaPJLgD3GWXiM_zaLw55vuS6dnc2BAcnBy2_E9BxW3pDQbUtDXcO4akBU5CyWxHYn4gk8PiY0B&currency=GBP"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
   </script>
@@ -31,7 +33,7 @@
 			}
   	</script>
 </head> 
-<body onload = 'checkBasket()'>
+<body onload = 'checkBasket();mdtoast("Welcome to Richmond Paper")'>
 	<header class = "header">
 		<h1 class = "pageTitle">
 			<a class = "pageTitleLink" href = "/">📎️ Richmond Paper Supply</a>
