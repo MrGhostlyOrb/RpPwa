@@ -174,6 +174,7 @@ function startServer() {
    		var myObject = req.body;      
    		console.log(myObject); 
    		let buyerName = myObject.name;
+   		let buyerTot = myObject.total;
    		var transporter = nodemailer.createTransport({   
    			service: 'Outlook365',   
    			auth: {     
@@ -184,8 +185,8 @@ function startServer() {
    		var mailOptions = {
   			from: cred.email,
   			to: cred.email,
-  			subject: 'New Payment From ' + userEmail,
-  			text: 'Confirmed Payment From : ' + buyerName
+  			subject: 'New Payment From ' + buyerName,
+  			text: 'Confirmed Payment From : ' + buyerName + ', for £' + buyerTot
 		};
 		
 			transporter.sendMail(mailOptions, function(error, info){

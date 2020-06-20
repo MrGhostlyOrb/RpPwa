@@ -170,7 +170,8 @@ function sendOrder(){
 function sendEmailConf(name){
 	console.log('Completed');
 	const bodyToSubmit = {
-		"name": name
+		"name": name,
+		"total": total
 	}
 	console.log(bodyToSubmit);
 	fetch('/foo3/', {
