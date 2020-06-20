@@ -38,7 +38,7 @@ function showBasketList(){
 	console.log(sPath)
 	if(sPath != '/confirmation'){
 	console.log('Normal basket')
-	const li = "<li class = 'listItem'>"
+	const li = "<li class = 'listItem2'>"
 	const cli = "</li>"
 	if(basketList2.length < 1){
 		listBasket.innerHTML = "Nothing in your basket yet";
@@ -52,7 +52,7 @@ function showBasketList(){
 	setTimeout(()=>{
 		console.log(resp);
 		
-		listBasket.innerHTML = listBasket.innerHTML + li + "Product Number : " + parsedList.Item.ProductNo + "<br>Quantity : " + parsedList.Item.Quantity + "<br>Name : " + resp[i].prodName + "<div onclick = 'removeFromBasket("+parsedList.Item.ProductNo+");setTimeout(()=>{location.reload()},1000);'>Remove</div>" + cli
+		listBasket.innerHTML = listBasket.innerHTML + li + "Product Number : " + parsedList.Item.ProductNo + "<br>Quantity : " + parsedList.Item.Quantity + "<br>Name : " + resp[i].prodName + "<div class = 'ord' onclick = 'removeFromBasket("+parsedList.Item.ProductNo+");setTimeout(()=>{location.reload()},1000);'>Remove</div>" + cli
 	},2000)}
 	}
 	}

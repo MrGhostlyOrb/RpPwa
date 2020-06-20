@@ -60,19 +60,18 @@ block content
 					//td.col
 						//input(class = 'input' id = 'time' name = 'time' type = 'date' value = '' required)
 				br
-			div.row2
-				div.pageInfo
-					div.card#order
-						p.card-text-title 
-							b Your Order 🗒️ So Far : 
+			div#order
+				div.card
+					p.card-text-title 
+						b Your Order 🗒️ So Far : 
 							
-							ul#listForBasket.listForBasket
+						ul#listForBasket.listForBasket
 			
-							input#butSubmit(class = 'sub' type = 'submit' value = 'Proceed to Payment')
-							br
-							b#tot Estimated total = 
-							br
-							div(id='paypal-button-container')
+						input#butSubmit(class = 'subpay' type = 'submit' value = 'Proceed to Payment')
+						br
+						b#tot Estimated total = 
+						br
+						div(id='paypal-button-container')
 
 
 
