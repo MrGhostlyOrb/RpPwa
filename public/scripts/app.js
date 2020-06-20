@@ -156,7 +156,8 @@ function sendOrder(){
       			return actions.order.capture().then(function(details) {
         		// This function shows a transaction success message to your buyer.
         			mdtoast('Transaction successfully completed by ' + details.payer.name.given_name + ', now loading confirmation page...', {type: mdtoast.SUCCESS, duration: 4000});
-        			sendEmailConf(details.payer.name.given_name);
+        			sendEmailConf(details.payer.name.given_name, details.id);
+        			localStorage.setItem('id', details.id);
         			setTimeout(()=>{
         			window.location.href = '/confirmation'
         			},4000)
@@ -167,7 +168,7 @@ function sendOrder(){
  }
 
 
-function sendEmailConf(name){
+function sendEmailConf(name, id){
 	console.log('Completed');
 	const name2 = document.getElementById("name").value;
 	const email = document.getElementById("email").value;
@@ -180,6 +181,7 @@ function sendEmailConf(name){
 		"email": email,
 		"phone": phone,
 		"total": total,
+		"ref": id,
 		"basket": JSON.parse(localStorage.getItem('copiedBasket'))
 	}
 	console.log(bodyToSubmit);
@@ -240,7 +242,8 @@ function getValue(){
   		setTimeout(()=>{
   		
   		if(sPath == '/confirmation'){
-  			document.getElementById('tot').innerHTML = "Your total was : £" + Math.round((total.total + Number.EPSILON) * 100) / 100
+  			document.getElementById('tot').innerHTML = "Your total was : £" + Math.round((total.total + Number.EPSILON) * 100) / 100;
+  			document.getElementById('ref').innerHTML = "Reference number : " + localStorage.getItem('id');
   		}else{
   		document.getElementById('tot').innerHTML = "Estimated total is : £" + Math.round((total.total + Number.EPSILON) * 100) / 100
   		}},250)

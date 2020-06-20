@@ -140,7 +140,7 @@ function startServer() {
    				console.log("Don't send")
    				sendMail = false;
    			}        
-   			list.push('Item Number : ' + parsed.Item.ProductNo);
+   			list.push('\nItem Number : ' + parsed.Item.ProductNo);
    			list.push('Quantity :' + parsed.Item.Quantity);
    		} 
    		let buyerName = myObject.name;
@@ -156,7 +156,7 @@ function startServer() {
   			from: cred.email,
   			to: cred.email,
   			subject: 'New Order + Payment From ' + buyerName,
-  			text: 'Confirmed Order + Payment From : ' + buyerName + ',\n Name given in app : '+ myObject.name2 +',\n Email given : '+ myObject.email +',\n Phone number given : '+ myObject.phone +',\n for £' + Math.round((buyerTot.total + Number.EPSILON) * 100) / 100 + '\n \n They ordered : ' + list.toString()
+  			text: 'Confirmed Order + Payment From : ' + buyerName + ',\n Name given in app : '+ myObject.name2 +',\n Email given : '+ myObject.email +',\n Phone number given : '+ myObject.phone +',\n Reference number : '+ myObject.ref + ',\n For £' + Math.round((buyerTot.total + Number.EPSILON) * 100) / 100 + '\n \n They ordered : \n \n' + list.toString()
 		};
 		
 			transporter.sendMail(mailOptions, function(error, info){
