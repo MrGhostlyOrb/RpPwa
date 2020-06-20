@@ -75,11 +75,11 @@ function startServer() {
 		});
 	app.get('/option2',function(req,res)
 		{  
-  			res.render('option2', {title:'Option2', message:'This is the option 2 home page'});
+  			res.render('option2', {title:'Option2', message:'This is the option 2 home page', grid: grid});
 		});
 	app.get('/option3',function(req,res)
 		{  
-  			res.render('option3', {title:'Option3', message:'This is the option 3 home page'});
+  			res.render('option3', {title:'Option3', message:'This is the option 3 home page', grid: grid});
 		});
 	app.get('/basket',function(req,res)
 		{  
