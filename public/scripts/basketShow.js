@@ -93,7 +93,7 @@ function checkQty(){
 	}
 	if(allGood === true){
 		sendBasket();
-		alert("Please complete the transaction with paypal or a Credit/Debit card after clicking 'OK'")
+		alert("Please complete the transaction with Paypal or a Credit/Debit card after clicking 'OK'")
 	}
 	
 }

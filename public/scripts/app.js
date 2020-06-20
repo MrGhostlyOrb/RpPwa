@@ -234,7 +234,7 @@ function getValue(){
   		}
   		setTimeout(()=>{
   		
-  		if(sPath = '/confirmation'){
+  		if(sPath == '/confirmation'){
   			document.getElementById('tot').innerHTML = "Your total was : £" + Math.round((total.total + Number.EPSILON) * 100) / 100
   		}else{
   		document.getElementById('tot').innerHTML = "Estimated total is : £" + Math.round((total.total + Number.EPSILON) * 100) / 100
