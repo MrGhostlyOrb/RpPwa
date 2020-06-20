@@ -155,7 +155,7 @@ function sendOrder(){
       		// This function captures the funds from the transaction.
       			return actions.order.capture().then(function(details) {
         		// This function shows a transaction success message to your buyer.
-        			mdtoast('Transaction successfully completed by ' + details.payer.name.given_name + ', now loading confirmation page', {type: mdtoast.SUCCESS, duration: 4000});
+        			mdtoast('Transaction successfully completed by ' + details.payer.name.given_name + ', now loading confirmation page...', {type: mdtoast.SUCCESS, duration: 4000});
         			sendEmailConf(details.payer.name.given_name);
         			setTimeout(()=>{
         			window.location.href = '/confirmation'
