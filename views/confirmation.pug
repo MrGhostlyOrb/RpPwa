@@ -28,7 +28,7 @@ block content
 				p.card-text-title
 					b Feedback
 					p.card-text It would be great if you could provide some feedback to us about your experience with this web app and what we could do to improve it.
-					form(onsubmit = 'sendFeedback()')
+					form(onsubmit = 'sendFeedback();mdtoast("Thanks for your feedback")')
 						input(type = 'textarea' id = 'feedback')
 						input(type = 'submit')
 				
