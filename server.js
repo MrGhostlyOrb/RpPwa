@@ -31,10 +31,6 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 //Variable to store user's email for orders
-var userEmail = "";
-var userName = "";
-var userPhone = "";
-var total = "";
 
 let productList = JSON.parse(fs.readFileSync('productList.json'));
 //Function to begin server and serve pages
@@ -120,14 +116,25 @@ function startServer() {
 };
 	var sendMail = true;
    	app.post("/foo/", function(req, res) { 
+   			console.log('Here');
+   		})
+
+   	app.post("/foo2/", function(req, res) { 
+   		console.log('here2');
    		
-   		setTimeout(() => {
-   		console.log('About to send mail');
-   		var list = [];
+   		
+   	})
+   	
+   	app.post("/foo3/", function(req, res) { 
    		var myObject = req.body;      
    		console.log(myObject); 
-   		for(var i = 0; i < myObject.length; i++){ 
-   			var parsed = JSON.parse(myObject[i]);
+   		let basket = myObject.basket
+   		console.log(basket);
+   		console.log('About to send mail');
+   		var list = [];
+   
+   		for(var i = 0; i < basket.length; i++){ 
+   			var parsed = JSON.parse(basket[i]);
    			
    			if(parsed.Item.Quantity === "undefined"){
    				console.log("Don't send")
@@ -136,43 +143,6 @@ function startServer() {
    			list.push('Item Number : ' + parsed.Item.ProductNo);
    			list.push('Quantity :' + parsed.Item.Quantity);
    		} 
-   		var transporter = nodemailer.createTransport({   
-   			service: 'Outlook365',   
-   			auth: {     
-   				user: cred.email,     
-   				pass: cred.password
-   				} 
-   		});
-   		var mailOptions = {
-  			from: cred.email,
-  			to: cred.email,
-  			subject: 'New Online Order From ' + userEmail,
-  			text: 'Their email : ' + userEmail + ', Their name : ' + userName + ', Their phone number : ' + userPhone + ', Their total : £' + Math.round((total + Number.EPSILON) * 100) / 100 + '\n \n They bought : ' + list.toString()
-		};
-		if(sendMail == true){
-			transporter.sendMail(mailOptions, function(error, info){
-  				if (error) {
-    				console.log(error);
-  				} 
-  				else {
-    				console.log('Email sent: ' + info.response);
-  				}
-			});
-		}
-   	}, 5000)})
-
-   	app.post("/foo2/", function(req, res) { 
-   		var myObject = req.body;      
-   		console.log(myObject); 
-   		userEmail = myObject.email;
-   		userName = myObject.name;
-   		userPhone = myObject.phone;
-   		total = myObject.total;
-   	})
-   	
-   	app.post("/foo3/", function(req, res) { 
-   		var myObject = req.body;      
-   		console.log(myObject); 
    		let buyerName = myObject.name;
    		let buyerTot = myObject.total;
    		var transporter = nodemailer.createTransport({   
@@ -185,8 +155,8 @@ function startServer() {
    		var mailOptions = {
   			from: cred.email,
   			to: cred.email,
-  			subject: 'New Payment From ' + buyerName,
-  			text: 'Confirmed Payment From : ' + buyerName + ', for £' + buyerTot
+  			subject: 'New Order + Payment From ' + buyerName,
+  			text: 'Confirmed Order + Payment From : ' + buyerName + ',\n Name given in app : '+ myObject.name2 +',\n Email given : '+ myObject.email +',\n Phone number given : '+ myObject.phone +',\n for £' + Math.round((buyerTot.total + Number.EPSILON) * 100) / 100 + '\n \n They ordered : ' + list.toString()
 		};
 		
 			transporter.sendMail(mailOptions, function(error, info){
@@ -210,25 +180,18 @@ function startServer() {
    		console.log(JSON.parse(body[0]).Item);
    		for(let i = 0; i < productList.data.length; i++){
    			for(let j = 0; j < body.length; j++){
-   				console.log(JSON.parse(body[j]).Item.ProductNo);
-   				console.log(productList.data[i].productNumber);
    				if(JSON.parse(body[j]).Item.ProductNo == productList.data[i].productNumber){
    					console.log('Found product');
-   					console.log(productList.data[i].productPrice);
    					total = total + (productList.data[i].productPrice * JSON.parse(body[j]).Item.Quantity);
-   					console.log(total);
 
-   				}
-   				else{
-   					console.log('no');
    				}
    			}
    			
    		
    		}}else{
-   		console.log('nah');
+   			console.log('No data sent');
    		}
-   		console.log(total);
+   		console.log("total is : " + total);
    		res.json({"total":total});
    		
    	

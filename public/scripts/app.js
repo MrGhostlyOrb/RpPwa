@@ -169,9 +169,18 @@ function sendOrder(){
 
 function sendEmailConf(name){
 	console.log('Completed');
+	const name2 = document.getElementById("name").value;
+	const email = document.getElementById("email").value;
+	const phone = document.getElementById("phone").value;
+	console.log(total);
+	//const time = document.getElementById("time").value;
 	const bodyToSubmit = {
 		"name": name,
-		"total": total
+		"name2": name2,
+		"email": email,
+		"phone": phone,
+		"total": total,
+		"basket": JSON.parse(localStorage.getItem('copiedBasket'))
 	}
 	console.log(bodyToSubmit);
 	fetch('/foo3/', {
@@ -281,10 +290,7 @@ function addQty(productNumber, basketList2, quantity){
 		if(parsedList.Item.ProductNo == productNumber){
 			console.log("found item");
 			parsedList.Item.Quantity = quantity;
-			console.log(parsedList.Item.Quantity);
-			console.log(parsedList);
 			basketList2[j] = JSON.stringify(parsedList);
-			console.log(basketList2[j])
 			localStorage.setItem('basket', JSON.stringify(basketList2));
 		}
 		else{

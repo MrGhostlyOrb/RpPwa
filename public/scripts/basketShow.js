@@ -76,7 +76,8 @@ function showBasketList(){
 	}
 }
 
-function checkQty(){
+function checkQty(e){
+	e.preventDefault();
 	var allGood = true;
 	for(let i = 0; i < basketList2.length; i++){
 	

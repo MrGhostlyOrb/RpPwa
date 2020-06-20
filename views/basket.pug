@@ -26,7 +26,7 @@ block content
 		
 
    
-		form#customerForm(name = 'form' class = 'form-data' method = 'post' onsubmit = 'sendData(event); checkQty();  getValue(); sendOrder(); copyBasket(); clearBasket();')
+		form#customerForm(name = 'form' class = 'form-data' method = 'post' onsubmit = 'checkQty(event);  copyBasket(); getValue(); sendOrder(); clearBasket();')
 			table.tab.card
 				tr.row
 					td.col
