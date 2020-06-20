@@ -48,7 +48,7 @@ for(let i = 0; i < productList.data.length; i++){
     let p = "<p class = 'card-text'>£" + item.productPrice + "</p>";
     let lab = "<label for='inp"+item.productNumber+"'>Quantity : </label>"
     let input = "<input type = 'number' placeholder = 'Quantity' class = 'input' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input>";
-    let submit = "<button type = 'sumbit' class = 'card-button-link' onclick = 'addJson(" + item.productNumber + ")' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Basket</button>"
+    let submit = "<button type = 'sumbit' class = 'card-button-link' onclick = 'addJson(" + item.productNumber + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Basket</button>"
     let r = "<button class = 'card-button-link' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
 	
 	let gridItem = "<div class = 'card'>" + img + h2 + p + lab + input + submit + r +"</div>"

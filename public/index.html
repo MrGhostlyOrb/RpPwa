@@ -31,7 +31,7 @@
 			}
   	</script>
 </head> 
-<body>
+<body onload = 'checkBasket()'>
 	<header class = "header">
 		<h1 class = "pageTitle">
 			<a class = "pageTitleLink" href = "/">📎️ Richmond Paper Supply</a>
@@ -76,4 +76,10 @@
 			<a class = "card-button-link" href = "/option3">Take me there!</a>
 		</div>
 	</div>
+	<div class="numberCircle" id = 'numberCircle'></div>
+	<div class="fab" onclick = "window.location.href = '/basket'">
+  <span class="fab-action-button" id = "fabSpan">
+        <i class="fab-action-button__icon"></i>
+    </span>
+</div>
 </body>
