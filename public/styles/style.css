@@ -194,6 +194,11 @@ label{
 	text-align:center;
 }
 
+#tot{
+	margin:2%;
+	margin-left:5%;
+}
+
 #remove{
 	width:100%;
 }
@@ -307,11 +312,11 @@ footer{
 
   .grid{
 	display:grid;
-	grid-template-columns: 80%; /* 5 cols */
+	grid-template-columns: 90%; /* 5 cols */
   	grid-template-rows:    40% 40% 40%;
   	grid-column-gap:2%;
   	grid-row-gap:2%;
-  	margin-left:15%;
+  	margin-left:10%;
   	margin-top:15%;
 }
 
@@ -414,10 +419,10 @@ footer{
 
   .grid{
 	display:grid;
-	grid-template-columns: 80%; /* 5 cols */
+	grid-template-columns: 90%; /* 5 cols */
   	grid-column-gap:2%;
   	grid-row-gap:2%;
-  	margin-left:15%;
+  	margin-left:10%;
   	margin-top:15%;
 }
 
@@ -499,10 +504,10 @@ footer{
 
   .grid{
 	display:grid;
-	grid-template-columns: 80%; /* 5 cols */
+	grid-template-columns: 90%; /* 5 cols */
   	grid-column-gap:2%;
   	grid-row-gap:2%;
-  	margin-left:15%;
+  	margin-left:10%;
   	margin-top:15%;
 }
 
