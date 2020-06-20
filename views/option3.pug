@@ -1,7 +1,8 @@
 extends layout.pug
 
+
 block content
-	body(onload = 'productLoad()')
+	body(onload = 'checkBasket()')
 		header.header
 			h1.pageTitle 
 				a.pageTitleLink(href = '/') 📎️ Richmond Paper Supply
@@ -15,4 +16,11 @@ block content
 					b Some text about the contents of this page
 		form#form(onsubmit='getValues(); return false;')
 			div.grid-product#grid-product
-	
+				| !{grid}
+		div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
+		div(class='fab' onclick = 'window.location.href = "/basket"')
+			span(class='fab-action-button' id = 'fabSpan')
+				i(class='fab-action-button__icon')
+				
+			
+
