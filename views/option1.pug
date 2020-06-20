@@ -17,7 +17,7 @@ block content
 		form#form(onsubmit='getValues(); return false;')
 			div.grid-product#grid-product
 				| !{grid}
-		div(class='numberCircle' id = 'numberCircle')
+		div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
 		div(class='fab' onclick = 'window.location.href = "/basket"')
 			span(class='fab-action-button' id = 'fabSpan')
 				i(class='fab-action-button__icon')
