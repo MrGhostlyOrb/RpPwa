@@ -31,16 +31,18 @@ block content
 					p Click here to print out your order confirmation:
 					br
 					a(class = 'btn purple' onclick = 'window.print();') Print
+						i(class = 'material-icons right') print
 				div.card-content
 					b Feedback : 
 					br
 					p It would be great if you could provide some feedback to us about your experience with this web app and what we could do to improve it.
-					form(onsubmit = 'sendFeedback();mdtoast("Thanks for your feedback")')
+					form#feedbackForm(onsubmit = 'sendFeedback();mdtoast("Thanks for your feedback")')
 						br
 						input(type = 'textarea' id = 'feedback')
 						br
 						br
-						input(type = 'submit' class = 'btn purple')
+						a(onclick = 'document.getElementById("feedbackForm").submit()' class = 'btn purple') Send 
+							i(class = 'material-icons right') send
 				
 			
 							
