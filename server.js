@@ -40,14 +40,14 @@ for(let i = 0; i < productList.data.length; i++){
 	let item = productList.data[i];
 	let loc = '"/product' + item.productNumber + '"';
 	let img = "<img class = 'cardImage' alt = 'Product Image' src = '" + item.imageURL + "'/>";
-    let h2 = "<h2 class = 'card-title'>" + item.productName + "</h2>";
-    let p = "<p class = 'card-text'>£" + item.productPrice + "</p>";
+    let h2 = "<span class = 'card-title'>" + item.productName + "</span>";
+    let p = "<p class = 'card-content'>£" + item.productPrice + "</p>";
     let lab = "<label for='inp"+item.productNumber+"'>Quantity : </label>"
     let input = "<input type = 'number' placeholder = 'Quantity' class = 'input' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input>";
     let submit = "<button type = 'sumbit' class = 'card-button-link' onclick = 'addJson(" + item.productNumber + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Basket</button>"
     let r = "<button class = 'card-button-link' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
 	
-	let gridItem = "<div class = 'card'>" + img + h2 + p + lab + input + submit + r +"</div>"
+	let gridItem = "<div class = 'card'><div class = 'card-image'>" + img + h2 + "</div>" + p + lab + input + submit + r +"</div>"
 			grid = grid + gridItem
 			
 }

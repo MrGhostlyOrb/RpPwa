@@ -3,24 +3,31 @@ extends layout.pug
 
 block content
 	body(onload = 'checkBasket()')
-		header.header
-			h1.pageTitle 
-				a.pageTitleLink(href = '/') 📎️ Richmond Paper Supply
-				a.powered-by(href = '/') Progressive Web App
-				button#butInstall(aria-label = 'Install')
-				button#butRefresh(aria-label = 'Refresh')
-				button#butBasket(aria-label = 'Basket' onclick = 'location.href = "/basket"')
+		div(class = navbar-fixed)
+			nav(id = 'nav' class = 'purple')
+				div(class='nav-wrapper')
+					a(href='/' class='card-content' id = 'title') 📎️ Richmond Paper Supply
+						ul(class='right hide-on-med-and-down')
+							li
+								a(id = 'butInstall' aria-label = 'install')
+									i(class='material-icons') add_circle_outline
+							li
+								a(id = 'butBasket' aria-label = 'basket')
+									i(class='material-icons') shopping_basket
+							li
+								a(id = 'butRefresh' aria-label = 'refresh')
+									i(class='material-icons') notifications
 		div.pageInfo
 			div.card
-				p.card-text-title
-					b Some text about the contents of this page
+				p.card-content
+					b Welcome to the #{ title } page
 		form#form(onsubmit='getValues(); return false;')
 			div.grid-product#grid-product
 				| !{grid}
 		div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
-		div(class='fab' onclick = 'window.location.href = "/basket"')
-			span(class='fab-action-button' id = 'fabSpan')
-				i(class='fab-action-button__icon')
+		div(class='fixed-action-btn' id = 'fabSpan' onclick = 'window.location.href = "/basket"')
+			a(class='btn-floating btn-large purple')
+				i(class='large material-icons') shopping_basket
 				
 			
 

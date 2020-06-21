@@ -18,6 +18,11 @@ header{
 	font-size:15px;
 }
 
+#title{
+	font-size:25px;
+	padding-left:20px;
+}
+
 .header .powered-by {
   color: white;
   font-size: 0.4em;
@@ -33,7 +38,7 @@ header{
 .ord{
 
 	background-color:#ef5350;
-	width:20%;
+	width:50%;
 	position:relative;
 	left:3%;
 	margin:2%;
@@ -88,14 +93,6 @@ label{
   	margin-top:5%;
   	
   	
-}
-
-.card{
-	background-color:white;
-  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  	border-radius:10px;
-  	display:grid;
-	grid-template-columns: 100%; /* 5 cols */
 }
 
 .card-home{
@@ -217,11 +214,6 @@ label{
 	padding:4%;
 }
 
-.card-title{
-	margin-top:2%;
-	padding-left:5%;
-}
-
 .card-button-link{
 	background-color:#ee98fb;
 	width:80%;
@@ -261,11 +253,12 @@ padding-left:10%;
 }
 .input {  
 padding-right:10%;
+	
 }
 
 .input{
 	background-color:#ee98fb;
-	width:70%;
+	width:80%;
 	padding:2% 3% 2% 3%;
 	margin-left:10%;
 	margin-top:5%;
@@ -281,7 +274,7 @@ padding-right:10%;
 	color:white;
 	padding:0.25%;
 	margin-left:5%;
-	padding-top:5px;
+	margin-top:20px;
 }
 
 footer{
@@ -290,7 +283,7 @@ footer{
 
 @media only screen and (max-width: 1070px) {
 
-
+	
 
 	
 	.pageTitle{
@@ -317,11 +310,11 @@ footer{
   .grid{
 	display:grid;
 	grid-template-columns: 90%; /* 5 cols */
-  	grid-template-rows:    40% 40% 40%;
+  	grid-template-rows:    50% 50% 50%;
   	grid-column-gap:2%;
   	grid-row-gap:2%;
   	margin-left:10%;
-  	margin-top:15%;
+  	margin-top:5%;
 }
 
 
@@ -332,7 +325,7 @@ footer{
   	grid-column-gap:2%;
   	grid-row-gap:2%;
   	margin-left:10%;
-  	margin-top:15%;
+  	margin-top:5%;
   	
 }
 
@@ -348,13 +341,7 @@ footer{
 	margin-top:80%;
 }
 
-.card{
-	background-color:white;
-  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  	border-radius:10px;
-  	display:grid;
-	grid-template-columns: 100%; /* 5 cols */
-}
+
 
 .card-home{
 	background-color:white;
@@ -424,10 +411,11 @@ footer{
   .grid{
 	display:grid;
 	grid-template-columns: 90%; /* 5 cols */
+	grid-template-rows:35% 35% 35%;
   	grid-column-gap:2%;
   	grid-row-gap:2%;
   	margin-left:10%;
-  	margin-top:15%;
+  	margin-top:5%;
 }
 
 
@@ -437,7 +425,7 @@ footer{
   	grid-column-gap:2%;
   	grid-row-gap:2%;
   	margin-left:10%;
-  	margin-top:15%;
+  	margin-top:5%;
   	
 }
 
@@ -512,7 +500,7 @@ footer{
   	grid-column-gap:2%;
   	grid-row-gap:2%;
   	margin-left:10%;
-  	margin-top:15%;
+  	margin-top:5%;
 }
 
 
@@ -522,7 +510,7 @@ footer{
   	grid-column-gap:2%;
   	grid-row-gap:2%;
   	margin-left:10%;
-  	margin-top:15%;
+  	margin-top:5%;
   	
 }
 }
@@ -667,6 +655,6 @@ footer{
     text-align: center;
     font-size: 15px;
     border: 2px solid #666;
-    z-index:100;
+    z-index:10000;
     background-color:white;
 }

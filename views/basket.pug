@@ -7,22 +7,30 @@ block content
 	
 	body(onload = 'getValue();mdtoast("Loading your basket", {duration: 2000})')
 		script(defer src='/scripts/basketShow.js')
-		header.header
-			h1.pageTitle 
-				a.pageTitleLink(href = '/') 📎️ Richmond Paper Supply
-				a.powered-by(href = '/') Progressive Web App
-				button#butInstall(aria-label = 'Install')
-				button#butRefresh(aria-label = 'Refresh')
+		div(class = navbar-fixed)
+			nav(id = 'nav' class = 'purple')
+				div(class='nav-wrapper')
+					a(href='/' class='card-content' id = 'title') 📎️ Richmond Paper Supply
+						ul(class='right hide-on-med-and-down')
+							li
+								a(id = 'butInstall' aria-label = 'install')
+									i(class='material-icons') add_circle_outline
+							li
+								a(id = 'butBasket' aria-label = 'basket')
+									i(class='material-icons') shopping_basket
+							li
+								a(id = 'butRefresh' aria-label = 'refresh')
+									i(class='material-icons') notifications
 		div.pageInfo
 			div.card
-				p.card-text-title
+				p.card-content
 					b.topText Welcome To Your Basket
 					br
 					br
-					b.topText <--Please note that ALL orders are UK Delivery ONLY-->
+					b.topText Please note that ALL orders are UK Delivery ONLY
 					br
 					br
-					button#remove(onclick = 'mdtoast("Everything has been removed from your basket", {type: mdtoast.WARNING});clearBasket();setTimeout(()=>{location.reload()},2000)') Click Here to Clear your basket
+					a#remove(class = 'btn red' onclick = 'mdtoast("Everything has been removed from your basket", {type: mdtoast.WARNING});clearBasket();setTimeout(()=>{location.reload()},2000)') Click Here to Clear your basket
 		
 
    
@@ -70,7 +78,7 @@ block content
 						b#tot Estimated total =
 						br
 						 
-						input#butSubmit(class = 'subpay' type = 'submit' value = 'Proceed to Payment')
+						input#butSubmit(class = 'subpay btn purple' type = 'submit' value = 'Proceed to Payment')
 						br
 						div(id='paypal-button-container')
 
