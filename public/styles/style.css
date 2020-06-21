@@ -445,6 +445,10 @@ footer{
 	body,html{
 		background-color:#292929;
 	}
+	#title{
+		background-color:purple;
+	}
+	
 	.card, .card-content{
 		background-color:#1d1d1d;
 		color:white;
