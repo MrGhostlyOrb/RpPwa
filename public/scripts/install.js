@@ -2,6 +2,7 @@
 
 let deferredInstallPrompt = null;
 const installButton2 = document.getElementById('butInstall2');
+const installButton = document.getElementById('butInstall');
 installButton.addEventListener('click', installPWA);
 installButton2.addEventListener('click', installPWA);
 
