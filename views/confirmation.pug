@@ -22,7 +22,7 @@ block content
 				div.card-content
 					h5 Order Confirmation:
 					p Thank you for placing your order with Richmond Paper Supply, our team in the office has been notified of your order and you should recieve a confirmation of your order shortly. Thank you.
-					ul#listForBasket.listForBasket
+					a#coll.collection
 					br
 					p#tot Your total was
 					br
@@ -36,12 +36,12 @@ block content
 					b Feedback : 
 					br
 					p It would be great if you could provide some feedback to us about your experience with this web app and what we could do to improve it.
-					form#feedbackForm(onsubmit = 'sendFeedback();mdtoast("Thanks for your feedback")')
+					form#feedbackForm()
 						br
-						input(type = 'textarea' id = 'feedback')
+						input(type = 'textarea' id = 'feedback' required)
 						br
 						br
-						a(onclick = 'document.getElementById("feedbackForm").submit()' class = 'btn purple') Send 
+						a(onclick = 'if(document.getElementById("feedback").value != ""){sendFeedback();mdtoast("Thanks for your feedback")}else{console.log("Not sending")}' class = 'btn purple') Send 
 							i(class = 'material-icons right') send
 				
 			

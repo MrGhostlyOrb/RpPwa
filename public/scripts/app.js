@@ -257,6 +257,7 @@ function getValue(){
 }
 
 function sendFeedback(){
+	console.log('Sending');
 	let text = {"feedBack":document.getElementById('feedback').value};
 	fetch('/feedback', {
   		method: 'post',

@@ -5,7 +5,7 @@ if(window.location.pathname == '/basket'){
 	document.getElementById('customerForm').addEventListener('submit', () => {setTimeout(()=>{document.getElementById('prog').style.display = 'block'},10000)})
 }
 
-let listBasket = document.getElementById("listForBasket")
+let listBasket = document.getElementById("coll")
 let basketList2;
 let resp = [];
 
@@ -41,8 +41,10 @@ function showBasketList(){
 	console.log(sPath)
 	if(sPath != '/confirmation'){
 	console.log('Normal basket')
-	const li = "<li class = 'listItem2'>"
-	const cli = "</li>"
+	const li = "<a href = '#!' class = 'collection-item'>"
+	const span1 = "<span left data-badge-caption = '' class='new badge'>Quantity : "
+	const span2 = "</span>"
+	const cli = "</a>"
 	if(basketList2.length < 1){
 		listBasket.innerHTML = "Nothing in your basket yet";
 	}
@@ -53,17 +55,16 @@ function showBasketList(){
 	const parsedList = JSON.parse(basketList2[i]);
 	getOtherInfo(parsedList.Item.ProductNo);
 	setTimeout(()=>{
-		console.log(resp);
 		
-		listBasket.innerHTML = listBasket.innerHTML + li + "Product Number : " + parsedList.Item.ProductNo + "<br>Quantity : " + parsedList.Item.Quantity + "<br>Name : " + resp[i].prodName + "<br><a class = 'ord btn red' onclick = 'removeFromBasket("+parsedList.Item.ProductNo+");setTimeout(()=>{location.reload()},1000);'>Remove</a>" + cli
+		listBasket.innerHTML = listBasket.innerHTML + li + span1 + parsedList.Item.Quantity + span2 + "Product Name : " + resp[i].prodName + "<br><br><div class = 'btn-small red' onclick = 'removeFromBasket("+parsedList.Item.ProductNo+");setTimeout(()=>{location.reload()},1000);'>Remove</div>" + cli;
 	},2000)}
 	}
 	}
 	else{
 	console.log('Not normal basket');
 	let copiedBasketList2 = JSON.parse(localStorage.getItem('copiedBasket'));
-	const li = "<li class = 'listItem'>"
-	const cli = "</li>"
+	const li = "<a class = 'collection-item'>"
+	const cli = "</a>"
 	if(copiedBasketList2.length < 1){
 		listBasket.innerHTML = "Nothing in your basket yet";
 	}
