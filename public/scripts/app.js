@@ -306,7 +306,7 @@ function checkBasket(){
 	let noItems = JSON.parse(localStorage.getItem('basket')).length
 	document.getElementById('fabSpan').setAttribute('data-tooltip', "Items in Basket : " + noItems);
 	document.getElementById('numberCircle').innerHTML = noItems;
-	document.getElementById('butBasket').setAttribute('onclick', ()=>{location.href = "/basket";});
+	document.getElementById('butBasket').setAttribute('onclick', 'location.href = "/basket";');
 	
 }
 
