@@ -36,8 +36,12 @@ block content
    
 		form#customerForm(name = 'form' class = 'form-data' method = 'post' onsubmit = 'checkQty(event);  copyBasket(); getValue(); sendOrder();')
 			table.tab.card
+				
 				tr.row
+					
 					td.col
+						h6 Delivery Form : 
+						br
 						label(for='name') Name :
 					td.col
 						input(class = 'input' placeholder = 'Name' id = 'name' name = 'name' type = 'text' value = '' required autofocus)
