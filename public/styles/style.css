@@ -243,9 +243,7 @@ label{
 	position:relative;
 }
 .col{
-	position:relative;
-	left:20%;
-	width:60%;
+	width:100%;
 
 }
 .row2{
