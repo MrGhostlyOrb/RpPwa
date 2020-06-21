@@ -69,6 +69,10 @@ header{
 
 }
 
+#prog{
+	display:none;
+}
+
 label{
 	margin-left: 5%;
 	margin-top:1%;
@@ -353,6 +357,7 @@ footer{
   	display:grid;
 	grid-template-columns: 100%; /* 5 cols */
 }
+
 
 #customerForm{
 	width:90%;

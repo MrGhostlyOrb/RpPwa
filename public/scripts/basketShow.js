@@ -1,6 +1,7 @@
 //Execute code in strict method
 'use strict';
 
+document.getElementById('customerForm').addEventListener('submit', () => {setTimeout(()=>{document.getElementById('prog').style.display = 'block'},10000)})
 
 let listBasket = document.getElementById("listForBasket")
 let basketList2;
