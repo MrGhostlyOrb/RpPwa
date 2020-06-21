@@ -387,9 +387,9 @@ footer{
 		background-color:purple;
 	}
 	.dark{
-		background-color:#292929 !important;
+		background-color:#1d1d1d !important;
 		color:white;
-		border: 1px solid #292929;
+		border: 1px solid #1d1d1d;
 	}
 	
 	.card, .card-content{
