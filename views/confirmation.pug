@@ -37,11 +37,13 @@ block content
 					br
 					a(class = 'btn purple' onclick = 'window.print();') Print
 				div.card-content
-					b Feedback
+					b Feedback : 
 					br
 					p It would be great if you could provide some feedback to us about your experience with this web app and what we could do to improve it.
 					form(onsubmit = 'sendFeedback();mdtoast("Thanks for your feedback")')
+						br
 						input(type = 'textarea' id = 'feedback')
+						br
 						input(type = 'submit' class = 'btn purple')
 				
 			
