@@ -466,7 +466,7 @@ footer{
 		color:white;
 	}
 	input{
-		color:white;
+		color:white !important;
 	}
 
 }
