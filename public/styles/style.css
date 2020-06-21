@@ -243,7 +243,7 @@ label{
 	position:relative;
 }
 .col{
-	width:55%;
+	width:100%;
 
 }
 .row2{
@@ -411,8 +411,7 @@ footer{
 	
 	}
 	.tab{
-		margin-left:5%;
-		width:90%;
+		width:100%;
 	}
 
   .grid{
