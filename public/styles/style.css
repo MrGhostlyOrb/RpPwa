@@ -389,6 +389,7 @@ footer{
 	.dark{
 		background-color:#292929 !important;
 		color:white;
+		border: 1px solid #292929;
 	}
 	
 	.card, .card-content{
