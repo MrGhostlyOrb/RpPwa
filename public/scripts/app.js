@@ -28,8 +28,7 @@ function addJson(ProductNo, Qty, Name){
 			isFound = true;
 			mdtoast('This product is already in your basket.', {type: mdtoast.ERROR});
 		}
-		}
-	
+	}
 	if(isFound === false){
 		mdtoast('Product added to your basket', {type: mdtoast.SUCCESS});
 		basketList.push('{"Item":{"ProductNo" :"' + ProductNo + '", "Quantity" :"' + Qty + '"}}');
@@ -37,7 +36,6 @@ function addJson(ProductNo, Qty, Name){
 		bg.style.backgroundColor = "#ba68c8";
 		localStorage.setItem('basket', JSON.stringify(basketList));
 	}
-	
 }
 
 //Function to remove an item from the customer's basket
@@ -137,7 +135,9 @@ function showNotification(title, message) {
     	});
   	}
 }
+
 let x = '15';
+
 function sendOrder(){
 	setTimeout(() => {
 		console.log(total);
@@ -161,14 +161,13 @@ function sendOrder(){
         			localStorage.setItem('id', details.id);
         			clearBasket();
         			setTimeout(()=>{
-        			window.location.href = '/confirmation'
+        				window.location.href = '/confirmation'
         			},4000)
       			});
     		}
   		}).render('#paypal-button-container');
-  	},500);
- }
-
+	},500);
+}
 
 function sendEmailConf(name, id){
 	console.log('Completed');
@@ -201,7 +200,9 @@ function sendEmailConf(name, id){
 	}).then(res=>res.json())
   		.then(res => console.log(res));
 }
+
 let copiedBasket;
+
 function copyBasket(){
 	console.log('copying basket');
 	copiedBasket = localStorage.getItem('basket')
@@ -230,30 +231,29 @@ function getValue(){
   		});
   		}else{
   			fetch('/price',
-		{
-			method: 'post',
-  			headers: {
-    			'Accept': 'application/json',
-    			'Content-Type': 'application/json'
-  				},
-  			body: localStorage.getItem('copiedBasket')
+				{
+					method: 'post',
+  					headers: {
+    					'Accept': 'application/json',
+    					'Content-Type': 'application/json'
+  						},
+  					body: localStorage.getItem('copiedBasket')
 	
-		}).then(res=>res.json())
-  		.then(res => total = res).catch((err)=>{
-  		console.log('Empty Order'); 
-  		total = '0';
-  		
-  		});
+				}).then(res=>res.json())
+  					.then(res => total = res).catch((err)=>{
+  						console.log('Empty Order'); 
+  						total = '0';
+  					});
   		}
   		setTimeout(()=>{
-  		
-  		if(sPath == '/confirmation'){
-  			document.getElementById('tot').innerHTML = "Your total was : £" + Math.round((total.total + Number.EPSILON) * 100) / 100;
-  			document.getElementById('ref').innerHTML = "Reference number : " + localStorage.getItem('id');
-  		}else{
-  		document.getElementById('tot').innerHTML = "Estimated total is : £" + Math.round((total.total + Number.EPSILON) * 100) / 100
-  		}},250)
-  		
+  			if(sPath == '/confirmation'){
+  				document.getElementById('tot').innerHTML = "Your total was : £" + Math.round((total.total + Number.EPSILON) * 100) / 100;
+  				document.getElementById('ref').innerHTML = "Reference number : " + localStorage.getItem('id');
+  			}
+  			else{
+  				document.getElementById('tot').innerHTML = "Estimated total is : £" + Math.round((total.total + Number.EPSILON) * 100) / 100
+  			}
+  		},250)
 }
 
 function sendFeedback(){
@@ -272,24 +272,25 @@ function sendFeedback(){
 //Function to get the user's selected quantity of item
 function getValues(){
 	setTimeout(()=>{
-	const inputs = document.getElementsByClassName('input');
-	console.log(inputs);
-	for(var i = 0; i < inputs.length; i++){
-		if(inputs[i].value === ""){
-			continue
-		}
-		else{
-			console.log("found input")
-			var productNumber = inputs[i].id.substr(3);
-			if (localStorage.getItem('basket')){
-				var basketList2 = JSON.parse(localStorage.getItem('basket'));
-				addQty(productNumber, basketList2, inputs[i].value);
+		const inputs = document.getElementsByClassName('input');
+		console.log(inputs);
+		for(var i = 0; i < inputs.length; i++){
+			if(inputs[i].value === ""){
+				continue
 			}
 			else{
-				mdtoast("There is nothing in your basket", {type: mdtoast.ERROR})
+				console.log("found input")
+				var productNumber = inputs[i].id.substr(3);
+				if (localStorage.getItem('basket')){
+					var basketList2 = JSON.parse(localStorage.getItem('basket'));
+					addQty(productNumber, basketList2, inputs[i].value);
+				}
+				else{
+					mdtoast("There is nothing in your basket", {type: mdtoast.ERROR})
+				}
 			}
 		}
-	}},300)
+	},300)
 }
 
 //Function to add quantity to the basket
@@ -315,6 +316,5 @@ function checkBasket(){
 	document.getElementById('butBasket').setAttribute('onclick', 'location.href = "/basket";');
 	
 }
-
 
 init();
