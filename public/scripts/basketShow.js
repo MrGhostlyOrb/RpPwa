@@ -1,8 +1,9 @@
 //Execute code in strict method
 'use strict';
 
-if(window.location.href == '/basket'){
-document.getElementById('customerForm').addEventListener('submit', () => {setTimeout(()=>{document.getElementById('prog').style.display = 'block'},10000)})}
+if(window.location.pathname == '/basket'){
+	document.getElementById('customerForm').addEventListener('submit', () => {setTimeout(()=>{document.getElementById('prog').style.display = 'block'},10000)})
+}
 
 let listBasket = document.getElementById("listForBasket")
 let basketList2;
