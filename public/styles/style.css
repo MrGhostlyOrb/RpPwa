@@ -386,6 +386,9 @@ footer{
 	#title{
 		background-color:purple;
 	}
+	#coll{
+		background-color:#292929 !important;
+	}
 	
 	.card, .card-content{
 		background-color:#1d1d1d !important;
