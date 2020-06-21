@@ -63,7 +63,7 @@ function showBasketList(){
 	else{
 	console.log('Not normal basket');
 	let copiedBasketList2 = JSON.parse(localStorage.getItem('copiedBasket'));
-	const li = "<a class = 'collection-item'>"
+	const li = "<a class = 'dark collection-item'>"
 	const cli = "</a>"
 	if(copiedBasketList2.length < 1){
 		listBasket.innerHTML = "Nothing in your basket yet";
