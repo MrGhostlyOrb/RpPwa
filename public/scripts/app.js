@@ -158,6 +158,7 @@ function sendOrder(){
         			mdtoast('Transaction successfully completed by ' + details.payer.name.given_name + ', now loading confirmation page...', {type: mdtoast.SUCCESS, duration: 4000});
         			sendEmailConf(details.payer.name.given_name, details.id);
         			localStorage.setItem('id', details.id);
+        			clearBasket();
         			setTimeout(()=>{
         			window.location.href = '/confirmation'
         			},4000)
