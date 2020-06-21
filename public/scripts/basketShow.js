@@ -41,7 +41,7 @@ function showBasketList(){
 	console.log(sPath)
 	if(sPath != '/confirmation'){
 	console.log('Normal basket')
-	const li = "<a href = '#!' class = 'collection-item'>"
+	const li = "<a href = '#!' class = 'dark collection-item'>"
 	const span1 = "<span left data-badge-caption = '' class='new badge'>Quantity : "
 	const span2 = "</span>"
 	const cli = "</a>"
