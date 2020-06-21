@@ -36,12 +36,13 @@ block content
 					p Click here to print out your order confirmation:
 					br
 					a(class = 'btn purple' onclick = 'window.print();') Print
-				p.card-content
+				div.card-content
 					b Feedback
-					pIt would be great if you could provide some feedback to us about your experience with this web app and what we could do to improve it.
+					br
+					p It would be great if you could provide some feedback to us about your experience with this web app and what we could do to improve it.
 					form(onsubmit = 'sendFeedback();mdtoast("Thanks for your feedback")')
 						input(type = 'textarea' id = 'feedback')
-						input(type = 'submit')
+						input(type = 'submit' class = 'btn purple')
 				
 			
 							
