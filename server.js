@@ -126,7 +126,7 @@ function startServer() {
    	})
    	
    	app.post("/foo3/", function(req, res) { 
-   		var myObject = req.body;      
+   		var myObject = req.body;   
    		console.log(myObject); 
    		let basket = myObject.basket
    		console.log(basket);

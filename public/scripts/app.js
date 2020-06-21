@@ -87,6 +87,7 @@ function sendData(e){
 	const name = document.getElementById("name").value;
 	const email = document.getElementById("email").value;
 	const phone = document.getElementById("phone").value;
+	
 	console.log(total);
 	//const time = document.getElementById("time").value;
 	const bodyToSubmit = {
@@ -174,6 +175,8 @@ function sendEmailConf(name, id){
 	const name2 = document.getElementById("name").value;
 	const email = document.getElementById("email").value;
 	const phone = document.getElementById("phone").value;
+	const address = document.getElementById("address").value;
+	const postcode = document.getElementById("postcode").value;
 	console.log(total);
 	//const time = document.getElementById("time").value;
 	const bodyToSubmit = {
@@ -181,6 +184,8 @@ function sendEmailConf(name, id){
 		"name2": name2,
 		"email": email,
 		"phone": phone,
+		"address": address,
+		"postcode": postcode,
 		"total": total,
 		"ref": id,
 		"basket": JSON.parse(localStorage.getItem('copiedBasket'))
