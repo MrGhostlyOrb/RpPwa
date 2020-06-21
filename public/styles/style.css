@@ -445,7 +445,7 @@ footer{
 	body,html{
 		background-color:#292929;
 	}
-	.card{
+	.card, .card-content{
 		background-color:#1d1d1d;
 		color:white;
 	}
