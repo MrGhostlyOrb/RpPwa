@@ -389,7 +389,7 @@ footer{
 	.dark{
 		background-color:#1d1d1d !important;
 		color:white;
-		border: 0px solid #1d1d1d;
+		border: 1px solid #1d1d1d;
 	}
 	
 	.card, .card-content{
