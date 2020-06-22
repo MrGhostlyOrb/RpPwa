@@ -57,7 +57,7 @@ function showBasketList(){
 	getOtherInfo(parsedList.Item.ProductNo);
 	setTimeout(()=>{
 		
-		listBasket.innerHTML = listBasket.innerHTML + li + span1 + parsedList.Item.Quantity + span2 + "Product Name : " + resp[i].prodName + "<br><br><div class = 'btn-small red' onclick = 'removeFromBasket("+parsedList.Item.ProductNo+");setTimeout(()=>{location.reload()},1000);'>Remove</div>" + cli;
+		listBasket.innerHTML = listBasket.innerHTML + li + span1 + parsedList.Item.Quantity + span2 + "Product Name : " + resp[i].prodName + "<br><br><div class = 'btn-small red waves-effect' onclick = 'removeFromBasket("+parsedList.Item.ProductNo+");setTimeout(()=>{location.reload()},1000);'>Remove</div>" + cli;
 	},2000)}
 	}
 	}
