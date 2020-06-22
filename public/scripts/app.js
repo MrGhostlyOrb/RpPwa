@@ -4,6 +4,11 @@
 //Variable to store the user's basket
 let basketList;
 let total;
+
+if(window.matchMedia('(display-mode: standalone)').matches){
+	document.getElementById('butInstall2').className = document.getElementById('butInstall2').className + " disabled";
+}
+
 //Check if there is a basket already in local storage
 if (localStorage.getItem('basket')){
 	basketList = JSON.parse(localStorage.getItem('basket'));
