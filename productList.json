@@ -29,6 +29,12 @@
 	"productName":"James",
 	"productPrice":702.46,
 	"productNumber":15
+	},
+	{
+	"imageURL":"/images/products/coke.jpg",
+	"productName":"Coke 330ml",
+	"productPrice":7.20,
+	"productNumber":"C101"
 	}
 	]
 }

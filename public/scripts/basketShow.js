@@ -41,7 +41,8 @@ function showBasketList(){
 	console.log(sPath)
 	if(sPath != '/confirmation'){
 	console.log('Normal basket')
-	const li = "<a href = '#!' class = 'dark collection-item'>"
+	const li1 = "<a href = '/product";
+	const li2 = "' class = 'dark collection-item'>"
 	const span1 = "<span left data-badge-caption = '' class='new badge'>Quantity : "
 	const span2 = "</span>"
 	const cli = "</a>"
@@ -57,7 +58,7 @@ function showBasketList(){
 	getOtherInfo(parsedList.Item.ProductNo);
 	setTimeout(()=>{
 		
-		listBasket.innerHTML = listBasket.innerHTML + li + span1 + parsedList.Item.Quantity + span2 + "Product Name : " + resp[i].prodName + "<br><br><div class = 'btn-small red waves-effect' onclick = 'removeFromBasket("+parsedList.Item.ProductNo+");setTimeout(()=>{location.reload()},1000);'>Remove</div>" + cli;
+		listBasket.innerHTML = listBasket.innerHTML + li1 + parsedList.Item.ProductNo + li2 + span1 + parsedList.Item.Quantity + span2 + "Product Name : " + resp[i].prodName + "<br><br>"+"Price per qty : £" + resp[i].prodPrice.toFixed(2) +"<br><br><div class = 'btn-small red waves-effect' onclick = 'removeFromBasket("+ "\"" +parsedList.Item.ProductNo+ "\"" +");setTimeout(()=>{location.reload()},1000);'>Remove</div>" + cli;
 	},2000)}
 	}
 	}

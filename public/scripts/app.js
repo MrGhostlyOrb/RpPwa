@@ -23,7 +23,9 @@ localStorage.setItem('basket', JSON.stringify(basketList));
 
 //Function to add a product to the user's basket
 function addJson(ProductNo, Qty, Name){
-	
+	console.log(ProductNo);
+	console.log(Qty);
+	console.log(Name);
 	basketList = JSON.parse(localStorage.getItem('basket'));
 	//Check if the product is already in the basket
 	let isFound = false;
@@ -316,6 +318,8 @@ function getValues(){
 function addQty(productNumber, basketList2, quantity){
 	for(let j = 0; j < basketList2.length; j++){
 		const parsedList = JSON.parse(basketList[j]);
+		console.log(parsedList.Item.ProductNo);
+		console.log(productNumber);
 		if(parsedList.Item.ProductNo == productNumber){
 			console.log("found item");
 			parsedList.Item.Quantity = quantity;
