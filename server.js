@@ -49,7 +49,7 @@ for(let i = 0; i < productList.data.length; i++){
    	let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
     let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
     let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
-	let gridItem = "<div class = 'card'><div class = 'card-image'>" + img + h2 + "</div>" + p + lab + input + submit + r +"</div>"
+	let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + h2 + "</div>" + p + lab + input + submit + r +"</div>"
 	
 	//Add item to the grid
 	grid = grid + gridItem	
@@ -114,7 +114,10 @@ function startServer() {
 			res.render('product', 
 				{
 					product: item.productNumber,
-					productDescription: item.productInfo
+					productDescription: item.productInfo,
+					productPrice: item.productPrice,
+					productImage: item.imageURL,
+					productName: item.productName
 				});
 			})
 		}

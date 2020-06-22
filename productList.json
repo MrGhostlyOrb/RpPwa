@@ -1,40 +1,46 @@
-{"resultDescription":"SUCCESS",
+{"resultInfo":"SUCCESS",
 	"data":[
 	{
 	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
 	"productName":"Oswaldo",
 	"productPrice":504.74,
-	"productNumber":36
+	"productNumber":36,
+	"productInfo":"Info here"
 	},
 	{
 	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
 	"productName":"Angeline",
 	"productPrice":553.6,
-	"productNumber":12
+	"productNumber":12,
+	"productInfo":"Info here"
 	},
 	{
 	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
 	"productName":"Gerardo",
 	"productPrice":578.03,
-	"productNumber":5
+	"productNumber":5,
+	"productInfo":"Info here"
 	},
 	{
 	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
 	"productName":"Nicki",
 	"productPrice":602.46,
-	"productNumber":7
+	"productNumber":7,
+	"productInfo":"Info here"
 	},
 	{
 	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
 	"productName":"James",
 	"productPrice":702.46,
-	"productNumber":15
+	"productNumber":15,
+	"productInfo":"Info here"
 	},
 	{
 	"imageURL":"/images/products/coke.jpg",
 	"productName":"Coke 330ml",
 	"productPrice":7.20,
-	"productNumber":"C101"
+	"productNumber":"C101",
+	"productInfo":"Info here"
 	}
 	]
 }

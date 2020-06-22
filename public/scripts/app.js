@@ -51,8 +51,6 @@ function addJson(ProductNo, Qty, Name){
 		else{
 		mdtoast('Product added to your basket', {type: mdtoast.SUCCESS});
 		basketList.push('{"Item":{"ProductNo" :"' + ProductNo + '", "Quantity" :"' + Qty + '"}}');
-		let bg = document.getElementById("sub" + ProductNo);
-		bg.style.backgroundColor = "#ba68c8";
 		localStorage.setItem('basket', JSON.stringify(basketList));
 		}
 	}
