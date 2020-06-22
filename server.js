@@ -174,7 +174,7 @@ function startServer() {
   			from: cred.email,
   			to: cred.email,
   			subject: 'New Order + Payment From ' + buyerName,
-  			text: 'Confirmed Order + Payment From : ' + buyerName + ',\n Name given in app : '+ myObject.name2 +',\n Email given : '+ myObject.email +',\n Phone number given : '+ myObject.phone +',\n Reference number : '+ myObject.ref + ',\n For £' + Math.round((buyerTot.total + Number.EPSILON) * 100) / 100 + '\n \n They ordered : \n \n' + list.toString()
+  			text: 'Confirmed Order + Payment From : ' + buyerName + ',\n Name given in app : '+ myObject.name2 +',\n Email given : '+ myObject.email +',\n Phone number given : '+ myObject.phone +',\n Reference number : '+ myObject.ref + ',\n For £' + buyerTot.total.toFixed(2) + '\n \n They ordered : \n \n' + list.toString()
 		};
 		transporter.sendMail(mailOptions, function(error, info){
   			if (error) {
@@ -188,7 +188,7 @@ function startServer() {
   			from: cred.email,
   			to: myObject.email,
   			subject: 'Richmond Paper Supply Order Confirmation ',
-  			text: 'Thank you for your order on the Richmond Paper Supply website ' + buyerName + ',\n \n Your reference number for this order is : '+ myObject.ref + ' please keep this for future reference,\n \n Your order total was £' + Math.round((buyerTot.total + Number.EPSILON) * 100) / 100 + '\n \n Products ordered : \n \n' + list.toString() + '\n \n Delivery Address : ' + myObject.address + ', ' + myObject.postcode + '\n \n If you have any issues with your order please contact us on : 0151 933 1000'
+  			text: 'Thank you for your order on the Richmond Paper Supply website ' + buyerName + ',\n \n Your reference number for this order is : '+ myObject.ref + ' please keep this for future reference,\n \n Your order total was £' + buyerTot.total.toFixed(2) + '\n \n Products ordered : \n \n' + list.toString() + '\n \n Delivery Address : ' + myObject.address + ', ' + myObject.postcode + '\n \n If you have any issues with your order please contact us on : 0151 933 1000'
 		};
 		transporter.sendMail(mailOptions, function(error, info){
   			if (error) {
