@@ -42,7 +42,7 @@ for(let i = 0; i < productList.data.length; i++){
 				
 	let item = productList.data[i];
 	let loc = '"/product' + item.productNumber + '"';
-	let img = "<img class = 'cardImage' alt = 'Product Image' src = '" + item.imageURL + "'/>";
+	let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "'/>";
     let h2 = "<span class = 'card-title'>" + item.productName + "</span>";
    	let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
    	let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
