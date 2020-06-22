@@ -15,7 +15,7 @@ if (localStorage.getItem('basket')){
 	showBasketList();
 }
 else{
-	listBasket.append("<li>There is nothing in your basket</li>")
+	listBasket.append("<a class = 'collection-item dark'>There is nothing in your basket</a>")
 }
 
 localStorage.setItem('basket', JSON.stringify(basketList2));
@@ -46,7 +46,8 @@ function showBasketList(){
 	const span2 = "</span>"
 	const cli = "</a>"
 	if(basketList2.length < 1){
-		listBasket.innerHTML = "Nothing in your basket yet";
+		listBasket.innerHTML = "<a class = 'collection-item dark'>There is nothing in your basket.</a>";
+		document.getElementById('butSubmit').className = document.getElementById('butSubmit').className + " disabled";
 	}
 	else{
 	listBasket.innerHTML = "";
