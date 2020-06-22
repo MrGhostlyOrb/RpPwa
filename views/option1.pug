@@ -9,13 +9,13 @@ block content
 					a(href='/' class='card-content purple' id = 'title') 📎️ Richmond Paper Supply
 						ul(class='right hide-on-med-and-down')
 							li
-								a(id = 'butInstall' aria-label = 'install')
+								a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
 									i(class='material-icons') add_circle_outline
 							li
-								a(id = 'butBasket' aria-label = 'basket')
+								a(id = 'butBasket' aria-label = 'basket' class = 'waves-effect')
 									i(class='material-icons') shopping_basket
 							li
-								a(id = 'butRefresh' aria-label = 'refresh')
+								a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect')
 									i(class='material-icons') notifications
 		div.pageInfo
 			div.card
@@ -26,7 +26,7 @@ block content
 				| !{grid}
 		div(class='fixed-action-btn' id = 'fabSpan' onclick = 'window.location.href = "/basket"')
 			div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
-			a(class='btn-floating btn-large purple')
+			a(class='btn-floating btn-large purple waves-effect waves-circle')
 				i(class='large material-icons') shopping_basket
 				
 			

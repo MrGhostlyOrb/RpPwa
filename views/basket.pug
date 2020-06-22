@@ -13,13 +13,13 @@ block content
 					a(href='/' class='card-content purple' id = 'title') 📎️ Richmond Paper Supply
 						ul(class='right hide-on-med-and-down')
 							li
-								a(id = 'butInstall' aria-label = 'install')
+								a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
 									i(class='material-icons') add_circle_outline
 							li
-								a(id = 'butBasket' aria-label = 'basket')
+								a(id = 'butBasket' aria-label = 'basket' class = 'waves-effect')
 									i(class='material-icons') shopping_basket
 							li
-								a(id = 'butRefresh' aria-label = 'refresh')
+								a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect')
 									i(class='material-icons') notifications
 		div.pageInfo
 			div.card
@@ -30,7 +30,7 @@ block content
 					b.topText Please note that ALL orders are UK Delivery ONLY
 					br
 					br
-					a#remove(class = 'btn red' onclick = 'mdtoast("Everything has been removed from your basket", {type: mdtoast.WARNING});clearBasket();setTimeout(()=>{location.reload()},2000)') Clear basket
+					a#remove(class = 'btn red waves-effect' onclick = 'mdtoast("Everything has been removed from your basket", {type: mdtoast.WARNING});clearBasket();setTimeout(()=>{location.reload()},2000)') Clear basket
 		
 
    
