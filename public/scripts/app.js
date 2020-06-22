@@ -31,8 +31,11 @@ function addJson(ProductNo, Qty, Name){
 		const parsedList = JSON.parse(basketList[i]);
 		if(parsedList.Item.ProductNo == ProductNo){
 			isFound = true;
-			if(document.getElementById('inp'+ProductNo).value != parsedList.Item.Quantity){
+			if(document.getElementById('inp'+ProductNo).value != parsedList.Item.Quantity && document.getElementById('inp'+ProductNo).value != 0){
 				mdtoast('Quantity has been updated', {type: mdtoast.SUCCESS});
+			}
+			else if(document.getElementById('inp'+ProductNo).value == 0){
+				removeFromBasket(ProductNo);
 			}
 			else{
 				mdtoast('This product is already in your basket.', {type: mdtoast.ERROR});
@@ -40,11 +43,16 @@ function addJson(ProductNo, Qty, Name){
 		}
 	}
 	if(isFound === false){
+		if(Qty == 0 || undefined){
+			removeFromBasket(ProductNo)
+		}
+		else{
 		mdtoast('Product added to your basket', {type: mdtoast.SUCCESS});
 		basketList.push('{"Item":{"ProductNo" :"' + ProductNo + '", "Quantity" :"' + Qty + '"}}');
 		let bg = document.getElementById("sub" + ProductNo);
 		bg.style.backgroundColor = "#ba68c8";
 		localStorage.setItem('basket', JSON.stringify(basketList));
+		}
 	}
 }
 
