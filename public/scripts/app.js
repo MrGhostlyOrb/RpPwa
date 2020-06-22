@@ -8,6 +8,9 @@ let total;
 if(window.matchMedia('(display-mode: standalone)').matches && window.location.pathname == '/'){
 	document.getElementById('butInstall2').className = document.getElementById('butInstall2').className + " disabled";
 }
+if(window.location.pathname == '/basket'){
+	document.getElementById('butSubmit').addEventListener('click', (e)=>{document.getElementById('butSubmit').className = document.getElementById('butSubmit').className + " disabled"})
+}
 
 //Check if there is a basket already in local storage
 if (localStorage.getItem('basket')){
