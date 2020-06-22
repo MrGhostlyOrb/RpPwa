@@ -8,7 +8,7 @@ let total;
 if(window.matchMedia('(display-mode: standalone)').matches && window.location.pathname == '/'){
 	document.getElementById('butInstall2').className = document.getElementById('butInstall2').className + " disabled";
 }
-function disableButton{
+function disableButton(){
 	document.getElementById('butSubmit').className = document.getElementById('butSubmit').className + " disabled";
 }
 
