@@ -3,10 +3,11 @@ extends layout.pug
 
 block content
 	body(onload = 'checkBasket()')
-		div(class = navbar-fixed)
+		div(class = 'navbar-fixed')
 			nav(id = 'nav' class = 'purple')
 				div(class='nav-wrapper')
 					a(href='/' class='card-content purple' id = 'title') 📎️ Richmond Paper Supply
+					
 						ul(class='right hide-on-med-and-down')
 							li
 								a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
@@ -17,6 +18,8 @@ block content
 							li
 								a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect')
 									i(class='material-icons') notifications
+				
+				
 		div.pageInfo
 			div.card
 				p.card-content
@@ -25,9 +28,23 @@ block content
 			div.grid-product#grid-product
 				| !{grid}
 		div(class='fixed-action-btn' id = 'fabSpan' onclick = 'window.location.href = "/basket"')
+			
 			div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
 			a(class='btn-floating btn-large purple waves-effect waves-circle')
 				i(class='large material-icons') shopping_basket
+			ul
+				li
+					a(class="btn-floating red")
+						i(class="material-icons") insert_chart
+				li
+					a(class="btn-floating yellow darken-1")
+						i(class="material-icons")
+				li
+					a(class="btn-floating green")
+						i(class="material-icons") publish
+				li
+					a(class="btn-floating blue")
+						i(class="material-icons") attach_file
 				
 			
 
