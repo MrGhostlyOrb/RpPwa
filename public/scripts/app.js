@@ -269,7 +269,7 @@ function getValue(){
   				document.getElementById('ref').innerHTML = "Reference number : " + localStorage.getItem('id');
   			}
   			else{
-  				document.getElementById('tot').innerHTML = "Estimated total is : £" + Math.round((total.total + Number.EPSILON) * 100) / 100
+  				document.getElementById('tot').innerHTML = "Estimated total is : £" + total.total.toFixed(2);
   			}
   		},250)
 }
