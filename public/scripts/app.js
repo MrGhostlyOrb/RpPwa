@@ -5,7 +5,7 @@
 let basketList;
 let total;
 
-if(window.matchMedia('(display-mode: standalone)').matches){
+if(window.matchMedia('(display-mode: standalone)').matches && window.location.pathname == '/'){
 	document.getElementById('butInstall2').className = document.getElementById('butInstall2').className + " disabled";
 }
 
