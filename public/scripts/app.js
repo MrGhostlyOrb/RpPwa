@@ -31,7 +31,12 @@ function addJson(ProductNo, Qty, Name){
 		const parsedList = JSON.parse(basketList[i]);
 		if(parsedList.Item.ProductNo == ProductNo){
 			isFound = true;
-			mdtoast('This product is already in your basket.', {type: mdtoast.ERROR});
+			if(document.getElementById('inp'+ProductNo).value != parsedList.Item.Quantity){
+				mdtoast('Quantity has been updated', {type: mdtoast.SUCCESS});
+			}
+			else{
+				mdtoast('This product is already in your basket.', {type: mdtoast.ERROR});
+			}
 		}
 	}
 	if(isFound === false){
