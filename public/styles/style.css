@@ -68,7 +68,10 @@ header{
 
 
 }
-
+.paymentSpace{
+	width:90%;
+	margin-left:5%;
+}
 #prog{
 	display:none;
 }
