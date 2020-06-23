@@ -31,6 +31,7 @@ block content
 					br
 					br
 					a#remove(class = 'btn red waves-effect' onclick = 'mdtoast("Everything has been removed from your basket", {type: mdtoast.WARNING});clearBasket();setTimeout(()=>{location.reload()},2000)') Clear basket
+						i.material-icons.right remove_shopping_cart
 		
 
    
@@ -75,13 +76,19 @@ block content
 				
 			div#order
 				div.card#dark
-					p.card-text-title 
+					div.card-content 
 						b Your Order 🗒️ So Far : 
 							
 						div(id = 'coll' class = 'dark collection')
 			
 						b#tot Estimated total =
 						br
+						br
+						
+						a.btn.waves-effect.purple(onclick = 'window.history.back();' style = 'margin-left:10%;') Continue Shopping
+							i.material-icons.right add_shopping_cart
+						br
+						
 						br
 						 
 						input#butSubmit(class = 'subpay btn purple' type = 'submit' value = 'Proceed to Payment')

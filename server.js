@@ -146,6 +146,11 @@ function startServer() {
    		console.log('About to send mail');
    		//List to store user's items
    		var list = [];
+   		let value = 0;
+   		let weight = 0;
+   		let length;
+   		let width;
+   		let height;
    		
    		for(var i = 0; i < basket.length; i++){ 
    			var parsed = JSON.parse(basket[i]);
@@ -155,6 +160,32 @@ function startServer() {
    			}        
    			list.push('\nItem Number : ' + parsed.Item.ProductNo);
    			list.push('Quantity :' + parsed.Item.Quantity);
+   			
+   			let prodValue;
+   			let prodWe;
+   			
+   			for(let i = 0; i < productList.data.length; i++){
+   			if(productList.data[i].productNumber == parsed.Item.ProductNo){
+   				let prodName = productList.data[i].productName;
+   				let prodPrice = productList.data[i].productPrice;
+   				let prodImg = productList.data[i].imageURL;
+   				let prodWeight = productList.data[i].productWeight;
+   				prodValue = prodPrice;
+   				prodWe = prodWeight;
+   				console.log(prodValue);
+   				console.log(prodWe);
+
+   				
+   			}
+   			
+   			console.log(prodValue);
+   			console.log(prodWe);
+   			console.log(value);
+   			console.log(weight);
+   		}
+   		
+   		value = value + prodValue;
+   			weight = weight + prodWe;
    		} 
    		let buyerName = myObject.name;
    		let buyerTot = myObject.total;
@@ -165,11 +196,32 @@ function startServer() {
    				pass: cred.password
    				} 
    		});
+   		
+   		console.log(myObject.phone);
+   		
+   		let lineHeaders = 'Item Name,Value,Weight,Name,Address,PostCode,Telephone';
+   		
+   		let line = myObject.ref + ',' + value + ',' + weight + ',' + buyerName + ',' + myObject.address + ',' + myObject.postcode + ',' + myObject.phone.toString();
+   		
+   		
+   		let csvlines = lineHeaders + '\n' + line;
+   		
+   		
    		var mailOptions = {
+   			
+   			
+   			
   			from: cred.email,
   			to: cred.email,
   			subject: 'New Order + Payment From ' + buyerName,
-  			text: 'Confirmed Order + Payment From : ' + buyerName + ',\n Name given in app : '+ myObject.name2 +',\n Email given : '+ myObject.email +',\n Phone number given : '+ myObject.phone +',\n Reference number : '+ myObject.ref + ',\n For £' + buyerTot.total.toFixed(2) + '\n \n They ordered : \n \n' + list.toString()
+  			text: 'Confirmed Order + Payment From : ' + buyerName + ',\n Name given in app : '+ myObject.name2 +',\n Email given : '+ myObject.email +',\n Phone number given : '+ myObject.phone +',\n Reference number : '+ myObject.ref + ',\n For £' + buyerTot.total.toFixed(2) + '\n \n They ordered : \n \n' + list.toString(),
+  			attachments: [
+  				{
+  					filename: myObject.ref + '.csv',
+  					content: csvlines
+  				
+  				}
+  			]
 		};
 		transporter.sendMail(mailOptions, function(error, info){
   			if (error) {
