@@ -39,7 +39,8 @@
 			}
   	</script>
 </head> 
-<body onload = 'checkBasket();mdtoast("Welcome to Richmond Paper Supply")'>
+<body id = "body" onload = 'checkBasket();mdtoast("Welcome to Richmond Paper Supply")'>
+<div id = "overlay">
 	 <nav id = "nav" class = "purple nav-extended">
     <div class="nav-wrapper">
       <a href="/" class="card-content purple" id = "title">📎️ Richmond Paper Supply</a>
@@ -106,6 +107,8 @@
 			</div>
 		</div>
 	</div>
+
+  
 	  
 	
 	<div class="fixed-action-btn" id = "fabSpan" onclick = "window.location.href = '/basket'">
@@ -124,4 +127,17 @@
 		<div class = "footer-copyright purple">
 			<p style = "padding-left:2%"> 2020 RPS by <i class = "material-icons left">copyright</i><a href = "https://www.github.com/MrGhostlyOrb">Ben Cooper<i class = "material-icons right">code</i></a> </p>
 		</div>
+		<!-- Modal Structure -->
+  
+  </div>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Privacy Stuff</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id = "modbut">Agree</a>
+    </div>
+    </div>
 </body>
+
