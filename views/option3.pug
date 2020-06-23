@@ -3,20 +3,29 @@ extends layout.pug
 
 block content
 	body(onload = 'checkBasket()')
-		div(class = navbar-fixed)
-			nav(id = 'nav' class = 'purple')
-				div(class='nav-wrapper')
-					a(href='/' class='card-content purple' id = 'title') 📎️ Richmond Paper Supply
-						ul(class='right hide-on-med-and-down')
-							li
-								a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
-									i(class='material-icons') add_circle_outline
-							li
-								a(id = 'butBasket' aria-label = 'basket' class = 'waves-effect')
-									i(class='material-icons') shopping_basket
-							li
-								a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect')
-									i(class='material-icons') notifications
+		nav(id = 'nav' class = 'nav-extended purple')
+			div(class='nav-wrapper')
+				a(href='/' class='card-content purple' id = 'title') 📎️ Richmond Paper Supply
+					ul(class='right hide-on-med-and-down')
+						li
+							a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
+								i(class='material-icons') add_circle_outline
+						li
+							a(id = 'butBasket' aria-label = 'basket' class = 'waves-effect')
+								i(class='material-icons') shopping_basket
+						li
+							a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect')
+								i(class='material-icons') notifications
+				div(class='nav-content' id = 'tab-mob')
+					ul(class='tabs tabs-transparent purple lighten-1')
+						li(class='tab waves-effect')
+							a(href='/') Home
+						li(class='tab waves-effect')
+							a(href='/option1') Option 1
+						li(class='tab waves-effect')
+							a(href='/option2') Option 2
+						li(class='tab waves-effect disabled')
+							a(href='/option3' class = 'active') Option 3
 		div.pageInfo
 			div.card
 				p.card-content

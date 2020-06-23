@@ -120,6 +120,10 @@ label{
 
 }
 
+#tab-mob{
+	display:none;
+}
+
 .pageInfo{
 	margin-top:2%;
 	width:50%;
@@ -292,6 +296,9 @@ footer{
 
 @media only screen and (max-width: 1070px) {
 
+	#tab-mob{
+		display:block;
+	}
 	.numberCircle{
 		display:block;
 	}
