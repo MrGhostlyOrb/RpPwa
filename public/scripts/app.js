@@ -15,7 +15,7 @@ function disableButton(){
 if(window.location.pathname == '/'){
 	
 	if(sessionStorage.getItem('pageLoad')){
-		cosole.log('Not first time');
+		console.log('Not first time');
 	}else{	
 	sessionStorage.setItem('pageLoad', true);
 	
