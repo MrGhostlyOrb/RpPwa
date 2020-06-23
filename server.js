@@ -25,7 +25,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 
 //Redirect HTTP to HTTPS,
-//app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
+app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 //Handle requests for static files
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true }));
