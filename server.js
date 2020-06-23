@@ -122,11 +122,6 @@ function startServer() {
 			})
 		}
 	
-	//Options for ssl  
- 	var options = {
-    	key: fs.readFileSync('key.pem'),
-    	cert: fs.readFileSync('cert.pem')
-	}
   
 	//Start the server on PORT 8080
 	app.listen(process.env.PORT || 8080, function(){
