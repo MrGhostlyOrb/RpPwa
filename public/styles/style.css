@@ -120,6 +120,10 @@ label{
 
 }
 
+.tab a.active{
+	border-bottom: 3px solid white
+}
+
 #tab-mob{
 	display:none;
 }
