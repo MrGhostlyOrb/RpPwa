@@ -13,6 +13,12 @@ function disableButton(){
 }
 
 if(window.location.pathname == '/'){
+	
+	if(sessionStorage.getItem('pageLoad')){
+		cosole.log('Not first time');
+	}else{	
+	sessionStorage.setItem('pageLoad', true);
+	
 	document.getElementById('modal1').style.display = "block"; 
 	document.getElementById('modal1').style.position = "fixed";
 	document.getElementById('modal1').style.top = "30%";
@@ -22,8 +28,10 @@ if(window.location.pathname == '/'){
 	})
 	document.getElementById('overlay').style.opacity = "0.3";
 	document.getElementById('modal1').style.opacity = "1";
+	}
 	
 }
+
 
 //Check if there is a basket already in local storage
 if (localStorage.getItem('basket')){
