@@ -9,6 +9,7 @@ const http = require('http');
 const https = require('https');
 const http2 = require('http2');
 const fs = require('fs');
+const compression = require('compression')
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
@@ -27,6 +28,7 @@ app.set('view engine', 'pug');
 //Redirect HTTP to HTTPS,
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 //Handle requests for static files
+app.use(compression());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
