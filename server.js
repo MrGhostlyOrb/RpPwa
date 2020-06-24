@@ -167,6 +167,7 @@ function startServer() {
 		})
 	});
 	app.post('/searchResults', (req,res)=>{
+		console.log('Beginning search');
 		let search = req.body.request;
 		let resultsList = [];
 		for(let i = 0; i < productList1.length; i++){
@@ -208,9 +209,17 @@ function startServer() {
 				pushed = true;
 			}
 		}
+		let resultHTML = "";
+		if(resultsList.length < 1){
+			console.log('No results');
+			resultHTML = "<li>Sorry, no results found, try searching for the name of the product.</li>";
+			let json = {"result": resultHTML};
+			res.json(json);
+		}
+		else{
 		console.log(req.body);
 		console.log(search);
-		let resultHTML = "";
+		
 		for(let i = 0; i < resultsList.length; i++){
 			let li = "<li class = 'collection-item hoverable'>";
 			let lie = "</li>";
@@ -218,8 +227,9 @@ function startServer() {
 			let ae = "Link to page</a>"
 			resultHTML = resultHTML + li + resultsList[i].productName + "<br>" + resultsList[i].productInfo + a + ae + lie;
 		}
-		let json = {"result": resultHTML}
-		res.json(json)
+		let json = {"result": resultHTML};
+		res.json(json);
+		}
 	})
 	
 	for(let i = 0; i < productList1.length; i++){
