@@ -76,6 +76,10 @@ header{
 	display:none;
 }
 
+#map{
+	display:none;
+}
+
 label{
 	margin-left: 5%;
 	margin-top:1%;

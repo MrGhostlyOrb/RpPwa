@@ -33,32 +33,83 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 
-//File to pull product data from
-let productList = JSON.parse(fs.readFileSync('productList.json'));
+//File to pull product option1 from
+let productList1 = JSON.parse(fs.readFileSync('productList.json')).option1;
+let productList2 = JSON.parse(fs.readFileSync('productList.json')).option2;
+let productList3 = JSON.parse(fs.readFileSync('productList.json')).option3;
 
 //Define grid variable to store grid of items
-let grid = "";
 
 //Add all the items in the json file to the grid
-for(let i = 0; i < productList.data.length; i++){
+
+function chooseProductCatagory(option){
+	let grid = "";
+	if(option == "option1"){
+		
+
+		for(let i = 0; i < productList1.length; i++){
 				
-	let item = productList.data[i];
-	let loc = '"/product' + item.productNumber + '"';
-	let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "'/>";
-    let h2 = "<span class = 'card-title'>" + item.productName + "</span>";
-   	let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
-   	let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
-   	let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
-    let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
-    let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
-	let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + h2 + "</div>" + p + lab + input + submit + r +"</div>"
+			let item = productList1[i];
+	
+			let loc = '"/product' + item.productNumber + '"';
+			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "'/>";
+    		let h2 = "<span class = 'card-title'>" + item.productName + "</span>";
+   			let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
+   			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
+   			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
+    		let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
+    		let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
+			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + h2 + "</div>" + p + lab + input + submit + r +"</div>"
 	
 	//Add item to the grid
-	grid = grid + gridItem	
+			grid = grid + gridItem	
+	
+		}
+	}
+	else if(option == "option2"){
+		for(let i = 0; i < productList2.length; i++){
+				
+			let item = productList2[i];
+	
+			let loc = '"/product' + item.productNumber + '"';
+			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "'/>";
+    		let h2 = "<span class = 'card-title'>" + item.productName + "</span>";
+   			let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
+   			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
+   			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
+    		let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
+    		let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
+			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + h2 + "</div>" + p + lab + input + submit + r +"</div>"
+	
+	//Add item to the grid
+			grid = grid + gridItem	
+	
+		}
+	}
+	else if(option == "option3"){
+		for(let i = 0; i < productList3.length; i++){
+				
+			let item = productList3[i];
+	
+			let loc = '"/product' + item.productNumber + '"';
+			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "'/>";
+    		let h2 = "<span class = 'card-title'>" + item.productName + "</span>";
+   			let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
+   			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
+   			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
+    		let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
+    		let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
+			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + h2 + "</div>" + p + lab + input + submit + r +"</div>"
+	
+	//Add item to the grid
+			grid = grid + gridItem	
+	
+		}
+	}
+	return grid;
 }
-
 //Variable to store payment script
-let payment = "<script> paypal.Buttons({createOrder: function (data, actions) {return fetch('/my-server/create-order', {method: 'POST'}).then(function(res) {return res.json();}).then(function(data) {return data.id;});},onApprove: function (data, actions) {return fetch('/my-server/capture-order/' + data.orderID, {method: 'POST'}).then(function(res) {if (!res.ok) {alert('Something went wrong');}});}}).render('#paypal-button-container');</script>";
+let payment = "<script> paypal.Buttons({createOrder: function (option1, actions) {return fetch('/my-server/create-order', {method: 'POST'}).then(function(res) {return res.json();}).then(function(option1) {return option1.id;});},onApprove: function (option1, actions) {return fetch('/my-server/capture-order/' + option1.orderID, {method: 'POST'}).then(function(res) {if (!res.ok) {alert('Something went wrong');}});}}).render('#paypal-button-container');</script>";
 
 //Function to begin the server
 function startServer() {
@@ -72,7 +123,7 @@ function startServer() {
   				{
   					title:'Option1', 
   					message:'This is the option 1 home page',
-  					grid: grid		
+  					grid: chooseProductCatagory("option1")
   				});
 		});
 	app.get('/option2',function(req,res)
@@ -81,7 +132,7 @@ function startServer() {
   			{
   				title:'Option2', 
   				message:'This is the option 2 home page', 
-  				grid: grid
+  				grid: chooseProductCatagory("option2")
   			});
 		});
 	app.get('/option3',function(req,res)
@@ -90,7 +141,7 @@ function startServer() {
   				{
   					title:'Option3', 
   					message:'This is the option 3 home page', 
-  					grid: grid
+  					grid: chooseProductCatagory("option3")
   				});
 		});
 	app.get('/basket',function(req,res)
@@ -99,7 +150,6 @@ function startServer() {
   			{
   				title:'Basket', 
   				message:'Basket List', 
-  				pay:payment
   			});
 		});
 	app.get('/confirmation', function(req,res){
@@ -110,9 +160,35 @@ function startServer() {
 			});
 		});
 	
-	for(let i = 0; i < productList.data.length; i++){
-		app.get('/product' + productList.data[i].productNumber, (req,res) => {			
-			var item = productList.data[i];
+	for(let i = 0; i < productList1.length; i++){
+		app.get('/product' + productList1[i].productNumber, (req,res) => {			
+			var item = productList1[i];
+			res.render('product', 
+				{
+					product: item.productNumber,
+					productDescription: item.productInfo,
+					productPrice: item.productPrice,
+					productImage: item.imageURL,
+					productName: item.productName
+				});
+			})
+		}
+		for(let i = 0; i < productList2.length; i++){
+		app.get('/product' + productList2[i].productNumber, (req,res) => {			
+			var item = productList2[i];
+			res.render('product', 
+				{
+					product: item.productNumber,
+					productDescription: item.productInfo,
+					productPrice: item.productPrice,
+					productImage: item.imageURL,
+					productName: item.productName
+				});
+			})
+		}
+		for(let i = 0; i < productList3.length; i++){
+		app.get('/product' + productList3[i].productNumber, (req,res) => {			
+			var item = productList3[i];
 			res.render('product', 
 				{
 					product: item.productNumber,
@@ -166,12 +242,12 @@ function startServer() {
    			let prodValue;
    			let prodWe;
    			
-   			for(let i = 0; i < productList.data.length; i++){
-   			if(productList.data[i].productNumber == parsed.Item.ProductNo){
-   				let prodName = productList.data[i].productName;
-   				let prodPrice = productList.data[i].productPrice;
-   				let prodImg = productList.data[i].imageURL;
-   				let prodWeight = productList.data[i].productWeight;
+   			for(let i = 0; i < productList1.length; i++){
+   			if(productList1[i].productNumber == parsed.Item.ProductNo){
+   				let prodName = productList1[i].productName;
+   				let prodPrice = productList1[i].productPrice;
+   				let prodImg = productList1[i].imageURL;
+   				let prodWeight = productList1[i].productWeight;
    				prodValue = prodPrice;
    				prodWe = prodWeight;
    				console.log(prodValue);
@@ -179,11 +255,27 @@ function startServer() {
 
    				
    			}
+   			else if(productList2[i].productNumber == parsed.Item.ProductNo){
+   				let prodName = productList2[i].productName;
+   				let prodPrice = productList2[i].productPrice;
+   				let prodImg = productList2[i].imageURL;
+   				let prodWeight = productList2[i].productWeight;
+   				prodValue = prodPrice;
+   				prodWe = prodWeight;
+   				console.log(prodValue);
+   				console.log(prodWe);
+   			}
+   			else if(productList3[i].productNumber == parsed.Item.ProductNo){
+   				let prodName = productList3[i].productName;
+   				let prodPrice = productList3[i].productPrice;
+   				let prodImg = productList3[i].imageURL;
+   				let prodWeight = productList3[i].productWeight;
+   				prodValue = prodPrice;
+   				prodWe = prodWeight;
+   				console.log(prodValue);
+   				console.log(prodWe);
+   			}
    			
-   			console.log(prodValue);
-   			console.log(prodWe);
-   			console.log(value);
-   			console.log(weight);
    		}
    		
    		value = value + prodValue;
@@ -255,17 +347,33 @@ function startServer() {
    		console.log(body[0]);
    		if(body[0] != undefined){
 			console.log(JSON.parse(body[0]).Item);
-	   		for(let i = 0; i < productList.data.length; i++){
+	   		for(let i = 0; i < productList1.length; i++){
 	   			for(let j = 0; j < body.length; j++){
-	   				if(JSON.parse(body[j]).Item.ProductNo == productList.data[i].productNumber){
+	   				if(JSON.parse(body[j]).Item.ProductNo == productList1[i].productNumber){
 	   					console.log('Found product');
-	   					total = total + (productList.data[i].productPrice * JSON.parse(body[j]).Item.Quantity);
+	   					total = total + (productList1[i].productPrice * JSON.parse(body[j]).Item.Quantity);
+   					}
+   				}
+   			}
+   			for(let i = 0; i < productList2.length; i++){
+	   			for(let j = 0; j < body.length; j++){
+	   				if(JSON.parse(body[j]).Item.ProductNo == productList2[i].productNumber){
+	   					console.log('Found product');
+	   					total = total + (productList2[i].productPrice * JSON.parse(body[j]).Item.Quantity);
+   					}
+   				}
+   			}
+   			for(let i = 0; i < productList3.length; i++){
+	   			for(let j = 0; j < body.length; j++){
+	   				if(JSON.parse(body[j]).Item.ProductNo == productList3[i].productNumber){
+	   					console.log('Found product');
+	   					total = total + (productList3[i].productPrice * JSON.parse(body[j]).Item.Quantity);
    					}
    				}
    			}
    		}
    		else{
-   			console.log('No data sent');
+   			console.log('No option1 sent');
    		}
    		console.log("total is : " + total);
    		res.json({"total":total});
@@ -304,11 +412,35 @@ function startServer() {
    		var resJson;
    		console.log(myObject); 
    		let ProductNo = myObject.ProductNo;
-   		for(let i = 0; i < productList.data.length; i++){
-   			if(productList.data[i].productNumber == ProductNo){
-   				let prodName = productList.data[i].productName;
-   				let prodPrice = productList.data[i].productPrice;
-   				let prodImg = productList.data[i].imageURL;
+   		for(let i = 0; i < productList1.length; i++){
+   			if(productList1[i].productNumber == ProductNo){
+   				let prodName = productList1[i].productName;
+   				let prodPrice = productList1[i].productPrice;
+   				let prodImg = productList1[i].imageURL;
+   				resJson = {
+   					"prodName":prodName,
+   					"prodPrice":prodPrice,
+   					"prodImg":prodImg
+   				}
+   			}
+   		}
+   		for(let i = 0; i < productList2.length; i++){
+   			if(productList2[i].productNumber == ProductNo){
+   				let prodName = productList2[i].productName;
+   				let prodPrice = productList2[i].productPrice;
+   				let prodImg = productList2[i].imageURL;
+   				resJson = {
+   					"prodName":prodName,
+   					"prodPrice":prodPrice,
+   					"prodImg":prodImg
+   				}
+   			}
+   		}
+   		for(let i = 0; i < productList3.length; i++){
+   			if(productList3[i].productNumber == ProductNo){
+   				let prodName = productList3[i].productName;
+   				let prodPrice = productList3[i].productPrice;
+   				let prodImg = productList3[i].imageURL;
    				resJson = {
    					"prodName":prodName,
    					"prodPrice":prodPrice,
