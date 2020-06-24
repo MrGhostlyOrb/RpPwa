@@ -255,7 +255,10 @@ function startServer() {
 
    				
    			}
-   			else if(productList2[i].productNumber == parsed.Item.ProductNo){
+   			
+   		}
+   		for(let i = 0; i < productList2.length; i++){
+   			if(productList2[i].productNumber == parsed.Item.ProductNo){
    				let prodName = productList2[i].productName;
    				let prodPrice = productList2[i].productPrice;
    				let prodImg = productList2[i].imageURL;
@@ -264,8 +267,13 @@ function startServer() {
    				prodWe = prodWeight;
    				console.log(prodValue);
    				console.log(prodWe);
+
+   				
    			}
-   			else if(productList3[i].productNumber == parsed.Item.ProductNo){
+   			
+   		}
+   		for(let i = 0; i < productList3.length; i++){
+   			if(productList3[i].productNumber == parsed.Item.ProductNo){
    				let prodName = productList3[i].productName;
    				let prodPrice = productList3[i].productPrice;
    				let prodImg = productList3[i].imageURL;
@@ -274,6 +282,8 @@ function startServer() {
    				prodWe = prodWeight;
    				console.log(prodValue);
    				console.log(prodWe);
+
+   				
    			}
    			
    		}
