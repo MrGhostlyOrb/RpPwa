@@ -52,7 +52,7 @@ function chooseProductCatagory(option){
 			let item = productList1[i];
 	
 			let loc = '"/product' + item.productNumber + '"';
-			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "'/>";
+			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
     		let h2 = "<span class = 'card-title textChange'>" + item.productName + "</span>";
    			let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
@@ -72,7 +72,7 @@ function chooseProductCatagory(option){
 			let item = productList2[i];
 	
 			let loc = '"/product' + item.productNumber + '"';
-			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "'/>";
+			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
     		let h2 = "<span class = 'card-title textChange'>" + item.productName + "</span>";
    			let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
@@ -92,7 +92,7 @@ function chooseProductCatagory(option){
 			let item = productList3[i];
 	
 			let loc = '"/product' + item.productNumber + '"';
-			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "'/>";
+			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
     		let h2 = "<span class = 'card-title textChange'>" + item.productName + "</span>";
    			let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
