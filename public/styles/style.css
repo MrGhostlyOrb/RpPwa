@@ -49,6 +49,12 @@ header{
 	color:white;
 }
 
+#fabSpan2{
+	position:relative;
+	top:20%;
+
+}
+
 .subpay{
 
 	border: none;
@@ -303,6 +309,10 @@ footer{
 }
 
 @media only screen and (max-width: 1070px) {
+
+	#back{
+		display:none;
+	}
 
 	#tab-mob{
 		display:block;
