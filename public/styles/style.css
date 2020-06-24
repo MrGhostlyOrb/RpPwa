@@ -218,6 +218,11 @@ label{
 	text-align:center;
 }
 
+.textChange{
+	color:black !important;
+	text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
+}
+
 #tot{
 	margin:2%;
 	margin-left:5%;

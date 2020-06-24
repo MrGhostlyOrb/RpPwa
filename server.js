@@ -53,7 +53,7 @@ function chooseProductCatagory(option){
 	
 			let loc = '"/product' + item.productNumber + '"';
 			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "'/>";
-    		let h2 = "<span class = 'card-title'>" + item.productName + "</span>";
+    		let h2 = "<span class = 'card-title textChange'>" + item.productName + "</span>";
    			let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
@@ -73,7 +73,7 @@ function chooseProductCatagory(option){
 	
 			let loc = '"/product' + item.productNumber + '"';
 			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "'/>";
-    		let h2 = "<span class = 'card-title'>" + item.productName + "</span>";
+    		let h2 = "<span class = 'card-title textChange'>" + item.productName + "</span>";
    			let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
@@ -93,7 +93,7 @@ function chooseProductCatagory(option){
 	
 			let loc = '"/product' + item.productNumber + '"';
 			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "'/>";
-    		let h2 = "<span class = 'card-title'>" + item.productName + "</span>";
+    		let h2 = "<span class = 'card-title textChange'>" + item.productName + "</span>";
    			let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
@@ -237,6 +237,7 @@ function startServer() {
 			var item = productList1[i];
 			res.render('product', 
 				{
+					title: item.productName,
 					product: item.productNumber,
 					productDescription: item.productInfo,
 					productPrice: item.productPrice,

@@ -1,28 +1,28 @@
 {"resultInfo":"SUCCESS",
 	"option1":[
 	{
-	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
-	"productName":"Oswaldo",
-	"productPrice":504.74,
-	"productWeight":1,
-	"productNumber":36,
-	"productInfo":"Info here"
+	"imageURL":"/images/products/RPSEJ10.png",
+	"productName":"1000ml Compartment Clamshell",
+	"productPrice":1,
+	"productWeight":17.5,
+	"productNumber":"RPSEJ10",
+	"productInfo":"Carton Size : 60cm x 33cm x 49.5cm Qty : 500pc"
 	},
 	{
-	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
-	"productName":"Angeline",
-	"productPrice":553.6,
-	"productWeight":1,
-	"productNumber":12,
-	"productInfo":"Info here"
+	"imageURL":"/images/products/RPSEJ9.png",
+	"productName":"Bagasse 600ml Clamshell",
+	"productPrice":1,
+	"productWeight":13,
+	"productNumber":"RPSEJ9",
+	"productInfo":"Carton Size : 54.5cm x 30cm x 38.5cm Qty : 600pc"
 	},
 	{
-	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
-	"productName":"Gerardo",
-	"productPrice":578.03,
-	"productWeight":1,
-	"productNumber":5,
-	"productInfo":"Info here"
+	"imageURL":"/images/products/RPSEJ6.png",
+	"productName":"6\" Hamburger Box",
+	"productPrice":1,
+	"productWeight":12,
+	"productNumber":"RPSEJ6",
+	"productInfo":"Carton Size : 62cm x 32cm x 32.5cm Qty : 500pc"
 	},
 	{
 	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
