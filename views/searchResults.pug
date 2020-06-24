@@ -1,0 +1,37 @@
+extends layout.pug
+
+block content
+	body()
+		script(defer src = '/scripts/search.js')
+		div(class = navbar-fixed)
+			nav(id = 'nav' class = 'purple')
+				div(class='nav-wrapper')
+					a(href='/' class='card-content purple' id = 'title') 📎️ Richmond Paper Supply
+						ul(class='right hide-on-med-and-down')
+							li
+								a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
+									i(class='material-icons') add_circle_outline
+							li
+								a(id = 'butBasket' aria-label = 'basket' class = 'waves-effect')
+									i(class='material-icons') shopping_basket
+							li
+								a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect')
+									i(class='material-icons') notifications
+		div.pageInfo
+			div.card
+				div.card-content
+					h5 Search
+						i.material-icons.right search
+					form(method = 'POST' id = 'searchForm')
+						div.input-field
+							input.validate(type = 'text' id = 'search' required)
+							label(for = 'search')
+					ul #{ results }
+						
+					
+				
+			
+							
+
+
+

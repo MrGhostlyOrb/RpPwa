@@ -159,6 +159,68 @@ function startServer() {
 				message:'Confirmation Page'
 			});
 		});
+		
+	app.get('/search', (req, res)=>{
+		res.render('search', {
+			title: 'Search',
+			message: 'Search'
+		})
+	});
+	app.post('/searchResults', (req,res)=>{
+		let search = req.body.request;
+		let resultsList = [];
+		for(let i = 0; i < productList1.length; i++){
+			let pushed = false
+			if(productList1[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false){
+				resultsList.push(productList1[i])
+				console.log(resultsList);
+				pushed = true;
+			}
+			if(productList1[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false){
+				resultsList.push(productList1[i])
+				console.log(resultsList);
+				pushed = true;
+			}
+		}
+		for(let i = 0; i < productList2.length; i++){
+			let pushed = false
+			if(productList2[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false){
+				resultsList.push(productList2[i])
+				console.log(resultsList);
+				pushed = true;
+			}
+			if(productList2[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false){
+				resultsList.push(productList2[i])
+				console.log(resultsList);
+				pushed = true;
+			}
+		}
+		for(let i = 0; i < productList3.length; i++){
+			let pushed = false
+			if(productList3[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false){
+				resultsList.push(productList3[i])
+				console.log(resultsList);
+				pushed = true;
+			}
+			if(productList3[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false){
+				resultsList.push(productList3[i])
+				console.log(resultsList);
+				pushed = true;
+			}
+		}
+		console.log(req.body);
+		console.log(search);
+		let resultHTML = "";
+		for(let i = 0; i < resultsList.length; i++){
+			let li = "<li class = 'collection-item hoverable'>";
+			let lie = "</li>";
+			let a = "<a href = '/product" + resultsList[i].productNumber + "' class = 'btn-small right'>";
+			let ae = "Link to page</a>"
+			resultHTML = resultHTML + li + resultsList[i].productName + "<br>" + resultsList[i].productInfo + a + ae + lie;
+		}
+		let json = {"result": resultHTML}
+		res.json(json)
+	})
 	
 	for(let i = 0; i < productList1.length; i++){
 		app.get('/product' + productList1[i].productNumber, (req,res) => {			
