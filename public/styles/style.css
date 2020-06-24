@@ -98,6 +98,7 @@ label{
 .grid-product{
 	display:grid;
 	grid-template-columns: 20% 20% 20% 20%; /* 5 cols */
+	grid-template-rows:100%;
   	grid-column-gap:2%;
   	grid-row-gap:5%;
   	margin-left:12%;

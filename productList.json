@@ -48,7 +48,9 @@
 	"productNumber":"C101",
 	"productInfo":"Info here"
 	}
-	],
+	]
+	
+	,
 	"option2": [
 	{
 	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
@@ -57,8 +59,42 @@
 	"productWeight":1,
 	"productNumber":360,
 	"productInfo":"Info here"
+	},
+	{
+	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
+	"productName":"Markus",
+	"productPrice":34.74,
+	"productWeight":1,
+	"productNumber":"7605C",
+	"productInfo":"Info here"
+	},
+	{
+	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
+	"productName":"Markus",
+	"productPrice":34.74,
+	"productWeight":1,
+	"productNumber":"767605C",
+	"productInfo":"Info here"
+	},
+	{
+	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
+	"productName":"Markus",
+	"productPrice":34.74,
+	"productWeight":1,
+	"productNumber":"36675C",
+	"productInfo":"Info here"
+	},
+	{
+	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
+	"productName":"Markus",
+	"productPrice":34.74,
+	"productWeight":1,
+	"productNumber":"36056C",
+	"productInfo":"Info here"
 	}
-	],
+	]
+	
+	,
 	"option3": [
 	{
 	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
@@ -66,6 +102,38 @@
 	"productPrice":34.74,
 	"productWeight":1,
 	"productNumber":"3605C",
+	"productInfo":"Info here"
+	},
+	{
+	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
+	"productName":"Markus",
+	"productPrice":34.74,
+	"productWeight":1,
+	"productNumber":"3606C",
+	"productInfo":"Info here"
+	},
+	{
+	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
+	"productName":"Markus",
+	"productPrice":34.74,
+	"productWeight":1,
+	"productNumber":"3607C",
+	"productInfo":"Info here"
+	},
+	{
+	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
+	"productName":"Markus",
+	"productPrice":34.74,
+	"productWeight":1,
+	"productNumber":"3608C",
+	"productInfo":"Info here"
+	},
+	{
+	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
+	"productName":"Markus",
+	"productPrice":34.74,
+	"productWeight":1,
+	"productNumber":"3609C",
 	"productInfo":"Info here"
 	}
 	]
