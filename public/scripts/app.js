@@ -11,6 +11,10 @@ if(window.matchMedia('(display-mode: standalone)').matches && window.location.pa
 if(window.matchMedia('(display-mode: standalone)').matches && window.location.pathname == '/'){
 	document.getElementById('installBtn3').className = document.getElementById('installBtn3').className + " disabled";
 }
+
+if(window.location.pathname == '/search'){
+	document.getElementById('butBasket').addEventListener('click', ()=>{window.location.href = '/basket'});
+}
 function disableButton(){
 	document.getElementById('butSubmit').className = document.getElementById('butSubmit').className + " disabled";
 }
