@@ -8,6 +8,9 @@ let total;
 if(window.matchMedia('(display-mode: standalone)').matches && window.location.pathname == '/'){
 	document.getElementById('butInstall2').className = document.getElementById('butInstall2').className + " disabled";
 }
+if(window.matchMedia('(display-mode: standalone)').matches && window.location.pathname == '/'){
+	document.getElementById('installBtn3').className = document.getElementById('installBtn3').className + " disabled";
+}
 function disableButton(){
 	document.getElementById('butSubmit').className = document.getElementById('butSubmit').className + " disabled";
 }
@@ -356,7 +359,6 @@ function addQty(productNumber, basketList2, quantity){
 
 function checkBasket(){
 	let noItems = JSON.parse(localStorage.getItem('basket')).length
-	document.getElementById('fabSpan').setAttribute('data-tooltip', "Items in Basket : " + noItems);
 	document.getElementById('numberCircle').innerHTML = noItems;
 	document.getElementById('butBasket').setAttribute('onclick', 'location.href = "/basket";');
 	

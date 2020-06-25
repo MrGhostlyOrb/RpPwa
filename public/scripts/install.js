@@ -2,10 +2,14 @@
 
 let deferredInstallPrompt = null;
 const installButton2 = document.getElementById('butInstall2');
+const installBtn3 = document.getElementById('installBtn3');
 const installButton = document.getElementById('butInstall');
 installButton.addEventListener('click', installPWA);
 if(window.location.pathname == '/'){
 	installButton2.addEventListener('click', (e)=>{installPWA(e)});
+}
+if(window.location.pathname == '/'){
+	installBtn3.addEventListener('click', (e)=>{installPWA(e)});
 }
 
 window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);

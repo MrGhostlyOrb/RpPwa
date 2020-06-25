@@ -114,13 +114,23 @@
   
 	  
 	
-	<div class="fixed-action-btn" id = "fabSpan" onclick = "window.location.href = '/basket'">
-		<div class="numberCircle" id = 'numberCircle' onclick = 'window.location.href="/basket"'></div>
-  			<a class="btn-floating waves-effect waves-circle btn-large purple hoverable">
-    		<i class="large material-icons">shopping_basket</i>
-  			</a>
-		</div>
+	<div class="fixed-action-btn">
+		<div class = "numberCircle" id = "numberCircle"></div>
+  		<a class="btn-floating btn-large purple">
+    		<i class="large material-icons">store</i>
+  		</a>
+  		<ul>
+   			<li><a href = "/basket" class="btn-floating purple lighten-2"><i class="material-icons">shopping_basket</i></a></li>
+    		<li><a id = "installBtn3" class="btn-floating purple lighten-2"><i class="material-icons">system_update</i></a></li>
+    		<li><a href = "/search" class="btn-floating purple lighten-2"><i class="material-icons">search</i></a></li>
+  		</ul>
 	</div>
+	<script>  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems);
+  });</script>
+  
+  
 	<footer class = "page-footer purple lighten-2">
 		<div class = "container">
 			<h5>Richmond Paper Supply Co Ltd</h5>
@@ -131,16 +141,16 @@
 			<p style = "padding-left:2%"> 2020 RPS by <i class = "material-icons left">copyright</i><a href = "https://www.github.com/MrGhostlyOrb">Ben Cooper<i class = "material-icons right">code</i></a> </p>
 		</div>
 		<!-- Modal Structure -->
-  
   </div>
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Cookies!</h4>
-      <p>A bunch of text <a href = "/privacy">Link to more info</a></p>
-    </div>
-    <div class="modal-footer">
-      <a class="modal-close waves-effect waves-green btn-flat" id = "modbut">Agree</a>
-    </div>
+  </div>
+  	<div id="modal1" class="modal">
+    	<div class="modal-content">
+      		<h4>Cookies!</h4>
+      		<p>A bunch of text <a href = "/privacy">Link to more info</a></p>
+    	</div>
+    	<div class="modal-footer">
+      		<a class="modal-close waves-effect waves-green btn-flat" id = "modbut">Agree</a>
+    	</div>
     </div>
 </body>
 
