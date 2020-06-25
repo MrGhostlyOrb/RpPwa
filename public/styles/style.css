@@ -18,6 +18,10 @@ header{
 	font-size:15px;
 }
 
+#searchPage{
+	margin-bottom:80%;
+}
+
 #title{
 	font-size:25px;
 	padding-left:20px;
