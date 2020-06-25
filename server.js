@@ -53,8 +53,8 @@ function chooseProductCatagory(option){
 	
 			let loc = '"/product' + item.productNumber + '"';
 			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
-    		let h2 = "<div class = 'card-title card-content textChange' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6></div>";
-   			let p = "<p class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</p>";
+    		let h2 = "<div class = 'card-content textChange' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
+   			let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
     		let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
@@ -73,8 +73,8 @@ function chooseProductCatagory(option){
 	
 			let loc = '"/product' + item.productNumber + '"';
 			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
-    		let h2 = "<div class = 'card-title card-content textChange' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6></div>";
-   			let p = "<p class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</p>";
+    		let h2 = "<div class = 'card-content textChange' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
+   			let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
     		let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
@@ -93,8 +93,8 @@ function chooseProductCatagory(option){
 	
 			let loc = '"/product' + item.productNumber + '"';
 			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
-    		let h2 = "<div class = 'card-title card-content textChange' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6></div>";
-   			let p = "<p class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</p>";
+    		let h2 = "<div class = 'card-content textChange' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
+   			let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
     		let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
