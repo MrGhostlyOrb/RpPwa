@@ -115,7 +115,7 @@
 	  
 	
 	<div class="fixed-action-btn">
-  		<a class="btn-floating pulse btn-large purple">
+  		<a id = "homeFab" class="btn-floating pulse btn-large purple">
     		<i class="large material-icons">store</i>
   		</a>
   		<ul>
@@ -127,6 +127,7 @@
 	<script>  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.fixed-action-btn');
     var instances = M.FloatingActionButton.init(elems);
+    setTimeout(()=>{document.getElementById('homeFab').className = 'btn-floating pulse btn-large purple'}, 5000)
   });</script>
   
   
