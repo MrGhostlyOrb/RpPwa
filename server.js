@@ -221,11 +221,11 @@ function startServer() {
 		console.log(search);
 		
 		for(let i = 0; i < resultsList.length; i++){
-			let li = "<li class = 'collection-item hoverable'>";
+			let li = "<li class = 'collection-item'>";
 			let lie = "</li>";
-			let a = "<a href = '/product" + resultsList[i].productNumber + "' class = 'btn-small right'>";
-			let ae = "Link to page</a>"
-			resultHTML = resultHTML + li + resultsList[i].productName + "<br>" + resultsList[i].productInfo + a + ae + lie;
+			let a = "<br><a href = '/product" + resultsList[i].productNumber + "' class = 'btn-small'>";
+			let ae = "Show Item</a>"
+			resultHTML = resultHTML + li + resultsList[i].productName + "<br>" + resultsList[i].productInfo + "<br>" + a + ae + lie;
 		}
 		let json = {"result": resultHTML};
 		res.json(json);

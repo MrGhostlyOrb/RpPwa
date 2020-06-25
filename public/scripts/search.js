@@ -19,5 +19,5 @@ fetch('/searchResults', {
 }
 function fun(res){
 	console.log(res);
-	document.getElementById('results').innerHTML = res.result;
+	document.getElementById('results').innerHTML = "<h5>Results : </h5>" + res.result;
 }
