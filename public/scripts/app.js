@@ -223,7 +223,8 @@ function sendEmailConf(name, id){
 	const name2 = document.getElementById("name").value;
 	const email = document.getElementById("email").value;
 	const phone = document.getElementById("phone").value;
-	const address = document.getElementById("address").value;
+	const address1 = document.getElementById("address1").value;
+	const town = document.getElementById("town").value;
 	const postcode = document.getElementById("postcode").value;
 	console.log(total);
 	//const time = document.getElementById("time").value;
@@ -232,7 +233,8 @@ function sendEmailConf(name, id){
 		"name2": name2,
 		"email": email,
 		"phone": phone,
-		"address": address,
+		"address1": address1,
+		"town": town,
 		"postcode": postcode,
 		"total": total,
 		"ref": id,

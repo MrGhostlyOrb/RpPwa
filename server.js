@@ -174,12 +174,12 @@ function startServer() {
 			let pushed = false
 			if(productList1[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false){
 				resultsList.push(productList1[i])
-				console.log(resultsList);
+				console.log("Search results : " + resultsList);
 				pushed = true;
 			}
 			if(productList1[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false){
 				resultsList.push(productList1[i])
-				console.log(resultsList);
+				console.log("Search results : " + resultsList);
 				pushed = true;
 			}
 		}
@@ -187,12 +187,12 @@ function startServer() {
 			let pushed = false
 			if(productList2[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false){
 				resultsList.push(productList2[i])
-				console.log(resultsList);
+				console.log("Search results : " + resultsList);
 				pushed = true;
 			}
 			if(productList2[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false){
 				resultsList.push(productList2[i])
-				console.log(resultsList);
+				console.log("Search results : " + resultsList);
 				pushed = true;
 			}
 		}
@@ -200,12 +200,12 @@ function startServer() {
 			let pushed = false
 			if(productList3[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false){
 				resultsList.push(productList3[i])
-				console.log(resultsList);
+				console.log("Search results : " + resultsList);
 				pushed = true;
 			}
 			if(productList3[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false){
 				resultsList.push(productList3[i])
-				console.log(resultsList);
+				console.log("Search results : " + resultsList);
 				pushed = true;
 			}
 		}
@@ -217,9 +217,8 @@ function startServer() {
 			res.json(json);
 		}
 		else{
-		console.log(req.body);
-		console.log(search);
-		
+		console.log("Searching for : " + search);
+
 		for(let i = 0; i < resultsList.length; i++){
 			let li = "<li class = 'collection-item'>";
 			let lie = "</li>";
@@ -306,7 +305,7 @@ function startServer() {
    		for(var i = 0; i < basket.length; i++){ 
    			var parsed = JSON.parse(basket[i]);
    			if(parsed.Item.Quantity === "undefined"){
-   				console.log("Don't send")
+   				console.log("Quantity is Undefined, not sending Email");
    				sendMail = false;
    			}        
    			list.push('\nItem Number : ' + parsed.Item.ProductNo);
@@ -323,10 +322,9 @@ function startServer() {
    				let prodWeight = productList1[i].productWeight;
    				prodValue = prodPrice;
    				prodWe = prodWeight;
-   				console.log(prodValue);
-   				console.log(prodWe);
+   				console.log("Value of product : " + prodValue);
+   				console.log("Weight of product : " + prodWe);
 
-   				
    			}
    			
    		}
@@ -338,8 +336,8 @@ function startServer() {
    				let prodWeight = productList2[i].productWeight;
    				prodValue = prodPrice;
    				prodWe = prodWeight;
-   				console.log(prodValue);
-   				console.log(prodWe);
+   				console.log("Value of product : " + prodValue);
+   				console.log("Weight of product : " + prodWe);
 
    				
    			}
@@ -353,8 +351,8 @@ function startServer() {
    				let prodWeight = productList3[i].productWeight;
    				prodValue = prodPrice;
    				prodWe = prodWeight;
-   				console.log(prodValue);
-   				console.log(prodWe);
+   				console.log("Value of product : " + prodValue);
+   				console.log("Weight of product : " + prodWe);
 
    				
    			}
@@ -374,15 +372,14 @@ function startServer() {
    				} 
    		});
    		
-   		console.log(myObject.phone);
+   		let lineHeaders = 'Item Name,Value,Weight,Name,Property,Town,PostCode,Telephone';
    		
-   		let lineHeaders = 'Item Name,Value,Weight,Name,Address,PostCode,Telephone';
-   		
-   		let line = myObject.ref + ',' + value + ',' + weight + ',' + buyerName + ',' + myObject.address + ',' + myObject.postcode + ',' + myObject.phone.toString();
+   		let line = myObject.ref + ',' + value + ',' + weight + ',' + buyerName + ',' + myObject.address1 + ',' + myObject.town + ',' + myObject.postcode + ',' + myObject.phone.toString();
    		
    		
    		let csvlines = lineHeaders + '\n' + line;
-   		
+   		console.log("Order : " + lineHeaders);
+   		console.log("Line : " + line);
    		
    		var mailOptions = {
    			
@@ -402,24 +399,24 @@ function startServer() {
 		};
 		transporter.sendMail(mailOptions, function(error, info){
   			if (error) {
-   				console.log(error);
+   				console.log("Error with Office email : " + error);
   			}
   			else {
-    			console.log('Email sent to office: ' + info.response);
+    			console.log('Email sent to office : ' + info.response);
   			}
 		}); 
 		var mailOptions = {
   			from: cred.email,
   			to: myObject.email,
   			subject: 'Richmond Paper Supply Order Confirmation ',
-  			text: 'Thank you for your order on the Richmond Paper Supply website ' + buyerName + ',\n \n Your reference number for this order is : '+ myObject.ref + ' please keep this for future reference,\n \n Your order total was £' + buyerTot.total.toFixed(2) + '\n \n Products ordered : \n \n' + list.toString() + '\n \n Delivery Address : ' + myObject.address + ', ' + myObject.postcode + '\n \n If you have any issues with your order please contact us on : 0151 933 1000'
+  			text: 'Thank you for your order on the Richmond Paper Supply website ' + buyerName + ',\n \n Your reference number for this order is : '+ myObject.ref + ' please keep this for future reference,\n \n Your order total was £' + buyerTot.total.toFixed(2) + '\n \n Products ordered : \n \n' + list.toString() + '\n \n Delivery Address : ' + myObject.address1 + ', ' + myObject.town + ',' + myObject.postcode + '\n \n If you have any issues with your order please contact us on : 0151 933 1000'
 		};
 		transporter.sendMail(mailOptions, function(error, info){
   			if (error) {
-   				console.log(error);
+   				console.log("Error with Buyer email : " + error);
   			}
   			else {
-    			console.log('Email sent to buyer: ' + info.response);
+    			console.log('Email sent to buyer : ' + info.response);
   			}
 		});    		
    	});
@@ -427,13 +424,11 @@ function startServer() {
    	app.post('/price', (req,res) => {
    		let total = 0;
    		var body = req.body;
-   		console.log(body[0]);
    		if(body[0] != undefined){
-			console.log(JSON.parse(body[0]).Item);
 	   		for(let i = 0; i < productList1.length; i++){
 	   			for(let j = 0; j < body.length; j++){
 	   				if(JSON.parse(body[j]).Item.ProductNo == productList1[i].productNumber){
-	   					console.log('Found product');
+	   					console.log('Found product : ' + productList1[i].productNumber);
 	   					total = total + (productList1[i].productPrice * JSON.parse(body[j]).Item.Quantity);
    					}
    				}
@@ -441,7 +436,7 @@ function startServer() {
    			for(let i = 0; i < productList2.length; i++){
 	   			for(let j = 0; j < body.length; j++){
 	   				if(JSON.parse(body[j]).Item.ProductNo == productList2[i].productNumber){
-	   					console.log('Found product');
+	   					console.log('Found product : ' + productList2[i].productNumber);
 	   					total = total + (productList2[i].productPrice * JSON.parse(body[j]).Item.Quantity);
    					}
    				}
@@ -449,22 +444,21 @@ function startServer() {
    			for(let i = 0; i < productList3.length; i++){
 	   			for(let j = 0; j < body.length; j++){
 	   				if(JSON.parse(body[j]).Item.ProductNo == productList3[i].productNumber){
-	   					console.log('Found product');
+	   					console.log('Found product : ' + productList3[i].productNumber);
 	   					total = total + (productList3[i].productPrice * JSON.parse(body[j]).Item.Quantity);
    					}
    				}
    			}
    		}
    		else{
-   			console.log('No option1 sent');
+   			console.log('No data sent');
    		}
-   		console.log("total is : " + total);
+   		console.log("Total so far is : " + total);
    		res.json({"total":total});
    	});
    	
    	app.post("/feedback", function(req, res) { 
    		var myObject = req.body;      
-   		console.log(myObject); 
    		let feedback = myObject.feedBack;
    		var transporter = nodemailer.createTransport({   
    			service: 'Outlook365',   
@@ -482,10 +476,10 @@ function startServer() {
 		
 		transporter.sendMail(mailOptions, function(error, info){
   			if (error) {
-   				console.log(error); 				
+   				console.log("Error with email : " + error);				
    			} 
   			else {
-    			console.log('Email sent: ' + info.response);
+    			console.log('Email sent with feedback : ' + info.response);
   			}
 		});
    	});
@@ -493,7 +487,6 @@ function startServer() {
    	app.post("/getInfo", function(req, res) { 
    		var myObject = req.body;      
    		var resJson;
-   		console.log(myObject); 
    		let ProductNo = myObject.ProductNo;
    		for(let i = 0; i < productList1.length; i++){
    			if(productList1[i].productNumber == ProductNo){
@@ -531,7 +524,7 @@ function startServer() {
    				}
    			}
    		}
-   		console.log(resJson);
+   		console.log("Information requested for product : " + resJson.prodName);
    		res.json(resJson);
    	});
 

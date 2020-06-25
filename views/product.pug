@@ -43,6 +43,7 @@ block content
 					input.input(name = 'inp' id = 'inp'+`${product}` min = '1' max = '999' value = '1')
 				div.card-action
 					a(href = '#' onclick = 'addJson("'+`${product}`+'");checkBasket();getValues()' class = 'btn purple waves-effect') Add to Basket
+
 					
 		div(class='fixed-action-btn' id = 'fabSpan' onclick = 'window.location.href = "/basket"')
 			div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
