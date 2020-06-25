@@ -53,13 +53,13 @@ function chooseProductCatagory(option){
 	
 			let loc = '"/product' + item.productNumber + '"';
 			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
-    		let h2 = "<span class = 'card-title textChange' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'>" + item.productName + "</span>";
-   			let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
+    		let h2 = "<div class = 'card-title card-content textChange' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6></div>";
+   			let p = "<p class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</p>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
     		let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
     		let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
-			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + h2 + "</div>" + p + lab + input + submit + r +"</div>"
+			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + "</div>" + h2 + p + lab + input + submit + r +"</div>"
 	
 	//Add item to the grid
 			grid = grid + gridItem	
@@ -73,13 +73,13 @@ function chooseProductCatagory(option){
 	
 			let loc = '"/product' + item.productNumber + '"';
 			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
-    		let h2 = "<span class = 'card-title textChange' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'>" + item.productName + "</span>";
-   			let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
+    		let h2 = "<div class = 'card-title card-content textChange' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6></div>";
+   			let p = "<p class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</p>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
     		let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
     		let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
-			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + h2 + "</div>" + p + lab + input + submit + r +"</div>"
+			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + "</div>" + h2 + p + lab + input + submit + r +"</div>"
 	
 	//Add item to the grid
 			grid = grid + gridItem	
@@ -93,13 +93,13 @@ function chooseProductCatagory(option){
 	
 			let loc = '"/product' + item.productNumber + '"';
 			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
-    		let h2 = "<span class = 'card-title textChange' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'>" + item.productName + "</span>";
-   			let p = "<h6 class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</h6>";
+    		let h2 = "<div class = 'card-title card-content textChange' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6></div>";
+   			let p = "<p class = 'card-content'>£" + item.productPrice.toFixed(2) + "  * inc VAT</p>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
     		let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
     		let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
-			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + h2 + "</div>" + p + lab + input + submit + r +"</div>"
+			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + "</div>" + h2 + p + lab + input + submit + r +"</div>"
 	
 	//Add item to the grid
 			grid = grid + gridItem	
