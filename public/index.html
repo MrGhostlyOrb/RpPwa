@@ -124,10 +124,10 @@
     		<li><a href = "/search" class="btn-floating purple lighten-2"><i class="material-icons">search</i></a></li>
   		</ul>
 	</div>
-	<script>  document.addEventListener('DOMContentLoaded', function() {
+	<script>  setTimeout(()=>{document.getElementById('homeFab').className = 'btn-floating pulse btn-large purple'}, 5000)document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.fixed-action-btn');
     var instances = M.FloatingActionButton.init(elems);
-    setTimeout(()=>{document.getElementById('homeFab').className = 'btn-floating pulse btn-large purple'}, 5000)
+    
   });</script>
   
   
