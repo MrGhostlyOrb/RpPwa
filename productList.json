@@ -34,20 +34,26 @@
 	"productInfo":"Carton Size : 62cm x 32cm x 32.5cm Qty : 500pc"
 	},
 	{
-	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
-	"productName":"Nicki",
-	"productPrice":602.46,
-	"productWeight":1,
-	"productNumber":7,
-	"productInfo":"Info here"
+	"imageURL":"/images/products/CPBURGERC.png",
+	"productName":"Burger and Chips Box",
+	"productPrice":10,
+	"productWeight":3.5,
+	"productLength":245,
+	"productWidth":135,
+	"productHeight":72,
+	"productNumber":"CPBURGERC",
+	"productInfo":"Qty : 100pc"
 	},
 	{
-	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
-	"productName":"James",
-	"productPrice":702.46,
-	"productWeight":1,
-	"productNumber":15,
-	"productInfo":"Info here"
+	"imageURL":"/images/products/CPBURGER.png",
+	"productName":"Small Burger and Chips Box",
+	"productPrice":8.5,
+	"productWeight":2.75,
+	"productLength":140,
+	"productWidth":128,
+	"productHeight":71,
+	"productNumber":"CPBURGER",
+	"productInfo":"Qty : 100pc"
 	},
 	{
 	"imageURL":"/images/products/coke.jpg",
