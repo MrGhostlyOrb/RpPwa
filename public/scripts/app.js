@@ -4,6 +4,7 @@
 //Variable to store the user's basket
 let basketList;
 let total;
+let DELIVERY = 10;
 
 if(window.matchMedia('(display-mode: standalone)').matches && window.location.pathname == '/'){
 	document.getElementById('butInstall2').className = document.getElementById('butInstall2').className + " disabled";
@@ -80,9 +81,10 @@ function addJson(ProductNo, Qty, Name){
 			removeFromBasket(ProductNo)
 		}
 		else{
-		mdtoast('Product added to your basket', {type: mdtoast.SUCCESS});
-		basketList.push('{"Item":{"ProductNo" :"' + ProductNo + '", "Quantity" :"' + Qty + '"}}');
+		setTimeout(()=>{mdtoast('Product added to your basket', {type: mdtoast.SUCCESS});},1000)
+		basketList.push('{"Item":{"ProductNo" :"' + ProductNo + '", "Quantity" :"' + 1 + '"}}');
 		localStorage.setItem('basket', JSON.stringify(basketList));
+		setTimeout(()=>{window.location.href = '/basket';},2000)
 		}
 	}
 }
@@ -196,7 +198,7 @@ function sendOrder(){
       			return actions.order.create({
         			purchase_units: [{
           				amount: {
-            				value: Math.round((total.total + Number.EPSILON) * 100) / 100
+            				value: total.total.toFixed(2)
           				}
         			}]
       			});
@@ -298,7 +300,7 @@ function getValue(){
   		}
   		setTimeout(()=>{
   			if(sPath == '/confirmation'){
-  				document.getElementById('tot').innerHTML = "Your total was : £" + total.total.toFixed(2)
+  				document.getElementById('tot').innerHTML = "Your total was : £" + total.total.toFixed(2);
   				document.getElementById('ref').innerHTML = "Reference number : " + localStorage.getItem('id');
   			}
   			else{
@@ -364,7 +366,17 @@ function addQty(productNumber, basketList2, quantity){
 }
 
 function checkBasket(){
-	let noItems = JSON.parse(localStorage.getItem('basket')).length
+	let noItems = JSON.parse(localStorage.getItem('basket')).length;
+	console.log(noItems);
+	if(noItems >= 1){
+		let numOfButtons = document.getElementsByClassName('add');
+		console.log(numOfButtons);
+		console.log(numOfButtons.length)
+		for(let i = 0;i < numOfButtons.length; i++){
+			numOfButtons[i].className += ' disabled';
+		}
+		setTimeout(()=>{mdtoast("You can only order a single sample at a time", {type: mdtoast.WARNING})},5000);
+	}
 	document.getElementById('numberCircle').innerHTML = noItems;
 	document.getElementById('butBasket').setAttribute('onclick', 'location.href = "/basket";');
 	

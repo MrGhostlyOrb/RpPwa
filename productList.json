@@ -5,6 +5,9 @@
 	"productName":"1000ml Compartment Clamshell",
 	"productPrice":1,
 	"productWeight":17.5,
+	"productLength":60,
+	"productWidth":33,
+	"productHeight":49.5,
 	"productNumber":"RPSEJ10",
 	"productInfo":"Carton Size : 60cm x 33cm x 49.5cm Qty : 500pc"
 	},
@@ -13,6 +16,9 @@
 	"productName":"Bagasse 600ml Clamshell",
 	"productPrice":1,
 	"productWeight":13,
+	"productLength":54.5,
+	"productWidth":30,
+	"productHeight":38.5,
 	"productNumber":"RPSEJ9",
 	"productInfo":"Carton Size : 54.5cm x 30cm x 38.5cm Qty : 600pc"
 	},
@@ -21,6 +27,9 @@
 	"productName":"6\" Hamburger Box",
 	"productPrice":1,
 	"productWeight":12,
+	"productLength":62,
+	"productWidth":32,
+	"productHeight":32.5,
 	"productNumber":"RPSEJ6",
 	"productInfo":"Carton Size : 62cm x 32cm x 32.5cm Qty : 500pc"
 	},

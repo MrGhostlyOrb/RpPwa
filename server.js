@@ -16,7 +16,7 @@ const { check, validationResult } = require('express-validator');
 
 //Constant for credentials file
 const cred = require('./cred.json');
-
+const DELIVERY = 10;
 //Constant for the express app
 const app = express();
 
@@ -57,7 +57,7 @@ function chooseProductCatagory(option){
    			let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
-    		let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
+    		let submit = "<button type = 'sumbit' class = 'btn waves-effect add purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Order Sample</button>"
     		let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
 			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + "</div>" + h2 + p + lab + input + submit + r +"</div>"
 	
@@ -298,9 +298,9 @@ function startServer() {
    		var list = [];
    		let value = 0;
    		let weight = 0;
-   		let length;
-   		let width;
-   		let height;
+   		let length = 0;
+   		let width = 0;
+   		let height = 0;
    		
    		for(var i = 0; i < basket.length; i++){ 
    			var parsed = JSON.parse(basket[i]);
@@ -320,6 +320,9 @@ function startServer() {
    				let prodPrice = productList1[i].productPrice;
    				let prodImg = productList1[i].imageURL;
    				let prodWeight = productList1[i].productWeight;
+   				length = productList1[i].productLength;
+   				width = productList1[i].productWidth;
+   				height = productList1[i].productHeight;
    				prodValue = prodPrice;
    				prodWe = prodWeight;
    				console.log("Value of product : " + prodValue);
@@ -334,6 +337,9 @@ function startServer() {
    				let prodPrice = productList2[i].productPrice;
    				let prodImg = productList2[i].imageURL;
    				let prodWeight = productList2[i].productWeight;
+   				length = productList2[i].productLength;
+   				width = productList2[i].productWidth;
+   				height = productList2[i].productHeight;
    				prodValue = prodPrice;
    				prodWe = prodWeight;
    				console.log("Value of product : " + prodValue);
@@ -349,6 +355,9 @@ function startServer() {
    				let prodPrice = productList3[i].productPrice;
    				let prodImg = productList3[i].imageURL;
    				let prodWeight = productList3[i].productWeight;
+   				length = productList3[i].productLength;
+   				width = productList3[i].productWidth;
+   				height = productList3[i].productHeight;
    				prodValue = prodPrice;
    				prodWe = prodWeight;
    				console.log("Value of product : " + prodValue);
@@ -372,9 +381,9 @@ function startServer() {
    				} 
    		});
    		
-   		let lineHeaders = 'Item Name,Value,Weight,Name,Property,Town,PostCode,Telephone';
+   		let lineHeaders = 'Item Name,Value,Weight,Length,Width,Height,Name,Property,Town,PostCode,Telephone';
    		
-   		let line = myObject.ref + ',' + value + ',' + weight + ',' + buyerName + ',' + myObject.address1 + ',' + myObject.town + ',' + myObject.postcode + ',' + myObject.phone.toString();
+   		let line = myObject.ref + ',' + value + ',' + weight + ',' + length + ',' + width + ',' + height + ',' + buyerName + ',' + myObject.address1 + ',' + myObject.town + ',' + myObject.postcode + ',' + myObject.phone.toString();
    		
    		
    		let csvlines = lineHeaders + '\n' + line;
@@ -453,7 +462,8 @@ function startServer() {
    		else{
    			console.log('No data sent');
    		}
-   		console.log("Total so far is : " + total);
+   		total = total + DELIVERY;
+   		console.log("Total so far is : " + total );
    		res.json({"total":total});
    	});
    	
