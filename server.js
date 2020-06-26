@@ -220,7 +220,7 @@ function startServer() {
 		console.log("Searching for : " + search);
 
 		for(let i = 0; i < resultsList.length; i++){
-			let li = "<li class = 'collection-item'>";
+			let li = "<li class = 'collection-item dark'>";
 			let lie = "</li>";
 			let a = "<br><a href = '/product" + resultsList[i].productNumber + "' class = 'btn-small'>";
 			let ae = "Show Item</a>"
