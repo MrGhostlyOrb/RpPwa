@@ -59,7 +59,7 @@ function chooseProductCatagory(option){
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
     		let submit = "<button type = 'sumbit' class = 'btn waves-effect add purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Order Sample</button>"
     		let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
-			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + "</div>" + h2 + p + lab + input + submit + r +"</div>"
+			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + "</div>" + h2 + p + submit + r +"</div>"
 	
 	//Add item to the grid
 			grid = grid + gridItem	
@@ -79,7 +79,7 @@ function chooseProductCatagory(option){
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
     		let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
     		let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
-			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + "</div>" + h2 + p + lab + input + submit + r +"</div>"
+			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + "</div>" + h2 + p + submit + r +"</div>"
 	
 	//Add item to the grid
 			grid = grid + gridItem	
@@ -99,7 +99,7 @@ function chooseProductCatagory(option){
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
     		let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Add to Cart</button>"
     		let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
-			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + "</div>" + h2 + p + lab + input + submit + r +"</div>"
+			let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + "</div>" + h2 + p + submit + r +"</div>"
 	
 	//Add item to the grid
 			grid = grid + gridItem	
