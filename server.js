@@ -250,6 +250,7 @@ function startServer() {
 			var item = productList2[i];
 			res.render('product', 
 				{
+					title: item.productName,
 					product: item.productNumber,
 					productDescription: item.productInfo,
 					productPrice: item.productPrice,
@@ -263,6 +264,7 @@ function startServer() {
 			var item = productList3[i];
 			res.render('product', 
 				{
+					title: item.productName,
 					product: item.productNumber,
 					productDescription: item.productInfo,
 					productPrice: item.productPrice,
