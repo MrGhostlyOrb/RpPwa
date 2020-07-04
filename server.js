@@ -52,7 +52,7 @@ function chooseProductCatagory(option){
 			let item = productList1[i];
 	
 			let loc = '"/product' + item.productNumber + '"';
-			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
+			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product : "+item.productName+"' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
     		let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
    			let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
@@ -72,7 +72,7 @@ function chooseProductCatagory(option){
 			let item = productList2[i];
 	
 			let loc = '"/product' + item.productNumber + '"';
-			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
+			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
     		let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
    			let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
@@ -92,7 +92,7 @@ function chooseProductCatagory(option){
 			let item = productList3[i];
 	
 			let loc = '"/product' + item.productNumber + '"';
-			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURL + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
+			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
     		let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
    			let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
