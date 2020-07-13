@@ -50,7 +50,7 @@
   	"url": "/option2",
   	"icons": [{
   		"src": "/images/icons/icon-32.png",
-      "sizes": "36x36",
+      "sizes": "32x32",
       "type": "image/png",
       "purpose": "any"
   	}]
@@ -61,7 +61,7 @@
   	"url": "/option3",
   	"icons": [{
   		"src": "/images/icons/icon-32.png",
-      "sizes": "36x36",
+      "sizes": "32x32",
       "type": "image/png",
       "purpose": "any"
   	}]
