@@ -39,7 +39,8 @@
   	"url": "/option1",
   	"icons": [{
   		"src": "/images/icons/icon-144.png",
-        "sizes": "144x144"
+        "sizes": "144x144",
+        "purpose": "maskable"
   	}]
   },
   {
@@ -48,7 +49,8 @@
   	"url": "/option2",
   	"icons": [{
   		"src": "/images/icons/icon-144.png",
-        "sizes": "144x144"
+        "sizes": "144x144",
+        "purpose": "maskable"
   	}]
   },
   {
@@ -57,7 +59,8 @@
   	"url": "/option3",
   	"icons": [{
   		"src": "/images/icons/icon-144.png",
-        "sizes": "144x144"
+        "sizes": "144x144",
+        "purpose": "maskable"
   	}]
   }]
 }
