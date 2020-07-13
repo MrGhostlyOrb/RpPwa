@@ -38,9 +38,7 @@
   	"description": "Jump to the cafe section of our product page",
   	"url": "/option1",
   	"icons": [{
-  		"src": "/images/icons/icon-32.png",
-      "sizes": "36x36",
-      "type": "image/png",
+  		"src": "/images/icons/local_cafe-24px.svg",
       "purpose": "any"
   	}]
   },
@@ -49,9 +47,7 @@
   	"description": "Jump to the cafe section of our product page",
   	"url": "/option2",
   	"icons": [{
-  		"src": "/images/icons/icon-32.png",
-      "sizes": "32x32",
-      "type": "image/png",
+  		"src": "/images/icons/local_cafe-24px.svg",
       "purpose": "any"
   	}]
   },
@@ -60,9 +56,7 @@
   	"description": "Jump to the cafe section of our product page",
   	"url": "/option3",
   	"icons": [{
-  		"src": "/images/icons/icon-32.png",
-      "sizes": "32x32",
-      "type": "image/png",
+  		"src": "/images/icons/local_cafe-24px.svg",
       "purpose": "any"
   	}]
   }]
