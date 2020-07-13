@@ -5,10 +5,7 @@ block content
 	body(onload = 'checkBasket()')
 		nav(id = 'nav' class = 'nav-extended purple')
 			div(class='nav-wrapper')
-				a(href='/' class='card-content purple' id = 'title')
-					i(onclick = 'window.history.back();' class = 'material-icons left' style = 'position:relative;left:1%;' id = 'back') arrow_back
-					h1.normal 📎️ Richmond Paper Supply
-					ul(class='right hide-on-med-and-down')
+				ul(class='right hide-on-med-and-down')
 						li
 							a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
 								i(class='material-icons') add_circle_outline
@@ -21,6 +18,10 @@ block content
 						li
 							a(id = 'butSearch' aria-label = 'refresh' class = 'waves-effect' onclick = 'location.href = "/search"')
 								i(class='material-icons') search
+				a(href='/' class='card-content purple' id = 'title')
+					i(onclick = 'window.history.back();' class = 'material-icons left' style = 'position:relative;left:1%;' id = 'back') arrow_back
+					h1.normal 📎️ Richmond Paper Supply
+					
 				div(class='nav-content' id = 'tab-mob')
 					ul(class='tabs tabs-transparent purple lighten-1')
 						li(class='tab waves-effect')

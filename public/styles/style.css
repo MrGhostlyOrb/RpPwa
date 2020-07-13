@@ -22,6 +22,7 @@ html,body{
 	padding-left:20px;
 	line-height:56px;
 	margin:0;
+	padding-top:2px;
 }
 
 header{
@@ -330,6 +331,10 @@ footer{
 
 	#back{
 		display:none;
+	}
+
+	.normal{
+		width:100%;
 	}
 
 	#tab-mob{

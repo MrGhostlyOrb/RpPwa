@@ -18,16 +18,15 @@ html(lang='en')
 		meta(name='description' content='Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers')
 		meta(name='theme-color' content='#df78ef')
 		link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
-		link(type='text/css' rel='stylesheet' href='styles/materialize.css'  media='screen,projection')
-		script(defer type='text/javascript' src='scripts/materialize.js')
+		link(type='text/css' rel='stylesheet' href='styles/materialize.css')
+		script(defer src='scripts/materialize.js')
 		script(defer src='/scripts/app.js')
 		script(defer src='/scripts/install.js')
 		link(rel='stylesheet' type='text/css' href='/styles/mdtoast.css')
-		script(defer type='text/javascript' src='/scripts/mdtoast.js')
+		script(defer src='/scripts/mdtoast.js')
 		script(src="https://www.paypal.com/sdk/js?client-id=Af8BTjxaPJLgD3GWXiM_zaLw55vuS6dnc2BAcnBy2_E9BxW3pDQbUtDXcO4akBU5CyWxHYn4gk8PiY0B&currency=GBP")
-		script(defer) if ('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/service-worker.js').then((reg) => {console.log('Service worker registered.', reg);});});}
-	body
-		block content
+		script if ('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/service-worker.js').then((reg) => {console.log('Service worker registered.', reg);});});}
+	block content
 	
 	footer(class = 'page-footer purple lighten-2')
 		div(class = 'container')
