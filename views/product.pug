@@ -36,7 +36,8 @@ block content
 			div(property='schema:name' content=`${productName}`)
 			div(property='schema:description' content=`${productDescription}`)
 			div(property='schema:sku' content=`${product}`)
-			div(property='schema:price' content=`${productPrice}`)
+			div(rel='schema:offers')
+				div(property='schema:price' content=`${productPrice}`)
 		div.pageInfo
 			div.card
 				div.card-image
