@@ -39,8 +39,12 @@ block content
 			div(rel='schema:offers')
 				div(property='schema:price' content=`${productPrice}`)
 				div(property = 'schema:priceCurrency' content = 'GBP')
-				div(property = 'schema:avaliability' content = 'http://schema.org/InStock')
+				div(property = 'schema:availability' content = 'http://schema.org/InStock')
 				div(rel = 'schema:url' resource = 'https://www.richmondpapersupply.co.uk/product' + `${product}`)
+				div(property='schema:priceValidUntil' datatype='xsd:date' content='2025-11-20')
+				div(rel='schema:brand')
+          			div(typeof='schema:Brand')
+            			div(property='schema:name' content='Richmond Paper Supply')
 		div.pageInfo
 			div.card
 				div.card-image
