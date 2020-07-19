@@ -273,6 +273,28 @@ function startServer() {
 				});
 			})
 		}
+		
+	app.get('/productList', (req,res) => {
+	
+		res.render('productList', {
+		
+			title: 'Product List'
+		
+		});
+		
+		let dataToWrite = "";
+		
+		for(let i = 0; i < productList1.length; i++){
+			let line = "";
+			line = productList1[i].productNumber + "," + productList1[i].productName + "," + productList1[i].productPrice + "\n"
+			dataToWrite = dataToWrite + line;
+		}
+		
+		fs.writeFile('public/productList.csv', dataToWrite, 'utf8', (err)=>{
+			console.log(err);
+		})
+		
+	});
 	
   
 	//Start the server on PORT 8080
