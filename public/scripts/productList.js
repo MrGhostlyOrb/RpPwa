@@ -21,7 +21,9 @@ function renderCSV(){
 
 function renderCSV2(){
 	let script = document.createElement('script');
-	script.innerHTML = '"@context":"https://schema.org/","@type":"Dataset","name":"Product List","description":"List of products sold by Richmond Paper Supply","distribution":{"@type":"DataDownload","encodingFormat":"CSV","contentUrl":"https://www.richmondpapersupply.co.uk/productList.csv"},';
+	script.setAttribute('type', 'application/ld+json')
+	script.innerHTML = "'@context':'https://schema.org/','@type':'Dataset','name':'Product List','description':'List of products sold by Richmond Paper Supply','distribution':{'@type':'DataDownload','encodingFormat':'CSV','contentUrl':'https://www.richmondpapersupply.co.uk/productList.csv'},";
+	
 	document.getElementById('data').appendChild(script);
 	
 }
