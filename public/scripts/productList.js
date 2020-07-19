@@ -22,7 +22,7 @@ function renderCSV(){
 function renderCSV2(){
 	let script = document.createElement('script');
 	script.setAttribute('type', 'application/ld+json')
-	script.innerHTML = '{"@type":"Dataset","@context":"https://schema.org/","name":"Product List","description":"List of products","distribution":{"@type":"DataDownload","encodingFormat":"CSV","contentUrl":"https://www.richmondpapersupply.co.uk/productList.csv"}}';
+	script.innerHTML = '{"@type":"Dataset","@context":"https://schema.org/","name":"Product List","description":"List of products/Pricelist sold by Richmond Paper Supply Co Ltd","distribution":{"@type":"DataDownload","encodingFormat":"CSV","contentUrl":"https://www.richmondpapersupply.co.uk/productList.csv"}}';
 	
 	document.getElementById('data').appendChild(script);
 	
