@@ -289,7 +289,7 @@ function startServer() {
 			let row = "";
 			let name = "<tr><td>" + productList1[i].productName + "</td>";
 			let description = "<td>" + productList1[i].productInfo + "</td>";
-			let price = "<td>£" + productList1[i].productPrice + "</td></tr>";
+			let price = "<td>£" + productList1[i].productPrice.toFixed(2) + "</td></tr>";
 			row = name + description + price
 			body = body + row;
 			
