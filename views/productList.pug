@@ -25,7 +25,7 @@ html(lang='en')
 		script(defer src='/scripts/mdtoast.js')
 		script(src="https://www.paypal.com/sdk/js?client-id=Af8BTjxaPJLgD3GWXiM_zaLw55vuS6dnc2BAcnBy2_E9BxW3pDQbUtDXcO4akBU5CyWxHYn4gk8PiY0B&currency=GBP")
 		script if ('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/service-worker.js').then((reg) => {console.log('Service worker registered.', reg);});});}
-	body(onload = 'checkBasket();getValue();')
+	body
 		script(defer src = '/scripts/productList.js')
 		nav(id = 'nav' class = 'nav-extended purple')
 			div(class='nav-wrapper')
@@ -60,6 +60,7 @@ html(lang='en')
 		div.pageInfo
 			div.card
 				div.card-content
+					a.btn.purple#download(href = '/productList.csv' download = 'PriceList') Download Price List
 					| !{products}
 			
 		

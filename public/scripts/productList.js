@@ -26,6 +26,8 @@ function renderCSV2(){
 	
 	document.getElementById('data').appendChild(script);
 	
+	
+	
 }
 
 
