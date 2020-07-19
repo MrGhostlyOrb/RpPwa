@@ -309,7 +309,7 @@ function startServer() {
 	
 		res.render('productList', {
 		
-			title: 'Product List',
+			title: 'Price List | Prices',
 			products: table
 		
 		});
