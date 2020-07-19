@@ -289,7 +289,7 @@ function startServer() {
 			let row = "";
 			let name = "<tr><td>" + productList1[i].productName + "</td>";
 			let description = "<td>" + productList1[i].productInfo + "</td>";
-			let price = "<td>" + productList1[i].productPrice + "</td></tr>";
+			let price = "<td>£" + productList1[i].productPrice + "</td></tr>";
 			row = name + description + price
 			body = body + row;
 			
@@ -297,7 +297,7 @@ function startServer() {
 		body = body + "</tbody>"
 		
 		
-		let table = tabo + thead + trow + "<th>Name</th><th>Description</th><th>Price</th>" + trowc + theadc + body
+		let table = tabo + thead + trow + "<th>Name</th><th>Description</th><th>Price (£)</th>" + trowc + theadc + body
 		console.log(table);
 	
 		res.render('productList', {
