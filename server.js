@@ -144,6 +144,13 @@ function startServer() {
   					grid: chooseProductCatagory("option3")
   				});
 		});
+		
+	app.get('/privacy', (req,res)=>{
+		res.render('privacy', {
+			title: 'Privacy Policy'
+		})
+	})
+		
 	app.get('/basket',function(req,res)
 		{  
   			res.render('basket', 
