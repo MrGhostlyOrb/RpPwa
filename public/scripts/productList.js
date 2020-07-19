@@ -22,7 +22,7 @@ function renderCSV(){
 function renderCSV2(){
 	let script = document.createElement('script');
 	script.setAttribute('type', 'application/ld+json')
-	script.innerHTML = "'@type':'Dataset'";
+	script.innerHTML = "'@context':'https://schema.org/'";
 	
 	document.getElementById('data').appendChild(script);
 	
