@@ -1,35 +1,66 @@
-extends layoutProd.pug
-
-block content
-	script(defer src = '/scripts/productList.js')
-	nav(id = 'nav' class = 'nav-extended purple')
-		div(class='nav-wrapper')
-			ul(class='right hide-on-med-and-down')
-					li
-						a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
-							i(class='material-icons') add_circle_outline
-					li
-						a(id = 'butBasket' aria-label = 'basket' class = 'waves-effect')
-							i(class='material-icons') shopping_basket
-					li
-						a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect')
-							i(class='material-icons') notifications
-					li
-						a(id = 'butSearch' aria-label = 'refresh' class = 'waves-effect' onclick = 'location.href = "/search"')
-							i(class='material-icons') search
-			a(href='/' class='card-content purple' id = 'title')
-				i(onclick = 'window.history.back();' class = 'material-icons left' style = 'position:relative;left:1%;' id = 'back') arrow_back
-				h1.normal 📎️ Richmond Paper Supply
+doctype html
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		title Richmond Paper Supply | #{ title }
+		link(type = 'text/css' rel = 'Stylesheet' href = '/styles/style.css')
+		link(rel='icon' href='/images/rich.ico' type='image/x-icon')
+		link(rel='manifest' href='/manifest.json')
+		link(rel='apple-touch-icon' href='/images/icons/icon-152.png')
+		link(href='https://fonts.googleapis.com/css2?family=Open+Sans&display=swap' rel='stylesheet')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+		meta(name='apple-mobile-web-app-capable' content='yes')
+		meta(name = 'keywords' content = 'Richmond Paper, Paper Supplies, Catering Supplies, Catering Disposables, Disposable, Catering, Food Supplies, Liverpool, RPS, Richmond Liverpool, Richmond paper liverpool, catering liverpool, wholesale liverpool, Richmond paper supply, richmondpaper, merseyside')
+		meta(name='apple-mobile-web-app-status-bar-style' content='black')
+		meta(name='apple-mobile-web-app-title' content='Richmond PWA')
+		meta(name='description' content='Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers')
+		meta(name='theme-color' content='#df78ef')
+		link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+		link(type='text/css' rel='stylesheet' href='styles/materialize.css')
+		script(defer src='scripts/materialize.js')
+		script(defer src='/scripts/app.js')
+		script(defer src='/scripts/install.js')
+		link(rel='stylesheet' type='text/css' href='/styles/mdtoast.css')
+		script(defer src='/scripts/mdtoast.js')
+		script(src="https://www.paypal.com/sdk/js?client-id=Af8BTjxaPJLgD3GWXiM_zaLw55vuS6dnc2BAcnBy2_E9BxW3pDQbUtDXcO4akBU5CyWxHYn4gk8PiY0B&currency=GBP")
+		script if ('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/service-worker.js').then((reg) => {console.log('Service worker registered.', reg);});});}
+	body(onload = 'checkBasket();getValue();')
+		script(defer src = '/scripts/productList.js')
+		nav(id = 'nav' class = 'nav-extended purple')
+			div(class='nav-wrapper')
+				ul(class='right hide-on-med-and-down')
+						li
+							a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
+								i(class='material-icons') add_circle_outline
+						li
+							a(id = 'butBasket' aria-label = 'basket' class = 'waves-effect')
+								i(class='material-icons') shopping_basket
+						li
+							a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect')
+								i(class='material-icons') notifications
+						li
+							a(id = 'butSearch' aria-label = 'refresh' class = 'waves-effect' onclick = 'location.href = "/search"')
+								i(class='material-icons') search
+				a(href='/' class='card-content purple' id = 'title')
+					i(onclick = 'window.history.back();' class = 'material-icons left' style = 'position:relative;left:1%;' id = 'back') arrow_back
+					h1.normal 📎️ Richmond Paper Supply
 					
-			div(class='nav-content' id = 'tab-mob')
-				ul(class='tabs tabs-transparent purple lighten-1')
-					li(class='tab waves-effect')
-						a(href='/') Home
-					li(class='tab disabled waves-effect')
-						a(href='/option1') Option 1
-					li(class='tab waves-effect')
-						a(href='/option2') Option 2
-					li(class='tab waves-effect')
-						a(href='/option3') Option 3
-	div.card#data
+				div(class='nav-content' id = 'tab-mob')
+					ul(class='tabs tabs-transparent purple lighten-1')
+						li(class='tab waves-effect')
+							a(href='/') Home
+						li(class='tab disabled waves-effect')
+							a(href='/option1') Option 1
+						li(class='tab waves-effect')
+							a(href='/option2') Option 2
+						li(class='tab waves-effect')
+							a(href='/option3') Option 3
+		div.card#data
+		div.pageInfo
+			div.card
+				div.card-content
+					| !{products}
+			
+		
 	

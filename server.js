@@ -276,9 +276,34 @@ function startServer() {
 		
 	app.get('/productList', (req,res) => {
 	
+		let tabo = "<table>";
+		let thead = "<thead>";
+		let trow = "<tr>";
+		let trowc = "</tr>";
+		let theadc = "</thead>";
+		let tabc = "</table>";
+		let body = "<tbody>"
+		
+		for(let i = 0; i < productList1.length;i++){
+		
+			let row = "";
+			let name = "<tr><td>" + productList1[i].productName + "</td>";
+			let description = "<td>" + productList1[i].productInfo + "</td>";
+			let price = "<td>" + productList1[i].productPrice + "</td></tr>";
+			row = name + description + price
+			body = body + row;
+			
+		}
+		body = body + "</tbody>"
+		
+		
+		let table = tabo + thead + trow + "<th>Name</th><th>Description</th><th>Price</th>" + trowc + theadc + body
+		console.log(table);
+	
 		res.render('productList', {
 		
-			title: 'Product List'
+			title: 'Product List',
+			products: table
 		
 		});
 		
