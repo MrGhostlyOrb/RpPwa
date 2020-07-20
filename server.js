@@ -283,7 +283,7 @@ function startServer() {
 		
 	app.get('/productList', (req,res) => {
 	
-		let tabo = "<table class = 'striped'>";
+		let tabo = "<table class = 'striped'><caption>Price List</caption>";
 		let thead = "<thead>";
 		let trow = "<tr>";
 		let trowc = "</tr>";
