@@ -301,6 +301,26 @@ function startServer() {
 			body = body + row;
 			
 		}
+		for(let i = 0; i < productList2.length;i++){
+		
+			let row = "";
+			let name = "<tr><td>" + productList2[i].productName + "</td>";
+			let description = "<td>" + productList2[i].productInfo + "</td>";
+			let price = "<td>£" + productList2[i].productPrice.toFixed(2) + "</td></tr>";
+			row = name + description + price
+			body = body + row;
+			
+		}
+		for(let i = 0; i < productList3.length;i++){
+		
+			let row = "";
+			let name = "<tr><td>" + productList3[i].productName + "</td>";
+			let description = "<td>" + productList3[i].productInfo + "</td>";
+			let price = "<td>£" + productList3[i].productPrice.toFixed(2) + "</td></tr>";
+			row = name + description + price
+			body = body + row;
+			
+		}
 		body = body + "</tbody>"
 		
 		
@@ -319,6 +339,16 @@ function startServer() {
 		for(let i = 0; i < productList1.length; i++){
 			let line = "";
 			line = productList1[i].productNumber + "," + productList1[i].productName + "," + productList1[i].productPrice + "\n"
+			dataToWrite = dataToWrite + line;
+		}
+		for(let i = 0; i < productList2.length; i++){
+			let line = "";
+			line = productList2[i].productNumber + "," + productList2[i].productName + "," + productList2[i].productPrice + "\n"
+			dataToWrite = dataToWrite + line;
+		}
+		for(let i = 0; i < productList3.length; i++){
+			let line = "";
+			line = productList3[i].productNumber + "," + productList3[i].productName + "," + productList3[i].productPrice + "\n"
 			dataToWrite = dataToWrite + line;
 		}
 		
