@@ -54,7 +54,7 @@ function chooseProductCatagory(option){
 			let loc = '"/product' + item.productNumber + '"';
 			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product : "+item.productName+"' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
     		let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
-   			let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
+   			let p = "<p>£" + item.productPrice.toFixed(2) + "  * not inc VAT</p></div>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
     		let submit = "<button type = 'sumbit' class = 'btn waves-effect add purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub"+item.productNumber+"'>Order Sample</button>"
@@ -124,7 +124,8 @@ function startServer() {
   					title:'Option1', 
   					message:'This is the option 1 home page',
   					grid: chooseProductCatagory("option1"),
-  					metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
+  					metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers',
+  					metaKeywords: 'Trays, Richmond Paper, Paper Supplies, Catering Supplies, Catering Disposables, Disposable, Catering, Food Supplies, Liverpool, RPS, Richmond Liverpool, Richmond paper liverpool, catering liverpool, wholesale liverpool, Richmond paper supply, richmondpaper, merseyside'
   				});
 		});
 	app.get('/option2',function(req,res)
@@ -134,7 +135,8 @@ function startServer() {
   				title:'Option2', 
   				message:'This is the option 2 home page', 
   				grid: chooseProductCatagory("option2"),
-  				metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
+  				metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers',
+  				metaKeywords: 'Cups, Richmond Paper, Paper Supplies, Catering Supplies, Catering Disposables, Disposable, Catering, Food Supplies, Liverpool, RPS, Richmond Liverpool, Richmond paper liverpool, catering liverpool, wholesale liverpool, Richmond paper supply, richmondpaper, merseyside'
   			});
 		});
 	app.get('/option3',function(req,res)
@@ -144,14 +146,16 @@ function startServer() {
   					title:'Option3', 
   					message:'This is the option 3 home page', 
   					grid: chooseProductCatagory("option3"),
-  					metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
+  					metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers',
+  					metaKeywords: 'Bags, Richmond Paper, Paper Supplies, Catering Supplies, Catering Disposables, Disposable, Catering, Food Supplies, Liverpool, RPS, Richmond Liverpool, Richmond paper liverpool, catering liverpool, wholesale liverpool, Richmond paper supply, richmondpaper, merseyside'
   				});
 		});
 		
 	app.get('/privacy', (req,res)=>{
 		res.render('privacy', {
 			title: 'Privacy Policy',
-			metaDescription: 'Richmond Paper Supply Co\'s Privacy Policy'
+			metaDescription: 'Richmond Paper Supply Co\'s Privacy Policy',
+			metaKeywords: 'Privacy, Richmond Paper, Paper Supplies, Catering Supplies, Catering Disposables, Disposable, Catering, Food Supplies, Liverpool, RPS, Richmond Liverpool, Richmond paper liverpool, catering liverpool, wholesale liverpool, Richmond paper supply, richmondpaper, merseyside'
 		})
 	})
 		
@@ -161,7 +165,8 @@ function startServer() {
   			{
   				title:'Basket', 
   				message:'Basket List',
-  				metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
+  				metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers',
+  				metaKeywords: 'Basket, Richmond Paper, Paper Supplies, Catering Supplies, Catering Disposables, Disposable, Catering, Food Supplies, Liverpool, RPS, Richmond Liverpool, Richmond paper liverpool, catering liverpool, wholesale liverpool, Richmond paper supply, richmondpaper, merseyside'
   			});
 		});
 	app.get('/confirmation', function(req,res){
@@ -169,7 +174,8 @@ function startServer() {
 			{
 				title:'Confirmation', 
 				message:'Confirmation Page',
-				metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
+				metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers',
+				metaKeywords: 'Confirmation, Richmond Paper, Paper Supplies, Catering Supplies, Catering Disposables, Disposable, Catering, Food Supplies, Liverpool, RPS, Richmond Liverpool, Richmond paper liverpool, catering liverpool, wholesale liverpool, Richmond paper supply, richmondpaper, merseyside'
 			});
 		});
 		
@@ -177,7 +183,8 @@ function startServer() {
 		res.render('search', {
 			title: 'Search',
 			message: 'Search',
-			metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
+			metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers',
+			metaKeywords: 'Richmond Paper, Paper Supplies, Catering Supplies, Catering Disposables, Disposable, Catering, Food Supplies, Liverpool, RPS, Richmond Liverpool, Richmond paper liverpool, catering liverpool, wholesale liverpool, Richmond paper supply, richmondpaper, merseyside'
 		})
 	});
 	app.post('/searchResults', (req,res)=>{
@@ -331,7 +338,7 @@ function startServer() {
 		body = body + "</tbody>"
 		
 		
-		let table = tabo + thead + trow + "<th>Name</th><th>Description</th><th>Price (£)</th>" + trowc + theadc + body
+		let table = tabo + thead + trow + "<th>Name</th><th>Description</th><th>Price (£) not inc VAT</th>" + trowc + theadc + body
 		console.log(table);
 	
 		res.render('productList', {

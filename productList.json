@@ -68,6 +68,123 @@
 	"productWeight":1,
 	"productNumber":"C101",
 	"productInfo":"Info here"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"8 x 8 White",
+	"productPrice":6.50,
+	"productWeight":1,
+	"productNumber":"8x8White",
+	"productInfo":"8\" x 8\" White Paper Bags"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"10 x 10 White",
+	"productPrice":8.50,
+	"productWeight":1,
+	"productNumber":"10x10White",
+	"productInfo":"10\" x 10\" White Paper Bags"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"10 x 10 Greaseproof",
+	"productPrice":12.50,
+	"productWeight":1,
+	"productNumber":"10x10GP",
+	"productInfo":"10\" x 10\" Greaseproof Bags"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"1/2 Pint Plastic Glasses",
+	"productPrice":30.00,
+	"productWeight":1,
+	"productNumber":"12Pint",
+	"productInfo":"1/2 Pint Plastic Glasses Qty: 1000"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Plastic Pint Glasses",
+	"productPrice":35.00,
+	"productWeight":1,
+	"productNumber":"PintGlass",
+	"productInfo":"Plastic Pint Glasses Qty: 1000"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"12oz Smoothie Cups",
+	"productPrice":60,
+	"productWeight":1,
+	"productNumber":"12ozS",
+	"productInfo":"12oz Smoothie Cups Qty: 1000"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"12oz Domed Lids",
+	"productPrice":35.00,
+	"productWeight":1,
+	"productNumber":"12ozD",
+	"productInfo":"12oz Domed Lids Qty: 1000 - For use with <a href = '/product12ozS'>12oz Smoothie Cups</a>"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"16oz Smoothie Cups",
+	"productPrice":70.00,
+	"productWeight":1,
+	"productNumber":"16ozS",
+	"productInfo":"16oz Smoothie Cups Qty: 1000"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"16oz Domed Lids",
+	"productPrice":35.00,
+	"productWeight":1,
+	"productNumber":"16ozD",
+	"productInfo":"16oz Domed Lids Qty: 1000 - For use with <a href = '/product16ozS'>16oz Smoothie Cups</a>"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Greaseproof Paper",
+	"productPrice":9.50,
+	"productWeight":1,
+	"productNumber":"GPP",
+	"productInfo":"Greaseproof Paper price/reem"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Burger Wrap",
+	"productPrice":18.50,
+	"productWeight":1,
+	"productNumber":"BW",
+	"productInfo":"Burger Wrap"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Wooden Cutlery",
+	"productPrice":24.00,
+	"productWeight":1,
+	"productNumber":"WC",
+	"productInfo":"Wooden Cutlery, Knives, Forks and Spoons Qty: 1000"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Plastic Cutlery",
+	"productPrice":8.50,
+	"productWeight":1,
+	"productNumber":"PC",
+	"productInfo":"Plastic Cutlery, Knives, Forks and Spoons Qty: 1000"
 	}
 	]
 	
