@@ -295,7 +295,7 @@ function startServer() {
 			})
 		}
 		
-	app.get('/productList', (req,res) => {
+	app.get('/price-list', (req,res) => {
 	
 		let tabo = "<table class = 'striped'><caption style = 'margin-bottom:3%;margin-top:3%;font-size:2em;'><b>Price List</b></caption>";
 		let thead = "<thead>";
