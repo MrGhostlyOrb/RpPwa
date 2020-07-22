@@ -61,15 +61,6 @@
 	"productInfo":"Qty : 100pc"
 	},
 	{
-	"imageURL":"/images/products/coke.jpg",
-	"imageURLSmall":"/images/products/cokeSmall.jpg",
-	"productName":"Coke 330ml",
-	"productPrice":9.95,
-	"productWeight":1,
-	"productNumber":"C101",
-	"productInfo":"Info here"
-	},
-	{
 	"imageURL":"",
 	"imageURLSmall":"",
 	"productName":"8 x 8 White",
@@ -275,6 +266,258 @@
 	"productWeight":1,
 	"productNumber":"HD",
 	"productInfo":"Hot Dog Boxes Qty: 1000"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Coke 330ml",
+	"productPrice":9.95,
+	"productWeight":1,
+	"productNumber":"Coke330",
+	"productInfo":"Coke Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Diet Coke 330ml",
+	"productPrice":7.95,
+	"productWeight":1,
+	"productNumber":"DietCoke330",
+	"productInfo":"Diet Coke Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Fanta 330ml",
+	"productPrice":7.95,
+	"productWeight":1,
+	"productNumber":"Fanta330",
+	"productInfo":"Fanta Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Cherry Coke 330ml",
+	"productPrice":9.95,
+	"productWeight":1,
+	"productNumber":"CherryCoke330",
+	"productInfo":"Cherry Coke Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Dr Pepper 330ml",
+	"productPrice":7.95,
+	"productWeight":1,
+	"productNumber":"DrP330",
+	"productInfo":"Dr Pepper Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Sprite 330ml",
+	"productPrice":7.95,
+	"productWeight":1,
+	"productNumber":"Sprite330",
+	"productInfo":"Sprite Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Pepsi 330ml",
+	"productPrice":5.50,
+	"productWeight":1,
+	"productNumber":"Pepsi330",
+	"productInfo":"Pepsi Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Diet Pepsi 330ml",
+	"productPrice":5.50,
+	"productWeight":1,
+	"productNumber":"DietPepsi330",
+	"productInfo":"Diet Pepsi Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"7Up 330ml",
+	"productPrice":7.50,
+	"productWeight":1,
+	"productNumber":"7Up330",
+	"productInfo":"7Up Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Tango 330ml",
+	"productPrice":6.00,
+	"productWeight":1,
+	"productNumber":"Tango330",
+	"productInfo":"Tango Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"D&B 330ml",
+	"productPrice":6.00,
+	"productWeight":1,
+	"productNumber":"D&B330",
+	"productInfo":"D&B Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Cream Soda 330ml",
+	"productPrice":6.00,
+	"productWeight":1,
+	"productNumber":"CreamSoda330",
+	"productInfo":"Cream Soda Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Vimto 330ml",
+	"productPrice":6.50,
+	"productWeight":1,
+	"productNumber":"Vimto330",
+	"productInfo":"Vimto Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Tango Apple 330ml",
+	"productPrice":6.00,
+	"productWeight":1,
+	"productNumber":"TangoApple330",
+	"productInfo":"Tango Apple Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Tango Cherry 330ml",
+	"productPrice":6.00,
+	"productWeight":1,
+	"productNumber":"TangoCherry330",
+	"productInfo":"Tango Cherry Cans 330ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Coke 500ml",
+	"productPrice":16.00,
+	"productWeight":1,
+	"productNumber":"Coke500",
+	"productInfo":"Coke Bottles 500ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Diet Coke 500ml",
+	"productPrice":14.00,
+	"productWeight":1,
+	"productNumber":"DietCoke500",
+	"productInfo":"Diet Coke Bottles 500ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Fanta 500ml",
+	"productPrice":14.00,
+	"productWeight":1,
+	"productNumber":"Fanta500",
+	"productInfo":"Fanta Bottles 500ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Sprite 500ml",
+	"productPrice":14.00,
+	"productWeight":1,
+	"productNumber":"Sprite500",
+	"productInfo":"Sprite Bottles 500ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"7Up 500ml",
+	"productPrice":12.50,
+	"productWeight":1,
+	"productNumber":"7Up500",
+	"productInfo":"7Up Bottles 500ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Dr Pepper 500ml",
+	"productPrice":14.00,
+	"productWeight":1,
+	"productNumber":"DrPepper500",
+	"productInfo":"Dr Pepper Bottles 500ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Cherry Coke 500ml",
+	"productPrice":17.00,
+	"productWeight":1,
+	"productNumber":"CherryCoke500",
+	"productInfo":"Cherry Coke Bottles 500ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Oasis Citrus 500ml",
+	"productPrice":8.00,
+	"productWeight":1,
+	"productNumber":"OasisCitrus500",
+	"productInfo":"Oasis Cirrus Bottles 500ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Oasis Summer 500ml",
+	"productPrice":8.00,
+	"productWeight":1,
+	"productNumber":"OasisSummer500",
+	"productInfo":"Oasis Summer Bottles 500ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Volvic Water 500ml",
+	"productPrice":5.50,
+	"productWeight":1,
+	"productNumber":"VolvicWater500",
+	"productInfo":"Volvic Water Bottles 500ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Water 500ml",
+	"productPrice":4.00,
+	"productWeight":1,
+	"productNumber":"Water500",
+	"productInfo":"Water Bottles 500ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Smart Water 500ml",
+	"productPrice":6.50,
+	"productWeight":1,
+	"productNumber":"SmartWater500",
+	"productInfo":"Smart Water Bottles 500ml Qty: 24"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Lucozade 500ml",
+	"productPrice":13.00,
+	"productWeight":1,
+	"productNumber":"Lucozade500",
+	"productInfo":"Lucozade Bottles 500ml Qty: 24"
 	}
 	]
 	

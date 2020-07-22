@@ -121,10 +121,10 @@ function startServer() {
 		{  
   			res.render('option1', 
   				{
-  					title:'Option1', 
-  					message:'This is the option 1 home page',
+  					title:'Coffee Shops', 
+  					message:'Our products catered towards Coffee Shops',
   					grid: chooseProductCatagory("option1"),
-  					metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers',
+  					metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers | Coffee Shops',
   					metaKeywords: 'Trays, Richmond Paper, Paper Supplies, Catering Supplies, Catering Disposables, Disposable, Catering, Food Supplies, Liverpool, RPS, Richmond Liverpool, Richmond paper liverpool, catering liverpool, wholesale liverpool, Richmond paper supply, richmondpaper, merseyside'
   				});
 		});
