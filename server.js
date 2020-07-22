@@ -123,7 +123,8 @@ function startServer() {
   				{
   					title:'Option1', 
   					message:'This is the option 1 home page',
-  					grid: chooseProductCatagory("option1")
+  					grid: chooseProductCatagory("option1"),
+  					metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
   				});
 		});
 	app.get('/option2',function(req,res)
@@ -132,7 +133,8 @@ function startServer() {
   			{
   				title:'Option2', 
   				message:'This is the option 2 home page', 
-  				grid: chooseProductCatagory("option2")
+  				grid: chooseProductCatagory("option2"),
+  				metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
   			});
 		});
 	app.get('/option3',function(req,res)
@@ -141,13 +143,15 @@ function startServer() {
   				{
   					title:'Option3', 
   					message:'This is the option 3 home page', 
-  					grid: chooseProductCatagory("option3")
+  					grid: chooseProductCatagory("option3"),
+  					metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
   				});
 		});
 		
 	app.get('/privacy', (req,res)=>{
 		res.render('privacy', {
-			title: 'Privacy Policy'
+			title: 'Privacy Policy',
+			metaDescription: 'Richmond Paper Supply Co\'s Privacy Policy'
 		})
 	})
 		
@@ -156,21 +160,24 @@ function startServer() {
   			res.render('basket', 
   			{
   				title:'Basket', 
-  				message:'Basket List', 
+  				message:'Basket List',
+  				metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
   			});
 		});
 	app.get('/confirmation', function(req,res){
 		res.render('confirmation', 
 			{
 				title:'Confirmation', 
-				message:'Confirmation Page'
+				message:'Confirmation Page',
+				metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
 			});
 		});
 		
 	app.get('/search', (req, res)=>{
 		res.render('search', {
 			title: 'Search',
-			message: 'Search'
+			message: 'Search',
+			metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
 		})
 	});
 	app.post('/searchResults', (req,res)=>{
@@ -330,7 +337,8 @@ function startServer() {
 		res.render('productList', {
 		
 			title: 'Price List | Prices',
-			products: table
+			products: table,
+			metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
 		
 		});
 		
