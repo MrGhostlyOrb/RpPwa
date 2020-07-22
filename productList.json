@@ -185,6 +185,96 @@
 	"productWeight":1,
 	"productNumber":"PC",
 	"productInfo":"Plastic Cutlery, Knives, Forks and Spoons Qty: 1000"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"1 Ply Serviettes",
+	"productPrice":17.50,
+	"productWeight":1,
+	"productNumber":"1Pl",
+	"productInfo":"1 Ply Serviettes Qty: 5000"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"2 Ply Serviettes",
+	"productPrice":16.00,
+	"productWeight":1,
+	"productNumber":"2Pl",
+	"productInfo":"2 Ply Serviettes Qty: 2000"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"20L Oil Drum",
+	"productPrice":18.50,
+	"productWeight":1,
+	"productNumber":"Oil",
+	"productInfo":"20L Oil Drum"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"12oz Double Wall Paper Cups",
+	"productPrice":35.00,
+	"productWeight":1,
+	"productNumber":"12PapC",
+	"productInfo":"12oz Double Wall Paper Cups Qty: 500"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"12oz Lids",
+	"productPrice":22.00,
+	"productWeight":1,
+	"productNumber":"12PapCL",
+	"productInfo":"12oz Paper Cup Lids Qty: 1000 - For use with <a href = '/product12PapC'>12oz Paper Cups</a>"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"16oz Double Wall Paper Cups",
+	"productPrice":40.00,
+	"productWeight":1,
+	"productNumber":"16PapC",
+	"productInfo":"16oz Double Wall Paper Cups Qty: 500"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"16oz Lids",
+	"productPrice":22.00,
+	"productWeight":1,
+	"productNumber":"16PapCL",
+	"productInfo":"16oz Paper Cup Lids Qty: 1000 - For use with <a href = '/product16PapC'>16oz Paper Cups</a>"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Chip Trays",
+	"productPrice":24.50,
+	"productWeight":1,
+	"productNumber":"CP",
+	"productInfo":"Polystyrene Chip Trays Qty: 500"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Large Chip Trays",
+	"productPrice":28.50,
+	"productWeight":1,
+	"productNumber":"CPL",
+	"productInfo":"Large Polystyrene Chip Trays Qty: 500"
+	},
+	{
+	"imageURL":"",
+	"imageURLSmall":"",
+	"productName":"Hot Dog Boxes",
+	"productPrice":60.00,
+	"productWeight":1,
+	"productNumber":"HD",
+	"productInfo":"Hot Dog Boxes Qty: 1000"
 	}
 	]
 	

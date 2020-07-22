@@ -119,7 +119,6 @@ label{
 	display:grid;
 	grid-template-columns: 20% 20% 20% 20%; /* 5 cols */
   	grid-column-gap:2%;
-  	grid-row-gap:5%;
   	margin-left:12%;
   	margin-top:5%;
   	
@@ -324,7 +323,7 @@ padding-right:10%;
 }
 
 footer{
-	margin-top:30%;
+	margin-top:5%;
 }
 
 @media only screen and (max-width: 1070px) {
