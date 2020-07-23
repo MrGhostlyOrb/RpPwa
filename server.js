@@ -125,7 +125,7 @@ function startServer() {
   					message:'Our products catered towards Coffee Shops',
   					grid: chooseProductCatagory("option1"),
   					metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers | Coffee Shops',
-  					metaKeywords: 'Trays, Richmond Paper, Paper Supplies, Catering Supplies, Catering Disposables, Disposable, Catering, Food Supplies, Liverpool, RPS, Richmond Liverpool, Richmond paper liverpool, catering liverpool, wholesale liverpool, Richmond paper supply, richmondpaper, merseyside'
+  					metaKeywords: 'Trays, Coffee shop supplies, Richmond Paper, Paper Supplies, Catering Supplies, Catering Disposables, Disposable, Catering, Food Supplies, Liverpool, RPS, Richmond Liverpool, Richmond paper liverpool, catering liverpool, wholesale liverpool, Richmond paper supply, richmondpaper, merseyside'
   				});
 		});
 	app.get('/option2',function(req,res)
