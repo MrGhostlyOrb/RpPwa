@@ -260,7 +260,7 @@ function startServer() {
 					title: item.productName,
 					product: item.productNumber,
 					productDescription: item.productInfo,
-					productPrice: item.productPrice,
+					productPrice: item.productPrice.toFixed(2),
 					productImage: item.imageURL,
 					productName: item.productName
 				});
@@ -274,7 +274,7 @@ function startServer() {
 					title: item.productName,
 					product: item.productNumber,
 					productDescription: item.productInfo,
-					productPrice: item.productPrice,
+					productPrice: item.productPrice.toFixed(2),
 					productImage: item.imageURL,
 					productName: item.productName
 				});
@@ -288,7 +288,7 @@ function startServer() {
 					title: item.productName,
 					product: item.productNumber,
 					productDescription: item.productInfo,
-					productPrice: item.productPrice,
+					productPrice: item.productPrice.toFixed(2),
 					productImage: item.imageURL,
 					productName: item.productName
 				});
