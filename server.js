@@ -51,9 +51,9 @@ function chooseProductCatagory(option){
 				
 			let item = productList1[i];
 	
-			let loc = '"/product' + item.productNumber + '"';
-			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product : "+item.productName+"' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
-    		let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
+			let loc = '"/products/' + item.productNumber + '"';
+			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product : "+item.productName+"' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/products/"+ item.productNumber +"\"'/>";
+    		let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/products/"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
    			let p = "<p>£" + item.productPrice.toFixed(2) + "  * not inc VAT</p></div>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
@@ -71,9 +71,9 @@ function chooseProductCatagory(option){
 				
 			let item = productList2[i];
 	
-			let loc = '"/product' + item.productNumber + '"';
-			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
-    		let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
+			let loc = '"/products/' + item.productNumber + '"';
+			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/products/"+ item.productNumber +"\"'/>";
+    		let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/products/"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
    			let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
@@ -91,9 +91,9 @@ function chooseProductCatagory(option){
 				
 			let item = productList3[i];
 	
-			let loc = '"/product' + item.productNumber + '"';
-			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'/>";
-    		let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/product"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
+			let loc = '"/products/' + item.productNumber + '"';
+			let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/products/"+ item.productNumber +"\"'/>";
+    		let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/products/"+ item.productNumber +"\"'><h6>" + item.productName + "</h6>";
    			let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
    			let lab = "<div class = 'input-field'><label for='inp"+item.productNumber+"'>Quantity : </label>"
    			let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp"+item.productNumber+"'></input></div>";
@@ -243,7 +243,7 @@ function startServer() {
 		for(let i = 0; i < resultsList.length; i++){
 			let li = "<li class = 'collection-item dark'>";
 			let lie = "</li>";
-			let a = "<br><a href = '/product" + resultsList[i].productNumber + "' class = 'btn-small'>";
+			let a = "<br><a href = '/products/" + resultsList[i].productNumber + "' class = 'btn-small'>";
 			let ae = "Show Item</a>"
 			resultHTML = resultHTML + li + resultsList[i].productName + "<br>" + resultsList[i].productInfo + "<br>" + a + ae + lie;
 		}
@@ -253,7 +253,7 @@ function startServer() {
 	})
 	
 	for(let i = 0; i < productList1.length; i++){
-		app.get('/product' + productList1[i].productNumber, (req,res) => {			
+		app.get('/products/' + productList1[i].productNumber, (req,res) => {			
 			var item = productList1[i];
 			res.render('product', 
 				{
@@ -267,7 +267,7 @@ function startServer() {
 			})
 		}
 		for(let i = 0; i < productList2.length; i++){
-		app.get('/product' + productList2[i].productNumber, (req,res) => {			
+		app.get('/products/' + productList2[i].productNumber, (req,res) => {			
 			var item = productList2[i];
 			res.render('product', 
 				{
@@ -281,7 +281,7 @@ function startServer() {
 			})
 		}
 		for(let i = 0; i < productList3.length; i++){
-		app.get('/product' + productList3[i].productNumber, (req,res) => {			
+		app.get('/products/' + productList3[i].productNumber, (req,res) => {			
 			var item = productList3[i];
 			res.render('product', 
 				{
