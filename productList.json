@@ -121,7 +121,7 @@
 	"productPrice":20.00,
 	"productWeight":1,
 	"productNumber":"GLASS12M1",
-	"productInfo":"12oz Domed Lids Qty: 1000 - For use with <a href = '/productGLASS12M'>12oz Smoothie Cups</a>"
+	"productInfo":"12oz Domed Lids Qty: 1000 - For use with <a href = '/products/GLASS12M'>12oz Smoothie Cups</a>"
 	},
 	{
 	"imageURL":"",
@@ -139,7 +139,7 @@
 	"productPrice":25.00,
 	"productWeight":1,
 	"productNumber":"GLASS16ML",
-	"productInfo":"16oz Domed Lids Qty: 1000 - For use with <a href = '/productGLASS16M'>16oz Smoothie Cups</a>"
+	"productInfo":"16oz Domed Lids Qty: 1000 - For use with <a href = '/products/GLASS16M'>16oz Smoothie Cups</a>"
 	},
 	{
 	"imageURL":"",
@@ -220,7 +220,7 @@
 	"productPrice":21.60,
 	"productWeight":1,
 	"productNumber":"PAPERLID9S",
-	"productInfo":"12oz Paper Cup Lids Qty: 1000 - For use with <a href = '/productPAPERCUP12B'>12oz Paper Cups</a>"
+	"productInfo":"12oz Paper Cup Lids Qty: 1000 - For use with <a href = '/products/PAPERCUP12B'>12oz Paper Cups</a>"
 	},
 	{
 	"imageURL":"",
@@ -238,7 +238,7 @@
 	"productPrice":22.00,
 	"productWeight":1,
 	"productNumber":"PAPERLID9SS",
-	"productInfo":"16oz Paper Cup Lids Qty: 1000 - For use with <a href = '/productPAPERCUP16A'>16oz Paper Cups</a>"
+	"productInfo":"16oz Paper Cup Lids Qty: 1000 - For use with <a href = '/products/PAPERCUP16A'>16oz Paper Cups</a>"
 	},
 	{
 	"imageURL":"",
