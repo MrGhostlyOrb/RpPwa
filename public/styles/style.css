@@ -161,19 +161,7 @@ label{
 	position:relative;
 	margin-left:25%;
 }
-.header button {
-  border: none;
-  cursor: pointer;
-  height: 50px;
-  margin-right: 16px;
-  opacity: 0.54;
-  outline: none;
-  overflow: hidden;
-  text-indent: -30000px;
-  transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
-  width: 24px;
-  float:right;
-}
+
 
 .pageTitleLink{
 	text-decoration:none;
@@ -188,31 +176,7 @@ label{
 	
 }
 
-.listItem{
 
-	width:50%;
-	position:relative;
-	left:25%;
-	text-decoration:none;
-	outline: 1px solid black;
-	margin-top:2%;
-	margin-bottom:2%;
-	height:20%;
-	
-}
-
-.listItem2{
-
-
-
-	text-decoration:none;
-	outline: 1px solid black;
-	margin-top:2%;
-	margin-bottom:2%;
-	height:20%;
-	padding:2%;
-	
-}
 
 .header #butRefresh {
   background: url(/images/refresh.svg) center center no-repeat;
@@ -235,11 +199,6 @@ label{
 	text-align:center;
 }
 
-.textChange{
-	color:black !important;
-	text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
-}
-
 #tot{
 	margin:2%;
 	margin-left:5%;
@@ -254,14 +213,7 @@ label{
 }
 
 
-.card-text{
-	
-	padding-left:5%;
-}
 
-.card-text-title{
-	padding:4%;
-}
 
 .card-button-link{
 	background-color:#ee98fb;
@@ -343,94 +295,61 @@ footer{
 	#tab-mob{
 		display:block;
 	}
+	
 	.numberCircle{
 		display:block;
 	}
-
-	
-	.pageTitle{
-	
-	
-	}
-	.pageTitleLink{
-		
-	
-	}
-	
-	.header{
-			height:56px;
-			
-		}
-		
-
 
 	#butSubmit{
 		width:70%;
 		margin-left:10%
 	}
 
-  .grid{
-	display:grid;
-	grid-template-columns: 100%; /* 5 cols */
-  	grid-template-rows:    35% 35% 35%;
-  	grid-column-gap:2%;
-  	grid-row-gap:2%;
-  	margin-top:5%;
-}
+  	.grid{
+		display:grid;
+		grid-template-columns: 100%; /* 5 cols */
+  		grid-template-rows:    35% 35% 35%;
+  		grid-column-gap:2%;
+  		grid-row-gap:2%;
+  		margin-top:5%;
+	}
 
 
-.grid-product{
-	display:grid;
-	width:90%;
-	position:relative;
-	left:5%;
-	grid-template-columns: 48% 48%; /* 5 cols */
-  	grid-column-gap:2%;
-  	margin-left:1%;
-  	margin-top:5%;
-  	
-}
+	.grid-product{
+		display:grid;
+		width:90%;
+		position:relative;
+		left:5%;
+		grid-template-columns: 48% 48%; /* 5 cols */
+  		grid-column-gap:2%;
+  		margin-left:1%;
+  		margin-top:5%;	
+	}
 
-.pageInfo{
-	margin-top:2%;
-	width:90%;
-	position:relative;
-	left:5%;
-	margin-left:0;
-}
+	.pageInfo{
+		margin-top:2%;
+		width:90%;
+		position:relative;
+		left:5%;
+		margin-left:0;
+	}
 
-footer{
-	margin-top:40%;
-}
+	footer{
+		margin-top:40%;
+	}
 
+	.card-home{
+		background-color:white;
+  		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  		border-radius:10px;
+  		display:grid;
+		grid-template-columns: 100%; /* 5 cols */
+	}
 
-
-.card-home{
-	background-color:white;
-  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  	border-radius:10px;
-  	display:grid;
-	grid-template-columns: 100%; /* 5 cols */
-}
-
-
-#customerForm{
-	width:90%;
-	margin-left:5%;
-
-}
-
-.listForBasket{
-	margin-top:5%;
-	margin-bottom:5%;
-}
-
-.listItem{
-	width:100%;
-	position:relative;
-	left:0%;
-}
-
+	#customerForm{
+		width:90%;
+		margin-left:5%;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -473,75 +392,43 @@ footer{
 }
 
 @media only screen and (max-width: 600px) {
-
-	*{
 		
-	}
-	
-	.pageTitle{
-		
-	
-	}
-	
-		.header{
-			height:56px;
-		
-			
-		}
-		
-		.header button{
-			height:40px;
-			margin-top:5px;
-		}
-		
-		.powered-by{
-			display:none;
-		}
-		
-		.pageTitleLink{
-		
+	.pageTitleLink{
 		font-size:20px;
 		margin-top:5%;
-	
 	}
-	
+		
 	#butRefresh{
 		display:none;
 	}
+  		
+  	.grid{
+		display:grid;
+		grid-template-columns: 100%; /* 5 cols */
+  		grid-column-gap:2%;
+  		grid-row-gap:2%;
+  		margin-top:5%;
+	}
 
-  .grid{
-	display:grid;
-	grid-template-columns: 100%; /* 5 cols */
-  	grid-column-gap:2%;
-  	grid-row-gap:2%;
-  	margin-top:5%;
+	.grid-product{
+		display:grid;
+		width:90%;
+		position:relative;
+		left:5%;
+		grid-template-columns: 48% 48%; /* 5 cols */
+  		grid-column-gap:2%;
+  		margin-left:1%;
+  		margin-top:5%;
+	}
 }
 
-
-.grid-product{
-	display:grid;
-	width:90%;
-	position:relative;
-	left:5%;
-	grid-template-columns: 48% 48%; /* 5 cols */
-  	grid-column-gap:2%;
-  	margin-left:1%;
-  	margin-top:5%;
-  	
+.fab {
+	position: fixed;
+	width: 56px;
+	left: 90%;
+	bottom: 15px;
+	margin-left: -28px;
 }
-}
-
-           
-            
-            .fab {
-              position: fixed;
-              width: 56px;
-              left: 90%;
-              bottom: 15px;
-              margin-left: -28px;
-            }
-            
-
 
 .numberCircle {
 	position:relative;
