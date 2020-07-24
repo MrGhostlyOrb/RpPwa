@@ -308,9 +308,9 @@ function startServer() {
 		for(let i = 0; i < productList1.length;i++){
 		
 			let row = "";
-			let name = "<tr><td>" + productList1[i].productName + "</td>";
+			let name = "<tr><td><a class = 'dark-text' style = 'color:rgba(0, 0, 0, 0.87);' href = '/products/" + productList1[i].productNumber + "'>" + productList1[i].productName + "</td>";
 			let description = "<td>" + productList1[i].productInfo + "</td>";
-			let price = "<td>£" + productList1[i].productPrice.toFixed(2) + "</td></tr>";
+			let price = "<td>£" + productList1[i].productPrice.toFixed(2) + "</a></td></tr>";
 			row = name + description + price
 			body = body + row;
 			
@@ -318,9 +318,9 @@ function startServer() {
 		for(let i = 0; i < productList2.length;i++){
 		
 			let row = "";
-			let name = "<tr><td>" + productList2[i].productName + "</td>";
+			let name = "<tr><td><a class = 'dark-text' style = 'color:rgba(0, 0, 0, 0.87);' href = '/products/" + productList1[i].productNumber + "'>" + productList2[i].productName + "</td>";
 			let description = "<td>" + productList2[i].productInfo + "</td>";
-			let price = "<td>£" + productList2[i].productPrice.toFixed(2) + "</td></tr>";
+			let price = "<td>£" + productList2[i].productPrice.toFixed(2) + "</a></td></tr>";
 			row = name + description + price
 			body = body + row;
 			
@@ -328,9 +328,9 @@ function startServer() {
 		for(let i = 0; i < productList3.length;i++){
 		
 			let row = "";
-			let name = "<tr><td>" + productList3[i].productName + "</td>";
+			let name = "<tr><td><a class = 'dark-text' style = 'color:rgba(0, 0, 0, 0.87);' href = '/products/" + productList1[i].productNumber + "'>" + productList3[i].productName + "</td>";
 			let description = "<td>" + productList3[i].productInfo + "</td>";
-			let price = "<td>£" + productList3[i].productPrice.toFixed(2) + "</td></tr>";
+			let price = "<td>£" + productList3[i].productPrice.toFixed(2) + "</a></td></tr>";
 			row = name + description + price
 			body = body + row;
 			

@@ -33,6 +33,10 @@ header{
 	font-size:15px;
 }
 
+.dark-text{
+	color:rgba(0, 0, 0, 0.87);
+}
+
 #searchPage{
 	margin-bottom:80%;
 }
@@ -460,6 +464,9 @@ footer{
 		color:white;
 	}
 	input{
+		color:white !important;
+	}
+	.dark-text{
 		color:white !important;
 	}
 
