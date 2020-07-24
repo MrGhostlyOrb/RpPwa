@@ -524,31 +524,28 @@
 	,
 	"option2": [
 	{
-	"imageURL":"",
-	"imageURLSmall":"",
-	"productName":"1 Ply Serviettes",
-	"productPrice":17.50,
+	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
+	"productName":"Mark",
+	"productPrice":534.74,
 	"productWeight":1,
-	"productNumber":"J1P33W",
-	"productInfo":"1 Ply Serviettes Qty: 5000"
+	"productNumber":360,
+	"productInfo":"Info here"
 	},
 	{
-	"imageURL":"",
-	"imageURLSmall":"",
-	"productName":"1 Ply Serviettes",
-	"productPrice":17.50,
+	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
+	"productName":"Markus",
+	"productPrice":34.74,
 	"productWeight":1,
-	"productNumber":"J1P33W",
-	"productInfo":"1 Ply Serviettes Qty: 5000"
+	"productNumber":"7605C",
+	"productInfo":"Info here"
 	},
 	{
-	"imageURL":"",
-	"imageURLSmall":"",
-	"productName":"1 Ply Serviettes",
-	"productPrice":17.50,
+	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
+	"productName":"Markus",
+	"productPrice":34.74,
 	"productWeight":1,
-	"productNumber":"J1P33W",
-	"productInfo":"1 Ply Serviettes Qty: 5000"
+	"productNumber":"767605C",
+	"productInfo":"Info here"
 	},
 	{
 	"imageURL":"https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
