@@ -248,7 +248,7 @@ function startServer() {
 
     for (let i = 0; i < productList1.length; i++) {
         app.get('/products/' + productList1[i].productNumber, (req, res) => {
-            var item = productList1[i];
+            const item = productList1[i];
             res.render('product',
                 {
                     title: item.productName,
@@ -262,7 +262,7 @@ function startServer() {
     }
     for (let i = 0; i < productList2.length; i++) {
         app.get('/products/' + productList2[i].productNumber, (req, res) => {
-            var item = productList2[i];
+            const item = productList2[i];
             res.render('product',
                 {
                     title: item.productName,
@@ -276,7 +276,7 @@ function startServer() {
     }
     for (let i = 0; i < productList3.length; i++) {
         app.get('/products/' + productList3[i].productNumber, (req, res) => {
-            var item = productList3[i];
+            const item = productList3[i];
             res.render('product',
                 {
                     title: item.productName,
@@ -451,8 +451,9 @@ function startServer() {
             app.settings.env
         );
     });
-};
-var sendMail = true;
+}
+
+let sendMail = true;
 app.post("/foo/", function (req, res) {
     console.log('Here');
 })
@@ -462,19 +463,19 @@ app.post("/foo2/", function (req, res) {
 })
 
 app.post("/foo3/", function (req, res) {
-    var myObject = req.body;
+    const myObject = req.body;
     let basket = myObject.basket;
     console.log('About to send mail');
     //List to store user's items
-    var list = [];
+    const list = [];
     let value = 0;
     let weight = 0;
     let length = 0;
     let width = 0;
     let height = 0;
 
-    for (var i = 0; i < basket.length; i++) {
-        var parsed = JSON.parse(basket[i]);
+    for (let i = 0; i < basket.length; i++) {
+        const parsed = JSON.parse(basket[i]);
         if (parsed.Item.Quantity === "undefined") {
             console.log("Quantity is Undefined, not sending Email");
             sendMail = false;
@@ -486,7 +487,7 @@ app.post("/foo3/", function (req, res) {
         let prodWe;
 
         for (let i = 0; i < productList1.length; i++) {
-            if (productList1[i].productNumber == parsed.Item.ProductNo) {
+            if (productList1[i].productNumber === parsed.Item.ProductNo) {
                 let prodName = productList1[i].productName;
                 let prodPrice = productList1[i].productPrice;
                 let prodImg = productList1[i].imageURL;
@@ -503,7 +504,7 @@ app.post("/foo3/", function (req, res) {
 
         }
         for (let i = 0; i < productList2.length; i++) {
-            if (productList2[i].productNumber == parsed.Item.ProductNo) {
+            if (productList2[i].productNumber === parsed.Item.ProductNo) {
                 let prodName = productList2[i].productName;
                 let prodPrice = productList2[i].productPrice;
                 let prodImg = productList2[i].imageURL;
@@ -521,7 +522,7 @@ app.post("/foo3/", function (req, res) {
 
         }
         for (let i = 0; i < productList3.length; i++) {
-            if (productList3[i].productNumber == parsed.Item.ProductNo) {
+            if (productList3[i].productNumber === parsed.Item.ProductNo) {
                 let prodName = productList3[i].productName;
                 let prodPrice = productList3[i].productPrice;
                 let prodImg = productList3[i].imageURL;
@@ -544,7 +545,7 @@ app.post("/foo3/", function (req, res) {
     }
     let buyerName = myObject.name;
     let buyerTot = myObject.total;
-    var transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
         service: 'Outlook365',
         auth: {
             user: cred.email,
@@ -561,7 +562,7 @@ app.post("/foo3/", function (req, res) {
     console.log("Order : " + lineHeaders);
     console.log("Line : " + line);
 
-    var mailOptions = {
+    let mailOptions = {
 
 
         from: cred.email,
@@ -583,7 +584,7 @@ app.post("/foo3/", function (req, res) {
             console.log('Email sent to office : ' + info.response);
         }
     });
-    var mailOptions = {
+    mailOptions = {
         from: cred.email,
         to: myObject.email,
         subject: 'Richmond Paper Supply Order Confirmation ',
@@ -600,11 +601,11 @@ app.post("/foo3/", function (req, res) {
 
 app.post('/price', (req, res) => {
     let total = 0;
-    var body = req.body;
-    if (body[0] != undefined) {
+    const body = req.body;
+    if (body[0] !== undefined) {
         for (let i = 0; i < productList1.length; i++) {
             for (let j = 0; j < body.length; j++) {
-                if (JSON.parse(body[j]).Item.ProductNo == productList1[i].productNumber) {
+                if (JSON.parse(body[j]).Item.ProductNo === productList1[i].productNumber) {
                     console.log('Found product : ' + productList1[i].productNumber);
                     total = total + (productList1[i].productPrice * JSON.parse(body[j]).Item.Quantity);
                 }
@@ -620,7 +621,7 @@ app.post('/price', (req, res) => {
         }
         for (let i = 0; i < productList3.length; i++) {
             for (let j = 0; j < body.length; j++) {
-                if (JSON.parse(body[j]).Item.ProductNo == productList3[i].productNumber) {
+                if (JSON.parse(body[j]).Item.ProductNo === productList3[i].productNumber) {
                     console.log('Found product : ' + productList3[i].productNumber);
                     total = total + (productList3[i].productPrice * JSON.parse(body[j]).Item.Quantity);
                 }
@@ -635,16 +636,16 @@ app.post('/price', (req, res) => {
 });
 
 app.post("/feedback", function (req, res) {
-    var myObject = req.body;
+    const myObject = req.body;
     let feedback = myObject.feedBack;
-    var transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
         service: 'Outlook365',
         auth: {
             user: cred.email,
             pass: cred.password
         }
     });
-    var mailOptions = {
+    const mailOptions = {
         from: cred.email,
         to: cred.email,
         subject: 'New Feedback about website',
@@ -661,11 +662,11 @@ app.post("/feedback", function (req, res) {
 });
 
 app.post("/getInfo", function (req, res) {
-    var myObject = req.body;
-    var resJson;
+    const myObject = req.body;
+    let resJson;
     let ProductNo = myObject.ProductNo;
     for (let i = 0; i < productList1.length; i++) {
-        if (productList1[i].productNumber == ProductNo) {
+        if (productList1[i].productNumber === ProductNo) {
             let prodName = productList1[i].productName;
             let prodPrice = productList1[i].productPrice;
             let prodImg = productList1[i].imageURL;
@@ -677,7 +678,7 @@ app.post("/getInfo", function (req, res) {
         }
     }
     for (let i = 0; i < productList2.length; i++) {
-        if (productList2[i].productNumber == ProductNo) {
+        if (productList2[i].productNumber === ProductNo) {
             let prodName = productList2[i].productName;
             let prodPrice = productList2[i].productPrice;
             let prodImg = productList2[i].imageURL;
@@ -689,7 +690,7 @@ app.post("/getInfo", function (req, res) {
         }
     }
     for (let i = 0; i < productList3.length; i++) {
-        if (productList3[i].productNumber == ProductNo) {
+        if (productList3[i].productNumber === ProductNo) {
             let prodName = productList3[i].productName;
             let prodPrice = productList3[i].productPrice;
             let prodImg = productList3[i].imageURL;
