@@ -1,123 +1,123 @@
 extends layout.pug
 
 block content
-	
 
 
-	
-	body(onload = 'getValue();mdtoast("Loading your basket", {duration: 2000})')
-		script(defer src='/scripts/basketShow.js')
-		nav(id = 'nav' class = 'nav-extended purple')
-			div(class='nav-wrapper')
-				ul(class='right hide-on-med-and-down')
-						li
-							a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
-								i(class='material-icons') add_circle_outline
-						li
-							a(id = 'butBasket' aria-label = 'basket' class = 'waves-effect')
-								i(class='material-icons') shopping_basket
-						li
-							a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect')
-								i(class='material-icons') notifications
-						li
-							a(id = 'butSearch' aria-label = 'refresh' class = 'waves-effect' onclick = 'location.href = "/search"')
-								i(class='material-icons') search
-				a(href='/' class='card-content purple' id = 'title')
-					i(onclick = 'window.history.back();' class = 'material-icons left' style = 'padding-left:1%;' id = 'back') arrow_back
-					h1.normal 📎️ Richmond Paper Supply
-					
-				div(class='nav-content' id = 'tab-mob')
-					ul(class='tabs tabs-transparent purple lighten-1')
-						li(class='tab waves-effect')
-							a(href='/') Home
-						li(class='tab waves-effect')
-							a(href='/option1') Option 1
-						li(class='tab waves-effect')
-							a(href='/option2') Option 2
-						li(class='tab waves-effect')
-							a(href='/option3') Option 3
-		div.pageInfo
-			div.card
-				p.card-content
-					b.topText Welcome To Your Basket
-					br
-					br
-					b.topText Please note that ALL orders are UK Delivery ONLY
-					br
-					br
-					a#remove(class = 'btn red waves-effect' onclick = 'mdtoast("Everything has been removed from your basket", {type: mdtoast.WARNING});clearBasket();setTimeout(()=>{location.reload()},2000)') Clear basket
-						i.material-icons.right remove_shopping_cart
-		
 
-   
-		form#customerForm(name = 'form' class = 'form-data' method = 'post' onsubmit = 'checkQty(event);  copyBasket(); getValue(); disableButton(); sendOrder();')
-			table.tab.card
-				
-				tr.row
-					
-					td.col
-						//h6 Delivery Form : 
-						//br
-						label(for='name') Name :
-					td.col
-						input(class = 'input' placeholder = 'Name' id = 'name' name = 'name' type = 'text' value = '' required autofocus)
-				tr.row
-					td.col
-						label(for='email') Email :
-					td.col
-						input(class = 'input' placeholder = 'Email' id = 'email' name = 'email' type = 'email' value = '' required)
-				tr.row
-					td.col
-						label(for='phone') Phone Number :
-					td.col
-						input(class = 'input' placeholder = 'Phone Number' id = 'phone' name = 'phone' type = 'text' value = '' required)
-				tr.row
-					td.col
-						label(for='address1') Property Name / Number :
-					td.col
-						input(class = 'input' placeholder = 'Property Name / Number' id = 'address1' name = 'address1' type = 'text' value = '' required)
-				tr.row
-					td.col
-						label(for='town') Town / City :
-					td.col
-						input(class = 'input' placeholder = 'Town/City' id = 'town' name = 'town' type = 'text' value = '')
-				tr.row
-					td.col
-						label(for='postcode') PostCode :
-					td.col
-						input(class = 'input' placeholder = 'PostCode' id = 'postcode' name = 'postcode' type = 'text' value = '' required)
-				
-				//tr.row
-					//td.col
-						//label(for='time') Pickup/Delivery Date :
-					//td.col
-						//input(class = 'input' id = 'time' name = 'time' type = 'date' value = '' required)
-				br
-				
-			div#order
-				div.card#dark
-					div.card-content 
-						b Your Order 🗒️ So Far : 
-							
-						div(id = 'coll' class = 'dark collection')
-			
-						b#tot Estimated total =
-						br
-						br
-						
-						a.btn.waves-effect.purple(onclick = 'window.history.back();' style = 'width:100%;') Continue Shopping
-							i.material-icons.right add_shopping_cart
-						br
-						
-						br
-						 
-						input#butSubmit(class = 'subpay btn purple' type = 'submit' value = 'Proceed to Payment')
-						br
-						div(id = 'prog' class="progress")
-							div(class="indeterminate")
-						br
-						div(class = 'paymentSpace')
-							div(id='paypal-button-container')
+
+    body(onload = 'getValue();mdtoast("Loading your basket", {duration: 2000})')
+        script(defer src='/scripts/basketShow.js')
+        nav(id = 'nav' class = 'nav-extended purple')
+            div(class='nav-wrapper')
+                ul(class='right hide-on-med-and-down')
+                    li
+                        a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
+                            i(class='material-icons') add_circle_outline
+                    li
+                        a(id = 'butBasket' aria-label = 'basket' class = 'waves-effect')
+                            i(class='material-icons') shopping_basket
+                    li
+                        a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect')
+                            i(class='material-icons') notifications
+                    li
+                        a(id = 'butSearch' aria-label = 'refresh' class = 'waves-effect' onclick = 'location.href = "/search"')
+                            i(class='material-icons') search
+                a(href='/' class='card-content purple' id = 'title')
+                    i(onclick = 'window.history.back();' class = 'material-icons left' style = 'padding-left:1%;' id = 'back') arrow_back
+                    h1.normal 📎️ Richmond Paper Supply
+
+                div(class='nav-content' id = 'tab-mob')
+                    ul(class='tabs tabs-transparent purple lighten-1')
+                        li(class='tab waves-effect')
+                            a(href='/') Home
+                        li(class='tab waves-effect')
+                            a(href='/option1') Option 1
+                        li(class='tab waves-effect')
+                            a(href='/option2') Option 2
+                        li(class='tab waves-effect')
+                            a(href='/option3') Option 3
+        div.pageInfo
+            div.card
+                p.card-content
+                    b.topText Welcome To Your Basket
+                    br
+                    br
+                    b.topText Please note that ALL orders are UK Delivery ONLY
+                    br
+                    br
+                    a#remove(class = 'btn red waves-effect' onclick = 'mdtoast("Everything has been removed from your basket", {type: mdtoast.WARNING});clearBasket();setTimeout(()=>{location.reload()},2000)') Clear basket
+                        i.material-icons.right remove_shopping_cart
+
+
+
+        form#customerForm(name = 'form' class = 'form-data' method = 'post' onsubmit = 'checkQty(event);  copyBasket(); getValue(); disableButton(); sendOrder();')
+            table.tab.card
+
+                tr.row
+
+                    td.col
+                        //h6 Delivery Form :
+                        //br
+                        label(for='name') Name :
+                    td.col
+                        input(class = 'input' placeholder = 'Name' id = 'name' name = 'name' type = 'text' value = '' required autofocus)
+                tr.row
+                    td.col
+                        label(for='email') Email :
+                    td.col
+                        input(class = 'input' placeholder = 'Email' id = 'email' name = 'email' type = 'email' value = '' required)
+                tr.row
+                    td.col
+                        label(for='phone') Phone Number :
+                    td.col
+                        input(class = 'input' placeholder = 'Phone Number' id = 'phone' name = 'phone' type = 'text' value = '' required)
+                tr.row
+                    td.col
+                        label(for='address1') Property Name / Number :
+                    td.col
+                        input(class = 'input' placeholder = 'Property Name / Number' id = 'address1' name = 'address1' type = 'text' value = '' required)
+                tr.row
+                    td.col
+                        label(for='town') Town / City :
+                    td.col
+                        input(class = 'input' placeholder = 'Town/City' id = 'town' name = 'town' type = 'text' value = '')
+                tr.row
+                    td.col
+                        label(for='postcode') PostCode :
+                    td.col
+                        input(class = 'input' placeholder = 'PostCode' id = 'postcode' name = 'postcode' type = 'text' value = '' required)
+
+                //tr.row
+                    //td.col
+                        //label(for='time') Pickup/Delivery Date :
+                    //td.col
+                        //input(class = 'input' id = 'time' name = 'time' type = 'date' value = '' required)
+                br
+
+            div#order
+                div.card#dark
+                    div.card-content
+                        b Your Order 🗒️ So Far :
+
+                        div(id = 'coll' class = 'dark collection')
+
+                        b#tot Estimated total =
+                        br
+                        br
+
+                        a.btn.waves-effect.purple(onclick = 'window.history.back();' style = 'width:100%;') Continue Shopping
+                            i.material-icons.right add_shopping_cart
+                        br
+
+                        br
+
+                        input#butSubmit(class = 'subpay btn purple' type = 'submit' value = 'Proceed to Payment')
+                        br
+                        div(id = 'prog' class="progress")
+                            div(class="indeterminate")
+                        br
+                        div(class = 'paymentSpace')
+                            div(id='paypal-button-container')
 						
 
 
