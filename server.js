@@ -295,6 +295,82 @@ function startServer() {
 			})
 		}
 		
+	app.get('/products', (req,res) =>{
+		let tabo = "<table class = 'striped'><caption style = 'margin-bottom:3%;margin-top:3%;font-size:2em;'><b>Price List</b></caption>";
+		let thead = "<thead>";
+		let trow = "<tr>";
+		let trowc = "</tr>";
+		let theadc = "</thead>";
+		let tabc = "</table>";
+		let body = "<tbody>"
+		
+		for(let i = 0; i < productList1.length;i++){
+		
+			let row = "";
+			let name = "<tr><td><a class = 'dark-text' style = 'color:rgba(0, 0, 0, 0.87);' href = '/products/" + productList1[i].productNumber + "'>" + productList1[i].productName + "</td>";
+			let description = "<td>" + productList1[i].productInfo + "</td>";
+			let price = "<td>£" + productList1[i].productPrice.toFixed(2) + "</a></td></tr>";
+			row = name + description + price
+			body = body + row;
+			
+		}
+		for(let i = 0; i < productList2.length;i++){
+		
+			let row = "";
+			let name = "<tr><td><a class = 'dark-text' style = 'color:rgba(0, 0, 0, 0.87);' href = '/products/" + productList1[i].productNumber + "'>" + productList2[i].productName + "</td>";
+			let description = "<td>" + productList2[i].productInfo + "</td>";
+			let price = "<td>£" + productList2[i].productPrice.toFixed(2) + "</a></td></tr>";
+			row = name + description + price
+			body = body + row;
+			
+		}
+		for(let i = 0; i < productList3.length;i++){
+		
+			let row = "";
+			let name = "<tr><td><a class = 'dark-text' style = 'color:rgba(0, 0, 0, 0.87);' href = '/products/" + productList1[i].productNumber + "'>" + productList3[i].productName + "</td>";
+			let description = "<td>" + productList3[i].productInfo + "</td>";
+			let price = "<td>£" + productList3[i].productPrice.toFixed(2) + "</a></td></tr>";
+			row = name + description + price
+			body = body + row;
+			
+		}
+		body = body + "</tbody>"
+		
+		
+		let table = tabo + thead + trow + "<th>Name</th><th>Description</th><th>Price (£) not inc VAT</th>" + trowc + theadc + body
+		console.log(table);
+	
+		res.render('productList', {
+		
+			title: 'Price List | Prices',
+			products: table,
+			metaDescription: 'Richmond Paper Supply Co Ltd, Liverpool | Food Packaging Suppliers'
+		
+		});
+		
+		let dataToWrite = "";
+		
+		for(let i = 0; i < productList1.length; i++){
+			let line = "";
+			line = productList1[i].productNumber + "," + productList1[i].productName + ",£" + productList1[i].productPrice.toFixed(2) + "\n"
+			dataToWrite = dataToWrite + line;
+		}
+		for(let i = 0; i < productList2.length; i++){
+			let line = "";
+			line = productList2[i].productNumber + "," + productList2[i].productName + ",£" + productList2[i].productPrice.toFixed(2) + "\n"
+			dataToWrite = dataToWrite + line;
+		}
+		for(let i = 0; i < productList3.length; i++){
+			let line = "";
+			line = productList3[i].productNumber + "," + productList3[i].productName + ",£" + productList3[i].productPrice.toFixed(2) + "\n"
+			dataToWrite = dataToWrite + line;
+		}
+		
+		fs.writeFile('public/productList.csv', dataToWrite, 'utf8', (err)=>{
+			console.log(err);
+		});
+	});
+		
 	app.get('/price-list', (req,res) => {
 	
 		let tabo = "<table class = 'striped'><caption style = 'margin-bottom:3%;margin-top:3%;font-size:2em;'><b>Price List</b></caption>";
