@@ -312,8 +312,10 @@ function getValue() {
         if (sPath === '/confirmation') {
             document.getElementById('tot').innerHTML = "Your total was : £" + total.total.toFixed(2);
             document.getElementById('ref').innerHTML = "Reference number : " + localStorage.getItem('id');
-        } else {
+        } else if (sPath === '/basket') {
             document.getElementById('tot').innerHTML = "Estimated total is : £" + total.total.toFixed(2);
+        } else {
+            console.log("No estimate to show");
         }
     }, 250)
 }

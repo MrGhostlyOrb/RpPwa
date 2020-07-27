@@ -34,12 +34,12 @@ block content
 		div.pageInfo#searchPage
 			div.card
 				div.card-content
-					h4 Search
+					h2(style = "font-size:2.28rem") Search
 						i.material-icons.right search
 					form(method = 'POST' id = 'searchForm')
 						div.input-field
-							input.validate(type = 'text' id = 'search' placeholder = 'Search Query' required)
 							label(for = 'search')
+							input.validate(type = 'text' id = 'search' placeholder = 'Search Query' required)
 					ul#results.collection.dark #{ results }
 						
 					
