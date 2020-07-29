@@ -5,6 +5,9 @@ block content
 		nav(id = 'nav' class = 'nav-extended purple')
 			div(class='nav-wrapper')
 				ul(class='right hide-on-med-and-down')
+					li
+						a.waves-effect(href = "/price-list")
+							i.material-icons list
 						li
 							a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
 								i(class='material-icons') add_circle_outline
@@ -20,7 +23,7 @@ block content
 				a(href='/' class='card-content purple' id = 'title')
 					i(onclick = 'window.history.back();' class = 'material-icons left' style = 'padding-left:1%;' id = 'back') arrow_back
 					h1.normal 📎️ Richmond Paper Supply
-					
+
 				div(class='nav-content' id = 'tab-mob')
 					ul(class='tabs tabs-transparent purple lighten-1')
 						li(class='tab waves-effect')
@@ -31,17 +34,17 @@ block content
 							a(href='/option2') Option 2
 						li(class='tab waves-effect disabled')
 							a(href='/option3' class = 'active') Option 3
-		div.pageInfo
-			div.card
-				p.card-content
-					b Welcome to the #{ title } page
-		form#form(onsubmit='getValues(); return false;')
-			div.grid-product#grid-product
-				| !{grid}
-		div(class='fixed-action-btn' id = 'fabSpan' onclick = 'window.location.href = "/basket"')
-			div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
-			a(class='btn-floating btn-large purple waves-effect waves-circle hoverable')
-				i(class='large material-icons') shopping_basket
+	div.container
+		div.card
+			p.card-content
+				b Welcome to the #{ title } page
+	form#form(onsubmit='getValues(); return false;')
+		div.grid-product#grid-product
+			| !{grid}
+	div(class='fixed-action-btn' id = 'fabSpan' onclick = 'window.location.href = "/basket"')
+		div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
+		a(class='btn-floating btn-large purple waves-effect waves-circle hoverable')
+			i(class='large material-icons') shopping_basket
 				
 			
 

@@ -72,7 +72,7 @@ function chooseProductCategory(option) {
 
             let loc = '"/products/' + item.productNumber + '"';
             let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/products/" + item.productNumber + "\"'/>";
-            let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/products/" + item.productNumber + "\"'><h6>" + item.productName + "</h6>";
+            let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/products/" + item.productNumber + "\"'><h2 style = 'font-size:1.15rem'>" + item.productName + "</h2>";
             let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
             let lab = "<div class = 'input-field'><label for='inp" + item.productNumber + "'>Quantity : </label>"
             let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp" + item.productNumber + "'></input></div>";
@@ -91,7 +91,7 @@ function chooseProductCategory(option) {
 
             let loc = '"/products/' + item.productNumber + '"';
             let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/products/" + item.productNumber + "\"'/>";
-            let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/products/" + item.productNumber + "\"'><h6>" + item.productName + "</h6>";
+            let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/products/" + item.productNumber + "\"'><h2 style = 'font-size:1.15rem'>" + item.productName + "</h2>";
             let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
             let lab = "<div class = 'input-field'><label for='inp" + item.productNumber + "'>Quantity : </label>"
             let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp" + item.productNumber + "'></input></div>";

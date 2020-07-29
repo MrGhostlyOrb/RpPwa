@@ -5,6 +5,9 @@ block content
 		nav(id = 'nav' class = 'nav-extended purple')
 			div(class='nav-wrapper')
 				ul(class='right hide-on-med-and-down')
+					li
+						a.waves-effect(href = "/price-list")
+							i.material-icons list
 						li
 							a(id = 'butInstall' aria-label = 'install' class = 'waves-effect')
 								i(class='material-icons') add_circle_outline
@@ -46,7 +49,7 @@ block content
 			div(rel='schema:brand')
 				div(typeof='schema:Brand')
 					div(property='schema:name' content='Richmond Paper Supply')
-		div.pageInfo
+		div.container
 			div.card
 				div.card-image
 					img.responsive-img.materialboxed(src=`${productImage}` alt = "Product Image")
