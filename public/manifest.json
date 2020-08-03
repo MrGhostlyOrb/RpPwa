@@ -34,33 +34,39 @@
   "background_color": "#ee98fb",
   "theme_color": "#ba68c8",
   "shortcuts": [{
-  	"name": "Cafes2",
-  	"description": "Jump to the cafe section of our product page",
-  	"url": "/option1",
-  	"icons": [{
-  		"src": "/images/icons/icon-144.png",
+    "name": "Search",
+    "description": "Search for a product in our selection",
+    "url": "/search",
+    "icons": [
+      {
+        "src": "/images/icons/icon-144.png",
         "sizes": "144x144",
         "purpose": "maskable"
-  	}]
+      }
+    ]
   },
-  {
-  	"name": "Option 2",
-  	"description": "Jump to the cafe section of our product page",
-  	"url": "/option2",
-  	"icons": [{
-  		"src": "/images/icons/icon-144.png",
-        "sizes": "144x144",
-        "purpose": "maskable"
-  	}]
-  },
-  {
-  	"name": "Option 3",
-  	"description": "Jump to the cafe section of our product page",
-  	"url": "/option3",
-  	"icons": [{
-  		"src": "/images/icons/icon-144.png",
-        "sizes": "144x144",
-        "purpose": "maskable"
-  	}]
-  }]
+    {
+      "name": "Price List",
+      "description": "Jump to our product price list",
+      "url": "/price-list",
+      "icons": [
+        {
+          "src": "/images/icons/icon-144.png",
+          "sizes": "144x144",
+          "purpose": "maskable"
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "description": "Jump to the product page of our website",
+      "url": "/option1",
+      "icons": [
+        {
+          "src": "/images/icons/icon-144.png",
+          "sizes": "144x144",
+          "purpose": "maskable"
+        }
+      ]
+    }]
 }
