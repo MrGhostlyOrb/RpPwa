@@ -67,9 +67,7 @@
      			 <div class="nav-content" id = "tab-mob">
       				<ul class="tabs tabs-transparent purple lighten-1">
         				<li class="tab disabled waves-effect"><a href="/" class = "active">Home</a></li>
-        				<li class="tab waves-effect"><a href="/option1">Option 1</a></li>
-        				<li class="tab waves-effect"><a href="/option2">Option 2</a></li>
-						<li class="tab waves-effect"><a href="/option3">Option 3</a></li>
+        				<li class="tab waves-effect"><a href="/option1">Products</a></li>
 					</ul>
 				 </div>
 				<script>
@@ -81,23 +79,57 @@
 		</nav>
 		<div class="container">
 			<div class="card">
-				<p class="card-content"><b>~~ Richmond Paper Alpha ~~ </b><br/><br/>Welcome to the Richmond Paper
-					Progressive Web App Experience! <br/> <br/>Here's how our new site works: <br/><br/> - This site is
-					still a work in progress and information may not be correct or final.<br/><br/> - You can select a
-					product catagory below.<br/><br/> - You can add a sample to your basket by clicking the Order Sample
-					button.<br/><br/> - Finally you can add your payment details and an e-mail will be sent to our
-					office and verified.<br/><br/> - If you have any issues using our website, we are open <b>9 AM - 5
-						PM MON - FRI</b> you can call us on : <br/><br/><a href="tel:01519331000"
-																		   class="btn-small purple lighten-2 waves-effect">0151
-						933 1000<i class="material-icons left">phone</i></a><br/><br/> - Or email us at : <br/><br/><a
-							href="mailto:orders@richmondpapersupply.co.uk"
-							class="btn-small waves-effect purple lighten-2" style="font-size:0.7em">orders@richmondpapersupply.co.uk<i
-							class="material-icons left">email</i></a><br/><br/>Thanks for using our new
-					website!<br/><br/>Click here to install our app if you have not already done so : <br/><br/><a
-							id="butInstall2" class="waves-effect btn purple">Install<i class="material-icons right">system_update</i></a><br/><br/><b>~~
-						Richmond Paper Alpha ~~</b></p>
-
-
+				<div class="card-content">
+					<b>Welcome to Richmond Paper Supply!</b><br><br>
+					<ul class="collapsible popout">
+						<li>
+							<div class = "collapsible-header">
+								<i class = "material-icons circle">
+									phone
+								</i>
+								Call Us
+							</div>
+							<div class = "collapsible-body">
+								<span>
+								Mon - Fri<br>9AM - 5PM<br>
+									<a href="tel:01519331000">
+										0151 933 1000
+										
+									</a>
+									
+								</span>
+							</div>
+						</li>
+						<li>
+							<div class = "collapsible-header">
+								<i class = "material-icons circle">
+									email
+								</i>
+								Email Us
+							</div>
+							<div class = "collapsible-body">
+								<span>
+									24 / 7<br>
+									<a href="mailto:orders@richmondpapersupply.co.uk">
+										orders@richmondpapersupply.co.uk
+									</a>
+								</span>
+							</div>
+						</li>
+					</ul>
+					<script>
+						document.addEventListener('DOMContentLoaded', function() {var elems = document.querySelectorAll('.collapsible');var instances = M.Collapsible.init(elems);});
+					</script>
+					
+					<br/>
+					Thanks for using our new website!
+					<br/>
+					<br/>
+					Click here to install our app if you have not already done so : 
+					<br/>
+					<br/>
+					<a id="butInstall2" class="waves-effect btn purple">Install<i class="material-icons right">system_update</i></a>
+				</div>
 			</div>
 
 			<!--<script> document.addEventListener('DOMContentLoaded', function() {

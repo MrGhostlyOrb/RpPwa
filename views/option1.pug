@@ -29,15 +29,11 @@ block content
                     li(class='tab waves-effect')
                         a(href='/') Home
                     li(class='tab disabled waves-effect')
-                        a(href='/option1' class = 'active') Option 1
-                    li(class='tab waves-effect')
-                        a(href='/option2') Option 2
-                    li(class='tab waves-effect')
-                        a(href='/option3') Option 3
+                        a(href='/option1' class = 'active') Products
     div.container
         div.card
             p.card-content
-                b Welcome to the #{ title } page
+                b Welcome to the #{ title } page!
     form#form(onsubmit='getValues(); return false;')
         div.grid-product#grid-product
             | !{grid}

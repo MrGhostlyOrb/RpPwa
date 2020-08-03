@@ -29,21 +29,17 @@ block content
 						li(class='tab waves-effect')
 							a(href='/') Home
 						li(class='tab waves-effect')
-							a(href='/option1') Option 1
-						li(class='tab waves-effect')
-							a(href='/option2') Option 2
-						li(class='tab waves-effect')
-							a(href='/option3') Option 3
-	div.container#searchPage
-		div.card
-			div.card-content
-				h2(style = "font-size:2.28rem") Search
-					i.material-icons.right search
-				form(method = 'POST' id = 'searchForm')
-					div.input-field
-						label(for = 'search')
-						input.validate(type = 'text' id = 'search' placeholder = 'Search Query' required)
-				ul#results.collection.dark #{ results }
+							a(href='/option1') Products
+		div.container#searchPage
+			div.card
+				div.card-content
+					h2(style = "font-size:2.28rem") Search
+						i.material-icons.right search
+					form(method = 'POST' id = 'searchForm')
+						div.input-field
+							label(for = 'search')
+							input.validate(type = 'text' id = 'search' placeholder = 'Search Query' required)
+					ul#results.collection.dark #{ results }
 						
 					
 				
