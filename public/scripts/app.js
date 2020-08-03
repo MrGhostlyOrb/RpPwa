@@ -28,7 +28,10 @@ if (window.location.pathname === '/') {
         const elem = document.querySelector('#modal1');
         console.log(elem);
         let options = {
-            dismissible: false
+            dismissible: false,
+            onCloseEnd: () => {
+                mdtoast('Welcome to Richmond Paper Supply!', {duration: 3000})
+            }
         }
         console.log(options);
         const instance = M.Modal.init(elem, options);
