@@ -51,8 +51,10 @@ if (window.location.pathname === '/') {
         let hours = date.getHours();
         if (hours > 8 && hours < 17) {
             document.getElementById("callUs").innerHTML = "Call Us - Available Now";
+            document.getElementById("phoneIcon").innerHTML = "phone"
         } else {
             document.getElementById("callUs").innerHTML = "Call Us - Unavailable";
+            document.getElementById("phoneIcon").innerHTML = "call_end"
         }
     })
 

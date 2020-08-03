@@ -87,8 +87,8 @@
 
 					<script>
 						document.addEventListener('DOMContentLoaded', function () {
-							var elems = document.querySelectorAll('.collapsible');
-							var instances = M.Collapsible.init(elems);
+							const elems = document.querySelectorAll('.collapsible');
+							const instances = M.Collapsible.init(elems);
 						});
 					</script>
 
@@ -105,7 +105,7 @@
 			<ul class="collapsible expandable">
 				<li id="callExp">
 					<div class="collapsible-header">
-						<i class="material-icons circle">
+						<i class="material-icons circle" id="phoneIcon">
 							phone
 						</i>
 						<p id="callUs">Call Us</p>
@@ -199,7 +199,7 @@
 					</div>
 					<div class="collapsible-body">
 								<span>
-									<a href="mailto:orders@richmondpapersupply.co.uk">
+									<a style="font-size: 1rem" href="mailto:orders@richmondpapersupply.co.uk">
 										orders@richmondpapersupply.co.uk
 									</a>
 									<br>
@@ -271,6 +271,32 @@
 											</tr>
 										</tbody>
 									</table>
+								</span>
+					</div>
+				</li>
+				<li id="emailExp">
+					<div class="collapsible-header">
+						<i class="material-icons circle">
+							dashboard
+						</i>
+						<p id="emailUs">View Products</p>
+					</div>
+					<div class="collapsible-body">
+								<span>
+									<a class="btn" href="/option1">Product Page</a>
+								</span>
+					</div>
+				</li>
+				<li id="emailExp">
+					<div class="collapsible-header">
+						<i class="material-icons circle">
+							attach_money
+						</i>
+						<p id="emailUs">View Prices</p>
+					</div>
+					<div class="collapsible-body">
+								<span>
+									<a class="btn" href="/price-list">Price List</a>
 								</span>
 					</div>
 				</li>
