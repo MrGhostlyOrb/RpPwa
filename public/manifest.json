@@ -39,7 +39,7 @@
     "url": "/search",
     "icons": [
       {
-        "src": "/images/icons/icon-144.png",
+        "src": "/images/icons/search.png",
         "sizes": "144x144",
         "purpose": "maskable"
       }
@@ -51,7 +51,7 @@
       "url": "/price-list",
       "icons": [
         {
-          "src": "/images/icons/icon-144.png",
+          "src": "/images/icons/price.png",
           "sizes": "144x144",
           "purpose": "maskable"
         }
@@ -63,7 +63,7 @@
       "url": "/option1",
       "icons": [
         {
-          "src": "/images/icons/icon-144.png",
+          "src": "/images/icons/products.png",
           "sizes": "144x144",
           "purpose": "maskable"
         }
