@@ -22,26 +22,30 @@ if (window.location.pathname === '/search') {
 function disableButton() {
     document.getElementById('butSubmit').className = document.getElementById('butSubmit').className + " disabled";
 }
-
 if (window.location.pathname === '/') {
 
-    if (sessionStorage.getItem('pageLoad')) {
-        console.log('Not first time');
-    } else {
-        sessionStorage.setItem('pageLoad', true);
+    document.addEventListener('DOMContentLoaded', function () {
+        const elem = document.querySelector('#modal1');
+        console.log(elem);
+        let options = {
+            dismissible: false
+        }
+        console.log(options);
+        const instance = M.Modal.init(elem, options);
+        console.log(instance);
 
-        document.getElementById('modal1').style.display = "block";
-        document.getElementById('modal1').style.position = "fixed";
-        document.getElementById('modal1').style.top = "30%";
-        document.getElementById('modbut').addEventListener('click', () => {
-            document.getElementById('modal1').style.display = "none";
-            document.getElementById('overlay').style.opacity = "1";
-        })
-        document.getElementById('overlay').style.opacity = "0.3";
-        document.getElementById('modal1').style.opacity = "1";
-    }
+        if (sessionStorage.getItem('pageLoad')) {
+            console.log('Not first time');
+        } else {
+            sessionStorage.setItem('pageLoad', true);
+            instance.open();
+        }
+
+    });
 
 }
+
+
 
 
 //Check if there is a basket already in local storage
