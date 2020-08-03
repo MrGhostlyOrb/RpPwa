@@ -46,6 +46,16 @@ if (window.location.pathname === '/') {
 
     });
 
+    document.addEventListener('DOMContentLoaded', function () {
+        let date = new Date();
+        let hours = date.getHours();
+        if (hours > 8 && hours < 17) {
+            document.getElementById("callUs").innerHTML = "Call Us - Available Now";
+        } else {
+            document.getElementById("callUs").innerHTML = "Call Us - Unavailable";
+        }
+    })
+
 }
 
 
