@@ -49,7 +49,8 @@ if (window.location.pathname === '/') {
     document.addEventListener('DOMContentLoaded', function () {
         let date = new Date();
         let hours = date.getHours();
-        if (hours > 8 && hours < 17) {
+	let day = date.getDay();
+        if (hours > 8 && hours < 17 || day === 0 || day === 6) {
             document.getElementById("callUs").innerHTML = "Call Us - Available Now";
             document.getElementById("phoneIcon").innerHTML = "phone"
         } else {
