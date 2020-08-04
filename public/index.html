@@ -349,29 +349,116 @@
 						<a class="btn purple waves-effect" href="/option3">Take me there!<i
 								class="material-icons right">arrow_forward</i></a>
 					</div>
-		</div>
+				</div>
+			</div>
+			<ul class="collapsible">
+				<li class="card-content">
+					<h2 style="padding-left:16px; font-size:2rem">FAQ</h2>
+				</li>
+				<li class="dark">
+					<div class="collapsible-header dark">
+						<i class="material-icons circle">
+							question_answer
+						</i>
+						<p>Who are we?</p>
+					</div>
+					<div class="collapsible-body dark">
+						<span>
 
-  
-	  
-	
-		<div class="fixed-action-btn">
-  			<a id = "homeFab" class="btn-floating pulse btn-large purple">
-    			<i class="large material-icons">store</i>
-  			</a>
-  			<ul>
-   				<li><a href = "/basket" class="btn-floating purple lighten-2"><i class="material-icons">shopping_basket</i></a></li>
-    			<li><a id = "installBtn3" class="btn-floating purple lighten-2"><i class="material-icons">system_update</i></a></li>
-    			<li><a href = "/search" class="btn-floating purple lighten-2"><i class="material-icons">search</i></a></li>
-    			<li><a href = "/price-list" class="btn-floating purple lighten-2"><i class="material-icons">list</i></a></li>
-  			</ul>
+							<p><i class="material-icons left">verified_user</i>We are a small family-run business based out of Liverpool working to supply product packaging all over the North West of England</p>
+						</span>
+					</div>
+				</li>
+				<li class="dark">
+					<div class="collapsible-header dark">
+						<i class="material-icons circle">
+							question_answer
+						</i>
+						<p>Where do we deliver?</p>
+					</div>
+					<div class="collapsible-body dark">
+						<span>
+
+							<p><i class="material-icons left">verified_user</i>We deliver to the majority of Liverpool and The Wirral with less frequent deliveries in the rest of the North West of England</p>
+						</span>
+					</div>
+				</li>
+				<li class="dark">
+					<div class="collapsible-header dark">
+						<i class="material-icons circle">
+							question_answer
+						</i>
+						<p>What days do we deliver?</p>
+					</div>
+					<div class="collapsible-body dark">
+						<span>
+
+							<p><i class="material-icons left">verified_user</i>We deliver all over liverpool and Wirral every day and other schedules can be seen in the table below</p>
+							<table>
+								<thead>
+									<tr>
+										<th>
+											Day
+										</th>
+										<th>
+											Place
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Monday</td>
+										<td>Somewhere</td>
+									</tr>
+									<tr>
+										<td>Tuesday</td>
+										<td>Somewhere</td>
+									</tr>
+									<tr>
+										<td>Wednesday</td>
+										<td>Somewhere</td>
+									</tr>
+									<tr>
+										<td>Thursday</td>
+										<td>Somewhere</td>
+									</tr>
+									<tr>
+										<td>Friday</td>
+										<td>Somewhere</td>
+									</tr>
+								</tbody>
+							</table>
+						</span>
+					</div>
+				</li>
+			</ul>
+
+
+			<div class="fixed-action-btn">
+				<a id="homeFab" class="btn-floating pulse btn-large purple">
+					<i class="large material-icons">store</i>
+				</a>
+				<ul>
+					<li><a href="/basket" class="btn-floating purple lighten-2"><i class="material-icons">shopping_basket</i></a>
+					</li>
+					<li><a id="installBtn3" class="btn-floating purple lighten-2"><i class="material-icons">system_update</i></a>
+					</li>
+					<li><a href="/search" class="btn-floating purple lighten-2"><i class="material-icons">search</i></a>
+					</li>
+					<li><a href="/price-list" class="btn-floating purple lighten-2"><i
+							class="material-icons">list</i></a></li>
+				</ul>
+			</div>
+			<script>  setTimeout(() => {
+				document.getElementById('homeFab').className = 'btn-floating pulse btn-large purple'
+			}, 5000);
+			document.addEventListener('DOMContentLoaded', function () {
+				const elems = document.querySelectorAll('.fixed-action-btn');
+				const instances = M.FloatingActionButton.init(elems);
+			});
+			</script>
+
 		</div>
-		<script>  console.log('here');setTimeout(()=>{document.getElementById('homeFab').className = 				'btn-floating pulse btn-large purple'}, 5000);document.addEventListener('DOMContentLoaded', function() {
-    		var elems = document.querySelectorAll('.fixed-action-btn');
-    		var instances = M.FloatingActionButton.init(elems);
-    		});	
-    	</script>
-  
-  	</div>
   	</div>	<footer class = "page-footer purple lighten-2">
 		<div class="container">
 			<h2 style="font-size:1.64rem;">Richmond Paper Supply Co Ltd</h2>
