@@ -56,23 +56,26 @@
 					arrow_back
 				</i>
 				<h1 class="normal left">
-					<a href="/">📎️ Richmond Paper Supply</a>
+					<a class="tooltipped" data-position="bottom" data-tooltip="Home" href="/">📎️ Richmond Paper
+						Supply</a>
 				</h1>
 			</div>
 
 			<ul class="right hide-on-med-and-down">
-				<li><a class="waves-effect" href="/price-list"><i class="material-icons">list</i></a></li>
-				<li><a id="butInstall" aria-label="install" class="waves-effect"><i class="material-icons">add_circle_outline</i></a>
+				<li><a class="waves-effect tooltipped" data-tooltip="Price List" href="/price-list"
+					   aria-label="price-list"><i class="material-icons">list</i></a></li>
+				<li><a id="butInstall" aria-label="install" class="waves-effect tooltipped" data-tooltip="Install"><i
+						class="material-icons">add_circle_outline</i></a>
 				</li>
 				<li><a id="butBasket" aria-label="basket" class="waves-effect"><i
-						class="material-icons">shopping_basket</i></a>
+						class="material-icons tooltipped" data-tooltip="Basket">shopping_basket</i></a>
 				</li>
-				<li><a id="butRefresh" aria-label="refresh" class="waves-effect"><i
-						class="material-icons">notifications</i></a>
+				<li><a id="butRefresh" aria-label="notifications" class="waves-effect"><i
+						class="material-icons tooltipped" data-tooltip="Notifications">notifications</i></a>
 				</li>
-				<li><a id="butSearch" aria-label="refresh" class="waves-effect"
-						   onclick="window.location.href = '/search'"><i class="material-icons">search</i></a></li>
-				</ul>
+				<li><a id="butSearch" aria-label="search" class="waves-effect tooltipped" data-tooltip="Search"
+					   onclick="window.location.href = '/search'"><i class="material-icons">search</i></a></li>
+			</ul>
      			 <div class="nav-content" id = "tab-mob">
       				<ul class="tabs tabs-transparent purple lighten-1">
         				<li class="tab disabled waves-effect"><a href="/" class = "active">Home</a></li>
@@ -119,7 +122,8 @@
 					</div>
 					<div class="collapsible-body dark">
 								<span>
-									<a style="font-size: 2rem" href="tel:01519331000">
+									<a class="tooltipped" data-tooltip="Click to Call" data-position="right"
+									   style="font-size: 2rem" href="tel:01519331000">
 										0151 933 1000
 
 									</a>
@@ -206,7 +210,8 @@
 					</div>
 					<div class="collapsible-body dark">
 								<span>
-									<a style="font-size: 1rem" href="mailto:orders@richmondpapersupply.co.uk">
+									<a class="tooltipped" data-tooltip="Click to Email" data-position="right"
+									   style="font-size: 1rem" href="mailto:orders@richmondpapersupply.co.uk">
 										orders@richmondpapersupply.co.uk
 									</a>
 									<br>
@@ -359,7 +364,7 @@
 			</div>
 			<ul class="collapsible dark">
 				<li class="card-content dark">
-					<h2 style="padding-left:16px; font-size:2rem">FAQ</h2>
+					<h2 style="padding-left:16px;padding-bottom: 8px; font-size:2rem">FAQ</h2>
 				</li>
 				<li class="dark">
 					<div class="collapsible-header dark">
@@ -445,13 +450,17 @@
 					<i class="large material-icons">store</i>
 				</a>
 				<ul>
-					<li><a href="/basket" class="btn-floating purple lighten-2"><i class="material-icons">shopping_basket</i></a>
+					<li><a href="/basket" class="tooltipped btn-floating purple lighten-2" data-tooltip="Basket"
+						   data-position="left"><i class="material-icons">shopping_basket</i></a>
 					</li>
-					<li><a id="installBtn3" class="btn-floating purple lighten-2"><i class="material-icons">system_update</i></a>
+					<li><a id="installBtn3" class="tooltipped btn-floating purple lighten-2" data-tooltip="Install"
+						   data-position="left"><i class="material-icons">system_update</i></a>
 					</li>
-					<li><a href="/search" class="btn-floating purple lighten-2"><i class="material-icons">search</i></a>
+					<li><a href="/search" class="tooltipped btn-floating purple lighten-2" data-tooltip="Search"
+						   data-position="left"><i class="material-icons">search</i></a>
 					</li>
-					<li><a href="/price-list" class="btn-floating purple lighten-2"><i
+					<li><a href="/price-list" class="tooltipped btn-floating purple lighten-2" data-tooltip="Price List"
+						   data-position="left"><i
 							class="material-icons">list</i></a></li>
 				</ul>
 			</div>

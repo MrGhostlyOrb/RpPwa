@@ -61,7 +61,10 @@ if (window.location.pathname === '/') {
 
 }
 
-
+document.addEventListener('DOMContentLoaded', function () {
+    const elems = document.querySelectorAll('.tooltipped');
+    const instances = M.Tooltip.init(elems);
+});
 
 
 //Check if there is a basket already in local storage
