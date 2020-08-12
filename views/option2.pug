@@ -35,17 +35,17 @@ block content
                         a(href='/option2' class = 'active') Option 2
                     li(class='tab waves-effect')
                         a(href='/option3') Option 3
-div.container
-    div.card
-        p.card-content
-            b Welcome to the #{ title } page
-form#form(onsubmit='getValues(); return false;')
-    div.grid-product#grid-product
-        | !{grid}
-div(class='fixed-action-btn' id = 'fabSpan' onclick = 'window.location.href = "/basket"')
-    div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
-    a(class='btn-floating btn-large purple waves-effect waves-circle hoverable')
-        i(class='large material-icons') shopping_basket
+    div.container
+        div.card
+            p.card-content
+                b Welcome to the #{ title } page
+    form#form(onsubmit='getValues(); return false;')
+        div.grid-product#grid-product
+            | !{grid}
+    div(class='fixed-action-btn' id = 'fabSpan' onclick = 'window.location.href = "/basket"')
+        div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
+        a(class='btn-floating btn-large purple waves-effect waves-circle hoverable')
+            i(class='large material-icons') shopping_basket
 				
 			
 

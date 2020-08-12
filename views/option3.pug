@@ -1,6 +1,5 @@
 extends layout.pug
 
-
 block content
     nav(id = 'nav' class = 'nav-extended purple')
         div(class='nav-wrapper')
@@ -35,17 +34,17 @@ block content
                         a(href='/option2') Option 2
                     li(class='tab waves-effect disabled')
                         a(href='/option3' class = 'active') Option 3
-div.container
-    div.card
-        p.card-content
-            b Welcome to the #{ title } page
-form#form(onsubmit='getValues(); return false;')
-    div.grid-product#grid-product
-        | !{grid}
-div(class='fixed-action-btn' id = 'fabSpan' onclick = 'window.location.href = "/basket"')
-    div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
-    a(class='btn-floating btn-large purple waves-effect waves-circle hoverable')
-        i(class='large material-icons') shopping_basket
+    div.container
+        div.card
+            p.card-content
+                b Welcome to the #{ title } page
+    form#form(onsubmit='getValues(); return false;')
+        div.grid-product#grid-product
+            | !{grid}
+    div(class='fixed-action-btn' id = 'fabSpan' onclick = 'window.location.href = "/basket"')
+        div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
+        a(class='btn-floating btn-large purple waves-effect waves-circle hoverable')
+            i(class='large material-icons') shopping_basket
 				
 			
 
