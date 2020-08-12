@@ -2,50 +2,50 @@ extends layout.pug
 
 
 block content
-		nav(id = 'nav' class = 'nav-extended purple')
-			div(class='nav-wrapper')
-				ul(class='right hide-on-med-and-down')
-					li
-						a.waves-effect.tooltipped(href = "/price-list" data-tooltip='Price List')
-							i.material-icons list
-						li
-							a(id = 'butInstall' aria-label = 'install' class = 'waves-effect tooltipped' data-tooltip='Install')
-								i(class='material-icons') add_circle_outline
-						li
-							a(id = 'butBasket' aria-label = 'basket' class = 'waves-effect tooltipped' data-tooltip='Basket')
-								i(class='material-icons') shopping_basket
-						li
-							a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect tooltipped' data-tooltip='Notifications')
-								i(class='material-icons') notifications
-						li
-							a(id = 'butSearch' aria-label = 'refresh' class = 'waves-effect tooltipped' onclick = 'location.href = "/search"' data-tooltip='Search')
-								i(class='material-icons') search
-				div(class='card-content purple' id = 'title')
-					i(onclick = 'window.history.back();' class = 'material-icons left' style = 'padding-left:1%;' id = 'back') arrow_back
-					h1.normal
-						a(href = "/") 📎️ Richmond Paper Supply
+    nav(id = 'nav' class = 'nav-extended purple')
+        div(class='nav-wrapper')
+            ul(class='right hide-on-med-and-down')
+                li
+                    a.waves-effect.tooltipped(href = "/price-list" data-tooltip='Price List')
+                        i.material-icons list
+                    li
+                        a(id = 'butInstall' aria-label = 'install' class = 'waves-effect tooltipped' data-tooltip='Install')
+                            i(class='material-icons') add_circle_outline
+                    li
+                        a(id = 'butBasket' aria-label = 'basket' class = 'waves-effect tooltipped' data-tooltip='Basket')
+                            i(class='material-icons') shopping_basket
+                    li
+                        a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect tooltipped' data-tooltip='Notifications')
+                            i(class='material-icons') notifications
+                    li
+                        a(id = 'butSearch' aria-label = 'refresh' class = 'waves-effect tooltipped' onclick = 'location.href = "/search"' data-tooltip='Search')
+                            i(class='material-icons') search
+            div(class='card-content purple' id = 'title')
+                i(onclick = 'window.history.back();' class = 'material-icons left' style = 'padding-left:1%;' id = 'back') arrow_back
+                h1.normal
+                    a(href = "/") 📎️ Richmond Paper Supply
 
-				div(class='nav-content' id = 'tab-mob')
-					ul(class='tabs tabs-transparent purple lighten-1')
-						li(class='tab waves-effect')
-							a(href='/') Home
-						li(class='tab waves-effect')
-							a(href='/option1') Option 1
-						li(class='tab disabled waves-effect')
-							a(href='/option2' class = 'active') Option 2
-						li(class='tab waves-effect')
-							a(href='/option3') Option 3
-	div.container
-		div.card
-			p.card-content
-				b Welcome to the #{ title } page
-	form#form(onsubmit='getValues(); return false;')
-		div.grid-product#grid-product
-			| !{grid}
-	div(class='fixed-action-btn' id = 'fabSpan' onclick = 'window.location.href = "/basket"')
-		div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
-		a(class='btn-floating btn-large purple waves-effect waves-circle hoverable')
-			i(class='large material-icons') shopping_basket
+            div(class='nav-content' id = 'tab-mob')
+                ul(class='tabs tabs-transparent purple lighten-1')
+                    li(class='tab waves-effect')
+                        a(href='/') Home
+                    li(class='tab waves-effect')
+                        a(href='/option1') Option 1
+                    li(class='tab disabled waves-effect')
+                        a(href='/option2' class = 'active') Option 2
+                    li(class='tab waves-effect')
+                        a(href='/option3') Option 3
+div.container
+    div.card
+        p.card-content
+            b Welcome to the #{ title } page
+form#form(onsubmit='getValues(); return false;')
+    div.grid-product#grid-product
+        | !{grid}
+div(class='fixed-action-btn' id = 'fabSpan' onclick = 'window.location.href = "/basket"')
+    div(class='numberCircle' id = 'numberCircle' onclick = 'window.location.href = "/basket"')
+    a(class='btn-floating btn-large purple waves-effect waves-circle hoverable')
+        i(class='large material-icons') shopping_basket
 				
 			
 
