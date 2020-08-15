@@ -174,6 +174,12 @@ function startServer() {
             });
     });
 
+    app.get('/sample', (req, res) => {
+        res.render('sample', {
+            title: 'Samples'
+        })
+    })
+
     app.get('/search', (req, res) => {
         res.render('search', {
             title: 'Search',
@@ -188,12 +194,12 @@ function startServer() {
         let resultsList = [];
         for (let i = 0; i < productList1.length; i++) {
             let pushed = false
-            if (productList1[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false) {
+            if (productList1[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed === false) {
                 resultsList.push(productList1[i])
                 console.log("Search results : " + resultsList);
                 pushed = true;
             }
-            if (productList1[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false) {
+            if (productList1[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed === false) {
                 resultsList.push(productList1[i])
                 console.log("Search results : " + resultsList);
                 pushed = true;
@@ -201,12 +207,12 @@ function startServer() {
         }
         for (let i = 0; i < productList2.length; i++) {
             let pushed = false
-            if (productList2[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false) {
+            if (productList2[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed === false) {
                 resultsList.push(productList2[i])
                 console.log("Search results : " + resultsList);
                 pushed = true;
             }
-            if (productList2[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false) {
+            if (productList2[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed === false) {
                 resultsList.push(productList2[i])
                 console.log("Search results : " + resultsList);
                 pushed = true;
@@ -214,12 +220,12 @@ function startServer() {
         }
         for (let i = 0; i < productList3.length; i++) {
             let pushed = false
-            if (productList3[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false) {
+            if (productList3[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed === false) {
                 resultsList.push(productList3[i])
                 console.log("Search results : " + resultsList);
                 pushed = true;
             }
-            if (productList3[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false) {
+            if (productList3[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed === false) {
                 resultsList.push(productList3[i])
                 console.log("Search results : " + resultsList);
                 pushed = true;
@@ -460,6 +466,49 @@ app.post("/foo/", function (req, res) {
 
 app.post("/foo2/", function (req, res) {
     console.log('here2');
+})
+
+app.post("/sampleData/", (req, res) => {
+    console.log(req);
+    console.log(req.body);
+    const data = req.body;
+    console.log(data);
+
+    const transporter = nodemailer.createTransport({
+        service: 'Outlook365',
+        auth: {
+            user: cred.email,
+            pass: cred.password
+        }
+    });
+
+    let mailOptions = {
+        from: cred.email,
+        to: cred.email,
+        subject: 'New Order + Payment From ' + data.custName,
+        text: 'Confirmed Order + Payment From : ' + data.custName + ',\n Email given : ' + data.email + ',\n For £20.00\n',
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log("Error with Office email : " + error);
+        } else {
+            console.log('Email sent to office : ' + info.response);
+        }
+    });
+    mailOptions = {
+        from: cred.email,
+        to: data.email,
+        subject: 'Richmond Paper Supply Order Confirmation ',
+        text: 'Thank you for your order on the Richmond Paper Supply website ' + data.custName + ',\n \n Your order total was £20.00\n \n Delivery Address : ' + data.addln1 + ', ' + data.addln2 + ',' + data.postcode + '\n \n If you have any issues with your order please contact us on : 0151 933 1000'
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log("Error with Buyer email : " + error);
+        } else {
+            console.log('Email sent to buyer : ' + info.response);
+        }
+    });
+
 })
 
 app.post("/foo3/", function (req, res) {
