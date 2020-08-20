@@ -47,15 +47,22 @@ if (window.location.pathname === '/') {
     });
 
     document.addEventListener('DOMContentLoaded', function () {
+        const elems = document.querySelectorAll('.collapsible');
+        const instances = M.Collapsible.init(elems);
         let date = new Date();
         let hours = date.getHours();
-	let day = date.getDay();
+        let day = date.getDay();
         if (hours > 8 && hours < 17 && day !== 0 && day !== 6) {
             document.getElementById("callUs").innerHTML = "Call Us - Available Now";
-            document.getElementById("phoneIcon").innerHTML = "phone"
+            document.getElementById("phoneIcon").innerHTML = "phone";
+            setTimeout(() => {
+                const instance = M.Collapsible.getInstance(document.getElementById('collapse'));
+                instance.open(0);
+            }, 1000)
+
         } else {
             document.getElementById("callUs").innerHTML = "Call Us - Unavailable";
-            document.getElementById("phoneIcon").innerHTML = "call_end"
+            document.getElementById("phoneIcon").innerHTML = "call_end";
         }
     })
 
