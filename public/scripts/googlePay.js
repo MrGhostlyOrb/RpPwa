@@ -10,21 +10,8 @@ const baseRequest = {
     shippingAddressParameters: params
 };
 
-/**
- * Card networks supported by your site and your gateway
- *
- * @see {@link https://developers.google.com/pay/api/web/reference/request-objects#CardParameters|CardParameters}
- * @todo confirm card networks supported by your site and gateway
- */
-const allowedCardNetworks = ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"];
+const allowedCardNetworks = ["MASTERCARD", "VISA"];
 
-/**
- * Card authentication methods supported by your site and your gateway
- *
- * @see {@link https://developers.google.com/pay/api/web/reference/request-objects#CardParameters|CardParameters}
- * @todo confirm your processor supports Android device tokens for your
- * supported card networks
- */
 const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
 
 /**
