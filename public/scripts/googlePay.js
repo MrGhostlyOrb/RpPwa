@@ -169,7 +169,7 @@ function getGoogleTransactionInfo() {
         totalPrice: '20.00'
     };
 }
-
+//We love GPay
 /**
  * Prefetch payment data to improve performance
  *
