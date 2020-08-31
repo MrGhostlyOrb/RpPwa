@@ -66,9 +66,9 @@ block content
 					br
 					p Product Code : #{ product }
 					br
-					br
-					script(src = 'shareSheet.js')
-					div.shareSheet
+					script(src = '/scripts/shareSheet.js')
+					a#shareSheet.btn-large.purple Share Product
+						i.material-icons.left share
 					//label(for = 'inp') Quantity
 					//input.input(name = 'inp' id = 'inp'+`${product}` min = '1' max = '999' value = '1')
 				div.card-action
