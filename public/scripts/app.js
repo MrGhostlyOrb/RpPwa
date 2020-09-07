@@ -52,7 +52,7 @@ if (window.location.pathname === '/') {
         let date = new Date();
         let hours = date.getHours();
         let day = date.getDay();
-        if (hours > 8 && hours < 17 && day !== 0 && day !== 6) {
+        if (hours > 8 && hours < 18 && day !== 0 && day !== 6 && day !== 5) {
             document.getElementById("callUs").innerHTML = "Call Us - Available Now";
             document.getElementById("phoneIcon").innerHTML = "phone";
             setTimeout(() => {
@@ -60,7 +60,16 @@ if (window.location.pathname === '/') {
                 instance.open(0);
             }, 1000)
 
-        } else {
+        }
+		else if(hours > 8 && hours < 17 && day === 5 ){
+			document.getElementById("callUs").innerHTML = "Call Us - Available Now";
+            document.getElementById("phoneIcon").innerHTML = "phone";
+            setTimeout(() => {
+                const instance = M.Collapsible.getInstance(document.getElementById('collapse'));
+                instance.open(0);
+            }, 1000)
+		}
+		else {
             document.getElementById("callUs").innerHTML = "Call Us - Unavailable";
             document.getElementById("phoneIcon").innerHTML = "call_end";
         }
