@@ -443,6 +443,13 @@ function startServer() {
 
     });
 
+    app.use((req, res, next) => {
+        res.status(404);
+        console.log("Page not found");
+        res.render('error', {
+            title: "Error"
+        })
+    })
 
     //Start the server on PORT 8080
     app.listen(process.env.PORT || 8080, function () {
@@ -704,6 +711,7 @@ app.post("/getInfo", function (req, res) {
     console.log("Information requested for product : " + resJson.prodName);
     res.json(resJson);
 });
+
 
 //Start the server
 startServer();
