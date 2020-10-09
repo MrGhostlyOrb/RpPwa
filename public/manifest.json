@@ -30,7 +30,7 @@
       "purpose": "maskable"
     }],
   "start_url": "/",
-  "display": "standalone",
+  "display": "minimal-ui",
   "background_color": "#ee98fb",
   "theme_color": "#ba68c8",
   "shortcuts": [{
