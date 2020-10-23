@@ -6,10 +6,10 @@ let basketList;
 let total;
 let DELIVERY = 10;
 
-if (window.matchMedia('(display-mode: standalone)').matches && window.location.pathname === '/') {
+if (window.matchMedia('(display-mode: minimal-ui)').matches && window.location.pathname === '/') {
     document.getElementById('butInstall2').className = document.getElementById('butInstall2').className + " disabled";
 }
-if (window.matchMedia('(display-mode: standalone)').matches && window.location.pathname === '/') {
+if (window.matchMedia('(display-mode: minimal-ui)').matches && window.location.pathname === '/') {
     document.getElementById('installBtn3').className = document.getElementById('installBtn3').className + " disabled";
 }
 
