@@ -22,9 +22,10 @@ if (window.location.pathname === '/search') {
 function disableButton() {
     document.getElementById('butSubmit').className = document.getElementById('butSubmit').className + " disabled";
 }
-if (window.location.pathname === '/') {
 
-    document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
+
+    if(document.querySelector('#modal1')){
         const elem = document.querySelector('#modal1');
         console.log(elem);
         let options = {
@@ -43,8 +44,16 @@ if (window.location.pathname === '/') {
             sessionStorage.setItem('pageLoad', true);
             instance.open();
         }
+    }
+    else{
+        console.log("No modal found");
+    }
 
-    });
+
+
+});
+
+if (window.location.pathname === '/') {
 
     document.addEventListener('DOMContentLoaded', function () {
         const elems = document.querySelectorAll('.collapsible');
