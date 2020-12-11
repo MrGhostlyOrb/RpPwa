@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
             onCloseEnd: () => {
                 mdtoast('Welcome to Richmond Paper Supply!', {duration: 3000})
             }
-        }
+        };
         console.log(options);
         const instance = M.Modal.init(elem, options);
         console.log(instance);
@@ -112,7 +112,7 @@ function addJson(ProductNo, Qty, Name) {
     basketList = JSON.parse(localStorage.getItem('basket'));
     //Check if the product is already in the basket
     let isFound = false;
-    for (var i = 0; i < JSON.parse(localStorage.getItem('basket')).length; i++) {
+    for (let i = 0; i < JSON.parse(localStorage.getItem('basket')).length; i++) {
         const parsedList = JSON.parse(basketList[i]);
         if (parsedList.Item.ProductNo === ProductNo) {
             isFound = true;
@@ -197,7 +197,7 @@ function sendData(e) {
             "phone": phone,
             "total": total.total
             //"time": time
-        }
+        };
         console.log(bodyToSubmit);
         fetch('/foo2/', {
             method: 'post',
@@ -215,8 +215,7 @@ function sendData(e) {
 function init() {
     const refreshButton = document.getElementById('butRefresh');
     refreshButton.addEventListener('click', notif);
-};
-
+}
 //Function to send a test notification to the user when the refersh button is clicked
 function notif() {
     Notification.requestPermission(result => {
@@ -237,7 +236,7 @@ function showNotification(title, message) {
                 body: message,
                 tag: 'vibration-sample'
                 //image, icon
-            });
+            }).then(r => {console.log(r)});
         });
     }
 }
@@ -299,7 +298,7 @@ function sendEmailConf(name, id) {
         "total": total,
         "ref": id,
         "basket": JSON.parse(localStorage.getItem('copiedBasket'))
-    }
+    };
     console.log(bodyToSubmit);
     fetch('/foo3/', {
         method: 'post',
@@ -316,13 +315,13 @@ let copiedBasket;
 
 function copyBasket() {
     console.log('copying basket');
-    copiedBasket = localStorage.getItem('basket')
+    copiedBasket = localStorage.getItem('basket');
     localStorage.setItem('copiedBasket', copiedBasket);
 
 }
 
 function getValue() {
-    var sPath = window.location.pathname;
+    const sPath = window.location.pathname;
     if (sPath !== '/confirmation') {
         console.log(localStorage.getItem('basket'));
         fetch('/price',
@@ -391,7 +390,7 @@ function getValues() {
             if (inputs[i].value === "") {
                 continue
             } else {
-                console.log("found input")
+                console.log("found input");
                 var productNumber = inputs[i].id.substr(3);
                 if (localStorage.getItem('basket')) {
                     var basketList2 = JSON.parse(localStorage.getItem('basket'));
@@ -427,7 +426,7 @@ function checkBasket() {
     if (noItems >= 1) {
         let numOfButtons = document.getElementsByClassName('add');
         console.log(numOfButtons);
-        console.log(numOfButtons.length)
+        console.log(numOfButtons.length);
         for (let i = 0; i < numOfButtons.length; i++) {
             numOfButtons[i].className += ' disabled';
         }
