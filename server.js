@@ -9,7 +9,7 @@ const http = require('http');
 const https = require('https');
 const http2 = require('http2');
 const fs = require('fs');
-const compression = require('compression')
+const compression = require('compression');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const {check, validationResult} = require('express-validator');
@@ -21,7 +21,7 @@ const DELIVERY = 10;
 const app = express();
 
 //Set app to use a pug interface to display pages
-app.engine('pug', require('pug').__express)
+app.engine('pug', require('pug').__express);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 
@@ -55,11 +55,11 @@ function chooseProductCategory(option) {
             let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product : " + item.productName + "' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/products/" + item.productNumber + "\"'/>";
             let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/products/" + item.productNumber + "\"'><h2 style = 'font-size:1.15rem'>" + item.productName + "</h2>";
             let p = "<p>£" + item.productPrice.toFixed(2) + "  * not inc VAT</p></div>";
-            let lab = "<div class = 'input-field'><label for='inp" + item.productNumber + "'>Quantity : </label>"
+            let lab = "<div class = 'input-field'><label for='inp" + item.productNumber + "'>Quantity : </label>";
             let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp" + item.productNumber + "'></input></div>";
             let submit = "<button type = 'sumbit' class = 'btn waves-effect add purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub" + item.productNumber + "'>Order Sample</button>"
             let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
-            let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + "</div>" + h2 + p + submit + r + "</div>"
+            let gridItem = "<div class = 'card hoverable'><div class = 'card-image'>" + img + "</div>" + h2 + p + submit + r + "</div>";
 
             //Add item to the grid
             grid = grid + gridItem
@@ -74,7 +74,7 @@ function chooseProductCategory(option) {
             let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/products/" + item.productNumber + "\"'/>";
             let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/products/" + item.productNumber + "\"'><h2 style = 'font-size:1.15rem'>" + item.productName + "</h2>";
             let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
-            let lab = "<div class = 'input-field'><label for='inp" + item.productNumber + "'>Quantity : </label>"
+            let lab = "<div class = 'input-field'><label for='inp" + item.productNumber + "'>Quantity : </label>";
             let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp" + item.productNumber + "'></input></div>";
             let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub" + item.productNumber + "'>Add to Cart</button>"
             let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
@@ -93,7 +93,7 @@ function chooseProductCategory(option) {
             let img = "<img class = 'cardImage materialboxed responsive-image' alt = 'Product Image' src = '" + item.imageURLSmall + "' onclick = 'window.location.href = \"/products/" + item.productNumber + "\"'/>";
             let h2 = "<div class = 'card-content' onclick = 'window.location.href = \"/products/" + item.productNumber + "\"'><h2 style = 'font-size:1.15rem'>" + item.productName + "</h2>";
             let p = "<p>£" + item.productPrice.toFixed(2) + "  * inc VAT</p></div>";
-            let lab = "<div class = 'input-field'><label for='inp" + item.productNumber + "'>Quantity : </label>"
+            let lab = "<div class = 'input-field'><label for='inp" + item.productNumber + "'>Quantity : </label>";
             let input = "<input type = 'number' placeholder = 'Quantity' class = 'input validate' min = '1' max = '999' value = '1' id = 'inp" + item.productNumber + "'></input></div>";
             let submit = "<button type = 'sumbit' class = 'btn waves-effect purple card-button-link' onclick = 'addJson(" + "\"" + item.productNumber + "\"" + ");checkBasket()' value = 'Add to Basket' id = 'sub" + item.productNumber + "'>Add to Cart</button>"
             let r = "<button class = 'card-button-link purple btn waves-effect' value = 'View Product' id = '" + item.productNumber + "rem" + "' onclick = 'location.href = " + loc + "'>" + "View Product</button>";
@@ -153,7 +153,7 @@ function startServer() {
             metaDescription: 'Richmond Paper Supply Co\'s Privacy Policy',
             metaKeywords: 'Privacy, Richmond Paper, Paper Supplies, Catering Supplies, Catering Disposables, Disposable, Catering, Food Supplies, Liverpool, RPS, Richmond Liverpool, Richmond paper liverpool, catering liverpool, wholesale liverpool, Richmond paper supply, richmondpaper, merseyside'
         })
-    })
+    });
 
     app.get('/basket', function (req, res) {
         res.render('basket',
@@ -187,40 +187,40 @@ function startServer() {
         let search = req.body.request;
         let resultsList = [];
         for (let i = 0; i < productList1.length; i++) {
-            let pushed = false
+            let pushed = false;
             if (productList1[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false) {
-                resultsList.push(productList1[i])
+                resultsList.push(productList1[i]);
                 console.log("Search results : " + resultsList);
                 pushed = true;
             }
             if (productList1[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false) {
-                resultsList.push(productList1[i])
+                resultsList.push(productList1[i]);
                 console.log("Search results : " + resultsList);
                 pushed = true;
             }
         }
         for (let i = 0; i < productList2.length; i++) {
-            let pushed = false
+            let pushed = false;
             if (productList2[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false) {
-                resultsList.push(productList2[i])
+                resultsList.push(productList2[i]);
                 console.log("Search results : " + resultsList);
                 pushed = true;
             }
             if (productList2[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false) {
-                resultsList.push(productList2[i])
+                resultsList.push(productList2[i]);
                 console.log("Search results : " + resultsList);
                 pushed = true;
             }
         }
         for (let i = 0; i < productList3.length; i++) {
-            let pushed = false
+            let pushed = false;
             if (productList3[i].productNumber.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false) {
-                resultsList.push(productList3[i])
+                resultsList.push(productList3[i]);
                 console.log("Search results : " + resultsList);
                 pushed = true;
             }
             if (productList3[i].productName.toString().toLowerCase().includes(search.toLowerCase()) && pushed == false) {
-                resultsList.push(productList3[i])
+                resultsList.push(productList3[i]);
                 console.log("Search results : " + resultsList);
                 pushed = true;
             }
@@ -238,13 +238,13 @@ function startServer() {
                 let li = "<li class = 'collection-item dark'>";
                 let lie = "</li>";
                 let a = "<br><a href = '/products/" + resultsList[i].productNumber + "' class = 'btn-small'>";
-                let ae = "Show Item</a>"
+                let ae = "Show Item</a>";
                 resultHTML = resultHTML + li + resultsList[i].productName + "<br>" + resultsList[i].productInfo + "<br>" + a + ae + lie;
             }
             let json = {"result": resultHTML};
             res.json(json);
         }
-    })
+    });
 
     for (let i = 0; i < productList1.length; i++) {
         app.get('/products/' + productList1[i].productNumber, (req, res) => {
@@ -296,7 +296,7 @@ function startServer() {
         let trowc = "</tr>";
         let theadc = "</thead>";
         let tabc = "</table>";
-        let body = "<tbody>"
+        let body = "<tbody>";
 
         for (let i = 0; i < productList1.length; i++) {
 
@@ -314,7 +314,7 @@ function startServer() {
             let name = "<tr><td><a class = 'dark-text' style = 'color:rgba(0, 0, 0, 0.87);' href = '/products/" + productList1[i].productNumber + "'>" + productList2[i].productName + "</td>";
             let description = "<td>" + productList2[i].productInfo + "</td>";
             let price = "<td>£" + productList2[i].productPrice.toFixed(2) + "</a></td></tr>";
-            row = name + description + price
+            row = name + description + price;
             body = body + row;
 
         }
@@ -324,14 +324,14 @@ function startServer() {
             let name = "<tr><td><a class = 'dark-text' style = 'color:rgba(0, 0, 0, 0.87);' href = '/products/" + productList1[i].productNumber + "'>" + productList3[i].productName + "</td>";
             let description = "<td>" + productList3[i].productInfo + "</td>";
             let price = "<td>£" + productList3[i].productPrice.toFixed(2) + "</a></td></tr>";
-            row = name + description + price
+            row = name + description + price;
             body = body + row;
 
         }
-        body = body + "</tbody>"
+        body = body + "</tbody>";
 
 
-        let table = tabo + thead + trow + "<th>Name</th><th>Description</th><th>Price (£) not inc VAT</th>" + trowc + theadc + body
+        let table = tabo + thead + trow + "<th>Name</th><th>Description</th><th>Price (£) not inc VAT</th>" + trowc + theadc + body;
         console.log(table);
 
         res.render('productList', {
@@ -346,17 +346,17 @@ function startServer() {
 
         for (let i = 0; i < productList1.length; i++) {
             let line = "";
-            line = productList1[i].productNumber + "," + productList1[i].productName + ",£" + productList1[i].productPrice.toFixed(2) + "\n"
+            line = productList1[i].productNumber + "," + productList1[i].productName + ",£" + productList1[i].productPrice.toFixed(2) + "\n";
             dataToWrite = dataToWrite + line;
         }
         for (let i = 0; i < productList2.length; i++) {
             let line = "";
-            line = productList2[i].productNumber + "," + productList2[i].productName + ",£" + productList2[i].productPrice.toFixed(2) + "\n"
+            line = productList2[i].productNumber + "," + productList2[i].productName + ",£" + productList2[i].productPrice.toFixed(2) + "\n";
             dataToWrite = dataToWrite + line;
         }
         for (let i = 0; i < productList3.length; i++) {
             let line = "";
-            line = productList3[i].productNumber + "," + productList3[i].productName + ",£" + productList3[i].productPrice.toFixed(2) + "\n"
+            line = productList3[i].productNumber + "," + productList3[i].productName + ",£" + productList3[i].productPrice.toFixed(2) + "\n";
             dataToWrite = dataToWrite + line;
         }
 
@@ -373,7 +373,7 @@ function startServer() {
         let trowc = "</tr>";
         let theadc = "</thead>";
         let tabc = "</table>";
-        let body = "<tbody>"
+        let body = "<tbody>";
 
         for (let i = 0; i < productList1.length; i++) {
 
@@ -381,7 +381,7 @@ function startServer() {
             let name = "<tr><td><a class = 'dark-text' style = 'color:rgba(0, 0, 0, 0.87);' href = '/products/" + productList1[i].productNumber + "'>" + productList1[i].productName + "</td>";
             let description = "<td>" + productList1[i].productInfo + "</td>";
             let price = "<td>£" + productList1[i].productPrice.toFixed(2) + "</a></td></tr>";
-            row = name + description + price
+            row = name + description + price;
             body = body + row;
 
         }
@@ -391,7 +391,7 @@ function startServer() {
             let name = "<tr><td><a class = 'dark-text' style = 'color:rgba(0, 0, 0, 0.87);' href = '/products/" + productList1[i].productNumber + "'>" + productList2[i].productName + "</td>";
             let description = "<td>" + productList2[i].productInfo + "</td>";
             let price = "<td>£" + productList2[i].productPrice.toFixed(2) + "</a></td></tr>";
-            row = name + description + price
+            row = name + description + price;
             body = body + row;
 
         }
@@ -401,14 +401,14 @@ function startServer() {
             let name = "<tr><td><a class = 'dark-text' style = 'color:rgba(0, 0, 0, 0.87);' href = '/products/" + productList1[i].productNumber + "'>" + productList3[i].productName + "</td>";
             let description = "<td>" + productList3[i].productInfo + "</td>";
             let price = "<td>£" + productList3[i].productPrice.toFixed(2) + "</a></td></tr>";
-            row = name + description + price
+            row = name + description + price;
             body = body + row;
 
         }
-        body = body + "</tbody>"
+        body = body + "</tbody>";
 
 
-        let table = tabo + thead + trow + "<th>Name</th><th>Description</th><th>Price (£) not inc VAT</th>" + trowc + theadc + body
+        let table = tabo + thead + trow + "<th>Name</th><th>Description</th><th>Price (£) not inc VAT</th>" + trowc + theadc + body;
         console.log(table);
 
         res.render('productList', {
@@ -423,17 +423,17 @@ function startServer() {
 
         for (let i = 0; i < productList1.length; i++) {
             let line = "";
-            line = productList1[i].productNumber + "," + productList1[i].productName + ",£" + productList1[i].productPrice.toFixed(2) + "\n"
+            line = productList1[i].productNumber + "," + productList1[i].productName + ",£" + productList1[i].productPrice.toFixed(2) + "\n";
             dataToWrite = dataToWrite + line;
         }
         for (let i = 0; i < productList2.length; i++) {
             let line = "";
-            line = productList2[i].productNumber + "," + productList2[i].productName + ",£" + productList2[i].productPrice.toFixed(2) + "\n"
+            line = productList2[i].productNumber + "," + productList2[i].productName + ",£" + productList2[i].productPrice.toFixed(2) + "\n";
             dataToWrite = dataToWrite + line;
         }
         for (let i = 0; i < productList3.length; i++) {
             let line = "";
-            line = productList3[i].productNumber + "," + productList3[i].productName + ",£" + productList3[i].productPrice.toFixed(2) + "\n"
+            line = productList3[i].productNumber + "," + productList3[i].productName + ",£" + productList3[i].productPrice.toFixed(2) + "\n";
             dataToWrite = dataToWrite + line;
         }
 
@@ -449,7 +449,7 @@ function startServer() {
         res.render('error', {
             title: "Error"
         })
-    })
+    });
 
     //Start the server on PORT 8080
     app.listen(process.env.PORT || 8080, function () {
@@ -463,11 +463,11 @@ function startServer() {
 let sendMail = true;
 app.post("/foo/", function (req, res) {
     console.log('Here');
-})
+});
 
 app.post("/foo2/", function (req, res) {
     console.log('here2');
-})
+});
 
 app.post("/foo3/", function (req, res) {
     const myObject = req.body;
