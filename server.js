@@ -110,11 +110,70 @@ function chooseProductCategory(option) {
 //Variable to store payment script
 let payment = "<script> paypal.Buttons({createOrder: function (option1, actions) {return fetch('/my-server/create-order', {method: 'POST'}).then(function(res) {return res.json();}).then(function(option1) {return option1.id;});},onApprove: function (option1, actions) {return fetch('/my-server/capture-order/' + option1.orderID, {method: 'POST'}).then(function(res) {if (!res.ok) {alert('Something went wrong');}});}}).render('#paypal-button-container');</script>";
 
+function sortHighScore(){
+    console.log("Sorting High Scores");
+    let jsonData = require('./highScores.json');
+    console.log("Data in file : " + JSON.stringify(jsonData));
+    jsonData = jsonData.sort((a,b)=>{
+        console.log(a);
+        console.log(b);
+        return b.Score - a.Score;
+    });
+    let json = JSON.stringify(jsonData);
+    fs.writeFile('./highScores.json', json, 'utf8', (err)=>{});
+    console.log("Highest Score : " + jsonData[0].Score)
+}
+function getHighScoresHTML(){
+    console.log("Getting High Scores");
+    let jsonData = require('./highScores.json');
+    let highScoresHTML = "";
+    if(jsonData.length < 10){
+        for(let i = 0; i < jsonData.length; i++){
+            let row = "<tr><td>" + jsonData[i].Name + "</td><td>" + jsonData[i].Score + "</td></tr>";
+            highScoresHTML += row;
+        }
+    }
+    else{
+        for(let i = 0; i < 10; i++){
+            let row = "<tr><td>" + jsonData[i].Name + "</td><td>" + jsonData[i].Score + "</td></tr>";
+            highScoresHTML += row;
+        }
+    }
+
+    return highScoresHTML
+}
+function setHighScore(data){
+    let jsonData = require('./highScores.json');
+    console.log(data.Score);
+    console.log(jsonData[0].Score)
+    if(data.Score > jsonData[0].Score){
+        jsonData.push(data);
+    }
+    else{
+        console.log("Not a high score");
+        jsonData.push(data);
+    }
+    console.log("Setting New High Score : " + data.Score);
+    sortHighScore();
+}
 //Function to begin the server
 function startServer() {
 
     app.get('/', function (req, res) {
         res.render('index');
+    });
+    app.get('/bubble-shooter', (req, res)=>{
+        sortHighScore();
+        res.render('bubble-shooter', {
+            rows: getHighScoresHTML()
+        });
+    });
+    app.post('/setHighScore', (req, res)=>{
+        console.log("New Score Received");
+        console.log(req.body);
+        let json = req.body;
+        sortHighScore()
+        setHighScore(json);
     });
     app.get('/option1', function (req, res) {
         res.render('option1',

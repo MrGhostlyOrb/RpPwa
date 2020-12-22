@@ -1,0 +1,99 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title Bubble Shooter
+        script(type='text/javascript' src='/scripts/bubble-shooter-example.js')
+        meta(charset='UTF-8')
+        title Richmond Paper Supply | Bubble Shooter
+        link(type = 'text/css' rel = 'Stylesheet' href = '/styles/style.css')
+        link(rel='icon' href='/images/rich.ico' type='image/x-icon')
+        link(rel='manifest' href='/manifest.json')
+        link(rel='apple-touch-icon' href='/images/icons/icon-152.png')
+        link(href='https://fonts.googleapis.com/css2?family=Open+Sans&display=swap' rel='stylesheet')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        meta(name='apple-mobile-web-app-capable' content='yes')
+        meta(name='apple-mobile-web-app-status-bar-style' content='black')
+        meta(name='apple-mobile-web-app-title' content='Richmond PWA')
+        meta(name='theme-color' content='#df78ef')
+        meta(name='google' content='notranslate')
+        meta(http-equiv='content-language' content='en')
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+        link(type='text/css' rel='stylesheet' href='/styles/materialize.css')
+        script(defer src='/scripts/materialize.js')
+        script(defer src='/scripts/app.js')
+        script(defer src='/scripts/install.js')
+        link(rel='stylesheet' type='text/css' href='/styles/mdtoast.css')
+        script(defer src='/scripts/mdtoast.js')
+        script if ('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/service-worker.js').then((reg) => {console.log('Service worker registered.', reg);});});}
+
+    body
+        nav(id = 'nav' class = 'nav-extended purple')
+            div(class='nav-wrapper')
+                ul(class='right hide-on-med-and-down')
+                    li
+                        a.waves-effect.tooltipped(href = "/price-list" data-tooltip='Price List')
+                            i.material-icons list
+                    li
+                        a(id = 'butInstall' aria-label = 'install' class = 'waves-effect tooltipped' data-tooltip='Install')
+                            i(class='material-icons') add_circle_outline
+                    li
+                        a(id = 'butBasket' aria-label = 'basket' class = 'waves-effect tooltipped' data-tooltip='Basket')
+                            i(class='material-icons') shopping_basket
+                    li
+                        a(id = 'butRefresh' aria-label = 'refresh' class = 'waves-effect tooltipped' data-tooltip='Notifications')
+                            i(class='material-icons') notifications
+                    li
+                        a(id = 'butSearch' aria-label = 'refresh' class = 'waves-effect tooltipped' onclick = 'location.href = "/search"' data-tooltip='Search')
+                            i(class='material-icons') search
+                div(class='card-content purple' id = 'title')
+                    i(onclick = 'window.history.back();' class = 'material-icons left' style = 'padding-left:1%;' id = 'back') games
+                    h1.normal
+                        a(href = "/") Bubble Shooter
+
+                div(class='nav-content' id = 'tab-mob')
+                    ul(class='tabs tabs-transparent purple lighten-1')
+                        li(class='tab waves-effect')
+                            a(href='/') Home
+                        li(class='tab disabled waves-effect')
+                            a(href='/option1' class = 'active') Products
+        div(id = "nameModal" class = "modal")
+            div.modal-content
+                h4 Name
+                p Leave blank for Anon
+                div.input-field
+                    input(id = "nameInput" type = "text" style = "color:black !important;")
+                    label(for = "nameInput") Name
+                button.btn(id= "modalSubmit") Submit
+        div.container
+            div.card.dark
+                div.card-content
+                    div.row
+                        div.col.s12.l5
+                            canvas(id="viewport" width="628" height="628")
+                        div.col.s0.l2
+                        div.col.s12.l5
+                            table()
+                                tbody(id = "tableBody")
+                                    tr
+                                        th Global High Scores
+                                    tr
+                                        th Name
+                                        th Score
+                                    !=rows
+
+        footer(class = 'page-footer purple lighten-2')
+            div(class = 'container')
+                h5 Richmond Paper Supply Co Ltd
+                p Address: 1-3 Forge St, Bootle, Liverpool, L20 8JG
+                    br
+                    br
+                    a(class = 'btn' href = '/privacy') Link to privacy policy
+                        i(class = 'material-icons left') assignment
+                br
+            div(class = 'footer-copyright purple')
+                p(style = 'padding-left:2%') 2020 RPS by #{' '}
+                    i.material-icons.left copyright
+                    a(href = 'https://www.github.com/MrGhostlyOrb')  Ben Cooper
+                        i.material-icons.right code
