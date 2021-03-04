@@ -12,12 +12,12 @@
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "express-http-to-https": "^1.1.4",
-    "express-validator": "^6.6.0",
+    "express-validator": "^6.10.0",
     "http2": "^3.3.7",
     "jade": "^1.11.0",
     "node-fetch": "^2.6.1",
-    "nodemailer": "^6.4.10",
-    "pug": "^2.0.4"
+    "nodemailer": "^6.5.0",
+    "pug": "^3.0.2"
   },
   "engines": {
     "node": "8.x"

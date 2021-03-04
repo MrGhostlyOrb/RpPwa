@@ -2,6 +2,19 @@ Demo Progressive Web App for Richmond Paper Supply Co Ltd
 
 To get started, clone the repo to your local machine and enter the working directory.
 
+`
+//Dependencies (install with npm):
+    express
+    node-fetch
+    express-http-to-https
+    compression
+    nodemailer
+    body-parser
+    express-validator
+    pug
+`
+    
+
 The in the working directory run the following:
 
 <code>node server.js</code>
