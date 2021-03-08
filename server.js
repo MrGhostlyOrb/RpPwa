@@ -20,6 +20,13 @@ const DELIVERY = 10;
 //Constant for the express app
 const app = express();
 
+
+New Class(){}
+
+{}
+
+
+
 //Set app to use a pug interface to display pages
 app.engine('pug', require('pug').__express);
 app.set('views', __dirname + '/views');
