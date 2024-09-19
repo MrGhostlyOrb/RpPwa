@@ -1,0 +1,5 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "uk.co.richmondpapersupply.www.twa",
+                   "sha256_cert_fingerprints": ["F6:DD:15:88:90:D4:13:DF:A7:5D:F0:07:0F:2C:55:55:B4:E8:30:93:BA:C4:5F:DD:3A:81:F1:73:CD:3E:AE:0E"] }
+    }]
