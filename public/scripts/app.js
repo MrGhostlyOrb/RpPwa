@@ -25,12 +25,10 @@ function disableButton() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-
         if (!sessionStorage.getItem('pageLoad')) {
             sessionStorage.setItem('pageLoad', true);
             cookiesDialog.open();
         }
-
 });
 
 if (window.location.pathname === '/') {
@@ -39,20 +37,19 @@ if (window.location.pathname === '/') {
         let date = new Date();
         let hours = date.getHours();
         let day = date.getDay();
+        // Monday - Thursday
         if (hours > 8 && hours < 18 && day !== 0 && day !== 6 && day !== 5) {
-            document.getElementById("callUs").innerHTML = "Call Us - Available Now";
-            setTimeout(() => {
-
-            }, 1000)
+            document.getElementById("call-us").innerHTML = "Call Us - Available Now";
 
         }
+        // Friday
 		else if(hours > 8 && hours < 17 && day === 5 ){
-			document.getElementById("callUs").innerHTML = "Call Us - Available Now";
-            setTimeout(() => {
-            }, 1000)
+			document.getElementById("call-us").innerHTML = "Call Us - Available Now";
 		}
 		else {
-            document.getElementById("callUs").innerHTML = "Call Us - Unavailable";
+            document.getElementById("call-us").innerHTML = "Call Us - Unavailable";
+            document.getElementById("call-us-click").removeAttribute('onclick');
+            document.getElementById("call-us-click-link").removeAttribute('href');
         }
     })
 
