@@ -1,4 +1,4 @@
-Progressive Web App for Richmond Paper Supply Co Ltd
+# Progressive Web App for Richmond Paper Supply Co Ltd
 
 To get started, clone the repo to your local machine and enter the public directory.
 
