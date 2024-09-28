@@ -1,6 +1,7 @@
 package main
 
 import (
+	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -17,10 +18,31 @@ func init() {
 
 func main() {
 	port := os.Getenv("PORT")
+	cdnURL := os.Getenv("CDN_URL")
 
 	publicDir := "./public"
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		tmpl, err := template.ParseFiles("./public/index.html")
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		data := struct {
+			CDNURL string
+		}{
+			CDNURL: cdnURL,
+		}
+
+		err = tmpl.Execute(w, data)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+		}
+	})
+
 	fs := http.FileServer(http.Dir(publicDir))
-	http.Handle("/", fs)
+	http.Handle("/*", fs)
 
 	log.Printf("Starting server on http://0.0.0.0:%s\n", port)
 	err := http.ListenAndServe(":"+port, nil)
