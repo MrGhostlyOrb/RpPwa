@@ -46,13 +46,7 @@ func main() {
 			return
 		}
 
-		data := struct {
-			CDNURL string
-		}{
-			CDNURL: cdnURL,
-		}
-
-		err = tmpl.Execute(w, data)
+		err = tmpl.Execute(w, nil)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
