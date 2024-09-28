@@ -1,5 +1,5 @@
 const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action';
-const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
+const ripples = [].map.call(document.querySelectorAll(selector), function (el) {
     return new mdc.ripple.MDCRipple(el);
 });
 
@@ -11,7 +11,7 @@ const list = new mdc.list.MDCList(document.querySelector('.mdc-list'));
 const cookiesDialog = new mdc.dialog.MDCDialog(document.getElementById('cookiesDialog'));
 const copyrightDialog = new mdc.dialog.MDCDialog(document.getElementById('copyrightDialog'));
 const copyrightButton = document.getElementById('copyrightButton')
-copyrightButton.addEventListener('click', ()=>{
+copyrightButton.addEventListener('click', () => {
     copyrightDialog.open();
 })
 cookiesDialog.scrimClickAction = "";
@@ -25,10 +25,10 @@ function disableButton() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-        if (!sessionStorage.getItem('pageLoad')) {
-            sessionStorage.setItem('pageLoad', true);
-            cookiesDialog.open();
-        }
+    if (!sessionStorage.getItem('pageLoad')) {
+        sessionStorage.setItem('pageLoad', true);
+        cookiesDialog.open();
+    }
 });
 
 if (window.location.pathname === '/') {
@@ -43,10 +43,10 @@ if (window.location.pathname === '/') {
 
         }
         // Friday
-		else if(hours > 8 && hours < 17 && day === 5 ){
-			document.getElementById("call-us").innerHTML = "Call Us - Available Now";
-		}
-		else {
+        else if (hours > 8 && hours < 17 && day === 5) {
+            document.getElementById("call-us").innerHTML = "Call Us - Available Now";
+        }
+        else {
             document.getElementById("call-us").innerHTML = "Call Us - Unavailable";
             document.getElementById("call-us-click").removeAttribute('onclick');
             document.getElementById("call-us-click-link").removeAttribute('href');
