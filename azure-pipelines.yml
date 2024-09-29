@@ -26,4 +26,4 @@ steps:
     fi
     go build -v .
   workingDirectory: '$(system.defaultWorkingDirectory)'
-  displayName: 'Run build'
+  displayName: '[PIPELINE] Run build'
