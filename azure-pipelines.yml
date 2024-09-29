@@ -8,7 +8,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  name: 'default'
 
 variables:
   GOBIN:  '$(system.defaultWorkingDirectory)/bin' # Go binaries path
