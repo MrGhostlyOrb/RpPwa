@@ -8,6 +8,8 @@ RUN go mod download
 
 COPY . .
 
+COPY .env.example .env
+
 # Build the Go app
 RUN CGO_ENABLED=0 GOOS=linux go build -o /richmond-paper-supply-website
 
