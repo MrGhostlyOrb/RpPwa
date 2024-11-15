@@ -17,7 +17,7 @@ COPY . .
 RUN go build -o richmond-paper-supply-website
 
 # Start a new stage from a smaller image
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 
 # Set the Current Working Directory inside the container
 WORKDIR /root/
