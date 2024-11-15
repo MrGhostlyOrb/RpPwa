@@ -12,4 +12,5 @@ services:
     networks:
       - reverse-proxy
 networks:
-  - reverse-proxy
+  reverse-proxy:
+    external: true
