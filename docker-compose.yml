@@ -11,3 +11,5 @@ services:
       PORT: 5080
     networks:
       - reverse-proxy
+networks:
+  - reverse-proxy
