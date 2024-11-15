@@ -55,8 +55,8 @@ func main() {
 	fs := http.FileServer(http.Dir("./public/static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	log.Printf("Starting server on http://0.0.0.0:%s\n", port)
-	err := http.ListenAndServe(":"+port, nil)
+	log.Printf("Starting server on http://127.0.0.1:%s\n", port)
+	err := http.ListenAndServe("127.0.0.1:"+port, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
