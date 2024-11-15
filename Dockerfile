@@ -1,32 +1,32 @@
-# Use an official Go runtime with Go 1.23
-FROM golang:1.23.1 as builder
+# Use an official Ubuntu image
+FROM ubuntu:22.04
+
+# Install Go 1.23 and necessary dependencies
+RUN apt-get update && apt-get install -y \
+    golang-1.23 \
+    libc6 \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set the Current Working Directory inside the container
 WORKDIR /app
 
-# Copy go.mod and go.sum files
+# Copy go.mod and go.sum to download dependencies
 COPY go.mod go.sum ./
 
-# Download dependencies
+# Download Go dependencies
 RUN go mod download
 
-# Copy the entire project
+# Copy the source code into the container
 COPY . .
 
-# Build the Go app
-RUN go build -o richmond-paper-supply-website
+# Build the Go application
+RUN go build -o richmond-paper-supply-website .
 
-# Start a new stage from a smaller image
-FROM debian:bookworm-slim
-
-# Set the Current Working Directory inside the container
+# Set the directory to where the binary will be executed
 WORKDIR /root/
 
-# Copy the binary from the builder image
-COPY --from=builder /app/richmond-paper-supply-website .
-
-# Expose port (optional: replace with the port your app runs on)
+# Expose the port your app runs on
 EXPOSE 5080
 
-# Run the Go binary
+# Run the Go binary when the container starts
 CMD ["./richmond-paper-supply-website"]
