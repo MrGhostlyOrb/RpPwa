@@ -11,6 +11,7 @@ services:
       PORT: 5080
     networks:
       - reverse-proxy
+    pull_policy: build
 networks:
   reverse-proxy:
     external: true
