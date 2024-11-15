@@ -19,6 +19,7 @@ func init() {
 func main() {
 	port := os.Getenv("PORT")
 	cdnURL := os.Getenv("CDN_URL")
+	address := os.Getenv("ADDRESS")
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		tmpl, err := template.ParseFiles("./public/index.html")
@@ -55,8 +56,8 @@ func main() {
 	fs := http.FileServer(http.Dir("./public/static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	log.Printf("Starting server on http://127.0.0.1:%s\n", port)
-	err := http.ListenAndServe("127.0.0.1:"+port, nil)
+	log.Printf("Starting server on http://%s:%s\n", address, port)
+	err := http.ListenAndServe(address+":"+port, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
