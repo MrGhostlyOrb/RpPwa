@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  go-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5080:5080" # Maps port 5000 on the host to port 5000 in the container
+    restart: unless-stopped
+    environment:
+      # Add any required environment variables here
+      PORT: 5080
