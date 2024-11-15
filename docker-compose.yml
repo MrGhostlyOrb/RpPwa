@@ -9,6 +9,10 @@ services:
     networks:
       - reverse-proxy
     pull_policy: build
+    environment:
+      - PORT=${PORT}
+      - CDN_URL=${CDN_URL}
+      - ADDRESS=${ADDRESS}
 networks:
   reverse-proxy:
     external: true
